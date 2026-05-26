@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Premium Packaging & Baking Supply Solutions",
+    "subtitle": "We provide quality packaging and baking supplies to support your business",
+    "cta_products": "View Products",
+    "cta_contact": "Contact Us"
+  },
+  "about_section": {
+    "title": "About Pinus Pack Indo",
+    "text": "Pinus Pack Indo is a company specializing in packaging and baking supply. We are committed to providing high-quality products to support your business needs."
+  },
+  "products_section": {
+    "title": "Our Products",
+    "subtitle": "Discover our wide range of packaging and baking supplies",
+    "category_packaging": "Packaging",
+    "category_baking": "Baking Supply",
+    "view_all": "View All Products"
+  },
+  "why_us": {
+    "title": "Why Pinus Pack Indo?",
+    "q1_title": "Quality Assured",
+    "q1_text": "Every product goes through a strict selection process to ensure the best quality.",
+    "q2_title": "Fast Delivery",
+    "q2_text": "We ensure your products arrive on time, every time.",
+    "q3_title": "Competitive Pricing",
+    "q3_text": "Best prices with premium quality for your business needs.",
+    "q4_title": "Professional Service",
+    "q4_text": "Our team is ready to help you find the right products."
+  },
+  "about_page": {
+    "hero_title": "About Us",
+    "hero_subtitle": "Get to know Pinus Pack Indo",
+    "story_title": "Our Story",
+    "story_text": "Pinus Pack Indo was founded with the determination to become a trusted partner for businesses in their packaging and baking supply needs. With experience in this industry, we understand the needs of every customer.",
+    "vision_title": "Vision",
+    "vision_text": "To become the leading packaging and baking supply company trusted by thousands of businesses across Indonesia.",
+    "mission_title": "Mission",
+    "mission_list": [
+      "Provide high-quality packaging and baking supply products",
+      "Deliver the best service to every customer",
+      "Build long-term mutually beneficial partnerships",
+      "Continuously innovate to meet market needs"
+    ],
+    "values_title": "Our Values"
+  },
+  "products_page": {
+    "hero_title": "Product Catalog",
+    "hero_subtitle": "Find the products you need",
+    "filter_all": "All",
+    "filter_packaging": "Packaging",
+    "filter_baking": "Baking Supply",
+    "inquiry": "Inquire About This Product",
+    "no_products": "No products found"
+  },
+  "contact_page": {
+    "hero_title": "Contact Us",
+    "hero_subtitle": "We are ready to assist you",
+    "info_title": "Contact Information",
+    "address_label": "Address",
+    "address_text": "Jakarta, Indonesia",
+    "phone_label": "Phone / WhatsApp",
+    "email_label": "Email",
+    "hours_label": "Business Hours",
+    "hours_text": "Monday – Saturday, 08:00 AM – 05:00 PM WIB",
+    "form_title": "Send a Message",
+    "form_name": "Full Name",
+    "form_company": "Company Name (optional)",
+    "form_email": "Email",
+    "form_phone": "WhatsApp Number",
+    "form_message": "Message",
+    "form_submit": "Send Message",
+    "wa_button": "Chat via WhatsApp"
+  },
+  "footer": {
+    "tagline": "Premium Packaging & Baking Supply Solutions",
+    "links_title": "Quick Links",
+    "contact_title": "Contact",
+    "rights": "All Rights Reserved"
+  }
+}

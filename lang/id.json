@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "products": "Produk",
+    "contact": "Kontak"
+  },
+  "hero": {
+    "tagline": "Solusi Kemasan & Perlengkapan Baking Terbaik",
+    "subtitle": "Kami menyediakan kemasan berkualitas dan perlengkapan baking untuk bisnis Anda",
+    "cta_products": "Lihat Produk",
+    "cta_contact": "Hubungi Kami"
+  },
+  "about_section": {
+    "title": "Tentang Pinus Pack Indo",
+    "text": "Pinus Pack Indo adalah perusahaan yang bergerak di bidang packaging dan baking supply. Kami berkomitmen menyediakan produk berkualitas tinggi untuk mendukung bisnis Anda."
+  },
+  "products_section": {
+    "title": "Produk Kami",
+    "subtitle": "Temukan berbagai pilihan kemasan dan perlengkapan baking kami",
+    "category_packaging": "Kemasan",
+    "category_baking": "Baking Supply",
+    "view_all": "Lihat Semua Produk"
+  },
+  "why_us": {
+    "title": "Mengapa Pinus Pack Indo?",
+    "q1_title": "Kualitas Terjamin",
+    "q1_text": "Setiap produk melewati proses seleksi ketat untuk memastikan kualitas terbaik.",
+    "q2_title": "Pengiriman Cepat",
+    "q2_text": "Kami memastikan produk sampai ke tangan Anda tepat waktu.",
+    "q3_title": "Harga Kompetitif",
+    "q3_text": "Harga terbaik dengan kualitas premium untuk kebutuhan bisnis Anda.",
+    "q4_title": "Layanan Profesional",
+    "q4_text": "Tim kami siap membantu Anda menemukan produk yang tepat."
+  },
+  "about_page": {
+    "hero_title": "Tentang Kami",
+    "hero_subtitle": "Kenali lebih dekat Pinus Pack Indo",
+    "story_title": "Cerita Kami",
+    "story_text": "Pinus Pack Indo berdiri dengan tekad untuk menjadi mitra terpercaya bagi para pelaku bisnis dalam kebutuhan kemasan dan perlengkapan baking. Dengan pengalaman di industri ini, kami memahami kebutuhan setiap pelanggan.",
+    "vision_title": "Visi",
+    "vision_text": "Menjadi perusahaan packaging dan baking supply terdepan yang dipercaya oleh ribuan pelaku bisnis di Indonesia.",
+    "mission_title": "Misi",
+    "mission_list": [
+      "Menyediakan produk kemasan dan baking supply berkualitas tinggi",
+      "Memberikan pelayanan terbaik kepada setiap pelanggan",
+      "Membangun kemitraan jangka panjang yang saling menguntungkan",
+      "Terus berinovasi untuk memenuhi kebutuhan pasar"
+    ],
+    "values_title": "Nilai Kami"
+  },
+  "products_page": {
+    "hero_title": "Katalog Produk",
+    "hero_subtitle": "Temukan produk yang Anda butuhkan",
+    "filter_all": "Semua",
+    "filter_packaging": "Kemasan",
+    "filter_baking": "Baking Supply",
+    "inquiry": "Tanya Produk Ini",
+    "no_products": "Produk tidak ditemukan"
+  },
+  "contact_page": {
+    "hero_title": "Hubungi Kami",
+    "hero_subtitle": "Kami siap membantu Anda",
+    "info_title": "Informasi Kontak",
+    "address_label": "Alamat",
+    "address_text": "Jakarta, Indonesia",
+    "phone_label": "Telepon / WhatsApp",
+    "email_label": "Email",
+    "hours_label": "Jam Operasional",
+    "hours_text": "Senin – Sabtu, 08.00 – 17.00 WIB",
+    "form_title": "Kirim Pesan",
+    "form_name": "Nama Lengkap",
+    "form_company": "Nama Perusahaan (opsional)",
+    "form_email": "Email",
+    "form_phone": "No. WhatsApp",
+    "form_message": "Pesan",
+    "form_submit": "Kirim Pesan",
+    "wa_button": "Chat via WhatsApp"
+  },
+  "footer": {
+    "tagline": "Solusi Kemasan & Baking Supply Terbaik",
+    "links_title": "Tautan Cepat",
+    "contact_title": "Kontak",
+    "rights": "Hak Cipta Dilindungi"
+  }
+}
