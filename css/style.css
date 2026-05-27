@@ -228,26 +228,22 @@ section { padding:88px 5%; }
   display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:24px;
 }
 .why-card {
-  padding:32px 28px; border-radius:var(--radius); border:1.5px solid var(--border);
-  background:var(--white); transition:var(--transition); position:relative; overflow:hidden;
+  padding:32px 28px; border-radius:var(--radius); border:none;
+  transition:var(--transition); position:relative; overflow:hidden;
 }
-.why-card::before {
-  content:''; position:absolute; top:0; left:0; right:0; height:3px;
-  background:linear-gradient(90deg,var(--g600),var(--g400));
-  transform:scaleX(0); transition:var(--transition); transform-origin:left;
-}
-.why-card:hover { border-color:var(--g400); box-shadow:var(--shadow-md); transform:translateY(-4px); }
-.why-card:hover::before { transform:scaleX(1); }
+.why-card:nth-child(1) { background:linear-gradient(135deg,var(--g800),var(--g700)); color:white; }
+.why-card:nth-child(2) { background:linear-gradient(135deg,var(--g600),var(--g500)); color:white; }
+.why-card:nth-child(3) { background:linear-gradient(135deg,var(--g500),var(--g400)); color:white; }
+.why-card:nth-child(4) { background:linear-gradient(135deg,var(--accent),var(--accent-dk)); color:white; }
+.why-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
 .why-icon {
   width:56px; height:56px; border-radius:14px;
-  background:var(--g200); display:flex; align-items:center; justify-content:center;
-  margin-bottom:20px; transition:var(--transition);
+  background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center;
+  margin-bottom:20px;
 }
-.why-card:hover .why-icon { background:var(--g700); }
-.why-icon svg { width:26px; color:var(--g700); transition:var(--transition); }
-.why-card:hover .why-icon svg { color:var(--white); }
-.why-card h3 { font-size:1.05rem; font-weight:700; margin-bottom:10px; }
-.why-card p  { font-size:0.88rem; color:var(--gray); line-height:1.7; }
+.why-icon svg { width:26px; color:white; }
+.why-card h3 { font-size:1.05rem; font-weight:700; margin-bottom:10px; color:white; }
+.why-card p  { font-size:0.88rem; color:rgba(255,255,255,0.8); line-height:1.7; }
 
 /* ── ABOUT / STORY ──────────────────────────────── */
 .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
@@ -308,6 +304,10 @@ section { padding:88px 5%; }
 .service-body { padding:20px; }
 .service-body h3 { font-size:1rem; font-weight:700; margin-bottom:8px; }
 .service-body p  { font-size:0.84rem; color:var(--gray); margin-bottom:16px; line-height:1.6; }
+.service-card:nth-child(1) .service-img { background:linear-gradient(135deg,#D8F3DC,#B7E4C7); }
+.service-card:nth-child(2) .service-img { background:linear-gradient(135deg,#C0E8CE,#95D5B2); }
+.service-card:nth-child(3) .service-img { background:linear-gradient(135deg,#FEF3DC,#FDDEA0); }
+.service-card:nth-child(4) .service-img { background:linear-gradient(135deg,#D8F3DC,#74C69D); }
 .service-link {
   display:inline-flex; align-items:center; gap:6px;
   font-size:0.83rem; font-weight:700; color:var(--g700);
