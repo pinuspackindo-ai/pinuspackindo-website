@@ -7,7 +7,8 @@ let translations = {};
 
 // ── Load language data ───────────────────
 async function loadLang(lang) {
-  const res = await fetch(`../lang/${lang}.json`);
+  const base = location.pathname.endsWith('/') || location.pathname.includes('index') ? '' : '../';
+  const res = await fetch(`${base}lang/${lang}.json`);
   return res.json();
 }
 

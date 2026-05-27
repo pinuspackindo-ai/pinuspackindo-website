@@ -1,304 +1,467 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Pinus Pack Indo — Packaging & Baking Supply</title>
-  <meta name="description" content="Pinus Pack Indo menyediakan solusi kemasan dan perlengkapan baking berkualitas tinggi untuk bisnis Anda." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Pinus Pack Indo menyediakan solusi kemasan dan perlengkapan baking berkualitas tinggi untuk bisnis Anda."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
-<!-- ── NAVBAR ─────────────────────────── -->
+<!-- ── NAVBAR ─────────────────────────────────── -->
 <nav class="navbar">
   <a href="index.html" class="navbar-brand">
-    <!-- TODO: ganti src dengan path logo asli, contoh: images/logo.png -->
-    <div style="width:40px;height:40px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="22"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <div class="brand-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
     </div>
-    <div>
+    <div class="brand-text">
       <div class="brand-name">Pinus Pack Indo</div>
       <div class="brand-sub">Packaging &amp; Baking Supply</div>
     </div>
   </a>
-
   <ul class="nav-links">
-    <li><a href="index.html"    data-i18n="nav.home">Beranda</a></li>
-    <li><a href="about.html"   data-i18n="nav.about">Tentang Kami</a></li>
+    <li><a href="index.html"     data-i18n="nav.home">Beranda</a></li>
+    <li><a href="about.html"    data-i18n="nav.about">Tentang Kami</a></li>
     <li><a href="products.html" data-i18n="nav.products">Produk</a></li>
-    <li><a href="contact.html" data-i18n="nav.contact">Kontak</a></li>
+    <li><a href="contact.html"  data-i18n="nav.contact">Kontak</a></li>
   </ul>
-
   <div class="nav-right">
     <div class="lang-switcher">
       <button class="lang-btn" data-lang="id">ID</button>
       <button class="lang-btn" data-lang="en">EN</button>
     </div>
-    <a href="contact.html" class="btn-nav-cta" data-i18n="nav.contact">Kontak</a>
-    <button class="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="contact.html" class="btn-cta-nav" data-i18n="nav.contact">Kontak</a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
-<!-- Mobile Nav -->
 <div class="mobile-nav">
-  <a href="index.html"    data-i18n="nav.home">Beranda</a>
-  <a href="about.html"   data-i18n="nav.about">Tentang Kami</a>
+  <a href="index.html"     data-i18n="nav.home">Beranda</a>
+  <a href="about.html"    data-i18n="nav.about">Tentang Kami</a>
   <a href="products.html" data-i18n="nav.products">Produk</a>
-  <a href="contact.html" data-i18n="nav.contact">Kontak</a>
+  <a href="contact.html"  data-i18n="nav.contact">Kontak</a>
   <div class="mobile-lang">
     <button class="lang-btn" data-lang="id">ID</button>
     <button class="lang-btn" data-lang="en">EN</button>
   </div>
 </div>
 
-<!-- ── HERO ──────────────────────────────── -->
+<!-- ── HERO ──────────────────────────────────────── -->
 <section class="hero">
-  <div class="hero-content">
-    <div class="hero-badge">Packaging &amp; Baking Supply</div>
-    <h1 data-i18n="hero.tagline">Solusi Kemasan &amp; Perlengkapan <span>Baking Terbaik</span></h1>
-    <p data-i18n="hero.subtitle">Kami menyediakan kemasan berkualitas dan perlengkapan baking untuk bisnis Anda</p>
-    <div class="hero-buttons">
-      <a href="products.html" class="btn-primary" data-i18n="hero.cta_products">Lihat Produk</a>
-      <a href="contact.html"  class="btn-outline"  data-i18n="hero.cta_contact">Hubungi Kami</a>
-    </div>
+  <div class="hero-bg-circles">
+    <span></span><span></span><span></span>
   </div>
-  <div class="hero-image">
-    <!-- TODO: ganti dengan foto produk/banner. Contoh: <img src="images/hero-banner.jpg" alt="Pinus Pack Indo"> -->
-    <div class="hero-placeholder-img">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      <span>Foto Produk / Banner Hero<br><small>Ganti dengan foto asli</small></span>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span></span>
+        Packaging &amp; Baking Supply
+      </div>
+      <h1 class="display-1" data-i18n="hero.tagline">
+        Solusi Kemasan &amp; Baking<br><em>Terbaik untuk Bisnis</em>
+      </h1>
+      <p data-i18n="hero.subtitle">Kami menyediakan kemasan berkualitas dan perlengkapan baking untuk mendukung pertumbuhan bisnis Anda di Indonesia.</p>
+      <div class="hero-buttons">
+        <a href="products.html" class="btn-primary" data-i18n="hero.cta_products">
+          Lihat Produk
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="contact.html" class="btn-ghost" data-i18n="hero.cta_contact">Hubungi Kami</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-stat">
+          <div class="num">500+</div>
+          <div class="lbl" id="lbl1">Produk</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-stat">
+          <div class="num">1000+</div>
+          <div class="lbl" id="lbl2">Pelanggan</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-stat">
+          <div class="num">5+</div>
+          <div class="lbl" id="lbl3">Tahun</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-stat">
+          <div class="num">⭐ 4.9</div>
+          <div class="lbl" id="lbl4">Rating</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-main">
+        <!-- TODO: <img src="images/hero-banner.jpg" alt="Pinus Pack Indo"> -->
+        <div class="img-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <span>Foto Produk Hero<br><small>Ganti dengan foto asli</small></span>
+        </div>
+      </div>
+      <div class="hero-float-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="fc-text">
+          <div class="fc-title">Kualitas Terjamin</div>
+          <div class="fc-sub">Standar Food Grade</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── STATS ──────────────────────────────── -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-number">500+</div>
-    <div class="stat-label" id="stat1">Produk Tersedia</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">1000+</div>
-    <div class="stat-label" id="stat2">Pelanggan Puas</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">5+</div>
-    <div class="stat-label" id="stat3">Tahun Pengalaman</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">Indonesia</div>
-    <div class="stat-label" id="stat4">Jangkauan Pengiriman</div>
+<!-- ── MARQUEE PARTNER ─────────────────────────── -->
+<div class="marquee-section">
+  <p class="marquee-label">Dipercaya oleh berbagai bisnis</p>
+  <div style="overflow:hidden">
+    <div class="marquee-track">
+      <div class="marquee-item">🏪 Toko Kue</div>
+      <div class="marquee-item">🍞 Bakeri</div>
+      <div class="marquee-item">🛍️ Retail</div>
+      <div class="marquee-item">🏭 Manufaktur</div>
+      <div class="marquee-item">☕ Kafe</div>
+      <div class="marquee-item">🍕 Restoran</div>
+      <div class="marquee-item">🎂 Catering</div>
+      <div class="marquee-item">📦 Distributor</div>
+      <!-- duplicate for seamless loop -->
+      <div class="marquee-item">🏪 Toko Kue</div>
+      <div class="marquee-item">🍞 Bakeri</div>
+      <div class="marquee-item">🛍️ Retail</div>
+      <div class="marquee-item">🏭 Manufaktur</div>
+      <div class="marquee-item">☕ Kafe</div>
+      <div class="marquee-item">🍕 Restoran</div>
+      <div class="marquee-item">🎂 Catering</div>
+      <div class="marquee-item">📦 Distributor</div>
+    </div>
   </div>
 </div>
 
-<!-- ── TENTANG SINGKAT ─────────────────────── -->
-<section>
-  <div class="about-grid">
-    <div class="about-img-wrap">
-      <!-- TODO: ganti dengan foto perusahaan/gudang. Contoh: <img src="images/about-office.jpg" alt="Kantor Pinus Pack Indo"> -->
-      <div style="text-align:center;padding:40px;color:var(--gray);">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" style="margin:0 auto 12px;display:block;"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        <p>Foto Perusahaan / Gudang<br><small>Ganti dengan foto asli</small></p>
-      </div>
-    </div>
-    <div class="about-text">
-      <div class="section-label">Tentang Kami</div>
-      <h2 class="section-title" data-i18n="about_section.title">Tentang Pinus Pack Indo</h2>
-      <p class="section-subtitle" data-i18n="about_section.text">
-        Pinus Pack Indo adalah perusahaan yang bergerak di bidang packaging dan baking supply.
-      </p>
-      <div class="about-values">
-        <div class="value-item">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div class="value-text">
-            <h4 data-i18n="why_us.q1_title">Kualitas Terjamin</h4>
-            <p data-i18n="why_us.q1_text">Setiap produk melewati proses seleksi ketat.</p>
-          </div>
+<!-- ── TENTANG SINGKAT ─────────────────────────── -->
+<section class="bg-white">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <!-- TODO: <img src="images/about-office.jpg" alt="Pinus Pack Indo"> -->
+        <div class="img-placeholder" style="height:100%;min-height:360px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Foto Perusahaan<br><small>Ganti dengan foto asli</small></span>
         </div>
-        <div class="value-item">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="value-text">
-            <h4 data-i18n="why_us.q2_title">Pengiriman Cepat</h4>
-            <p data-i18n="why_us.q2_text">Produk sampai tepat waktu ke tangan Anda.</p>
-          </div>
-        </div>
-        <div class="value-item">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-          </div>
-          <div class="value-text">
-            <h4 data-i18n="why_us.q3_title">Harga Kompetitif</h4>
-            <p data-i18n="why_us.q3_text">Harga terbaik dengan kualitas premium.</p>
+        <div class="about-img-badge">✅ Berdiri sejak 2019</div>
+        <div class="about-img-stat">
+          <div>
+            <div class="stat-num">1000+</div>
+            <div class="stat-lbl">Pelanggan Puas</div>
           </div>
         </div>
       </div>
-      <a href="about.html" class="btn-secondary" style="margin-top:28px;display:inline-block;">
-        Selengkapnya &rarr;
-      </a>
+      <div class="about-content">
+        <div class="section-label">Tentang Kami</div>
+        <h2 class="section-title" data-i18n="about_section.title">Tentang Pinus Pack Indo</h2>
+        <p class="section-subtitle" data-i18n="about_section.text">Pinus Pack Indo adalah perusahaan terpercaya di bidang packaging dan baking supply. Kami berkomitmen menyediakan produk berkualitas tinggi untuk mendukung bisnis Anda.</p>
+        <div class="about-features">
+          <div class="about-feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="feature-text">
+              <h4 data-i18n="why_us.q1_title">Kualitas Terjamin</h4>
+              <p data-i18n="why_us.q1_text">Produk food-grade terstandar untuk keamanan bisnis Anda.</p>
+            </div>
+          </div>
+          <div class="about-feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="feature-text">
+              <h4 data-i18n="why_us.q2_title">Pengiriman Cepat</h4>
+              <p data-i18n="why_us.q2_text">Stok selalu tersedia, pengiriman ke seluruh Indonesia.</p>
+            </div>
+          </div>
+          <div class="about-feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="feature-text">
+              <h4 data-i18n="why_us.q3_title">Harga Kompetitif</h4>
+              <p data-i18n="why_us.q3_text">Harga grosir terbaik langsung dari produsen.</p>
+            </div>
+          </div>
+        </div>
+        <a href="about.html" class="btn-green">
+          Selengkapnya
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── PRODUK UNGGULAN ─────────────────────── -->
-<section class="bg-light">
-  <div class="section-header center">
-    <div class="section-label">Produk</div>
-    <h2 class="section-title" data-i18n="products_section.title">Produk Kami</h2>
-    <p class="section-subtitle" data-i18n="products_section.subtitle">Temukan berbagai pilihan kemasan dan perlengkapan baking kami</p>
-  </div>
-
-  <div class="product-grid">
-    <!-- Produk 1 -->
-    <div class="product-card" data-category="packaging">
-      <div class="product-img">
-        <span class="product-badge badge-packaging" data-i18n="products_section.category_packaging">Kemasan</span>
-        <!-- TODO: <img src="images/products/produk1.jpg" alt="Nama Produk"> -->
-        <span style="color:var(--gray);font-size:0.8rem;">Foto Produk</span>
-      </div>
-      <div class="product-info">
-        <h3>Kotak Kemasan Kraft</h3>
-        <p>Kemasan kraft premium untuk berbagai kebutuhan bisnis</p>
-      </div>
-      <a href="contact.html" class="product-cta" data-i18n="products_page.inquiry">Tanya Produk Ini</a>
+<!-- ── WHY CHOOSE US ───────────────────────────── -->
+<section class="bg-g100">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Keunggulan</div>
+      <h2 class="section-title" data-i18n="why_us.title">Mengapa Pinus Pack Indo?</h2>
+      <p class="section-subtitle">Kami hadir sebagai solusi lengkap untuk semua kebutuhan kemasan dan baking supply bisnis Anda.</p>
     </div>
-
-    <!-- Produk 2 -->
-    <div class="product-card" data-category="packaging">
-      <div class="product-img">
-        <span class="product-badge badge-packaging" data-i18n="products_section.category_packaging">Kemasan</span>
-        <span style="color:var(--gray);font-size:0.8rem;">Foto Produk</span>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 data-i18n="why_us.q1_title">Kualitas Terjamin</h3>
+        <p data-i18n="why_us.q1_text">Setiap produk melewati proses seleksi ketat untuk memastikan kualitas terbaik dan standar food-grade.</p>
       </div>
-      <div class="product-info">
-        <h3>Paper Bag Custom</h3>
-        <p>Kantong kertas berkualitas untuk branding bisnis Anda</p>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 data-i18n="why_us.q2_title">Pengiriman Cepat</h3>
+        <p data-i18n="why_us.q2_text">Stok selalu tersedia dan pengiriman cepat ke seluruh Indonesia agar bisnis Anda tidak terhenti.</p>
       </div>
-      <a href="contact.html" class="product-cta" data-i18n="products_page.inquiry">Tanya Produk Ini</a>
-    </div>
-
-    <!-- Produk 3 -->
-    <div class="product-card" data-category="baking">
-      <div class="product-img">
-        <span class="product-badge badge-baking" data-i18n="products_section.category_baking">Baking Supply</span>
-        <span style="color:var(--gray);font-size:0.8rem;">Foto Produk</span>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h3 data-i18n="why_us.q3_title">Harga Kompetitif</h3>
+        <p data-i18n="why_us.q3_text">Harga terbaik langsung dari sumber, cocok untuk pembelian satuan hingga partai besar.</p>
       </div>
-      <div class="product-info">
-        <h3>Loyang Roti Premium</h3>
-        <p>Loyang anti lengket berkualitas tinggi untuk usaha bakeri</p>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 data-i18n="why_us.q4_title">Layanan Profesional</h3>
+        <p data-i18n="why_us.q4_text">Tim berpengalaman siap membantu Anda memilih produk yang paling sesuai kebutuhan bisnis.</p>
       </div>
-      <a href="contact.html" class="product-cta" data-i18n="products_page.inquiry">Tanya Produk Ini</a>
-    </div>
-
-    <!-- Produk 4 -->
-    <div class="product-card" data-category="baking">
-      <div class="product-img">
-        <span class="product-badge badge-baking" data-i18n="products_section.category_baking">Baking Supply</span>
-        <span style="color:var(--gray);font-size:0.8rem;">Foto Produk</span>
-      </div>
-      <div class="product-info">
-        <h3>Kertas Roti / Baking Paper</h3>
-        <p>Kertas roti food-grade untuk berbagai keperluan baking</p>
-      </div>
-      <a href="contact.html" class="product-cta" data-i18n="products_page.inquiry">Tanya Produk Ini</a>
-    </div>
-  </div>
-
-  <div class="view-all-wrap">
-    <a href="products.html" class="btn-secondary" data-i18n="products_section.view_all">Lihat Semua Produk</a>
-  </div>
-</section>
-
-<!-- ── MENGAPA KAMI ────────────────────────── -->
-<section>
-  <div class="section-header center">
-    <div class="section-label">Keunggulan</div>
-    <h2 class="section-title" data-i18n="why_us.title">Mengapa Pinus Pack Indo?</h2>
-  </div>
-  <div class="why-grid">
-    <div class="why-card">
-      <div class="why-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <h3 data-i18n="why_us.q1_title">Kualitas Terjamin</h3>
-      <p data-i18n="why_us.q1_text">Setiap produk melewati proses seleksi ketat untuk memastikan kualitas terbaik.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      </div>
-      <h3 data-i18n="why_us.q2_title">Pengiriman Cepat</h3>
-      <p data-i18n="why_us.q2_text">Kami memastikan produk sampai ke tangan Anda tepat waktu.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-      </div>
-      <h3 data-i18n="why_us.q3_title">Harga Kompetitif</h3>
-      <p data-i18n="why_us.q3_text">Harga terbaik dengan kualitas premium untuk kebutuhan bisnis Anda.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-      </div>
-      <h3 data-i18n="why_us.q4_title">Layanan Profesional</h3>
-      <p data-i18n="why_us.q4_text">Tim kami siap membantu Anda menemukan produk yang tepat.</p>
     </div>
   </div>
 </section>
 
-<!-- ── CTA BANNER ─────────────────────────── -->
+<!-- ── KATEGORI PRODUK ─────────────────────────── -->
+<section class="bg-white">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Produk</div>
+      <h2 class="section-title" data-i18n="products_section.title">Kategori Produk Kami</h2>
+      <p class="section-subtitle" data-i18n="products_section.subtitle">Temukan berbagai pilihan kemasan dan perlengkapan baking berkualitas tinggi</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img">
+          <span class="service-tag tag-packaging">Kemasan</span>
+          <div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span>Kotak Kemasan</span></div>
+        </div>
+        <div class="service-body">
+          <h3>Kotak &amp; Box Kemasan</h3>
+          <p>Berbagai pilihan kotak kemasan kraft, mika, dan karton untuk produk makanan, kue, dan souvenir.</p>
+          <a href="products.html" class="service-link">
+            Lihat Produk
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img">
+          <span class="service-tag tag-packaging">Kemasan</span>
+          <div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg><span>Paper Bag</span></div>
+        </div>
+        <div class="service-body">
+          <h3>Paper Bag &amp; Kantong</h3>
+          <p>Kantong kertas berkualitas dalam berbagai ukuran dan warna untuk branding bisnis Anda.</p>
+          <a href="products.html" class="service-link">
+            Lihat Produk
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img">
+          <span class="service-tag tag-baking">Baking</span>
+          <div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg><span>Peralatan Baking</span></div>
+        </div>
+        <div class="service-body">
+          <h3>Peralatan Baking</h3>
+          <p>Loyang, cetakan, dan peralatan baking profesional untuk usaha kue dan bakeri Anda.</p>
+          <a href="products.html" class="service-link">
+            Lihat Produk
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img">
+          <span class="service-tag tag-baking">Baking</span>
+          <div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>Kertas &amp; Cup</span></div>
+        </div>
+        <div class="service-body">
+          <h3>Kertas &amp; Cup Baking</h3>
+          <p>Kertas roti food-grade, baking cup, dan perlengkapan baking sekali pakai berkualitas tinggi.</p>
+          <a href="products.html" class="service-link">
+            Lihat Produk
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="products.html" class="btn-outline-green" data-i18n="products_section.view_all">Lihat Semua Produk</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW WE WORK ─────────────────────────────── -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Cara Kerja</div>
+      <h2 class="section-title">Mudah Belanja di Pinus Pack Indo</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.65);margin:0 auto;">Proses pemesanan yang simpel dan cepat, mulai dari pilih produk hingga terima di tangan Anda</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-item">
+        <div class="process-num">1</div>
+        <h3>Pilih Produk</h3>
+        <p>Jelajahi katalog produk kami dan temukan kemasan atau perlengkapan baking yang Anda butuhkan.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">2</div>
+        <h3>Hubungi Kami</h3>
+        <p>Chat via WhatsApp atau isi form kontak. Tim kami akan response dalam hitungan menit.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">3</div>
+        <h3>Terima Pesanan</h3>
+        <p>Produk dikemas dengan baik dan dikirim cepat ke lokasi Anda di seluruh Indonesia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIAL ─────────────────────────────── -->
+<section class="bg-g100">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Testimoni</div>
+      <h2 class="section-title">Kata Pelanggan Kami</h2>
+      <p class="section-subtitle">Ribuan pelanggan telah mempercayakan kebutuhan packaging mereka kepada kami</p>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testi-card">
+        <div class="testi-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testi-text">"Kualitas packaging dari Pinus Pack Indo luar biasa! Loyang dan kertas baking yang saya beli sangat memuaskan, pengiriman juga cepat."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div>
+            <div class="testi-name">Sari Dewi</div>
+            <div class="testi-role">Pemilik Toko Kue, Jakarta</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testi-text">"Harga kompetitif, pelayanan ramah, dan produk selalu ready stok. Sudah 2 tahun jadi pelanggan setia Pinus Pack Indo!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">B</div>
+          <div>
+            <div class="testi-name">Budi Santoso</div>
+            <div class="testi-role">Owner Bakeri, Bandung</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testi-text">"Paper bag dan kotak kemasan mereka kualitasnya premium banget. Pelanggan saya selalu memuji packaging produk saya. Recommended!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Rina Kusuma</div>
+            <div class="testi-role">Catering &amp; Event, Surabaya</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ─────────────────────────────── -->
 <section class="cta-banner">
-  <h2>Siap Meningkatkan Bisnis Anda?</h2>
-  <p>Hubungi kami sekarang dan temukan solusi packaging &amp; baking supply yang tepat untuk Anda</p>
+  <h2>Siap Upgrade Packaging Bisnis Anda?</h2>
+  <p>Hubungi kami sekarang dan dapatkan konsultasi gratis untuk kebutuhan kemasan dan baking supply Anda</p>
   <div class="cta-buttons">
-    <a href="contact.html" class="btn-wa">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <a href="https://wa.me/628XXXXXXXXXX" target="_blank" class="btn-wa">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
       <span data-i18n="contact_page.wa_button">Chat via WhatsApp</span>
     </a>
-    <a href="products.html" class="btn-outline" data-i18n="hero.cta_products">Lihat Produk</a>
+    <a href="products.html" class="btn-outline-white" data-i18n="hero.cta_products">Lihat Produk</a>
   </div>
 </section>
 
-<!-- ── FOOTER ─────────────────────────────── -->
+<!-- ── FOOTER ─────────────────────────────────── -->
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="brand-name" style="color:white;font-size:1.1rem;font-weight:700;margin-bottom:10px;">Pinus Pack Indo</div>
-      <p data-i18n="footer.tagline">Solusi Kemasan &amp; Baking Supply Terbaik</p>
-    </div>
-    <div class="footer-col">
-      <h4 data-i18n="footer.links_title">Tautan Cepat</h4>
-      <ul>
-        <li><a href="index.html"    data-i18n="nav.home">Beranda</a></li>
-        <li><a href="about.html"   data-i18n="nav.about">Tentang Kami</a></li>
-        <li><a href="products.html" data-i18n="nav.products">Produk</a></li>
-        <li><a href="contact.html" data-i18n="nav.contact">Kontak</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 data-i18n="footer.contact_title">Kontak</h4>
-      <div class="footer-contact-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 13.5 19.79 19.79 0 01.16 4.82 2 2 0 012.18 2.65h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.17 6.17l1.49-1.49a2 2 0 012.12-.45 12.84 12.84 0 002.81.7A2 2 0 0121.92 16.92z"/></svg>
-        <!-- TODO: ganti dengan nomor WA bisnis -->
-        <span>+62 8XX-XXXX-XXXX</span>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <div class="brand-logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <span class="footer-brand-name">Pinus Pack Indo</span>
+        </div>
+        <p data-i18n="footer.tagline">Solusi kemasan dan baking supply berkualitas tinggi untuk bisnis Anda di seluruh Indonesia.</p>
       </div>
-      <div class="footer-contact-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span>pinuspackindo@gmail.com</span>
+      <div class="footer-col">
+        <h4 data-i18n="footer.links_title">Tautan Cepat</h4>
+        <ul>
+          <li><a href="index.html"     data-i18n="nav.home">Beranda</a></li>
+          <li><a href="about.html"    data-i18n="nav.about">Tentang Kami</a></li>
+          <li><a href="products.html" data-i18n="nav.products">Produk</a></li>
+          <li><a href="contact.html"  data-i18n="nav.contact">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.contact_title">Kontak</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 13.5 19.79 19.79 0 01.16 4.82 2 2 0 012.18 2.65h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.17 6.17l1.49-1.49a2 2 0 012.12-.45c.907.339 1.85.573 2.81.7A2 2 0 0121.92 16.92z"/></svg>
+          <!-- TODO: ganti nomor WA -->
+          <span>+62 8XX-XXXX-XXXX</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>pinuspackindo@gmail.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <!-- TODO: ganti alamat -->
+          <span>Jakarta, Indonesia</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <span>&copy; <span id="year"></span> Pinus Pack Indo. <span data-i18n="footer.rights">Hak Cipta Dilindungi</span>.</span>
-    <span>Made with ♥ in Indonesia</span>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Pinus Pack Indo. <span data-i18n="footer.rights">Hak Cipta Dilindungi</span>.</span>
+      <span>Made with ♥ in Indonesia</span>
+    </div>
   </div>
 </footer>
 
