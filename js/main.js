@@ -59,21 +59,27 @@ async function switchLang(lang) {
 
 // ── Navbar ───────────────────────────────
 function initNavbar() {
-  const navbar   = document.querySelector('.navbar');
-  const hamburger = document.querySelector('.hamburger');
-  const mobileNav = document.querySelector('.mobile-nav');
+  const navbarWrap = document.querySelector('.navbar-wrap');
+  const navbar     = document.querySelector('.navbar');
+  const hamburger  = document.querySelector('.hamburger');
+  const mobileNav  = document.querySelector('.mobile-nav');
+  const mobileClose = document.querySelector('.mobile-close');
 
   window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
+    navbarWrap?.classList.toggle('scrolled', window.scrollY > 20);
     document.querySelector('.scroll-top')?.classList.toggle('show', window.scrollY > 300);
   });
 
   hamburger?.addEventListener('click', () => {
-    mobileNav.classList.toggle('open');
+    mobileNav?.classList.toggle('open');
+  });
+
+  mobileClose?.addEventListener('click', () => {
+    mobileNav?.classList.remove('open');
   });
 
   document.addEventListener('click', e => {
-    if (!navbar.contains(e.target) && !mobileNav?.contains(e.target)) {
+    if (!navbarWrap?.contains(e.target) && !mobileNav?.contains(e.target)) {
       mobileNav?.classList.remove('open');
     }
   });
