@@ -168,7 +168,8 @@ nav {
 .service-card-icon {
   height: 200px; display: flex; align-items: center; justify-content: center;
   border-radius: 16px; overflow: hidden;
-  isolation: isolate; transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  will-change: transform;
 }
 .service-card-icon svg {
   width: 72px; height: 72px; stroke: rgba(255,255,255,0.95); fill: none;
