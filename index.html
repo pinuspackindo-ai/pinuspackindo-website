@@ -1011,6 +1011,17 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     document.getElementById('svcNext').disabled = svcIndex === svcMax;
   }, 7000);
 
+  // Swipe touch — Section 2 (Services)
+  (function() {
+    var el = document.getElementById('servicesTrack');
+    var startX = 0;
+    el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, { passive: true });
+    el.addEventListener('touchend', function(e){
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) slideServices(diff > 0 ? 1 : -1);
+    });
+  })();
+
   // Testimonial slider
   let testiCurrent = 0;
   const testiTotal = 3;
@@ -1023,6 +1034,17 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     testiCurrent = (testiCurrent + 1) % testiTotal;
     document.getElementById('testiTrack').style.transform = 'translateX(-' + (testiCurrent * 100) + '%)';
   }, 10000);
+
+  // Swipe touch — Testimoni
+  (function() {
+    var el = document.getElementById('testiTrack');
+    var startX = 0;
+    el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, { passive: true });
+    el.addEventListener('touchend', function(e){
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) changeTesti(diff > 0 ? 1 : -1);
+    });
+  })();
 
   // Hero Slideshow
   const track    = document.getElementById('heroTrack');

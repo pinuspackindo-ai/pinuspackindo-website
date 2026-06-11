@@ -703,14 +703,20 @@ footer { background: #111; color: #aaa; padding: 56px 80px 24px; }
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Hitung offset dinamis (tinggi nav + tabs aktual)
+  function getOffset() {
+    const nav  = document.querySelector('nav');
+    const tabs = document.querySelector('.cat-tabs-wrap');
+    return (nav ? nav.offsetHeight : 0) + (tabs ? tabs.offsetHeight : 0) + 16;
+  }
+
   // Smooth scroll + update active tab
   function scrollToSection(id) {
     const el = id === 'semua'
       ? document.getElementById('kemasan-plastik')
       : document.getElementById(id);
     if (el) {
-      const offset = 160;
-      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      const top = el.getBoundingClientRect().top + window.scrollY - getOffset();
       window.scrollTo({ top, behavior: 'smooth' });
     }
     const ids = ['semua','kemasan-plastik','kemasan-kertas','kemasan-styrofoam','peralatan-baking','bahan-baking'];
@@ -756,11 +762,17 @@ footer { background: #111; color: #aaa; padding: 56px 80px 24px; }
   }
   fetch(`lang/${currentLang}.json`).then(r => r.json()).then(applyLang);
 
-  // Handle URL hash on load
-  window.addEventListener('load', () => {
+  // Handle URL hash — tunggu sampai layout selesai lalu scroll
+  function handleHash() {
     const hash = window.location.hash.replace('#', '');
-    if (hash) setTimeout(() => scrollToSection(hash), 200);
-  });
+    if (hash) {
+      // Cegah browser auto-scroll ke hash, biar JS yang handle
+      window.scrollTo(0, 0);
+      setTimeout(() => scrollToSection(hash), 350);
+    }
+  }
+  window.addEventListener('load', handleHash);
+  window.addEventListener('hashchange', handleHash);
 </script>
 </body>
 </html>
