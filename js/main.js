@@ -132,7 +132,7 @@ function initContactForm() {
     const message = form.querySelector('[name="message"]').value.trim();
 
     // Redirect to WhatsApp with pre-filled message
-    const WA_NUMBER = '628XXXXXXXXXX'; // TODO: ganti dengan nomor WA bisnis
+    const WA_NUMBER = '6285283338989'; // TODO: ganti dengan nomor WA bisnis
     const text = encodeURIComponent(`Halo Pinus Pack Indo,\n\nNama: ${name}\nPesan: ${message}`);
     window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, '_blank');
 
@@ -151,7 +151,7 @@ function initSendBtn() {
     const phone   = inputs[1]?.value.trim() || '';
     const message = inputs[3]?.value.trim() || '';
     if (!name) { inputs[0]?.focus(); return; }
-    const WA_NUMBER = '628XXXXXXXXXX'; // TODO: ganti nomor WA bisnis
+    const WA_NUMBER = '6285283338989'; // TODO: ganti nomor WA bisnis
     const text = encodeURIComponent(`Halo Pinus Pack Indo,\n\nNama: ${name}\nHP: ${phone}\nPesan: ${message}`);
     window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, '_blank');
   });
