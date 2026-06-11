@@ -160,29 +160,24 @@ nav {
 .about-photo-3 img { width: 100%; height: 100%; object-fit: cover; }
 
 /* KEUNGGULAN */
-.team-section { background: #f8fdf9; }
-.team-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px; }
+.team-section { background: #fff; }
+.team-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; }
 .team-header-right { max-width: 380px; }
-.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
 .team-card {
-  background: #fff; border-radius: 18px;
-  padding: 36px 28px; text-align: center;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: transparent;
+  transition: transform 0.2s;
+  display: flex; flex-direction: column;
 }
-.team-card:hover { transform: translateY(-5px); box-shadow: 0 8px 32px rgba(39,174,96,0.12); }
-.team-card-icon {
-  width: 72px; height: 72px; border-radius: 50%;
-  background: linear-gradient(135deg, #d4edda, #a8d5b5);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 34px; margin: 0 auto 20px;
+.team-card:hover { transform: translateY(-4px); }
+.team-card-img {
+  width: 100%; height: 240px; overflow: hidden;
+  border-radius: 16px;
 }
-.team-card h4 { font-size: 20px; font-weight: 800; color: #1a3d2b; margin-bottom: 12px; }
-.team-card p { font-size: 14px; color: #666; line-height: 1.7; }
-.team-card-accent {
-  width: 40px; height: 4px; background: #27ae60;
-  border-radius: 2px; margin: 16px auto 0;
-}
+.team-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.team-card-body { padding: 16px 4px; display: flex; flex-direction: column; flex: 1; }
+.team-card-body h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #111; }
+.team-card-body p { font-size: 13px; color: #666; line-height: 1.6; flex: 1; }
 
 /* WELCOME */
 .welcome-section { background: #fff; }
@@ -489,24 +484,34 @@ footer { background: #1a3d2b; color: #ccc; padding: 56px 80px 32px; }
       <p class="section-sub">Kami hadir sebagai mitra terpercaya untuk kebutuhan kemasan dan baking supply bisnis Anda.</p>
     </div>
   </div>
+  <hr style="border:none;border-top:1px solid #e8e8e8;margin-bottom:32px;">
   <div class="team-grid">
     <div class="team-card">
-      <div class="team-card-icon">😊</div>
-      <h4>Nyaman</h4>
-      <p>Belanja mudah dan menyenangkan — baik datang langsung ke toko maupun pesan secara online. Proses cepat, pengiriman tepat waktu, dan stok selalu tersedia.</p>
-      <div class="team-card-accent"></div>
+      <div class="team-card-img">
+        <img src="images/unggulan-1.png" alt="Nyaman Berbelanja">
+      </div>
+      <div class="team-card-body">
+        <h4>Nyaman</h4>
+        <p>Belanja mudah dan menyenangkan — baik datang langsung ke toko maupun pesan secara online. Proses cepat, pengiriman tepat waktu, dan stok selalu tersedia.</p>
+      </div>
     </div>
     <div class="team-card">
-      <div class="team-card-icon">🤝</div>
-      <h4>Ramah</h4>
-      <p>Tim kami siap membantu dengan sepenuh hati. Dari konsultasi produk hingga after-sales, kami melayani dengan senyum dan solusi terbaik untuk bisnis Anda.</p>
-      <div class="team-card-accent"></div>
+      <div class="team-card-img">
+        <img src="images/unggulan-2.png" alt="Pelayanan Ramah">
+      </div>
+      <div class="team-card-body">
+        <h4>Ramah</h4>
+        <p>Tim kami siap membantu dengan sepenuh hati. Dari konsultasi produk hingga after-sales, kami melayani dengan senyum dan solusi terbaik untuk bisnis Anda.</p>
+      </div>
     </div>
     <div class="team-card">
-      <div class="team-card-icon">📦</div>
-      <h4>Lengkap</h4>
-      <p>Ribuan pilihan produk kemasan dan baking supply tersedia di satu tempat — dari paper bag, kotak kemasan, hingga peralatan baking profesional untuk semua skala usaha.</p>
-      <div class="team-card-accent"></div>
+      <div class="team-card-img">
+        <img src="images/unggulan-3.png" alt="Produk Lengkap">
+      </div>
+      <div class="team-card-body">
+        <h4>Lengkap</h4>
+        <p>Ribuan pilihan produk kemasan dan baking supply tersedia di satu tempat — dari paper bag, kotak kemasan, hingga peralatan baking profesional untuk semua skala usaha.</p>
+      </div>
     </div>
   </div>
 </section>
