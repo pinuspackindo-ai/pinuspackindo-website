@@ -183,7 +183,7 @@ nav {
 .welcome-section { background: #fff; }
 .welcome-inner { display: flex; align-items: center; gap: 60px; }
 .welcome-img {
-  width: 320px; height: 320px; flex-shrink: 0;
+  width: 220px; height: 220px; flex-shrink: 0;
   border-radius: 16px; overflow: hidden;
   box-shadow: 0 8px 32px rgba(0,0,0,0.13);
 }
@@ -770,6 +770,21 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Unmute video saat scroll ke section welcome
+  const welcomeVideo = document.querySelector('.welcome-img video');
+  if (welcomeVideo) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          welcomeVideo.muted = false;
+        } else {
+          welcomeVideo.muted = true;
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(welcomeVideo);
+  }
   function switchLang(lang) {
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
     document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`).classList.add('active');
