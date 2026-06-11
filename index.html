@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pinus Pack Indo - Packaging &amp; Baking Supply</title>
+<title>Pinus Packindo - Packaging &amp; Baking Supply</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -17,28 +17,30 @@ nav {
   position: sticky; top: 0; z-index: 100;
   box-shadow: 0 1px 8px rgba(0,0,0,0.07);
 }
-.logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 18px; color: #2a7a4b; }
-.logo-icon { width: 32px; height: 32px; background: #2a7a4b; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon { width: 36px; height: 36px; background: #27ae60; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .logo-icon svg { width: 18px; height: 18px; fill: #fff; }
+.logo-name { font-weight: 800; font-size: 17px; color: #27ae60; line-height: 1.15; }
+.logo-sub  { font-size: 10px; color: #999; letter-spacing: 0.5px; }
 .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; color: #444; }
-.nav-links a:hover { color: #2a7a4b; }
+.nav-links a:hover { color: #27ae60; }
 .nav-right { display: flex; align-items: center; gap: 12px; }
 .lang-switcher { display: flex; gap: 4px; }
 .lang-btn {
   padding: 5px 10px; border-radius: 5px; border: 1.5px solid #ddd;
   background: #fff; font-size: 12px; font-weight: 600; cursor: pointer; color: #666; transition: all 0.2s;
 }
-.lang-btn.active, .lang-btn:hover { background: #2a7a4b; color: #fff; border-color: #2a7a4b; }
+.lang-btn.active, .lang-btn:hover { background: #27ae60; color: #fff; border-color: #27ae60; }
 .btn-quote {
-  background: #2a7a4b; color: #fff; padding: 10px 22px;
+  background: #27ae60; color: #fff; padding: 10px 22px;
   border-radius: 6px; font-size: 14px; font-weight: 600;
   border: none; cursor: pointer;
 }
-.btn-quote:hover { background: #1f5c38; }
+.btn-quote:hover { background: #1e8449; }
 
 /* HERO */
 .hero {
-  background: #f5f9f6;
+  background: #fff;
   padding: 70px 80px;
   display: flex; align-items: center; justify-content: space-between;
   min-height: 500px; position: relative; overflow: hidden;
@@ -49,20 +51,16 @@ nav {
 .hero p { font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 30px; max-width: 420px; }
 .hero-btns { display: flex; gap: 14px; }
 .btn-green {
-  background: #2a7a4b; color: #fff; padding: 12px 26px;
+  background: #27ae60; color: #fff; padding: 12px 26px;
   border-radius: 6px; font-size: 14px; font-weight: 600; border: none; cursor: pointer;
 }
-.btn-green:hover { background: #1f5c38; }
-.btn-outline {
-  background: #fff; color: #2a7a4b; padding: 12px 26px;
+.btn-green:hover { background: #1e8449; }
+.btn-secondary {
+  background: #eafaf1; color: #27ae60; padding: 12px 26px;
   border-radius: 6px; font-size: 14px; font-weight: 600;
-  border: 2px solid #2a7a4b; cursor: pointer;
+  border: none; cursor: pointer;
 }
-.btn-outline:hover { background: #f0f9f4; }
-.hero-img {
-  width: 500px; height: 380px; object-fit: cover;
-  border-radius: 16px;
-}
+.btn-secondary:hover { background: #d5f5e3; }
 .hero-img-placeholder {
   width: 500px; height: 380px; border-radius: 16px;
   background: linear-gradient(135deg, #d4edda 0%, #a8d5b5 100%);
@@ -72,7 +70,7 @@ nav {
 
 /* SECTION BASE */
 .section { padding: 72px 80px; }
-.section-label { font-size: 12px; color: #2a7a4b; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.section-label { font-size: 12px; color: #27ae60; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
 .section-title { font-size: 32px; font-weight: 800; color: #111; line-height: 1.3; }
 .section-sub { font-size: 14px; color: #666; line-height: 1.7; margin-top: 10px; }
 
@@ -83,36 +81,35 @@ nav {
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .service-card {
   border-radius: 12px; overflow: hidden;
-  border: 1px solid #eee;
   transition: box-shadow 0.2s;
 }
-.service-card:hover { box-shadow: 0 8px 32px rgba(42,122,75,0.12); }
+.service-card:hover { box-shadow: 0 8px 32px rgba(39,174,96,0.14); }
 .service-card-img {
   width: 100%; height: 200px; object-fit: cover;
   background: linear-gradient(135deg, #c8e6c9, #81c784);
   display: flex; align-items: center; justify-content: center;
-  font-size: 48px;
+  font-size: 48px; border-radius: 12px 12px 0 0;
 }
 .service-card-body { padding: 20px; }
 .service-card-body h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
 .service-card-body p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 16px; }
 .btn-book {
   display: inline-flex; align-items: center; gap: 6px;
-  border: 1.5px solid #2a7a4b; color: #2a7a4b;
+  background: #eafaf1; color: #27ae60;
   padding: 8px 18px; border-radius: 6px; font-size: 13px; font-weight: 600;
-  cursor: pointer; background: #fff;
+  cursor: pointer; border: none;
 }
-.btn-book:hover { background: #f0f9f4; }
+.btn-book:hover { background: #d5f5e3; }
 
 /* ABOUT */
-.about-section { background: #f5f9f6; }
+.about-section { background: #fff; }
 .about-inner { display: flex; align-items: center; gap: 60px; }
 .about-text { flex: 1; }
 .about-text h2 { font-size: 32px; font-weight: 800; line-height: 1.3; margin-bottom: 16px; }
 .about-text p { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 24px; }
 .about-img {
   width: 420px; height: 300px; border-radius: 14px;
-  background: linear-gradient(135deg, #a8d5b5, #2a7a4b);
+  background: linear-gradient(135deg, #a8d5b5, #27ae60);
   display: flex; align-items: center; justify-content: center;
   font-size: 70px; flex-shrink: 0;
 }
@@ -122,15 +119,12 @@ nav {
 .team-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
 .team-header-right { max-width: 380px; }
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.team-card {
-  border-radius: 14px; overflow: hidden;
-  position: relative;
-}
+.team-card { border-radius: 14px; overflow: hidden; position: relative; }
 .team-card-img {
   width: 100%; height: 260px;
-  background: linear-gradient(135deg, #c8e6c9, #388e5a);
+  background: linear-gradient(135deg, #c8e6c9, #52b788);
   display: flex; align-items: center; justify-content: center;
-  font-size: 60px; position: relative;
+  font-size: 60px; position: relative; border-radius: 14px 14px 0 0;
 }
 .team-card-overlay {
   position: absolute; bottom: 0; left: 0; right: 0;
@@ -142,18 +136,18 @@ nav {
 .stars { color: #f5a623; font-size: 13px; margin-bottom: 6px; }
 .social-links { display: flex; gap: 8px; }
 .social-links a {
-  width: 26px; height: 26px; border: 1px solid #ddd; border-radius: 4px;
+  width: 26px; height: 26px; border-radius: 4px; background: #f0f0f0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 11px; color: #555;
+  font-size: 11px; color: #555; border: none;
 }
-.social-links a:hover { border-color: #2a7a4b; color: #2a7a4b; }
+.social-links a:hover { background: #27ae60; color: #fff; }
 
 /* WELCOME */
 .welcome-section { background: #fff; }
 .welcome-inner { display: flex; align-items: center; gap: 60px; }
 .welcome-img {
   width: 400px; height: 320px; border-radius: 14px;
-  background: linear-gradient(135deg, #a8d5b5, #2a7a4b);
+  background: linear-gradient(135deg, #a8d5b5, #27ae60);
   display: flex; align-items: center; justify-content: center;
   font-size: 70px; flex-shrink: 0;
 }
@@ -167,13 +161,13 @@ nav {
 }
 .feature-dot {
   width: 10px; height: 10px; border-radius: 50%;
-  background: #2a7a4b; flex-shrink: 0;
+  background: #27ae60; flex-shrink: 0;
 }
 .welcome-btns { display: flex; gap: 14px; }
 
 /* PRICING */
-.pricing-section { background: #2a7a4b; padding: 72px 80px; }
-.pricing-section .section-label { color: #a8d5b5; }
+.pricing-section { background: #27ae60; padding: 72px 80px; }
+.pricing-section .section-label { color: #d5f5e3; }
 .pricing-section .section-title { color: #fff; text-align: center; }
 .pricing-toggle {
   display: flex; justify-content: center; gap: 0; margin: 24px auto 40px;
@@ -185,14 +179,12 @@ nav {
   border: none; background: transparent; color: rgba(255,255,255,0.8);
   border-radius: 30px; transition: all 0.2s;
 }
-.toggle-btn.active { background: #fff; color: #2a7a4b; }
+.toggle-btn.active { background: #fff; color: #27ae60; }
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.pricing-card {
-  background: #fff; border-radius: 14px; padding: 30px 28px;
-}
-.pricing-card.featured { background: #1f5c38; color: #fff; }
-.pricing-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #2a7a4b; margin-bottom: 12px; }
-.pricing-card.featured .pricing-label { color: #a8d5b5; }
+.pricing-card { background: #fff; border-radius: 14px; padding: 30px 28px; }
+.pricing-card.featured { background: #1e8449; color: #fff; }
+.pricing-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #27ae60; margin-bottom: 12px; }
+.pricing-card.featured .pricing-label { color: #a9dfbf; }
 .pricing-price { font-size: 36px; font-weight: 800; color: #111; margin-bottom: 4px; }
 .pricing-price span { font-size: 14px; font-weight: 400; color: #888; }
 .pricing-card.featured .pricing-price { color: #fff; }
@@ -205,40 +197,40 @@ nav {
   font-size: 13px; color: #444; margin-bottom: 12px; line-height: 1.5;
 }
 .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.85); }
-.check-icon { color: #2a7a4b; font-weight: 700; font-size: 14px; margin-top: 1px; }
-.pricing-card.featured .check-icon { color: #a8d5b5; }
+.check-icon { color: #27ae60; font-weight: 700; font-size: 14px; margin-top: 1px; }
+.pricing-card.featured .check-icon { color: #a9dfbf; }
 .btn-pricing {
   width: 100%; padding: 12px; border-radius: 8px;
   font-size: 14px; font-weight: 600; cursor: pointer;
-  border: 2px solid #2a7a4b; color: #2a7a4b; background: #fff;
+  border: none; color: #fff; background: #27ae60;
 }
-.btn-pricing:hover { background: #f0f9f4; }
-.pricing-card.featured .btn-pricing { background: #fff; color: #1f5c38; border-color: #fff; }
+.btn-pricing:hover { background: #1e8449; }
+.pricing-card.featured .btn-pricing { background: #fff; color: #1e8449; }
+.pricing-card.featured .btn-pricing:hover { background: #eafaf1; }
 
 /* TESTIMONIAL */
-.testimonial-section { background: #f5f9f6; padding: 72px 80px; }
+.testimonial-section { background: #fff; padding: 72px 80px; }
 .testimonial-inner { display: flex; gap: 60px; align-items: center; }
 .testimonial-left { flex: 1; }
 .testimonial-left h2 { font-size: 32px; font-weight: 800; line-height: 1.3; margin-bottom: 14px; }
 .testimonial-left p { font-size: 14px; color: #555; line-height: 1.7; }
 .testimonial-nav { display: flex; gap: 10px; margin-top: 24px; }
 .nav-btn {
-  width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #ccc;
-  background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
-  font-size: 16px;
+  width: 36px; height: 36px; border-radius: 50%; border: none;
+  background: #eafaf1; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: #27ae60;
 }
-.nav-btn:hover { border-color: #2a7a4b; color: #2a7a4b; }
+.nav-btn:hover { background: #27ae60; color: #fff; }
 .testimonial-card {
   flex: 1; background: #fff; border-radius: 14px; padding: 28px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  position: relative;
 }
-.quote-icon { font-size: 48px; color: #2a7a4b; line-height: 1; margin-bottom: 12px; }
+.quote-icon { font-size: 48px; color: #27ae60; line-height: 1; margin-bottom: 12px; }
 .testimonial-text { font-size: 14px; color: #444; line-height: 1.8; margin-bottom: 20px; }
 .testimonial-author { display: flex; align-items: center; gap: 14px; }
 .author-avatar {
   width: 48px; height: 48px; border-radius: 50%;
-  background: linear-gradient(135deg, #a8d5b5, #2a7a4b);
+  background: linear-gradient(135deg, #a8d5b5, #27ae60);
   display: flex; align-items: center; justify-content: center;
   font-size: 20px; flex-shrink: 0;
 }
@@ -250,23 +242,23 @@ nav {
 .blog-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
 .blog-header-right { max-width: 380px; }
 .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.blog-card { border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
+.blog-card { border-radius: 12px; overflow: hidden; }
 .blog-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
 .blog-img {
   width: 100%; height: 180px;
   background: linear-gradient(135deg, #c8e6c9, #81c784);
   display: flex; align-items: center; justify-content: center;
-  font-size: 44px;
+  font-size: 44px; border-radius: 12px 12px 0 0;
 }
 .blog-body { padding: 18px; }
 .blog-meta { font-size: 11px; color: #999; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
 .blog-body h3 { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 10px; }
 .blog-body p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 14px; }
-.read-more { font-size: 13px; color: #2a7a4b; font-weight: 600; }
+.read-more { font-size: 13px; color: #27ae60; font-weight: 600; }
 .read-more:hover { text-decoration: underline; }
 
 /* CONTACT */
-.contact-section { background: #f5f9f6; }
+.contact-section { background: #fff; }
 .contact-inner { display: flex; gap: 60px; }
 .contact-left { flex: 1; }
 .contact-left h2 { font-size: 32px; font-weight: 800; margin-bottom: 14px; }
@@ -275,7 +267,7 @@ nav {
 .contact-item { display: flex; align-items: center; gap: 14px; }
 .contact-icon {
   width: 44px; height: 44px; border-radius: 50%;
-  background: #2a7a4b; display: flex; align-items: center;
+  background: #27ae60; display: flex; align-items: center;
   justify-content: center; flex-shrink: 0;
 }
 .contact-icon svg { width: 20px; height: 20px; fill: #fff; }
@@ -293,34 +285,35 @@ nav {
   transition: border-color 0.2s;
 }
 .form-group input:focus,
-.form-group textarea:focus { border-color: #2a7a4b; }
+.form-group textarea:focus { border-color: #27ae60; }
 .form-group textarea { height: 120px; resize: vertical; }
 .btn-send {
-  background: #2a7a4b; color: #fff; padding: 13px 36px;
+  background: #27ae60; color: #fff; padding: 13px 36px;
   border-radius: 8px; font-size: 14px; font-weight: 600;
   border: none; cursor: pointer; width: 100%;
 }
-.btn-send:hover { background: #1f5c38; }
+.btn-send:hover { background: #1e8449; }
 
 /* FOOTER */
 footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 40px; margin-bottom: 40px; }
-.footer-brand .logo { color: #fff; margin-bottom: 14px; display: flex; }
+.footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.footer-logo .logo-icon { background: #27ae60; }
 .footer-brand p { font-size: 13px; color: #888; line-height: 1.7; }
 .footer-col h4 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 16px; }
 .footer-col ul { list-style: none; }
 .footer-col ul li { margin-bottom: 10px; }
 .footer-col ul li a { font-size: 13px; color: #888; }
-.footer-col ul li a:hover { color: #2a7a4b; }
+.footer-col ul li a:hover { color: #27ae60; }
 .newsletter-input-wrap { display: flex; gap: 8px; margin-top: 14px; }
 .newsletter-input {
   flex: 1; padding: 10px 14px;
-  border: 1px solid #333; border-radius: 6px;
+  border: none; border-radius: 6px;
   background: #222; color: #fff; font-size: 13px; outline: none;
 }
-.newsletter-input:focus { border-color: #2a7a4b; }
+.newsletter-input:focus { background: #2a2a2a; }
 .btn-send-sm {
-  background: #2a7a4b; color: #fff; padding: 10px 18px;
+  background: #27ae60; color: #fff; padding: 10px 18px;
   border-radius: 6px; font-size: 13px; font-weight: 600;
   border: none; cursor: pointer;
 }
@@ -328,10 +321,8 @@ footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
   border-top: 1px solid #222; padding-top: 20px;
   font-size: 12px; color: #666; text-align: center;
 }
-
-/* DIVIDER LABEL */
 .divider-label {
-  text-align: center; font-size: 11px; color: #2a7a4b;
+  text-align: center; font-size: 11px; color: #d5f5e3;
   font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;
   margin-bottom: 12px;
 }
@@ -341,12 +332,15 @@ footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
 
 <!-- NAV -->
 <nav>
-  <div class="logo">
+  <a href="index.html" class="logo">
     <div class="logo-icon">
       <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
     </div>
-    Pinus Pack Indo
-  </div>
+    <div>
+      <div class="logo-name">Pinus Packindo</div>
+      <div class="logo-sub">Packaging &amp; Baking Supply</div>
+    </div>
+  </a>
   <div class="nav-links">
     <a href="index.html">Beranda</a>
     <a href="about.html">Tentang Kami</a>
@@ -371,7 +365,7 @@ footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
     <p>Kami menyediakan kemasan berkualitas dan perlengkapan baking untuk mendukung pertumbuhan bisnis Anda di seluruh Indonesia.</p>
     <div class="hero-btns">
       <button class="btn-green" onclick="location.href='products.html'">Lihat Produk</button>
-      <button class="btn-outline" onclick="location.href='contact.html'">Hubungi Kami</button>
+      <button class="btn-secondary" onclick="location.href='contact.html'">Hubungi Kami</button>
     </div>
   </div>
   <div class="hero-img-placeholder">📦</div>
@@ -429,7 +423,7 @@ footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
   </div>
 </section>
 
-<!-- TEAM -->
+<!-- TEAM / TESTIMONI -->
 <section class="section team-section">
   <div class="team-header">
     <div>
@@ -478,11 +472,11 @@ footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
 </section>
 
 <!-- WELCOME -->
-<section class="section welcome-section" style="background:#f5f9f6;">
+<section class="section welcome-section">
   <div class="welcome-inner">
     <div class="welcome-img">📋</div>
     <div class="welcome-text">
-      <h2>Selamat Datang di<br>Pinus Pack Indo!</h2>
+      <h2>Selamat Datang di<br>Pinus Packindo!</h2>
       <p>Jadikan produk Anda tampil profesional! Kami menyediakan kemasan dan baking supply berkualitas tinggi untuk usaha rumahan maupun skala besar. Kepuasan pelanggan adalah prioritas kami!</p>
       <ul class="feature-list">
         <li><span class="feature-dot"></span> Standar food grade terjamin</li>
@@ -494,7 +488,7 @@ footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
       </ul>
       <div class="welcome-btns">
         <button class="btn-green" onclick="location.href='products.html'">Lihat Produk</button>
-        <button class="btn-outline" onclick="location.href='about.html'">Tentang Kami</button>
+        <button class="btn-secondary" onclick="location.href='about.html'">Tentang Kami</button>
       </div>
     </div>
   </div>
@@ -514,9 +508,9 @@ footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
       <p class="pricing-price">Min. <span style="font-size:22px;font-weight:800;color:#111;">50 pcs</span></p>
       <hr class="pricing-divider">
       <ul class="pricing-features">
-        <li><span class="check-icon">✓</span> Kotak kemasan kraft & mika</li>
+        <li><span class="check-icon">✓</span> Kotak kemasan kraft &amp; mika</li>
         <li><span class="check-icon">✓</span> Paper bag berbagai ukuran</li>
-        <li><span class="check-icon">✓</span> Baking cup & kertas roti</li>
+        <li><span class="check-icon">✓</span> Baking cup &amp; kertas roti</li>
         <li><span class="check-icon">✓</span> Harga satuan standar</li>
         <li><span class="check-icon">✓</span> Pengiriman via ekspedisi</li>
         <li><span class="check-icon">✓</span> Konsultasi produk gratis</li>
@@ -544,7 +538,7 @@ footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
       <ul class="pricing-features">
         <li><span class="check-icon">✓</span> Semua produk di Paket Bisnis</li>
         <li><span class="check-icon">✓</span> Harga spesial industri</li>
-        <li><span class="check-icon">✓</span> Custom desain & ukuran</li>
+        <li><span class="check-icon">✓</span> Custom desain &amp; ukuran</li>
         <li><span class="check-icon">✓</span> Cetak logo full color</li>
         <li><span class="check-icon">✓</span> Dedicated account manager</li>
         <li><span class="check-icon">✓</span> Kontrak jangka panjang</li>
@@ -567,7 +561,7 @@ footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
     </div>
     <div class="testimonial-card">
       <div class="quote-icon">"</div>
-      <p class="testimonial-text">Produk kemasan dari Pinus Pack Indo sangat memuaskan! Kualitas kotak dan paper bag jauh melebihi ekspektasi saya. Pengiriman cepat dan packaging aman sampai tujuan. Sangat direkomendasikan untuk semua pelaku usaha!</p>
+      <p class="testimonial-text">Produk kemasan dari Pinus Packindo sangat memuaskan! Kualitas kotak dan paper bag jauh melebihi ekspektasi saya. Pengiriman cepat dan packaging aman sampai tujuan. Sangat direkomendasikan untuk semua pelaku usaha!</p>
       <div class="testimonial-author">
         <div class="author-avatar">👩</div>
         <div>
@@ -679,14 +673,16 @@ footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo" style="margin-bottom:14px;">
+      <div class="footer-logo">
         <div class="logo-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
-        Pinus Pack Indo
+        <div>
+          <div style="font-weight:800;font-size:16px;color:#fff;">Pinus Packindo</div>
+          <div style="font-size:10px;color:#666;letter-spacing:0.5px;">Packaging &amp; Baking Supply</div>
+        </div>
       </div>
-      <p style="font-size:12px;color:#777;">Packaging &amp; Baking Supply</p>
-      <p style="font-size:13px;color:#666;margin-top:10px;line-height:1.7;">Solusi kemasan dan baking supply berkualitas tinggi untuk bisnis Anda di seluruh Indonesia.</p>
+      <p>Solusi kemasan dan baking supply berkualitas tinggi untuk bisnis Anda di seluruh Indonesia.</p>
     </div>
     <div class="footer-col">
       <h4>Menu</h4>
@@ -717,31 +713,26 @@ footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
     </div>
   </div>
   <div class="footer-bottom">
-    &copy; <span id="year"></span> Pinus Pack Indo. Hak Cipta Dilindungi.
+    &copy; <span id="year"></span> Pinus Packindo. Hak Cipta Dilindungi.
   </div>
 </footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Lang switcher (simpel)
   function switchLang(lang) {
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
     document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`).classList.add('active');
     localStorage.setItem('lang', lang);
   }
-  // Set active on load
   const saved = localStorage.getItem('lang') || 'id';
   if (saved === 'en') switchLang('en');
-
-  // Send to WhatsApp
   document.getElementById('sendBtn').addEventListener('click', () => {
     const name  = document.getElementById('cName').value.trim();
     const phone = document.getElementById('cPhone').value.trim();
     const msg   = document.getElementById('cMsg').value.trim();
     if (!name) { document.getElementById('cName').focus(); return; }
-    const WA = '628XXXXXXXXXX'; // TODO: ganti nomor WA
-    const text = encodeURIComponent(`Halo Pinus Pack Indo,\n\nNama: ${name}\nHP: ${phone}\nPesan: ${msg}`);
+    const WA = '628XXXXXXXXXX';
+    const text = encodeURIComponent(`Halo Pinus Packindo,\n\nNama: ${name}\nHP: ${phone}\nPesan: ${msg}`);
     window.open(`https://wa.me/${WA}?text=${text}`, '_blank');
   });
 </script>
