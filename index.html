@@ -40,15 +40,29 @@ nav {
 
 /* HERO */
 .hero {
-  background: #fff;
-  padding: 70px 80px;
-  display: flex; align-items: center; justify-content: space-between;
-  min-height: 500px; position: relative; overflow: hidden;
+  position: relative; overflow: hidden;
+  min-height: 560px;
+  display: flex; align-items: center;
 }
-.hero-text { max-width: 500px; }
-.hero-tag { font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
-.hero h1 { font-size: 44px; font-weight: 800; line-height: 1.15; color: #111; margin-bottom: 18px; }
-.hero p { font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 30px; max-width: 420px; }
+.hero-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  /* Ubah dinding hitam → coklat tua */
+  filter: sepia(45%) hue-rotate(340deg) saturate(1.3) brightness(0.88);
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(15,40,25,0.82) 0%, rgba(15,40,25,0.55) 55%, rgba(0,0,0,0.1) 100%);
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  padding: 70px 80px; max-width: 640px;
+}
+.hero-text { max-width: 540px; }
+.hero-tag { font-size: 12px; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px; }
+.hero h1 { font-size: 48px; font-weight: 800; line-height: 1.12; color: #fff; margin-bottom: 18px; }
+.hero p { font-size: 15px; color: rgba(255,255,255,0.82); line-height: 1.7; margin-bottom: 30px; max-width: 440px; }
 .hero-btns { display: flex; gap: 14px; }
 .btn-green {
   background: #27ae60; color: #fff; padding: 12px 26px;
@@ -56,17 +70,11 @@ nav {
 }
 .btn-green:hover { background: #1e8449; }
 .btn-secondary {
-  background: #eafaf1; color: #27ae60; padding: 12px 26px;
+  background: rgba(255,255,255,0.15); color: #fff; padding: 12px 26px;
   border-radius: 6px; font-size: 14px; font-weight: 600;
-  border: none; cursor: pointer;
+  border: none; cursor: pointer; backdrop-filter: blur(4px);
 }
-.btn-secondary:hover { background: #d5f5e3; }
-.hero-img-placeholder {
-  width: 500px; height: 380px; border-radius: 16px;
-  background: linear-gradient(135deg, #d4edda 0%, #a8d5b5 100%);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 80px;
-}
+.btn-secondary:hover { background: rgba(255,255,255,0.25); }
 
 /* SECTION BASE */
 .section { padding: 72px 80px; }
@@ -358,17 +366,19 @@ footer { background: #1a3d2b; color: #ccc; padding: 56px 80px 32px; }
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-text">
-    <p class="hero-tag">Packaging &amp; Baking Supply</p>
-    <p style="font-size:13px;color:#888;margin-bottom:6px;">Kualitas terjamin, harga kompetitif.</p>
-    <h1>Solusi kemasan dan baking supply terbaik untuk bisnis Anda</h1>
-    <p>Kami menyediakan kemasan berkualitas dan perlengkapan baking untuk mendukung pertumbuhan bisnis Anda di seluruh Indonesia.</p>
-    <div class="hero-btns">
-      <button class="btn-green" onclick="location.href='products.html'">Lihat Produk</button>
-      <button class="btn-secondary" onclick="location.href='contact.html'">Hubungi Kami</button>
+  <img src="images/hero-banner.jpg" alt="Pinus Packindo Store" class="hero-bg">
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-tag">Packaging &amp; Baking Supply</p>
+      <h1>Solusi kemasan dan baking supply terbaik untuk bisnis Anda</h1>
+      <p>Kami menyediakan kemasan berkualitas dan perlengkapan baking untuk mendukung pertumbuhan bisnis Anda di seluruh Indonesia.</p>
+      <div class="hero-btns">
+        <button class="btn-green" onclick="location.href='products.html'">Lihat Produk</button>
+        <button class="btn-secondary" onclick="location.href='contact.html'">Hubungi Kami</button>
+      </div>
     </div>
   </div>
-  <div class="hero-img-placeholder">📦</div>
 </section>
 
 <!-- SERVICES -->
