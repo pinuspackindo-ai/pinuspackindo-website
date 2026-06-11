@@ -83,7 +83,14 @@
     "c7_t4": "Wooden Utensils",
     "c7_t5": "Skewers",
     "c7_t6": "Tissue",
-    "c7_t7": "Bubble Wrap"
+    "c7_t7": "Bubble Wrap",
+    "c1_desc": "Various plastic packaging for food & beverage needs: cups, plates, acrylic boxes, bottles, plastic bags, standing pouches, thinwall, vacuum bags, jars, straws, and shopping bags.",
+    "c2_desc": "Eco-friendly paper packaging: paper cups, food boxes, bowls, paper bags, rice packaging, snack packaging, cake boxes, and bread paper.",
+    "c3_desc": "Various styrofoam packaging for food: boxes, plates, bowls, ice boxes, fruit trays, and meat & vegetable packaging.",
+    "c4_desc": "Complete equipment for baking: egg beater, scale, cake molds, piping tips, dough mat, sauce bottles, baking pans, and mixer.",
+    "c5_desc": "Quality baking ingredients: flour, sugar, milk, baking agents, chocolate, toppings, food coloring, and various essences.",
+    "c6_desc": "Various ready-to-eat food and packaged beverages: snacks, light food, cakes & bread, and beverages in various variants.",
+    "c7_desc": "Other supporting supplies: tape, staples, spunbond, wooden utensils, skewers, tissue, and bubble wrap."
   },
   "about": {
     "label": "Premium quality packaging solutions",
