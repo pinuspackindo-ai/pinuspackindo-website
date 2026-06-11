@@ -183,14 +183,28 @@ nav {
 .welcome-section { background: #fff; }
 .welcome-inner { display: flex; align-items: center; gap: 60px; }
 .welcome-img {
-  width: 220px; height: 220px; flex-shrink: 0;
+  width: 280px; height: 280px; flex-shrink: 0;
   border-radius: 16px; overflow: hidden;
   box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  position: relative; cursor: pointer;
 }
 .welcome-img video {
   width: 100%; height: 100%; display: block;
   object-fit: cover; border-radius: 16px;
 }
+.play-btn {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.25);
+  border-radius: 16px;
+  transition: background 0.2s;
+}
+.play-btn:hover { background: rgba(0,0,0,0.38); }
+.play-btn svg {
+  width: 64px; height: 64px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+}
+.play-btn.hidden { display: none; }
 .welcome-text { flex: 1; }
 .welcome-text h2 { font-size: 30px; font-weight: 800; line-height: 1.3; margin-bottom: 14px; }
 .welcome-text p { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 20px; }
@@ -521,10 +535,16 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 <!-- WELCOME -->
 <section class="section welcome-section">
   <div class="welcome-inner">
-    <div class="welcome-img">
-      <video autoplay muted loop playsinline preload="auto">
+    <div class="welcome-img" id="videoWrapper">
+      <video id="welcomeVid" muted preload="metadata">
         <source src="video-pinus.mp4" type="video/mp4">
       </video>
+      <div class="play-btn" id="playBtn">
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="40" fill="rgba(255,255,255,0.9)"/>
+          <polygon points="32,24 60,40 32,56" fill="#27ae60"/>
+        </svg>
+      </div>
     </div>
     <div class="welcome-text">
       <h2>Selamat Datang di<br>Pinus Packindo!</h2>
@@ -771,19 +791,21 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Unmute video saat scroll ke section welcome
-  const welcomeVideo = document.querySelector('.welcome-img video');
-  if (welcomeVideo) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          welcomeVideo.muted = false;
-        } else {
-          welcomeVideo.muted = true;
-        }
-      });
-    }, { threshold: 0.5 });
-    observer.observe(welcomeVideo);
+  // Klik tombol play untuk memutar video
+  const vid = document.getElementById('welcomeVid');
+  const playBtn = document.getElementById('playBtn');
+  const wrapper = document.getElementById('videoWrapper');
+  if (vid && playBtn) {
+    wrapper.addEventListener('click', () => {
+      if (vid.paused) {
+        vid.muted = false;
+        vid.play();
+        playBtn.classList.add('hidden');
+      } else {
+        vid.pause();
+        playBtn.classList.remove('hidden');
+      }
+    });
   }
   function switchLang(lang) {
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
