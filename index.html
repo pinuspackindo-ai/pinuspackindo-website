@@ -342,8 +342,10 @@ nav {
   font-size: 16px; color: #27ae60;
 }
 .nav-btn:hover { background: #27ae60; color: #fff; }
+.testi-viewport { flex: 1; overflow: hidden; }
+.testi-track { display: flex; transition: transform 0.5s ease-in-out; }
 .testimonial-card {
-  flex: 1; background: #fff; border-radius: 14px; padding: 28px;
+  min-width: 100%; background: #fff; border-radius: 14px; padding: 28px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
 .quote-icon { font-size: 48px; color: #27ae60; line-height: 1; margin-bottom: 12px; }
@@ -537,7 +539,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       <div class="service-card-body">
         <h3 data-i18n="services.card2_title">Paper Bag &amp; Kantong</h3>
         <p data-i18n="services.card2_desc">Kantong kertas berkualitas dalam berbagai ukuran dan warna untuk mendukung branding bisnis Anda.</p>
-        <a href="products.html" class="btn-book">Lihat Produk ↗</a>
+        <a href="products.html" class="btn-book" data-i18n="services.btn_view">Lihat Produk ↗</a>
       </div>
     </div>
     <div class="service-card">
@@ -547,7 +549,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       <div class="service-card-body">
         <h3 data-i18n="services.card3_title">Peralatan Baking</h3>
         <p data-i18n="services.card3_desc">Loyang, cetakan, dan peralatan baking profesional untuk usaha kue dan bakeri Anda.</p>
-        <a href="products.html" class="btn-book">Lihat Produk ↗</a>
+        <a href="products.html" class="btn-book" data-i18n="services.btn_view">Lihat Produk ↗</a>
       </div>
     </div>
   </div>
@@ -660,12 +662,12 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       <p class="pricing-price">Min. <span style="font-size:22px;font-weight:800;color:#111;">50 pcs</span></p>
       <hr class="pricing-divider">
       <ul class="pricing-features">
-        <li><span class="check-icon">✓</span> Kotak kemasan kraft &amp; mika</li>
-        <li><span class="check-icon">✓</span> Paper bag berbagai ukuran</li>
-        <li><span class="check-icon">✓</span> Baking cup &amp; kertas roti</li>
-        <li><span class="check-icon">✓</span> Harga satuan standar</li>
-        <li><span class="check-icon">✓</span> Pengiriman via ekspedisi</li>
-        <li><span class="check-icon">✓</span> Konsultasi produk gratis</li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p1_f1">Kotak kemasan kraft &amp; mika</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p1_f2">Paper bag berbagai ukuran</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p1_f3">Baking cup &amp; kertas roti</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p1_f4">Harga satuan standar</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p1_f5">Pengiriman via ekspedisi</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p1_f6">Konsultasi produk gratis</span></li>
       </ul>
       <button class="btn-pricing" onclick="location.href='contact.html'" data-i18n="pricing.btn">Pesan Sekarang</button>
     </div>
@@ -674,12 +676,12 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       <p class="pricing-price">Min. <span style="font-size:22px;font-weight:800;color:#fff;">500 pcs</span></p>
       <hr class="pricing-divider">
       <ul class="pricing-features">
-        <li><span class="check-icon">✓</span> Semua produk di Paket Starter</li>
-        <li><span class="check-icon">✓</span> Diskon harga grosir</li>
-        <li><span class="check-icon">✓</span> Prioritas proses pesanan</li>
-        <li><span class="check-icon">✓</span> Pilihan cetak logo/branding</li>
-        <li><span class="check-icon">✓</span> Account manager khusus</li>
-        <li><span class="check-icon">✓</span> Free ongkir area tertentu</li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p2_f1">Semua produk di Paket Starter</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p2_f2">Diskon harga grosir</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p2_f3">Prioritas proses pesanan</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p2_f4">Pilihan cetak logo/branding</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p2_f5">Account manager khusus</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p2_f6">Free ongkir area tertentu</span></li>
       </ul>
       <button class="btn-pricing" onclick="location.href='contact.html'" data-i18n="pricing.btn">Pesan Sekarang</button>
     </div>
@@ -688,12 +690,12 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       <p class="pricing-price">Min. <span style="font-size:22px;font-weight:800;color:#111;">2000 pcs</span></p>
       <hr class="pricing-divider">
       <ul class="pricing-features">
-        <li><span class="check-icon">✓</span> Semua produk di Paket Bisnis</li>
-        <li><span class="check-icon">✓</span> Harga spesial industri</li>
-        <li><span class="check-icon">✓</span> Custom desain &amp; ukuran</li>
-        <li><span class="check-icon">✓</span> Cetak logo full color</li>
-        <li><span class="check-icon">✓</span> Dedicated account manager</li>
-        <li><span class="check-icon">✓</span> Kontrak jangka panjang</li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p3_f1">Semua produk di Paket Bisnis</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p3_f2">Harga spesial industri</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p3_f3">Custom desain &amp; ukuran</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p3_f4">Cetak logo full color</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p3_f5">Dedicated account manager</span></li>
+        <li><span class="check-icon">✓</span> <span data-i18n="pricing.p3_f6">Kontrak jangka panjang</span></li>
       </ul>
       <button class="btn-pricing" onclick="location.href='contact.html'" data-i18n="pricing.btn">Pesan Sekarang</button>
     </div>
@@ -707,19 +709,55 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       <h2 data-i18n="testi.title">Apa Kata Pelanggan Kami Tentang Produk Kami</h2>
       <p data-i18n="testi.desc">Baca testimoni dari pelanggan kami yang puas. Lihat bagaimana produk packaging kami telah membantu bisnis mereka berkembang.</p>
       <div class="testimonial-nav">
-        <button class="nav-btn">←</button>
-        <button class="nav-btn">→</button>
+        <button class="nav-btn" onclick="changeTesti(-1)">←</button>
+        <button class="nav-btn" onclick="changeTesti(1)">→</button>
       </div>
     </div>
-    <div class="testimonial-card">
-      <div class="quote-icon">"</div>
-      <p class="testimonial-text" data-i18n="testi.quote">Produk kemasan dari Pinus Packindo sangat memuaskan! Kualitas kotak dan paper bag jauh melebihi ekspektasi saya. Pengiriman cepat dan packaging aman sampai tujuan. Sangat direkomendasikan untuk semua pelaku usaha!</p>
-      <div class="testimonial-author">
-        <div class="author-avatar"><img src="images/testi-joya.jpg" alt="Joya Pratama"></div>
-        <div>
-          <div class="stars" style="font-size:12px;">★★★★★</div>
-          <p class="author-name">Joya Pratama</p>
-          <p class="author-title">Pemilik Coffee Shop, Rembang</p>
+    <div class="testi-viewport">
+      <div class="testi-track" id="testiTrack">
+        <!-- Testimoni 1: Joya Pratama -->
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text" data-i18n="testi.q1">Produk kemasan dari Pinus Packindo sangat memuaskan! Kualitas kotak dan paper bag jauh melebihi ekspektasi saya. Pengiriman cepat dan packaging aman sampai tujuan. Sangat direkomendasikan untuk semua pelaku usaha!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><img src="images/testi-joya.jpg" alt="Joya Pratama"></div>
+            <div>
+              <div class="stars" style="font-size:12px;">★★★★★</div>
+              <p class="author-name" data-i18n="testi.n1">Joya Pratama</p>
+              <p class="author-title" data-i18n="testi.r1">Pemilik Coffee Shop, Rembang</p>
+            </div>
+          </div>
+        </div>
+        <!-- Testimoni 2: Tasya Amelia -->
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text" data-i18n="testi.q2">Saya sudah langganan Pinus Packindo untuk kemasan toko roti saya. Kotak kemasan dan kertas rotinya selalu bersih, rapi, dan membuat produk saya makin menarik. Harga juga sangat bersahabat untuk usaha kecil seperti saya!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><img src="images/testi-tasya.jpg" alt="Tasya Amelia"></div>
+            <div>
+              <div class="stars" style="font-size:12px;">★★★★★</div>
+              <p class="author-name" data-i18n="testi.n2">Tasya Amelia</p>
+              <p class="author-title" data-i18n="testi.r2">Pemilik Toko Roti, Kudus</p>
+            </div>
+          </div>
+        </div>
+        <!-- Testimoni 3: Sukardi (avatar laki-laki) -->
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text" data-i18n="testi.q3">Sebagai pemilik toko bahan kue, saya sangat puas dengan kelengkapan produk di Pinus Packindo. Stok selalu tersedia, pelayanannya ramah dan cepat tanggap, serta harga grosirnya sangat menguntungkan untuk bisnis saya.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#e8f5e9;display:flex;align-items:center;justify-content:center;">
+              <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="15" r="9" fill="#27ae60" opacity="0.85"/>
+                <ellipse cx="20" cy="36" rx="14" ry="9" fill="#27ae60" opacity="0.65"/>
+              </svg>
+            </div>
+            <div>
+              <div class="stars" style="font-size:12px;">★★★★★</div>
+              <p class="author-name" data-i18n="testi.n3">Sukardi</p>
+              <p class="author-title" data-i18n="testi.r3">Pemilik Toko Bahan Kue, Pati</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -848,11 +886,11 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     <div class="footer-col">
       <h4 data-i18n="footer.products_col">Produk</h4>
       <ul>
-        <li><a href="products.html">Kotak Kemasan</a></li>
-        <li><a href="products.html">Paper Bag</a></li>
-        <li><a href="products.html">Peralatan Baking</a></li>
-        <li><a href="products.html">Kertas Baking</a></li>
-        <li><a href="products.html">Baking Cup</a></li>
+        <li><a href="products.html" data-i18n="footer.prod1">Kotak Kemasan</a></li>
+        <li><a href="products.html" data-i18n="footer.prod2">Paper Bag</a></li>
+        <li><a href="products.html" data-i18n="footer.prod3">Peralatan Baking</a></li>
+        <li><a href="products.html" data-i18n="footer.prod4">Kertas Baking</a></li>
+        <li><a href="products.html" data-i18n="footer.prod5">Baking Cup</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -871,6 +909,14 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Testimonial slider
+  let testiCurrent = 0;
+  const testiTotal = 3;
+  function changeTesti(dir) {
+    testiCurrent = (testiCurrent + dir + testiTotal) % testiTotal;
+    document.getElementById('testiTrack').style.transform = 'translateX(-' + (testiCurrent * 100) + '%)';
+  }
 
   // Hero Slideshow
   const track    = document.getElementById('heroTrack');
