@@ -987,7 +987,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Services slider (show 3, total 7, max shift = 4)
+  // Services slider (show 3, total 5, max shift = 2)
   let svcIndex = 0;
   const svcMax = 2;
   function slideServices(dir) {
@@ -1000,6 +1000,16 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     document.getElementById('svcPrev').disabled = svcIndex === 0;
     document.getElementById('svcNext').disabled = svcIndex === svcMax;
   }
+  // Auto-play services every 7s (loop back to start)
+  setInterval(function() {
+    svcIndex = (svcIndex >= svcMax) ? 0 : svcIndex + 1;
+    const card = document.querySelector('.service-card');
+    const cardW = card.offsetWidth + 24;
+    document.getElementById('servicesTrack').style.transform = 'translateX(-' + (svcIndex * cardW) + 'px)';
+    document.getElementById('svcCurrent').textContent = svcIndex + 1;
+    document.getElementById('svcPrev').disabled = svcIndex === 0;
+    document.getElementById('svcNext').disabled = svcIndex === svcMax;
+  }, 7000);
 
   // Testimonial slider
   let testiCurrent = 0;
@@ -1008,6 +1018,11 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     testiCurrent = (testiCurrent + dir + testiTotal) % testiTotal;
     document.getElementById('testiTrack').style.transform = 'translateX(-' + (testiCurrent * 100) + '%)';
   }
+  // Auto-play testimonial every 10s
+  setInterval(function() {
+    testiCurrent = (testiCurrent + 1) % testiTotal;
+    document.getElementById('testiTrack').style.transform = 'translateX(-' + (testiCurrent * 100) + '%)';
+  }, 10000);
 
   // Hero Slideshow
   const track    = document.getElementById('heroTrack');
