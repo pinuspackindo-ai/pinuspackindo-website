@@ -38,22 +38,40 @@ nav {
 }
 .btn-quote:hover { background: #1e8449; }
 
-/* HERO */
+/* HERO SLIDESHOW */
 .hero {
   position: relative; overflow: hidden;
   min-height: 560px;
   display: flex; align-items: center;
 }
-.hero-bg {
+.hero-slides {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
-  object-fit: cover; object-position: center top;
-  filter: brightness(0.9);
 }
+.hero-slide {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.hero-slide.active { opacity: 1; }
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(90deg, rgba(15,40,25,0.82) 0%, rgba(15,40,25,0.55) 55%, rgba(0,0,0,0.1) 100%);
 }
+/* Dots indicator */
+.hero-dots {
+  position: absolute; bottom: 20px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 8px; z-index: 3;
+}
+.hero-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.5); cursor: pointer;
+  transition: background 0.3s;
+}
+.hero-dot.active { background: #fff; }
 .hero-inner {
   position: relative; z-index: 2;
   padding: 70px 80px; max-width: 640px;
@@ -411,7 +429,13 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 
 <!-- HERO -->
 <section class="hero">
-  <img src="images/hero-banner.png" alt="Pinus Packindo Store" class="hero-bg">
+  <div class="hero-slides">
+    <img src="images/slide-1.png"  class="hero-slide active" alt="Slide 1">
+    <img src="images/slide-2.jpeg" class="hero-slide" alt="Slide 2">
+    <img src="images/slide-3.jpeg" class="hero-slide" alt="Slide 3">
+    <img src="images/slide-4.jpeg" class="hero-slide" alt="Slide 4">
+    <img src="images/slide-5.jpeg" class="hero-slide" alt="Slide 5">
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="hero-text">
@@ -423,6 +447,13 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
         <button class="btn-secondary" onclick="location.href='contact.html'">Hubungi Kami</button>
       </div>
     </div>
+  </div>
+  <div class="hero-dots">
+    <div class="hero-dot active" onclick="goSlide(0)"></div>
+    <div class="hero-dot" onclick="goSlide(1)"></div>
+    <div class="hero-dot" onclick="goSlide(2)"></div>
+    <div class="hero-dot" onclick="goSlide(3)"></div>
+    <div class="hero-dot" onclick="goSlide(4)"></div>
   </div>
 </section>
 
@@ -790,6 +821,19 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Hero Slideshow
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots   = document.querySelectorAll('.hero-dot');
+  let current  = 0;
+  function goSlide(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = n;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  setInterval(() => goSlide((current + 1) % slides.length), 2000);
 
   // Klik tombol play untuk memutar video
   const vid = document.getElementById('welcomeVid');
