@@ -1,86 +1,13 @@
 {
-  "nav": {
-    "home": "Home",
-    "about": "About Us",
-    "products": "Products",
-    "contact": "Contact"
-  },
-  "hero": {
-    "tagline": "Premium Packaging & Baking Supply Solutions",
-    "subtitle": "We provide quality packaging and baking supplies to support your business",
-    "cta_products": "View Products",
-    "cta_contact": "Contact Us"
-  },
-  "about_section": {
-    "title": "About Pinus Pack Indo",
-    "text": "Pinus Pack Indo is a company specializing in packaging and baking supply. We are committed to providing high-quality products to support your business needs."
-  },
-  "products_section": {
-    "title": "Our Products",
-    "subtitle": "Discover our wide range of packaging and baking supplies",
-    "category_packaging": "Packaging",
-    "category_baking": "Baking Supply",
-    "view_all": "View All Products"
-  },
-  "why_us": {
-    "title": "Why Pinus Pack Indo?",
-    "q1_title": "Quality Assured",
-    "q1_text": "Every product goes through a strict selection process to ensure the best quality.",
-    "q2_title": "Fast Delivery",
-    "q2_text": "We ensure your products arrive on time, every time.",
-    "q3_title": "Competitive Pricing",
-    "q3_text": "Best prices with premium quality for your business needs.",
-    "q4_title": "Professional Service",
-    "q4_text": "Our team is ready to help you find the right products."
-  },
-  "about_page": {
-    "hero_title": "About Us",
-    "hero_subtitle": "Get to know Pinus Pack Indo",
-    "story_title": "Our Story",
-    "story_text": "Pinus Pack Indo was founded with the determination to become a trusted partner for businesses in their packaging and baking supply needs. With experience in this industry, we understand the needs of every customer.",
-    "vision_title": "Vision",
-    "vision_text": "To become the leading packaging and baking supply company trusted by thousands of businesses across Indonesia.",
-    "mission_title": "Mission",
-    "mission_list": [
-      "Provide high-quality packaging and baking supply products",
-      "Deliver the best service to every customer",
-      "Build long-term mutually beneficial partnerships",
-      "Continuously innovate to meet market needs"
-    ],
-    "values_title": "Our Values"
-  },
-  "products_page": {
-    "hero_title": "Product Catalog",
-    "hero_subtitle": "Find the products you need",
-    "filter_all": "All",
-    "filter_packaging": "Packaging",
-    "filter_baking": "Baking Supply",
-    "inquiry": "Inquire About This Product",
-    "no_products": "No products found"
-  },
-  "contact_page": {
-    "hero_title": "Contact Us",
-    "hero_subtitle": "We are ready to assist you",
-    "info_title": "Contact Information",
-    "address_label": "Address",
-    "address_text": "Jakarta, Indonesia",
-    "phone_label": "Phone / WhatsApp",
-    "email_label": "Email",
-    "hours_label": "Business Hours",
-    "hours_text": "Monday – Saturday, 08:00 AM – 05:00 PM WIB",
-    "form_title": "Send a Message",
-    "form_name": "Full Name",
-    "form_company": "Company Name (optional)",
-    "form_email": "Email",
-    "form_phone": "WhatsApp Number",
-    "form_message": "Message",
-    "form_submit": "Send Message",
-    "wa_button": "Chat via WhatsApp"
-  },
-  "footer": {
-    "tagline": "Premium Packaging & Baking Supply Solutions",
-    "links_title": "Quick Links",
-    "contact_title": "Contact",
-    "rights": "All Rights Reserved"
-  }
+  "nav": { "home": "Home", "about": "About Us", "products": "Products", "contact": "Contact", "cta": "Contact Us" },
+  "hero": { "tag": "Packaging & Baking Supply", "h1": "The Best Packaging & Baking Supply Solution for Your Business", "p": "We provide quality packaging and professional baking equipment to support your business growth across Indonesia.", "btn_products": "View Products", "btn_contact": "Contact Us" },
+  "services": { "title": "We Always Provide the Best Products", "label": "Our Products", "sub": "From packaging boxes to professional baking equipment — all available here with guaranteed quality and competitive prices.", "card1_title": "Boxes & Packaging", "card1_desc": "Wide selection of kraft, acrylic, and cardboard packaging boxes for food, cakes, and souvenir products.", "card2_title": "Paper Bags & Pouches", "card2_desc": "Quality paper bags in various sizes and colors to support your business branding.", "card3_title": "Baking Equipment", "card3_desc": "Baking pans, molds, and professional baking tools for your cake and bakery business.", "btn_view": "View Products ↗" },
+  "about": { "label": "Premium quality packaging solutions", "title": "Quality Products & Friendly Service at Affordable Prices", "desc": "We provide complete packaging and baking supply services tailored to your business needs, from home-based businesses to industrial scale.", "btn": "Contact Us" },
+  "why": { "title": "Why Choose Pinus Packindo?", "label": "Our Advantages", "sub": "We are your trusted partner for all packaging and baking supply needs.", "card1_title": "Convenient", "card1_desc": "Easy and enjoyable shopping — whether you visit our store or order online. Fast process, on-time delivery, and stock always available.", "card2_title": "Friendly", "card2_desc": "Our team is ready to help wholeheartedly. From product consultation to after-sales, we serve with a smile and the best solutions for your business.", "card3_title": "Complete", "card3_desc": "Thousands of packaging and baking supply products available in one place — from paper bags, packaging boxes, to professional baking equipment for all business scales." },
+  "welcome": { "title": "Welcome to Pinus Packindo!", "desc": "Make your products look professional! We provide high-quality packaging and baking supplies for home businesses and large-scale operations. Customer satisfaction is our priority!", "f1": "Food grade standards guaranteed", "f2": "Competitive prices direct from producer", "f3": "Stock ready", "f4": "Best premium quality", "f5": "1500+ types of products available", "f6": "Delivery to Pati Pantura Raya", "btn_products": "View Products", "btn_about": "About Us" },
+  "pricing": { "label": "Order Packages", "title": "Choose the Package That Suits Your Business Needs", "retail": "Retail", "wholesale": "Wholesale", "p1_name": "Starter Package", "p2_name": "Business Package", "p3_name": "Premium Package", "btn": "Order Now" },
+  "testi": { "title": "What Our Customers Say About Our Products", "desc": "Read testimonials from our satisfied customers. See how our packaging products have helped their businesses grow.", "quote": "Packaging products from Pinus Packindo are very satisfying! The quality of the boxes and paper bags far exceeded my expectations. Fast delivery and packaging arrived safely. Highly recommended for all business owners!" },
+  "blog": { "label": "Latest Tips & Info About Packaging!", "title": "Articles & Tips", "sub": "Get the latest packaging tips, product updates, and guides to choosing the right packaging for your business.", "read_more": "Read More", "b1_title": "Eco-Friendly Packaging: A Smart Choice for Modern Business", "b1_desc": "Learn how eco-friendly packaging can improve your brand image while protecting the environment...", "b2_title": "Tips for Choosing the Right Packaging for Your Food Products", "b2_desc": "A complete guide to choosing the right type of packaging for various food and beverage products...", "b3_title": "Benefits of Quality Packaging to Boost Sales", "b3_desc": "Find out how investing in quality packaging can significantly increase your business revenue..." },
+  "contact": { "label": "Contact Info", "title": "Find Us", "desc": "We are ready to respond to your inquiries and orders quickly so your business is not delayed.", "wa_label": "WhatsApp / Phone", "email_label": "Email", "address_label": "Address", "form_title": "Send a Message", "name_ph": "Your Name", "phone_ph": "WhatsApp / Phone Number", "msg_ph": "Tell us about your packaging needs...", "btn_send": "Send via WhatsApp" },
+  "footer": { "desc": "Premium quality packaging and baking supply solutions for your business across Indonesia.", "menu": "Menu", "products_col": "Products", "newsletter": "Newsletter", "newsletter_desc": "Get the latest product info and special offers.", "newsletter_ph": "Your Email", "newsletter_btn": "Subscribe" }
 }
