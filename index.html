@@ -88,19 +88,10 @@ nav {
 .services-header-right { max-width: 380px; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
 .service-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 16px;
+  background: transparent;
   transition: transform 0.2s;
   display: flex; flex-direction: column;
 }
-.service-card:nth-child(even) { background: #27ae60; }
-.service-card:nth-child(even) .service-card-body h3 { color: #fff; }
-.service-card:nth-child(even) .service-card-body p  { color: rgba(255,255,255,0.85); }
-.service-card:nth-child(even) .btn-book {
-  background: rgba(255,255,255,0.2); color: #fff;
-}
-.service-card:nth-child(even) .btn-book:hover { background: rgba(255,255,255,0.35); }
 .service-card:hover { transform: translateY(-4px); }
 .service-card-img {
   width: 100%; height: 280px; overflow: hidden;
@@ -114,16 +105,19 @@ nav {
   width: auto; height: auto;
   object-fit: contain;
 }
-.service-card-body { padding: 16px 0 0 0; display: flex; flex-direction: column; flex: 1; }
+.service-card-body { padding: 16px 4px; display: flex; flex-direction: column; flex: 1; }
 .service-card-body h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
 .service-card-body p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 16px; flex: 1; }
 .btn-book {
   display: inline-flex; align-items: center; gap: 6px;
-  background: #eafaf1; color: #27ae60;
   padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600;
   cursor: pointer; border: none; width: fit-content; align-self: flex-start;
 }
-.btn-book:hover { background: #d5f5e3; }
+/* Selang-seling: card ganjil = putih, card genap = hijau */
+.service-card:nth-child(odd)  .btn-book { background: #fff;     color: #27ae60; box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
+.service-card:nth-child(odd)  .btn-book:hover { background: #f0f0f0; }
+.service-card:nth-child(even) .btn-book { background: #27ae60; color: #fff; }
+.service-card:nth-child(even) .btn-book:hover { background: #1e8449; }
 
 /* ABOUT */
 .about-section { background: #fff; }
