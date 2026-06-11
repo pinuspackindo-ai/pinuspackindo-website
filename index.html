@@ -118,8 +118,8 @@ nav {
 .btn-secondary:hover { transform: translateY(-3px) scale(1.04) !important; box-shadow: 0 6px 20px rgba(39,174,96,0.2) !important; }
 .btn-book { transition: transform 0.18s ease !important; }
 .btn-book:hover { transform: translateX(5px) !important; }
-.read-more { transition: transform 0.18s, color 0.18s !important; display: inline-block; }
-.read-more:hover { transform: translateX(5px) !important; }
+.read-more { transition: transform 0.18s ease, background 0.18s, box-shadow 0.18s !important; }
+.read-more:hover { transform: translateY(-2px) !important; }
 /* Menu nav */
 .nav-links a { transition: color 0.18s, transform 0.18s !important; display: inline-block; }
 .nav-links a:hover { transform: translateY(-2px) !important; }
@@ -375,8 +375,16 @@ nav {
 .blog-meta { font-size: 11px; color: #999; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
 .blog-body h3 { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 10px; }
 .blog-body p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 14px; }
-.read-more { font-size: 13px; color: #27ae60; font-weight: 600; }
-.read-more:hover { text-decoration: underline; }
+.read-more {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600;
+  cursor: pointer; border: none; width: fit-content; text-decoration: none;
+}
+/* Selang-seling blog card: ganjil = putih, genap = hijau */
+.blog-card:nth-child(odd)  .read-more { background: #fff; color: #27ae60; box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
+.blog-card:nth-child(odd)  .read-more:hover { background: #f0f0f0; text-decoration: none; }
+.blog-card:nth-child(even) .read-more { background: #27ae60; color: #fff; }
+.blog-card:nth-child(even) .read-more:hover { background: #1e8449; text-decoration: none; }
 
 /* CONTACT */
 .contact-section { background: #fff; }
