@@ -44,23 +44,35 @@ nav {
   min-height: 560px;
   display: flex; align-items: center;
 }
-.hero-slides {
+.hero-track {
   position: absolute; inset: 0;
-  width: 100%; height: 100%;
+  display: flex;
+  width: 500%; height: 100%;
+  transition: transform 0.6s ease-in-out;
 }
 .hero-slide {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
+  width: 20%; height: 100%;
   object-fit: cover; object-position: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  flex-shrink: 0;
 }
-.hero-slide.active { opacity: 1; }
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(90deg, rgba(15,40,25,0.82) 0%, rgba(15,40,25,0.55) 55%, rgba(0,0,0,0.1) 100%);
+  pointer-events: none;
 }
-/* Dots indicator */
+/* Arrow buttons */
+.hero-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  z-index: 4; background: rgba(255,255,255,0.2);
+  border: none; color: #fff; font-size: 22px;
+  width: 44px; height: 44px; border-radius: 50%;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s; backdrop-filter: blur(4px);
+}
+.hero-arrow:hover { background: rgba(255,255,255,0.4); }
+.hero-arrow.prev { left: 24px; }
+.hero-arrow.next { right: 24px; }
+/* Dots */
 .hero-dots {
   position: absolute; bottom: 20px; left: 50%;
   transform: translateX(-50%);
@@ -429,14 +441,16 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-slides">
-    <img src="images/slide-1.png"  class="hero-slide active" alt="Slide 1">
+  <div class="hero-track" id="heroTrack">
+    <img src="images/slide-1.png"  class="hero-slide" alt="Slide 1">
     <img src="images/slide-2.jpeg" class="hero-slide" alt="Slide 2">
     <img src="images/slide-3.jpeg" class="hero-slide" alt="Slide 3">
     <img src="images/slide-4.jpeg" class="hero-slide" alt="Slide 4">
     <img src="images/slide-5.jpeg" class="hero-slide" alt="Slide 5">
   </div>
   <div class="hero-overlay"></div>
+  <button class="hero-arrow prev" onclick="changeSlide(-1)">&#8592;</button>
+  <button class="hero-arrow next" onclick="changeSlide(1)">&#8594;</button>
   <div class="hero-inner">
     <div class="hero-text">
       <p class="hero-tag">Packaging &amp; Baking Supply</p>
@@ -823,17 +837,26 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Hero Slideshow
-  const slides = document.querySelectorAll('.hero-slide');
-  const dots   = document.querySelectorAll('.hero-dot');
-  let current  = 0;
+  const track    = document.getElementById('heroTrack');
+  const dots     = document.querySelectorAll('.hero-dot');
+  const total    = 5;
+  let current    = 0;
+  let autoTimer;
+
   function goSlide(n) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = n;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
+    current = (n + total) % total;
+    track.style.transform = `translateX(-${current * 20}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
   }
-  setInterval(() => goSlide((current + 1) % slides.length), 2000);
+  function changeSlide(dir) {
+    clearInterval(autoTimer);
+    goSlide(current + dir);
+    startAuto();
+  }
+  function startAuto() {
+    autoTimer = setInterval(() => goSlide(current + 1), 2000);
+  }
+  startAuto();
 
   // Klik tombol play untuk memutar video
   const vid = document.getElementById('welcomeVid');
