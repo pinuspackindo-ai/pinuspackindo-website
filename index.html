@@ -3,157 +3,402 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pinus Pack Indo — Packaging &amp; Baking Supply</title>
-<meta name="description" content="Pinus Pack Indo menyediakan solusi kemasan dan perlengkapan baking berkualitas tinggi untuk bisnis Anda di seluruh Indonesia.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Pinus Pack Indo - Packaging &amp; Baking Supply</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: #222; }
+a { text-decoration: none; color: inherit; }
+
+/* NAV */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 80px; background: #fff;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+}
+.logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 18px; color: #2a7a4b; }
+.logo-icon { width: 32px; height: 32px; background: #2a7a4b; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.logo-icon svg { width: 18px; height: 18px; fill: #fff; }
+.nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; color: #444; }
+.nav-links a:hover { color: #2a7a4b; }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.lang-switcher { display: flex; gap: 4px; }
+.lang-btn {
+  padding: 5px 10px; border-radius: 5px; border: 1.5px solid #ddd;
+  background: #fff; font-size: 12px; font-weight: 600; cursor: pointer; color: #666; transition: all 0.2s;
+}
+.lang-btn.active, .lang-btn:hover { background: #2a7a4b; color: #fff; border-color: #2a7a4b; }
+.btn-quote {
+  background: #2a7a4b; color: #fff; padding: 10px 22px;
+  border-radius: 6px; font-size: 14px; font-weight: 600;
+  border: none; cursor: pointer;
+}
+.btn-quote:hover { background: #1f5c38; }
+
+/* HERO */
+.hero {
+  background: #f5f9f6;
+  padding: 70px 80px;
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 500px; position: relative; overflow: hidden;
+}
+.hero-text { max-width: 500px; }
+.hero-tag { font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+.hero h1 { font-size: 44px; font-weight: 800; line-height: 1.15; color: #111; margin-bottom: 18px; }
+.hero p { font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 30px; max-width: 420px; }
+.hero-btns { display: flex; gap: 14px; }
+.btn-green {
+  background: #2a7a4b; color: #fff; padding: 12px 26px;
+  border-radius: 6px; font-size: 14px; font-weight: 600; border: none; cursor: pointer;
+}
+.btn-green:hover { background: #1f5c38; }
+.btn-outline {
+  background: #fff; color: #2a7a4b; padding: 12px 26px;
+  border-radius: 6px; font-size: 14px; font-weight: 600;
+  border: 2px solid #2a7a4b; cursor: pointer;
+}
+.btn-outline:hover { background: #f0f9f4; }
+.hero-img {
+  width: 500px; height: 380px; object-fit: cover;
+  border-radius: 16px;
+}
+.hero-img-placeholder {
+  width: 500px; height: 380px; border-radius: 16px;
+  background: linear-gradient(135deg, #d4edda 0%, #a8d5b5 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 80px;
+}
+
+/* SECTION BASE */
+.section { padding: 72px 80px; }
+.section-label { font-size: 12px; color: #2a7a4b; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.section-title { font-size: 32px; font-weight: 800; color: #111; line-height: 1.3; }
+.section-sub { font-size: 14px; color: #666; line-height: 1.7; margin-top: 10px; }
+
+/* SERVICES */
+.services-section { background: #fff; }
+.services-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+.services-header-right { max-width: 380px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service-card {
+  border-radius: 12px; overflow: hidden;
+  border: 1px solid #eee;
+  transition: box-shadow 0.2s;
+}
+.service-card:hover { box-shadow: 0 8px 32px rgba(42,122,75,0.12); }
+.service-card-img {
+  width: 100%; height: 200px; object-fit: cover;
+  background: linear-gradient(135deg, #c8e6c9, #81c784);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px;
+}
+.service-card-body { padding: 20px; }
+.service-card-body h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.service-card-body p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 16px; }
+.btn-book {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1.5px solid #2a7a4b; color: #2a7a4b;
+  padding: 8px 18px; border-radius: 6px; font-size: 13px; font-weight: 600;
+  cursor: pointer; background: #fff;
+}
+.btn-book:hover { background: #f0f9f4; }
+
+/* ABOUT */
+.about-section { background: #f5f9f6; }
+.about-inner { display: flex; align-items: center; gap: 60px; }
+.about-text { flex: 1; }
+.about-text h2 { font-size: 32px; font-weight: 800; line-height: 1.3; margin-bottom: 16px; }
+.about-text p { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 24px; }
+.about-img {
+  width: 420px; height: 300px; border-radius: 14px;
+  background: linear-gradient(135deg, #a8d5b5, #2a7a4b);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 70px; flex-shrink: 0;
+}
+
+/* TEAM */
+.team-section { background: #fff; }
+.team-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+.team-header-right { max-width: 380px; }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.team-card {
+  border-radius: 14px; overflow: hidden;
+  position: relative;
+}
+.team-card-img {
+  width: 100%; height: 260px;
+  background: linear-gradient(135deg, #c8e6c9, #388e5a);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 60px; position: relative;
+}
+.team-card-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(255,255,255,0.92);
+  padding: 14px 16px;
+}
+.team-card-overlay h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.team-card-overlay p { font-size: 12px; color: #555; line-height: 1.5; margin-bottom: 8px; }
+.stars { color: #f5a623; font-size: 13px; margin-bottom: 6px; }
+.social-links { display: flex; gap: 8px; }
+.social-links a {
+  width: 26px; height: 26px; border: 1px solid #ddd; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: #555;
+}
+.social-links a:hover { border-color: #2a7a4b; color: #2a7a4b; }
+
+/* WELCOME */
+.welcome-section { background: #fff; }
+.welcome-inner { display: flex; align-items: center; gap: 60px; }
+.welcome-img {
+  width: 400px; height: 320px; border-radius: 14px;
+  background: linear-gradient(135deg, #a8d5b5, #2a7a4b);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 70px; flex-shrink: 0;
+}
+.welcome-text { flex: 1; }
+.welcome-text h2 { font-size: 30px; font-weight: 800; line-height: 1.3; margin-bottom: 14px; }
+.welcome-text p { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 20px; }
+.feature-list { list-style: none; margin-bottom: 28px; }
+.feature-list li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; color: #333; margin-bottom: 10px;
+}
+.feature-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #2a7a4b; flex-shrink: 0;
+}
+.welcome-btns { display: flex; gap: 14px; }
+
+/* PRICING */
+.pricing-section { background: #2a7a4b; padding: 72px 80px; }
+.pricing-section .section-label { color: #a8d5b5; }
+.pricing-section .section-title { color: #fff; text-align: center; }
+.pricing-toggle {
+  display: flex; justify-content: center; gap: 0; margin: 24px auto 40px;
+  background: rgba(255,255,255,0.15); border-radius: 30px;
+  width: fit-content; overflow: hidden;
+}
+.toggle-btn {
+  padding: 8px 28px; font-size: 14px; font-weight: 600; cursor: pointer;
+  border: none; background: transparent; color: rgba(255,255,255,0.8);
+  border-radius: 30px; transition: all 0.2s;
+}
+.toggle-btn.active { background: #fff; color: #2a7a4b; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.pricing-card {
+  background: #fff; border-radius: 14px; padding: 30px 28px;
+}
+.pricing-card.featured { background: #1f5c38; color: #fff; }
+.pricing-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #2a7a4b; margin-bottom: 12px; }
+.pricing-card.featured .pricing-label { color: #a8d5b5; }
+.pricing-price { font-size: 36px; font-weight: 800; color: #111; margin-bottom: 4px; }
+.pricing-price span { font-size: 14px; font-weight: 400; color: #888; }
+.pricing-card.featured .pricing-price { color: #fff; }
+.pricing-card.featured .pricing-price span { color: rgba(255,255,255,0.6); }
+.pricing-divider { border: none; border-top: 1px solid #eee; margin: 20px 0; }
+.pricing-card.featured .pricing-divider { border-color: rgba(255,255,255,0.2); }
+.pricing-features { list-style: none; margin-bottom: 28px; }
+.pricing-features li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; color: #444; margin-bottom: 12px; line-height: 1.5;
+}
+.pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.85); }
+.check-icon { color: #2a7a4b; font-weight: 700; font-size: 14px; margin-top: 1px; }
+.pricing-card.featured .check-icon { color: #a8d5b5; }
+.btn-pricing {
+  width: 100%; padding: 12px; border-radius: 8px;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  border: 2px solid #2a7a4b; color: #2a7a4b; background: #fff;
+}
+.btn-pricing:hover { background: #f0f9f4; }
+.pricing-card.featured .btn-pricing { background: #fff; color: #1f5c38; border-color: #fff; }
+
+/* TESTIMONIAL */
+.testimonial-section { background: #f5f9f6; padding: 72px 80px; }
+.testimonial-inner { display: flex; gap: 60px; align-items: center; }
+.testimonial-left { flex: 1; }
+.testimonial-left h2 { font-size: 32px; font-weight: 800; line-height: 1.3; margin-bottom: 14px; }
+.testimonial-left p { font-size: 14px; color: #555; line-height: 1.7; }
+.testimonial-nav { display: flex; gap: 10px; margin-top: 24px; }
+.nav-btn {
+  width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #ccc;
+  background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+}
+.nav-btn:hover { border-color: #2a7a4b; color: #2a7a4b; }
+.testimonial-card {
+  flex: 1; background: #fff; border-radius: 14px; padding: 28px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  position: relative;
+}
+.quote-icon { font-size: 48px; color: #2a7a4b; line-height: 1; margin-bottom: 12px; }
+.testimonial-text { font-size: 14px; color: #444; line-height: 1.8; margin-bottom: 20px; }
+.testimonial-author { display: flex; align-items: center; gap: 14px; }
+.author-avatar {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: linear-gradient(135deg, #a8d5b5, #2a7a4b);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.author-name { font-weight: 700; font-size: 15px; }
+.author-title { font-size: 12px; color: #888; }
+
+/* BLOG */
+.blog-section { background: #fff; }
+.blog-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+.blog-header-right { max-width: 380px; }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.blog-card { border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
+.blog-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+.blog-img {
+  width: 100%; height: 180px;
+  background: linear-gradient(135deg, #c8e6c9, #81c784);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 44px;
+}
+.blog-body { padding: 18px; }
+.blog-meta { font-size: 11px; color: #999; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
+.blog-body h3 { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 10px; }
+.blog-body p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 14px; }
+.read-more { font-size: 13px; color: #2a7a4b; font-weight: 600; }
+.read-more:hover { text-decoration: underline; }
+
+/* CONTACT */
+.contact-section { background: #f5f9f6; }
+.contact-inner { display: flex; gap: 60px; }
+.contact-left { flex: 1; }
+.contact-left h2 { font-size: 32px; font-weight: 800; margin-bottom: 14px; }
+.contact-left > p { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 30px; }
+.contact-items { display: flex; flex-direction: column; gap: 18px; }
+.contact-item { display: flex; align-items: center; gap: 14px; }
+.contact-icon {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: #2a7a4b; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0;
+}
+.contact-icon svg { width: 20px; height: 20px; fill: #fff; }
+.contact-label { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; }
+.contact-value { font-size: 14px; font-weight: 600; color: #222; }
+.contact-right { flex: 1; }
+.contact-right h2 { font-size: 32px; font-weight: 800; margin-bottom: 28px; }
+.form-group { margin-bottom: 16px; }
+.form-group input,
+.form-group textarea {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid #ddd; border-radius: 8px;
+  font-size: 14px; font-family: 'Inter', sans-serif;
+  color: #333; outline: none;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus { border-color: #2a7a4b; }
+.form-group textarea { height: 120px; resize: vertical; }
+.btn-send {
+  background: #2a7a4b; color: #fff; padding: 13px 36px;
+  border-radius: 8px; font-size: 14px; font-weight: 600;
+  border: none; cursor: pointer; width: 100%;
+}
+.btn-send:hover { background: #1f5c38; }
+
+/* FOOTER */
+footer { background: #111; color: #ccc; padding: 56px 80px 32px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 40px; margin-bottom: 40px; }
+.footer-brand .logo { color: #fff; margin-bottom: 14px; display: flex; }
+.footer-brand p { font-size: 13px; color: #888; line-height: 1.7; }
+.footer-col h4 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { font-size: 13px; color: #888; }
+.footer-col ul li a:hover { color: #2a7a4b; }
+.newsletter-input-wrap { display: flex; gap: 8px; margin-top: 14px; }
+.newsletter-input {
+  flex: 1; padding: 10px 14px;
+  border: 1px solid #333; border-radius: 6px;
+  background: #222; color: #fff; font-size: 13px; outline: none;
+}
+.newsletter-input:focus { border-color: #2a7a4b; }
+.btn-send-sm {
+  background: #2a7a4b; color: #fff; padding: 10px 18px;
+  border-radius: 6px; font-size: 13px; font-weight: 600;
+  border: none; cursor: pointer;
+}
+.footer-bottom {
+  border-top: 1px solid #222; padding-top: 20px;
+  font-size: 12px; color: #666; text-align: center;
+}
+
+/* DIVIDER LABEL */
+.divider-label {
+  text-align: center; font-size: 11px; color: #2a7a4b;
+  font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+</style>
 </head>
 <body>
 
-<!-- ── NAV ──────────────────────────────────────── -->
+<!-- NAV -->
 <nav>
-  <a href="index.html" class="logo">
+  <div class="logo">
     <div class="logo-icon">
       <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
     </div>
-    <div>
-      <div class="logo-name">Pinus Pack Indo</div>
-      <div class="logo-sub">Packaging &amp; Baking Supply</div>
-    </div>
-  </a>
+    Pinus Pack Indo
+  </div>
   <div class="nav-links">
-    <a href="index.html" class="active" data-i18n="nav.home">Beranda</a>
-    <a href="about.html" data-i18n="nav.about">Tentang Kami</a>
-    <a href="products.html" data-i18n="nav.products">Produk</a>
-    <a href="contact.html" data-i18n="nav.contact">Kontak</a>
+    <a href="index.html">Beranda</a>
+    <a href="about.html">Tentang Kami</a>
+    <a href="products.html">Produk</a>
+    <a href="contact.html">Kontak</a>
   </div>
   <div class="nav-right">
     <div class="lang-switcher">
-      <button class="lang-btn active" data-lang="id">ID</button>
-      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn active" onclick="switchLang('id')">ID</button>
+      <button class="lang-btn" onclick="switchLang('en')">EN</button>
     </div>
-    <a href="contact.html" class="btn-nav" data-i18n="nav.cta">Hubungi Kami</a>
-    <button class="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="btn-quote" onclick="location.href='contact.html'">Hubungi Kami</button>
   </div>
 </nav>
 
-<!-- ── MOBILE NAV ────────────────────────────────── -->
-<div class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav-header">
-    <a href="index.html" class="logo">
-      <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-      <div class="logo-name">Pinus Pack Indo</div>
-    </a>
-    <button class="mobile-close" id="mobileClose">✕</button>
-  </div>
-  <a href="index.html" data-i18n="nav.home">Beranda</a>
-  <a href="about.html" data-i18n="nav.about">Tentang Kami</a>
-  <a href="products.html" data-i18n="nav.products">Produk</a>
-  <a href="contact.html" data-i18n="nav.contact">Kontak</a>
-  <div class="mobile-lang">
-    <button class="lang-btn" data-lang="id">ID</button>
-    <button class="lang-btn" data-lang="en">EN</button>
-  </div>
-  <div class="mobile-cta">
-    <a href="contact.html" class="btn-green" style="justify-content:center;" data-i18n="nav.cta">Hubungi Kami</a>
-  </div>
-</div>
-
-<!-- ── HERO ──────────────────────────────────────── -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="hero-tag">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Packaging &amp; Baking Supply
-    </div>
-    <h1 data-i18n="hero.tagline">Solusi Kemasan &amp; <span>Baking Supply</span> Terbaik</h1>
-    <p class="hero-sub" data-i18n="hero.subtitle">Kami menyediakan kemasan berkualitas dan perlengkapan baking untuk mendukung pertumbuhan bisnis Anda di Indonesia.</p>
+    <p class="hero-tag">Packaging &amp; Baking Supply</p>
+    <p style="font-size:13px;color:#888;margin-bottom:6px;">Kualitas terjamin, harga kompetitif.</p>
+    <h1>Solusi kemasan dan baking supply terbaik untuk bisnis Anda</h1>
+    <p>Kami menyediakan kemasan berkualitas dan perlengkapan baking untuk mendukung pertumbuhan bisnis Anda di seluruh Indonesia.</p>
     <div class="hero-btns">
-      <a href="products.html" class="btn-green" data-i18n="hero.cta_products">
-        Lihat Produk
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="contact.html" class="btn-outline" data-i18n="hero.cta_contact">Hubungi Kami</a>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-num">500+</div>
-        <div class="hero-stat-lbl">Jenis Produk</div>
-      </div>
-      <div class="hero-stat-div"></div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">1000+</div>
-        <div class="hero-stat-lbl">Pelanggan Puas</div>
-      </div>
-      <div class="hero-stat-div"></div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">5+</div>
-        <div class="hero-stat-lbl">Tahun Pengalaman</div>
-      </div>
+      <button class="btn-green" onclick="location.href='products.html'">Lihat Produk</button>
+      <button class="btn-outline" onclick="location.href='contact.html'">Hubungi Kami</button>
     </div>
   </div>
-  <div class="hero-visual">
-    <!-- Ganti dengan: <img src="images/hero-banner.jpg" alt="Pinus Pack Indo"> -->
-    📦
-    <div class="hero-badge">
-      <div class="hero-badge-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <div>
-        <div class="hero-badge-t">Food Grade</div>
-        <div class="hero-badge-s">Kualitas Terjamin</div>
-      </div>
-    </div>
-  </div>
+  <div class="hero-img-placeholder">📦</div>
 </section>
 
-<!-- ── TRUST BAR ──────────────────────────────────── -->
-<div class="trust-section">
-  <div class="trust-inner">
-    <span class="trust-label">Dipercaya Oleh</span>
-    <div class="trust-chips">
-      <span class="trust-chip">🍰 Toko Kue</span>
-      <span class="trust-chip">🍞 Bakeri</span>
-      <span class="trust-chip">☕ Kafe</span>
-      <span class="trust-chip">🏭 Manufaktur</span>
-      <span class="trust-chip">🛍️ Retail</span>
-      <span class="trust-chip">🎂 Catering</span>
-    </div>
-  </div>
-</div>
-
-<!-- ── PRODUK / SERVICES ──────────────────────────── -->
+<!-- SERVICES -->
 <section class="section services-section">
   <div class="services-header">
     <div>
-      <h2 class="section-title" data-i18n="products_section.title">Temukan Produk yang<br>Anda Butuhkan</h2>
+      <h2 class="section-title">Kami Selalu Menyediakan<br>Produk Terbaik</h2>
     </div>
     <div class="services-header-right">
       <p class="section-label">Produk Kami</p>
-      <p class="section-sub" data-i18n="products_section.subtitle">Dari kotak kemasan hingga peralatan baking profesional, semua tersedia di sini dengan kualitas terjamin.</p>
+      <p class="section-sub">Dari kotak kemasan hingga peralatan baking profesional, semua tersedia di sini dengan kualitas terjamin dan harga kompetitif.</p>
     </div>
   </div>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-card-img">
-        <!-- <img src="images/products/kotak-kemasan.jpg" alt="Kotak Kemasan"> -->
-        📦
-      </div>
+      <div class="service-card-img">📦</div>
       <div class="service-card-body">
         <h3>Kotak &amp; Box Kemasan</h3>
-        <p>Berbagai pilihan kotak kemasan kraft, mika, dan karton untuk produk makanan, kue, dan souvenir.</p>
+        <p>Berbagai pilihan kotak kemasan kraft, mika, dan karton untuk produk makanan, kue, dan souvenir Anda.</p>
         <a href="products.html" class="btn-book">Lihat Produk ↗</a>
       </div>
     </div>
     <div class="service-card">
-      <div class="service-card-img">
-        <!-- <img src="images/products/paper-bag.jpg" alt="Paper Bag"> -->
-        🛍️
-      </div>
+      <div class="service-card-img">🛍️</div>
       <div class="service-card-body">
         <h3>Paper Bag &amp; Kantong</h3>
         <p>Kantong kertas berkualitas dalam berbagai ukuran dan warna untuk mendukung branding bisnis Anda.</p>
@@ -161,201 +406,229 @@
       </div>
     </div>
     <div class="service-card">
-      <div class="service-card-img">
-        <!-- <img src="images/products/baking-tools.jpg" alt="Peralatan Baking"> -->
-        🍞
-      </div>
+      <div class="service-card-img">🍞</div>
       <div class="service-card-body">
         <h3>Peralatan Baking</h3>
-        <p>Loyang, cetakan, baking cup, dan peralatan baking profesional untuk usaha kue dan bakeri Anda.</p>
+        <p>Loyang, cetakan, dan peralatan baking profesional untuk usaha kue dan bakeri Anda.</p>
         <a href="products.html" class="btn-book">Lihat Produk ↗</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── ABOUT ──────────────────────────────────────── -->
+<!-- ABOUT -->
 <section class="section about-section">
   <div class="about-inner">
     <div class="about-text">
-      <p class="section-label">Tentang Kami</p>
-      <h2 data-i18n="about_section.title">Solusi Kemasan Berkualitas<br>untuk Bisnis Anda</h2>
-      <p data-i18n="about_section.text">Pinus Pack Indo adalah perusahaan yang bergerak di bidang packaging dan baking supply. Kami berkomitmen menyediakan produk berkualitas tinggi dengan harga kompetitif untuk mendukung bisnis Anda berkembang.</p>
-      <div class="about-chips">
-        <span class="about-chip">✓ Food Grade</span>
-        <span class="about-chip">✓ Stok Ready</span>
-        <span class="about-chip">✓ Kirim ke Seluruh Indonesia</span>
-        <span class="about-chip">✓ Harga Grosir</span>
-      </div>
-      <a href="about.html" class="btn-green" data-i18n="about_section.cta">
-        Selengkapnya
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <p class="section-label">Solusi kemasan berkualitas tinggi</p>
+      <h2>Produk Berkualitas dan Layanan<br>Ramah dengan Harga Terjangkau</h2>
+      <p>Kami menyediakan layanan packaging dan baking supply lengkap sesuai kebutuhan bisnis Anda, mulai dari usaha rumahan hingga skala industri.</p>
+      <button class="btn-green" onclick="location.href='contact.html'">Hubungi Kami</button>
     </div>
-    <div class="about-img">
-      <!-- <img src="images/about-office.jpg" alt="Pinus Pack Indo"> -->
-      🏭
-    </div>
+    <div class="about-img">🏭</div>
   </div>
 </section>
 
-<!-- ── STATS ──────────────────────────────────────── -->
-<section class="stats-section">
-  <div class="stats-row">
-    <div class="stat-card">
-      <div class="stat-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-      </div>
-      <div>
-        <div class="stat-num">500+</div>
-        <div class="stat-lbl">Jenis Produk</div>
-      </div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-      </div>
-      <div>
-        <div class="stat-num">1000+</div>
-        <div class="stat-lbl">Pelanggan Puas</div>
-      </div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      </div>
-      <div>
-        <div class="stat-num">5+</div>
-        <div class="stat-lbl">Tahun Pengalaman</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── WHY US ──────────────────────────────────────── -->
-<section class="section why-section">
-  <div class="why-inner">
-    <div class="why-img">
-      <!-- <img src="images/why-us.jpg" alt="Pinus Pack Indo"> -->
-      🧺
-    </div>
-    <div class="why-text">
-      <p class="section-label">Keunggulan Kami</p>
-      <h2 data-i18n="why_us.title">Mengapa Pilih<br>Pinus Pack Indo?</h2>
-      <p>Kami hadir sebagai solusi lengkap untuk semua kebutuhan kemasan dan baking supply bisnis Anda dengan produk berkualitas dan harga terjangkau.</p>
-      <ul class="feature-list">
-        <li>
-          <div class="feature-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span data-i18n="why_us.q1_title"><strong>Kualitas Terjamin</strong> — Semua produk memenuhi standar food grade yang aman</span>
-        </li>
-        <li>
-          <div class="feature-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span data-i18n="why_us.q2_title"><strong>Pengiriman Cepat</strong> — Kirim ke seluruh Indonesia, stok ready tiap hari</span>
-        </li>
-        <li>
-          <div class="feature-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span data-i18n="why_us.q3_title"><strong>Harga Kompetitif</strong> — Harga grosir langsung dari produsen</span>
-        </li>
-        <li>
-          <div class="feature-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span data-i18n="why_us.q4_title"><strong>Layanan Profesional</strong> — Tim siap membantu konsultasi kebutuhan Anda</span>
-        </li>
-      </ul>
-      <div class="why-btns">
-        <a href="products.html" class="btn-green">Lihat Produk</a>
-        <a href="about.html" class="btn-outline">Tentang Kami</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── TESTIMONI ──────────────────────────────────── -->
-<section class="testimonial-section">
-  <div class="testimonial-header">
+<!-- TEAM -->
+<section class="section team-section">
+  <div class="team-header">
     <div>
-      <p class="section-label">Testimoni</p>
-      <h2 class="section-title">Kata Pelanggan Kami</h2>
+      <h2 class="section-title">Bisnis Berkembang dengan<br>Kemasan yang Tepat</h2>
     </div>
-    <div class="testimonial-header-right">
-      <p class="section-sub">Ribuan pelanggan telah mempercayakan kebutuhan packaging mereka kepada kami di seluruh Indonesia.</p>
+    <div class="team-header-right">
+      <p class="section-label">Pelanggan Kami</p>
+      <p class="section-sub">Ribuan pelaku bisnis dari berbagai industri telah mempercayakan kebutuhan packaging mereka kepada kami.</p>
     </div>
   </div>
-  <div class="testimonial-grid">
-    <div class="testimonial-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">Kualitas packaging dari Pinus Pack Indo luar biasa! Loyang dan kertas baking yang saya beli sangat memuaskan, pengiriman juga cepat sampai.</p>
-      <div class="testi-author">
-        <div class="testi-avatar">S</div>
-        <div>
-          <div class="testi-name">Sari Dewi</div>
-          <div class="testi-role">Pemilik Toko Kue, Jakarta</div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-card-img">🍰</div>
+      <div class="team-card-overlay">
+        <div class="stars">★★★★★</div>
+        <h4>Sari Dewi</h4>
+        <p>Kualitas packaging luar biasa! Loyang dan kertas baking yang saya beli sangat memuaskan.</p>
+        <div class="social-links">
+          <a href="#">f</a><a href="#">𝕏</a><a href="#">in</a><a href="#">ig</a>
         </div>
       </div>
     </div>
-    <div class="testimonial-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">Harga kompetitif, pelayanan ramah, dan produk selalu ready stok. Sudah 2 tahun jadi pelanggan setia dan tidak pernah kecewa!</p>
-      <div class="testi-author">
-        <div class="testi-avatar">B</div>
-        <div>
-          <div class="testi-name">Budi Santoso</div>
-          <div class="testi-role">Owner Bakeri, Bandung</div>
+    <div class="team-card">
+      <div class="team-card-img">🍞</div>
+      <div class="team-card-overlay">
+        <div class="stars">★★★★★</div>
+        <h4>Budi Santoso</h4>
+        <p>Harga kompetitif, pelayanan ramah, dan produk selalu ready stok. Sudah 2 tahun jadi pelanggan setia!</p>
+        <div class="social-links">
+          <a href="#">f</a><a href="#">𝕏</a><a href="#">in</a><a href="#">ig</a>
         </div>
       </div>
     </div>
-    <div class="testimonial-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">Paper bag dan kotak kemasan mereka kualitasnya premium banget. Pelanggan saya selalu memuji packaging produk saya. Sangat recommended!</p>
-      <div class="testi-author">
-        <div class="testi-avatar">R</div>
-        <div>
-          <div class="testi-name">Rina Kusuma</div>
-          <div class="testi-role">Catering &amp; Event, Surabaya</div>
+    <div class="team-card">
+      <div class="team-card-img">🎂</div>
+      <div class="team-card-overlay">
+        <div class="stars">★★★★★</div>
+        <h4>Rina Kusuma</h4>
+        <p>Paper bag dan kotak kemasan mereka kualitasnya premium banget. Pelanggan saya selalu memuji packaging saya!</p>
+        <div class="social-links">
+          <a href="#">f</a><a href="#">𝕏</a><a href="#">in</a><a href="#">ig</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CARA PESAN ──────────────────────────────────── -->
-<section class="how-section">
-  <div style="text-align:center;margin-bottom:8px;">
-    <p class="section-label" style="display:inline-block;">Cara Pesan</p>
-  </div>
-  <h2 class="section-title">Cara Mudah Pesan di<br>Pinus Pack Indo</h2>
-  <p class="section-sub">Proses pemesanan yang simpel dan cepat, produk tiba di tangan Anda di seluruh Indonesia.</p>
-  <div class="how-steps">
-    <div class="how-step">
-      <div class="how-step-num">1</div>
-      <h3>Pilih Produk</h3>
-      <p>Jelajahi katalog dan temukan kemasan atau baking supply yang Anda butuhkan</p>
+<!-- WELCOME -->
+<section class="section welcome-section" style="background:#f5f9f6;">
+  <div class="welcome-inner">
+    <div class="welcome-img">📋</div>
+    <div class="welcome-text">
+      <h2>Selamat Datang di<br>Pinus Pack Indo!</h2>
+      <p>Jadikan produk Anda tampil profesional! Kami menyediakan kemasan dan baking supply berkualitas tinggi untuk usaha rumahan maupun skala besar. Kepuasan pelanggan adalah prioritas kami!</p>
+      <ul class="feature-list">
+        <li><span class="feature-dot"></span> Standar food grade terjamin</li>
+        <li><span class="feature-dot"></span> Harga kompetitif langsung produsen</li>
+        <li><span class="feature-dot"></span> Stok ready, kirim hari ini</li>
+        <li><span class="feature-dot"></span> Kualitas premium terbaik</li>
+        <li><span class="feature-dot"></span> 500+ jenis produk tersedia</li>
+        <li><span class="feature-dot"></span> Pengiriman ke seluruh Indonesia</li>
+      </ul>
+      <div class="welcome-btns">
+        <button class="btn-green" onclick="location.href='products.html'">Lihat Produk</button>
+        <button class="btn-outline" onclick="location.href='about.html'">Tentang Kami</button>
+      </div>
     </div>
-    <div class="how-step">
-      <div class="how-step-num">2</div>
-      <h3>Hubungi Kami</h3>
-      <p>Chat via WhatsApp atau isi form kontak — kami respons dalam hitungan menit</p>
-    </div>
-    <div class="how-step">
-      <div class="how-step-num">3</div>
-      <h3>Terima Pesanan</h3>
-      <p>Produk dikemas dengan baik dan dikirim cepat ke lokasi Anda</p>
-    </div>
-  </div>
-  <div class="how-cta">
-    <a href="https://wa.me/628XXXXXXXXXX" target="_blank" class="btn-wa">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-      Pesan via WhatsApp
-    </a>
   </div>
 </section>
 
-<!-- ── CONTACT ─────────────────────────────────────── -->
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="divider-label">Paket Pemesanan</div>
+  <h2 class="section-title" style="color:#fff;text-align:center;font-size:32px;margin-bottom:0;">Pilih Paket yang Sesuai<br>dengan Kebutuhan Bisnis Anda</h2>
+  <div class="pricing-toggle">
+    <button class="toggle-btn active" onclick="this.classList.add('active');this.nextElementSibling.classList.remove('active')">Eceran</button>
+    <button class="toggle-btn" onclick="this.classList.add('active');this.previousElementSibling.classList.remove('active')">Grosir</button>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <p class="pricing-label">Paket Starter</p>
+      <p class="pricing-price">Min. <span style="font-size:22px;font-weight:800;color:#111;">50 pcs</span></p>
+      <hr class="pricing-divider">
+      <ul class="pricing-features">
+        <li><span class="check-icon">✓</span> Kotak kemasan kraft & mika</li>
+        <li><span class="check-icon">✓</span> Paper bag berbagai ukuran</li>
+        <li><span class="check-icon">✓</span> Baking cup & kertas roti</li>
+        <li><span class="check-icon">✓</span> Harga satuan standar</li>
+        <li><span class="check-icon">✓</span> Pengiriman via ekspedisi</li>
+        <li><span class="check-icon">✓</span> Konsultasi produk gratis</li>
+      </ul>
+      <button class="btn-pricing" onclick="location.href='contact.html'">Pesan Sekarang</button>
+    </div>
+    <div class="pricing-card featured">
+      <p class="pricing-label">Paket Bisnis</p>
+      <p class="pricing-price">Min. <span style="font-size:22px;font-weight:800;color:#fff;">500 pcs</span></p>
+      <hr class="pricing-divider">
+      <ul class="pricing-features">
+        <li><span class="check-icon">✓</span> Semua produk di Paket Starter</li>
+        <li><span class="check-icon">✓</span> Diskon harga grosir</li>
+        <li><span class="check-icon">✓</span> Prioritas proses pesanan</li>
+        <li><span class="check-icon">✓</span> Pilihan cetak logo/branding</li>
+        <li><span class="check-icon">✓</span> Account manager khusus</li>
+        <li><span class="check-icon">✓</span> Free ongkir area tertentu</li>
+      </ul>
+      <button class="btn-pricing" onclick="location.href='contact.html'">Pesan Sekarang</button>
+    </div>
+    <div class="pricing-card">
+      <p class="pricing-label">Paket Premium</p>
+      <p class="pricing-price">Min. <span style="font-size:22px;font-weight:800;color:#111;">2000 pcs</span></p>
+      <hr class="pricing-divider">
+      <ul class="pricing-features">
+        <li><span class="check-icon">✓</span> Semua produk di Paket Bisnis</li>
+        <li><span class="check-icon">✓</span> Harga spesial industri</li>
+        <li><span class="check-icon">✓</span> Custom desain & ukuran</li>
+        <li><span class="check-icon">✓</span> Cetak logo full color</li>
+        <li><span class="check-icon">✓</span> Dedicated account manager</li>
+        <li><span class="check-icon">✓</span> Kontrak jangka panjang</li>
+      </ul>
+      <button class="btn-pricing" onclick="location.href='contact.html'">Pesan Sekarang</button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="testimonial-inner">
+    <div class="testimonial-left">
+      <h2>Apa Kata Pelanggan<br>Kami Tentang Produk Kami</h2>
+      <p>Baca testimoni dari pelanggan kami yang puas. Lihat bagaimana produk packaging kami telah membantu bisnis mereka berkembang.</p>
+      <div class="testimonial-nav">
+        <button class="nav-btn">←</button>
+        <button class="nav-btn">→</button>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="quote-icon">"</div>
+      <p class="testimonial-text">Produk kemasan dari Pinus Pack Indo sangat memuaskan! Kualitas kotak dan paper bag jauh melebihi ekspektasi saya. Pengiriman cepat dan packaging aman sampai tujuan. Sangat direkomendasikan untuk semua pelaku usaha!</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">👩</div>
+        <div>
+          <div class="stars" style="font-size:12px;">★★★★★</div>
+          <p class="author-name">Sari Dewi</p>
+          <p class="author-title">Pemilik Toko Kue, Jakarta</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section blog-section">
+  <div class="blog-header">
+    <div>
+      <p class="section-label">Tips &amp; Info Terbaru Seputar Packaging!</p>
+      <h2 class="section-title">Artikel &amp; Tips</h2>
+    </div>
+    <div class="blog-header-right">
+      <p class="section-sub">Dapatkan tips packaging terkini, update produk, dan panduan memilih kemasan yang tepat untuk bisnis Anda.</p>
+    </div>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-img">🌿</div>
+      <div class="blog-body">
+        <p class="blog-meta">Tim Pinus &nbsp; Jan 2025</p>
+        <h3>Kemasan Ramah Lingkungan: Pilihan Cerdas untuk Bisnis Modern</h3>
+        <p>Pelajari bagaimana kemasan eco-friendly dapat meningkatkan citra brand Anda sekaligus menjaga lingkungan...</p>
+        <a href="#" class="read-more">Baca Selengkapnya</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img">📦</div>
+      <div class="blog-body">
+        <p class="blog-meta">Tim Pinus &nbsp; Feb 2025</p>
+        <h3>Tips Memilih Kemasan yang Tepat untuk Produk Makanan Anda</h3>
+        <p>Panduan lengkap memilih jenis kemasan yang sesuai untuk berbagai produk makanan dan minuman...</p>
+        <a href="#" class="read-more">Baca Selengkapnya</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img">✨</div>
+      <div class="blog-body">
+        <p class="blog-meta">Tim Pinus &nbsp; Mar 2025</p>
+        <h3>Manfaat Kemasan Berkualitas untuk Meningkatkan Penjualan</h3>
+        <p>Ketahui bagaimana investasi pada kemasan berkualitas dapat meningkatkan omzet bisnis Anda secara signifikan...</p>
+        <a href="#" class="read-more">Baca Selengkapnya</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section class="section contact-section">
   <div class="contact-inner">
     <div class="contact-left">
-      <p class="section-label">Kontak Info</p>
-      <h2 data-i18n="contact_page.title">Hubungi Kami</h2>
-      <p>Kami siap membantu kebutuhan packaging dan baking supply Anda. Respons cepat di hari kerja.</p>
+      <p class="section-label">Info Kontak</p>
+      <h2>Temukan Kami</h2>
+      <p>Kami siap merespons pertanyaan dan pesanan Anda dengan cepat agar bisnis Anda tidak terhambat.</p>
       <div class="contact-items">
         <div class="contact-item">
           <div class="contact-icon">
@@ -387,57 +660,41 @@
       </div>
     </div>
     <div class="contact-right">
-      <h2 data-i18n="contact_page.form_title">Kirim Pesan</h2>
-      <div class="form-row">
-        <div class="form-group">
-          <input type="text" placeholder="Nama Anda" data-i18n-placeholder="contact_page.name">
-        </div>
-        <div class="form-group">
-          <input type="tel" placeholder="No. WhatsApp / HP">
-        </div>
+      <h2>Kirim Pesan</h2>
+      <div class="form-group">
+        <input type="text" placeholder="Nama Anda" id="cName">
       </div>
       <div class="form-group">
-        <input type="email" placeholder="Email (opsional)">
+        <input type="tel" placeholder="No. WhatsApp / HP" id="cPhone">
       </div>
       <div class="form-group">
-        <textarea placeholder="Ceritakan kebutuhan kemasan Anda..." data-i18n-placeholder="contact_page.message"></textarea>
+        <textarea placeholder="Ceritakan kebutuhan kemasan Anda..." id="cMsg"></textarea>
       </div>
-      <button class="btn-send" id="sendBtn" data-i18n="contact_page.send">Kirim ke WhatsApp</button>
+      <button class="btn-send" id="sendBtn">Kirim ke WhatsApp</button>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ──────────────────────────────────────── -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="logo" style="margin-bottom:12px;">
-        <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <div>
-          <div class="footer-brand-name">Pinus Pack Indo</div>
-          <div class="footer-brand-sub">Packaging &amp; Baking Supply</div>
+      <div class="logo" style="margin-bottom:14px;">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
-      </a>
-      <p data-i18n="footer.tagline">Solusi kemasan dan baking supply berkualitas tinggi untuk bisnis Anda di seluruh Indonesia.</p>
-      <div class="footer-socials" style="margin-top:16px;">
-        <a href="#" class="social-btn" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-        <a href="#" class="social-btn" aria-label="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-        </a>
-        <a href="https://wa.me/628XXXXXXXXXX" target="_blank" class="social-btn" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-        </a>
+        Pinus Pack Indo
       </div>
+      <p style="font-size:12px;color:#777;">Packaging &amp; Baking Supply</p>
+      <p style="font-size:13px;color:#666;margin-top:10px;line-height:1.7;">Solusi kemasan dan baking supply berkualitas tinggi untuk bisnis Anda di seluruh Indonesia.</p>
     </div>
     <div class="footer-col">
-      <h4 data-i18n="footer.links_title">Menu</h4>
+      <h4>Menu</h4>
       <ul>
-        <li><a href="index.html"     data-i18n="nav.home">Beranda</a></li>
-        <li><a href="about.html"    data-i18n="nav.about">Tentang Kami</a></li>
-        <li><a href="products.html" data-i18n="nav.products">Produk</a></li>
-        <li><a href="contact.html"  data-i18n="nav.contact">Kontak</a></li>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang Kami</a></li>
+        <li><a href="products.html">Produk</a></li>
+        <li><a href="contact.html">Kontak</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -452,35 +709,41 @@
     </div>
     <div class="footer-col">
       <h4>Newsletter</h4>
-      <p style="font-size:13px;color:#777;line-height:1.6;margin-bottom:4px;">Dapatkan info produk terbaru dan penawaran spesial langsung di email Anda.</p>
-      <div class="newsletter-wrap">
-        <input type="email" class="newsletter-input" placeholder="Email Anda">
-        <button class="newsletter-btn">Daftar</button>
-      </div>
-      <div style="margin-top:20px;">
-        <div style="font-size:11px;color:#555;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;">Kontak</div>
-        <div style="font-size:13px;color:#777;line-height:2;">
-          📞 +62 8XX-XXXX-XXXX<br>
-          ✉️ pinuspackindo@gmail.com<br>
-          📍 Jakarta, Indonesia
-        </div>
+      <p style="font-size:13px;color:#777;margin-bottom:8px;">Dapatkan info produk terbaru dan penawaran spesial.</p>
+      <div class="newsletter-input-wrap">
+        <input class="newsletter-input" type="email" placeholder="Email Anda">
+        <button class="btn-send-sm">Daftar</button>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; <span id="year"></span> Pinus Pack Indo. Hak Cipta Dilindungi.</span>
-    <span>Made with ♥ in Indonesia</span>
+    &copy; <span id="year"></span> Pinus Pack Indo. Hak Cipta Dilindungi.
   </div>
 </footer>
 
-<!-- ── SCROLL TO TOP ──────────────────────────────── -->
-<button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
-<script src="js/main.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Lang switcher (simpel)
+  function switchLang(lang) {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`).classList.add('active');
+    localStorage.setItem('lang', lang);
+  }
+  // Set active on load
+  const saved = localStorage.getItem('lang') || 'id';
+  if (saved === 'en') switchLang('en');
+
+  // Send to WhatsApp
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const name  = document.getElementById('cName').value.trim();
+    const phone = document.getElementById('cPhone').value.trim();
+    const msg   = document.getElementById('cMsg').value.trim();
+    if (!name) { document.getElementById('cName').focus(); return; }
+    const WA = '628XXXXXXXXXX'; // TODO: ganti nomor WA
+    const text = encodeURIComponent(`Halo Pinus Pack Indo,\n\nNama: ${name}\nHP: ${phone}\nPesan: ${msg}`);
+    window.open(`https://wa.me/${WA}?text=${text}`, '_blank');
+  });
 </script>
 </body>
 </html>
