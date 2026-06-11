@@ -1,271 +1,345 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Kontak — Pinus Pack Indo</title>
-  <meta name="description" content="Hubungi Pinus Pack Indo untuk informasi produk packaging dan baking supply. Chat WhatsApp atau isi form kontak."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/style.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontak - Pinus Packindo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: #222; }
+a { text-decoration: none; color: inherit; }
+
+/* ── NAV ── */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 80px; background: #fff;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+}
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon { width: 64px; height: 64px; border-radius: 10px; overflow: hidden; flex-shrink: 0; }
+.logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+.logo-name { font-weight: 800; font-size: 22px; color: #27ae60; line-height: 1.15; }
+.logo-sub  { font-size: 11px; color: #999; letter-spacing: 0.5px; }
+.nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; color: #444; }
+.nav-links a { transition: color 0.18s, transform 0.18s; display: inline-block; }
+.nav-links a:hover { color: #27ae60; transform: translateY(-2px); }
+.nav-links a.active { color: #27ae60; font-weight: 700; }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.lang-switcher { display: flex; gap: 4px; }
+.lang-btn {
+  padding: 5px 10px; border-radius: 5px; border: 1.5px solid #ddd;
+  background: #fff; font-size: 12px; font-weight: 600; cursor: pointer; color: #666; transition: all 0.2s;
+}
+.lang-btn.active, .lang-btn:hover { background: #27ae60; color: #fff; border-color: #27ae60; }
+.btn-quote {
+  background: #27ae60; color: #fff; padding: 10px 22px;
+  border-radius: 6px; font-size: 14px; font-weight: 600;
+  border: none; cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s;
+}
+.btn-quote:hover { background: #1e8449; transform: translateY(-3px) scale(1.04); box-shadow: 0 6px 20px rgba(39,174,96,0.35); }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { background: #f8f8f8; padding: 12px 80px; border-bottom: 1px solid #eee; }
+.breadcrumb a { font-size: 13px; color: #27ae60; }
+.breadcrumb span { font-size: 13px; color: #999; margin: 0 6px; }
+.breadcrumb strong { font-size: 13px; color: #444; }
+
+/* ── PAGE HERO BANNER ── */
+.page-hero {
+  background: linear-gradient(135deg, #0d2218 0%, #1a4a2e 55%, #27ae60 100%);
+  padding: 80px 80px;
+  position: relative; overflow: hidden;
+}
+.page-hero::after {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 360px; height: 360px; border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.page-hero::before {
+  content: ''; position: absolute; bottom: -50px; left: 35%;
+  width: 240px; height: 240px; border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+}
+.page-hero-inner { position: relative; z-index: 1; max-width: 640px; }
+.page-hero-tag { font-size: 12px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; }
+.page-hero h1 { font-size: 44px; font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 16px; }
+.page-hero p { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; max-width: 500px; }
+
+/* ── CONTACT SECTION ── */
+.contact-section { padding: 72px 80px; background: #fff; }
+.contact-inner { display: flex; gap: 80px; align-items: flex-start; }
+
+/* Info side */
+.contact-info { flex: 1; }
+.contact-info .section-label { font-size: 12px; color: #27ae60; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+.contact-info h2 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+.contact-info > p { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 36px; }
+
+.contact-items { display: flex; flex-direction: column; gap: 24px; }
+.contact-item { display: flex; align-items: flex-start; gap: 16px; }
+.contact-icon {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: #27ae60; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.contact-icon svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.contact-detail { padding-top: 2px; }
+.contact-detail .label { font-size: 11px; color: #999; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.contact-detail .value { font-size: 16px; font-weight: 700; color: #111; }
+.contact-detail .value a { color: #111; transition: color 0.2s; }
+.contact-detail .value a:hover { color: #27ae60; }
+
+/* Map */
+.contact-map { margin-top: 40px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.contact-map iframe { width: 100%; height: 220px; border: none; display: block; }
+
+/* Form side */
+.contact-form-wrap { flex: 1; }
+.contact-form-wrap h3 { font-size: 28px; font-weight: 800; margin-bottom: 28px; }
+.form-group { margin-bottom: 16px; }
+.form-input, .form-textarea {
+  width: 100%; padding: 14px 16px;
+  border: 1.5px solid #e0e0e0; border-radius: 10px;
+  font-size: 14px; font-family: inherit; color: #222;
+  background: #fff; outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input:focus, .form-textarea:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39,174,96,0.12);
+}
+.form-textarea { resize: vertical; min-height: 140px; }
+.btn-wa {
+  width: 100%; padding: 16px;
+  background: #27ae60; color: #fff;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+  transition: background 0.2s, transform 0.18s, box-shadow 0.18s;
+  margin-top: 8px;
+}
+.btn-wa:hover { background: #1e8449; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(39,174,96,0.35); }
+.btn-wa svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
+
+/* ── FOOTER ── */
+footer { background: #111; color: #aaa; padding: 56px 80px 24px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 40px; }
+.footer-brand p { font-size: 13px; color: #666; line-height: 1.7; margin-top: 14px; max-width: 260px; }
+.footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.footer-col h4 { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 14px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-col ul li a { font-size: 13px; color: #666; transition: color 0.2s; }
+.footer-col ul li a:hover { color: #27ae60; }
+.newsletter-input-wrap { display: flex; gap: 8px; margin-top: 8px; }
+.newsletter-input { flex: 1; padding: 9px 12px; border-radius: 6px; border: 1px solid #333; background: #1a1a1a; color: #ccc; font-size: 13px; outline: none; }
+.btn-send-sm { background: #27ae60; color: #fff; border: none; padding: 9px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; }
+.footer-bottom { border-top: 1px solid #222; padding-top: 20px; font-size: 12px; color: #555; text-align: center; }
+</style>
 </head>
 <body>
 
-<!-- ── TOP BAR ─────────────────────────────────── -->
-<div class="top-bar">
-  <div class="top-bar-item">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 13.5 19.79 19.79 0 01.16 4.82 2 2 0 012.18 2.65h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.17 6.17l1.49-1.49a2 2 0 012.12-.45c.907.339 1.85.573 2.81.7A2 2 0 0121.92 16.92z"/></svg>
-    <span>+62 8XX-XXXX-XXXX</span>
-  </div>
-  <div class="top-bar-item">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-    <span>pinuspackindo@gmail.com</span>
-  </div>
-  <div class="top-bar-item">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-    <span>Jakarta, Indonesia</span>
-  </div>
-</div>
-
-<!-- ── NAVBAR ─────────────────────────────────── -->
-<div class="navbar-wrap">
-  <nav class="navbar">
-    <a href="index.html" class="navbar-brand">
-      <div class="brand-logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      </div>
-      <div>
-        <div class="brand-name">Pinus Pack Indo</div>
-        <div class="brand-sub">Packaging &amp; Baking Supply</div>
-      </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html"     data-i18n="nav.home">Beranda</a></li>
-      <li><a href="about.html"    data-i18n="nav.about">Tentang Kami</a></li>
-      <li><a href="products.html" data-i18n="nav.products">Produk</a></li>
-      <li><a href="contact.html"  data-i18n="nav.contact">Kontak</a></li>
-    </ul>
-    <div class="nav-right">
-      <div class="lang-switcher">
-        <button class="lang-btn" data-lang="id">ID</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-      <a href="contact.html" class="btn-nav" data-i18n="nav.contact">Kontak</a>
-      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+<!-- NAV -->
+<nav>
+  <div class="logo" onclick="location.href='index.html'" style="cursor:pointer;">
+    <div class="logo-icon"><img src="images/logo.jpg" alt="Pinus Packindo Logo"></div>
+    <div>
+      <div class="logo-name">Pinus Packindo</div>
+      <div class="logo-sub">Packaging &amp; Baking Supply</div>
     </div>
-  </nav>
+  </div>
+  <div class="nav-links">
+    <a href="index.html" data-i18n="nav.home">Beranda</a>
+    <a href="about.html" data-i18n="nav.about">Tentang Kami</a>
+    <a href="products.html" data-i18n="nav.products">Produk</a>
+    <a href="contact.html" class="active" data-i18n="nav.contact">Kontak</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" onclick="switchLang('id')">ID</button>
+      <button class="lang-btn" onclick="switchLang('en')">EN</button>
+    </div>
+    <button class="btn-quote" onclick="location.href='contact.html'" data-i18n="nav.cta">Hubungi Kami</button>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html" data-i18n="nav.home">Beranda</a>
+  <span>›</span>
+  <strong data-i18n="nav.contact">Kontak</strong>
 </div>
 
-<!-- ── MOBILE NAV ─────────────────────────────── -->
-<div class="mobile-nav">
-  <div class="mobile-nav-header">
-    <a href="index.html" class="navbar-brand">
-      <div class="brand-logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      </div>
-      <div class="brand-name">Pinus Pack Indo</div>
-    </a>
-    <button class="mobile-close" aria-label="Tutup">✕</button>
-  </div>
-  <a href="index.html"     data-i18n="nav.home">Beranda</a>
-  <a href="about.html"    data-i18n="nav.about">Tentang Kami</a>
-  <a href="products.html" data-i18n="nav.products">Produk</a>
-  <a href="contact.html"  data-i18n="nav.contact">Kontak</a>
-  <div class="mobile-lang">
-    <button class="lang-btn" data-lang="id">ID</button>
-    <button class="lang-btn" data-lang="en">EN</button>
-  </div>
-</div>
-
-<!-- ── PAGE HERO ─────────────────────────────── -->
+<!-- PAGE HERO -->
 <div class="page-hero">
-  <div class="section-label">Kontak</div>
-  <h1 data-i18n="contact_page.hero_title">Hubungi Kami</h1>
-  <p data-i18n="contact_page.hero_subtitle">Kami siap membantu Anda</p>
+  <div class="page-hero-inner">
+    <p class="page-hero-tag" data-i18n="contact.label">Info Kontak</p>
+    <h1 data-i18n="contact.title">Temukan Kami</h1>
+    <p data-i18n="contact.desc">Kami siap merespons pertanyaan dan pesanan Anda dengan cepat agar bisnis Anda tidak terhambat.</p>
+  </div>
 </div>
 
-<!-- ── KONTAK UTAMA ──────────────────────────── -->
-<section style="padding:70px 5%;background:var(--white)">
-  <div class="contact-grid">
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="contact-inner">
 
-    <!-- Info Kontak -->
-    <div class="contact-info-card">
-      <div class="ci-item">
-        <div class="ci-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    <!-- INFO -->
+    <div class="contact-info">
+      <p class="section-label" data-i18n="contact.label">Info Kontak</p>
+      <h2 data-i18n="contact.title">Temukan Kami</h2>
+      <p data-i18n="contact.desc">Kami siap merespons pertanyaan dan pesanan Anda dengan cepat agar bisnis Anda tidak terhambat.</p>
+
+      <div class="contact-items">
+        <!-- WhatsApp -->
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.12 1.27 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="contact-detail">
+            <div class="label" data-i18n="contact.wa_label">WhatsApp / Telepon</div>
+            <div class="value"><a href="https://wa.me/6285283338989" target="_blank">+62 852-8333-8989</a></div>
+          </div>
         </div>
-        <div class="ci-text">
-          <h4 data-i18n="contact_page.address_label">Alamat</h4>
-          <!-- TODO: ganti dengan alamat lengkap -->
-          <p data-i18n="contact_page.address_text">Jakarta, Indonesia</p>
+
+        <!-- Email -->
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-detail">
+            <div class="label" data-i18n="contact.email_label">Email</div>
+            <div class="value"><a href="mailto:pinuspackindo@gmail.com">pinuspackindo@gmail.com</a></div>
+          </div>
+        </div>
+
+        <!-- Alamat -->
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-detail">
+            <div class="label" data-i18n="contact.address_label">Alamat</div>
+            <div class="value">Jalan Penjawi No. 11, Pati, Jawa Tengah</div>
+          </div>
         </div>
       </div>
-      <div class="ci-item">
-        <div class="ci-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 13.5 19.79 19.79 0 01.16 4.82 2 2 0 012.18 2.65h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.17 6.17l1.49-1.49a2 2 0 012.12-.45c.907.339 1.85.573 2.81.7A2 2 0 0121.92 16.92z"/></svg>
-        </div>
-        <div class="ci-text">
-          <h4 data-i18n="contact_page.phone_label">Telepon / WhatsApp</h4>
-          <!-- TODO: ganti dengan nomor WA bisnis -->
-          <p>+62 8XX-XXXX-XXXX</p>
-        </div>
+
+      <!-- Google Maps -->
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.123!2d111.0376!3d-6.7501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70f9b0e0b0b0b0%3A0x0!2sJl.+Penjawi+No.11%2C+Pati%2C+Jawa+Tengah!5e0!3m2!1sid!2sid!4v1620000000000"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
-      <div class="ci-item">
-        <div class="ci-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <div class="ci-text">
-          <h4 data-i18n="contact_page.email_label">Email</h4>
-          <p>pinuspackindo@gmail.com</p>
-        </div>
-      </div>
-      <div class="ci-item">
-        <div class="ci-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <div class="ci-text">
-          <h4 data-i18n="contact_page.hours_label">Jam Operasional</h4>
-          <p data-i18n="contact_page.hours_text">Senin – Sabtu, 08.00 – 17.00 WIB</p>
-        </div>
-      </div>
-      <!-- Tombol WA langsung -->
-      <a id="waDirectBtn" href="https://wa.me/628XXXXXXXXXX" target="_blank" class="btn-wa" style="justify-content:center;margin-top:8px">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        <span data-i18n="contact_page.wa_button">Chat via WhatsApp</span>
-      </a>
     </div>
 
-    <!-- Form Kontak -->
-    <div class="contact-form-card">
-      <div class="section-label">Pesan</div>
-      <h2 style="font-size:clamp(1.4rem,2.5vw,1.8rem);color:var(--dark);margin-bottom:24px" data-i18n="contact_page.form_title">Kirim Pesan</h2>
-      <form id="contactForm" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label data-i18n="contact_page.form_name">Nama Lengkap</label>
-            <input type="text" name="name" required
-              data-i18n-placeholder="contact_page.form_name"
-              placeholder="Nama Lengkap"/>
-          </div>
-          <div class="form-group">
-            <label data-i18n="contact_page.form_company">Nama Perusahaan</label>
-            <input type="text" name="company"
-              data-i18n-placeholder="contact_page.form_company"
-              placeholder="Nama Perusahaan (opsional)"/>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label data-i18n="contact_page.form_phone">No. WhatsApp</label>
-            <input type="tel" name="phone" required placeholder="08XX-XXXX-XXXX"/>
-          </div>
-          <div class="form-group">
-            <label data-i18n="contact_page.form_email">Email</label>
-            <input type="email" name="email" placeholder="email@contoh.com"/>
-          </div>
-        </div>
-        <div class="form-group">
-          <label data-i18n="contact_page.form_message">Pesan</label>
-          <textarea name="message" required
-            data-i18n-placeholder="contact_page.form_message"
-            placeholder="Tulis pesan Anda di sini..."></textarea>
-        </div>
-        <button type="submit" class="btn-submit" data-i18n="contact_page.form_submit">
-          Kirim Pesan
-        </button>
-      </form>
+    <!-- FORM -->
+    <div class="contact-form-wrap">
+      <h3 data-i18n="contact.form_title">Kirim Pesan</h3>
+      <div class="form-group">
+        <input class="form-input" type="text" id="contactName" data-i18n-placeholder="contact.name_ph" placeholder="Nama Anda">
+      </div>
+      <div class="form-group">
+        <input class="form-input" type="tel" id="contactPhone" data-i18n-placeholder="contact.phone_ph" placeholder="No. WhatsApp / HP">
+      </div>
+      <div class="form-group">
+        <textarea class="form-textarea" id="contactMsg" data-i18n-placeholder="contact.msg_ph" placeholder="Ceritakan kebutuhan kemasan Anda..."></textarea>
+      </div>
+      <button class="btn-wa" onclick="sendWhatsApp()">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <span data-i18n="contact.btn_send">Kirim ke WhatsApp</span>
+      </button>
     </div>
 
   </div>
 </section>
 
-<!-- ── MAPS ───────────────────────────────────── -->
-<section style="padding:0 5% 70px;background:var(--white)">
-  <div style="max-width:1100px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;border:1.5px solid #D5E8DD">
-    <!-- TODO: Ganti div ini dengan embed Google Maps lokasi kantor Anda -->
-    <!-- Cara: 1) Buka Google Maps, cari lokasi Anda  2) Klik Share > Embed a map > Copy HTML  3) Ganti div di bawah dengan <iframe> yang di-copy -->
-    <div style="background:var(--cream2);height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--gray)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="44" style="opacity:.4"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <p style="font-size:.9rem;text-align:center">Google Maps akan ditampilkan di sini<br><small style="opacity:.7">Ganti dengan embed maps lokasi kantor Anda</small></p>
-    </div>
-  </div>
-</section>
-
-<!-- ── CTA BANNER ─────────────────────────────── -->
-<section class="cta-section">
-  <div class="cta-inner">
-    <div class="cta-text">
-      <h2>Kami Siap Membantu Bisnis Anda</h2>
-      <p>Konsultasikan kebutuhan kemasan dan baking supply Anda bersama tim profesional kami</p>
-    </div>
-    <div class="cta-btns">
-      <a href="https://wa.me/628XXXXXXXXXX" target="_blank" class="btn-wa">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        <span data-i18n="contact_page.wa_button">Chat via WhatsApp</span>
-      </a>
-      <a href="products.html" class="btn-outline-w" data-i18n="nav.products">Lihat Produk</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ─────────────────────────────────── -->
+<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo-row">
-          <div class="brand-logo">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <span class="footer-brand-name">Pinus Pack Indo</span>
-        </div>
-        <p data-i18n="footer.tagline">Solusi kemasan dan baking supply berkualitas tinggi untuk bisnis Anda di seluruh Indonesia.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-          <a href="https://wa.me/628XXXXXXXXXX" target="_blank" class="social-btn" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></a>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="logo-icon"><img src="images/logo.jpg" alt="Pinus Packindo Logo"></div>
+        <div>
+          <div style="font-weight:800;font-size:16px;color:#fff;">Pinus Packindo</div>
+          <div style="font-size:10px;color:#666;letter-spacing:0.5px;">Packaging &amp; Baking Supply</div>
         </div>
       </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer.links_title">Tautan Cepat</h4>
-        <ul>
-          <li><a href="index.html"     data-i18n="nav.home">Beranda</a></li>
-          <li><a href="about.html"    data-i18n="nav.about">Tentang Kami</a></li>
-          <li><a href="products.html" data-i18n="nav.products">Produk</a></li>
-          <li><a href="contact.html"  data-i18n="nav.contact">Kontak</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Produk</h4>
-        <ul>
-          <li><a href="products.html">Kotak Kemasan</a></li>
-          <li><a href="products.html">Paper Bag</a></li>
-          <li><a href="products.html">Peralatan Baking</a></li>
-          <li><a href="products.html">Kertas Baking</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Newsletter</h4>
-        <p style="font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:14px;line-height:1.6">Dapatkan info produk terbaru dan penawaran spesial.</p>
-        <div class="newsletter-form">
-          <input type="email" class="newsletter-input" placeholder="Email Anda"/>
-          <button class="newsletter-btn">Daftar</button>
-        </div>
+      <p data-i18n="footer.desc">Solusi kemasan dan baking supply berkualitas tinggi untuk bisnis Anda di seluruh Indonesia.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.menu">Menu</h4>
+      <ul>
+        <li><a href="index.html" data-i18n="nav.home">Beranda</a></li>
+        <li><a href="about.html" data-i18n="nav.about">Tentang Kami</a></li>
+        <li><a href="products.html" data-i18n="nav.products">Produk</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.products_col">Produk</h4>
+      <ul>
+        <li><a href="products.html#kemasan-plastik" data-i18n="services.c1_title">Kemasan Plastik</a></li>
+        <li><a href="products.html#kemasan-kertas" data-i18n="services.c2_title">Kemasan Kertas</a></li>
+        <li><a href="products.html#kemasan-styrofoam" data-i18n="services.c3_title">Kemasan Styrofoam</a></li>
+        <li><a href="products.html#peralatan-baking" data-i18n="services.c4_title">Peralatan Baking</a></li>
+        <li><a href="products.html#bahan-baking" data-i18n="services.c5_title">Bahan Baking</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.newsletter">Newsletter</h4>
+      <p style="font-size:13px;color:#777;margin-bottom:8px;" data-i18n="footer.newsletter_desc">Dapatkan info produk terbaru dan penawaran spesial.</p>
+      <div class="newsletter-input-wrap">
+        <input class="newsletter-input" type="email" placeholder="Email Anda" data-i18n-placeholder="footer.newsletter_ph">
+        <button class="btn-send-sm" data-i18n="footer.newsletter_btn">Daftar</button>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; <span id="year"></span> Pinus Pack Indo. <span data-i18n="footer.rights">Hak Cipta Dilindungi</span>.</span>
-      <span>Made with ♥ in Indonesia</span>
-    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; <span id="year"></span> Pinus Packindo. Hak Cipta Dilindungi.
   </div>
 </footer>
 
-<button class="scroll-top" aria-label="Scroll to top">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-<script src="js/main.js"></script>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  function sendWhatsApp() {
+    const name  = document.getElementById('contactName').value.trim();
+    const phone = document.getElementById('contactPhone').value.trim();
+    const msg   = document.getElementById('contactMsg').value.trim();
+    if (!name && !msg) { alert('Mohon isi nama dan pesan Anda.'); return; }
+    const text = `Halo Pinus Packindo!%0A%0ANama: ${encodeURIComponent(name)}%0ANo. HP: ${encodeURIComponent(phone)}%0A%0APesan:%0A${encodeURIComponent(msg)}`;
+    window.open(`https://wa.me/6285283338989?text=${text}`, '_blank');
+  }
+
+  // i18n
+  let currentLang = localStorage.getItem('lang') || 'id';
+  function getVal(obj, path) {
+    return path.split('.').reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), obj);
+  }
+  function applyLang(t) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const v = getVal(t, el.getAttribute('data-i18n'));
+      if (v !== undefined) el.textContent = v;
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const v = getVal(t, el.getAttribute('data-i18n-placeholder'));
+      if (v !== undefined) el.placeholder = v;
+    });
+    document.querySelectorAll('.lang-btn').forEach(b =>
+      b.classList.toggle('active', b.getAttribute('onclick').includes(`'${currentLang}'`))
+    );
+  }
+  async function switchLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    const res = await fetch(`lang/${lang}.json`);
+    const t = await res.json();
+    applyLang(t);
+  }
+  fetch(`lang/${currentLang}.json`).then(r => r.json()).then(applyLang);
+</script>
 </body>
 </html>
