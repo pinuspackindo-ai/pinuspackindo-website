@@ -449,7 +449,6 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     <img src="images/slide-5.jpeg" class="hero-slide" alt="Slide 5">
   </div>
   <div class="hero-overlay"></div>
-  <button class="hero-arrow prev" onclick="changeSlide(-1)">&#8592;</button>
   <button class="hero-arrow next" onclick="changeSlide(1)">&#8594;</button>
   <div class="hero-inner">
     <div class="hero-text">
@@ -854,7 +853,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     startAuto();
   }
   function startAuto() {
-    autoTimer = setInterval(() => goSlide(current + 1), 2000);
+    autoTimer = setInterval(() => goSlide(current + 1), 3000);
   }
   startAuto();
 
