@@ -105,37 +105,42 @@ nav {
 }
 .btn-secondary:hover { background: rgba(255,255,255,0.25); }
 
-/* ── GLOBAL HOVER ANIMATIONS ── */
-.btn-green,.btn-quote,.btn-pricing,.btn-send,.btn-send-sm { transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s !important; }
-.btn-green:hover,.btn-quote:hover,.btn-pricing:hover,.btn-send:hover,.btn-send-sm:hover { transform: translateY(-3px) scale(1.04) !important; box-shadow: 0 6px 20px rgba(39,174,96,0.35) !important; }
+/* ── HOVER ANIMATIONS: foto, tombol, menu ── */
+/* Tombol */
+.btn-green,.btn-quote,.btn-pricing,.btn-send,.btn-send-sm {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s !important;
+}
+.btn-green:hover,.btn-quote:hover,.btn-pricing:hover,.btn-send:hover,.btn-send-sm:hover {
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow: 0 6px 20px rgba(39,174,96,0.35) !important;
+}
 .btn-secondary { transition: transform 0.18s ease, box-shadow 0.18s ease !important; }
 .btn-secondary:hover { transform: translateY(-3px) scale(1.04) !important; box-shadow: 0 6px 20px rgba(39,174,96,0.2) !important; }
 .btn-book { transition: transform 0.18s ease !important; }
 .btn-book:hover { transform: translateX(5px) !important; }
 .read-more { transition: transform 0.18s, color 0.18s !important; display: inline-block; }
 .read-more:hover { transform: translateX(5px) !important; }
+/* Menu nav */
 .nav-links a { transition: color 0.18s, transform 0.18s !important; display: inline-block; }
 .nav-links a:hover { transform: translateY(-2px) !important; }
-.service-card:hover { transform: translateY(-6px) !important; box-shadow: 0 12px 32px rgba(39,174,96,0.13) !important; }
-.team-card:hover { transform: translateY(-6px) !important; box-shadow: 0 12px 32px rgba(39,174,96,0.13) !important; }
-.blog-card { transition: transform 0.22s ease, box-shadow 0.22s ease !important; }
-.blog-card:hover { transform: translateY(-5px) !important; box-shadow: 0 10px 28px rgba(0,0,0,0.10) !important; }
-.pricing-card { transition: transform 0.22s ease, box-shadow 0.22s ease !important; }
-.pricing-card:hover { transform: translateY(-6px) scale(1.02) !important; box-shadow: 0 16px 40px rgba(0,0,0,0.15) !important; }
+.lang-btn { transition: transform 0.18s, background 0.18s, color 0.18s !important; }
+.lang-btn:hover { transform: scale(1.1) !important; }
+/* Foto */
+.service-card-img img,.team-card-img img,.blog-img img,.about-photo-1 img,.about-photo-2 img,.about-photo-3 img,.welcome-img video {
+  transition: transform 0.3s ease !important;
+}
+.service-card-img:hover img,.team-card-img:hover img,.blog-img:hover img {
+  transform: scale(1.06) !important;
+}
+.about-photo-1:hover img,.about-photo-2:hover img,.about-photo-3:hover img {
+  transform: scale(1.07) !important;
+}
+/* Logo */
 .logo { transition: opacity 0.18s !important; }
 .logo:hover { opacity: 0.82 !important; }
+/* Footer links */
 .footer-col ul li a { transition: color 0.18s, transform 0.18s !important; display: inline-block; }
 .footer-col ul li a:hover { transform: translateX(4px) !important; }
-.contact-item { transition: transform 0.18s !important; }
-.contact-item:hover { transform: translateX(5px) !important; }
-.about-photo-1,.about-photo-2,.about-photo-3 { transition: transform 0.25s ease !important; }
-.about-photo-1:hover,.about-photo-2:hover,.about-photo-3:hover { transform: scale(1.05) !important; }
-.hero-dot { transition: transform 0.18s, background 0.18s !important; }
-.hero-dot:hover { transform: scale(1.5) !important; }
-.lang-btn { transition: transform 0.18s, background 0.18s, color 0.18s !important; }
-.lang-btn:hover { transform: scale(1.08) !important; }
-.toggle-btn { transition: transform 0.18s, background 0.18s !important; }
-.toggle-btn:hover { transform: scale(1.05) !important; }
 
 /* SECTION BASE */
 .section { padding: 72px 80px; }
@@ -488,8 +493,8 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       <h1 data-i18n="hero.h1">Solusi kemasan dan baking supply terbaik untuk bisnis Anda</h1>
       <p data-i18n="hero.p">Kami menyediakan kemasan berkualitas dan perlengkapan baking untuk mendukung pertumbuhan bisnis Anda di seluruh Indonesia.</p>
       <div class="hero-btns">
-        <button class="btn-green" onclick="location.href='products.html'">Lihat Produk</button>
-        <button class="btn-secondary" onclick="location.href='contact.html'">Hubungi Kami</button>
+        <button class="btn-green" onclick="location.href='products.html'" data-i18n="hero.btn_products">Lihat Produk</button>
+        <button class="btn-secondary" onclick="location.href='contact.html'" data-i18n="hero.btn_contact">Hubungi Kami</button>
       </div>
     </div>
   </div>
@@ -634,8 +639,8 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
         <li><span class="feature-dot"></span> <span data-i18n="welcome.f6">Pengiriman ke Pati Pantura Raya</span></li>
       </ul>
       <div class="welcome-btns">
-        <button class="btn-green" onclick="location.href='products.html'">Lihat Produk</button>
-        <button class="btn-secondary" onclick="location.href='about.html'">Tentang Kami</button>
+        <button class="btn-green" onclick="location.href='products.html'" data-i18n="welcome.btn_products">Lihat Produk</button>
+        <button class="btn-secondary" onclick="location.href='about.html'" data-i18n="welcome.btn_about">Tentang Kami</button>
       </div>
     </div>
   </div>
@@ -644,10 +649,10 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 <!-- PRICING -->
 <section class="pricing-section">
   <div class="divider-label" data-i18n="pricing.label">Paket Pemesanan</div>
-  <h2 class="section-title" style="color:#fff;text-align:center;font-size:32px;margin-bottom:0;">Pilih Paket yang Sesuai<br>dengan Kebutuhan Bisnis Anda</h2>
+  <h2 class="section-title" style="color:#fff;text-align:center;font-size:32px;margin-bottom:0;" data-i18n="pricing.title">Pilih Paket yang Sesuai dengan Kebutuhan Bisnis Anda</h2>
   <div class="pricing-toggle">
-    <button class="toggle-btn active" onclick="this.classList.add('active');this.nextElementSibling.classList.remove('active')">Eceran</button>
-    <button class="toggle-btn" onclick="this.classList.add('active');this.previousElementSibling.classList.remove('active')">Grosir</button>
+    <button class="toggle-btn active" onclick="this.classList.add('active');this.nextElementSibling.classList.remove('active')" data-i18n="pricing.retail">Eceran</button>
+    <button class="toggle-btn" onclick="this.classList.add('active');this.previousElementSibling.classList.remove('active')" data-i18n="pricing.wholesale">Grosir</button>
   </div>
   <div class="pricing-grid">
     <div class="pricing-card">
@@ -662,7 +667,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
         <li><span class="check-icon">✓</span> Pengiriman via ekspedisi</li>
         <li><span class="check-icon">✓</span> Konsultasi produk gratis</li>
       </ul>
-      <button class="btn-pricing" onclick="location.href='contact.html'">Pesan Sekarang</button>
+      <button class="btn-pricing" onclick="location.href='contact.html'" data-i18n="pricing.btn">Pesan Sekarang</button>
     </div>
     <div class="pricing-card featured">
       <p class="pricing-label" data-i18n="pricing.p2_name">Paket Bisnis</p>
@@ -676,7 +681,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
         <li><span class="check-icon">✓</span> Account manager khusus</li>
         <li><span class="check-icon">✓</span> Free ongkir area tertentu</li>
       </ul>
-      <button class="btn-pricing" onclick="location.href='contact.html'">Pesan Sekarang</button>
+      <button class="btn-pricing" onclick="location.href='contact.html'" data-i18n="pricing.btn">Pesan Sekarang</button>
     </div>
     <div class="pricing-card">
       <p class="pricing-label" data-i18n="pricing.p3_name">Paket Premium</p>
@@ -690,7 +695,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
         <li><span class="check-icon">✓</span> Dedicated account manager</li>
         <li><span class="check-icon">✓</span> Kontrak jangka panjang</li>
       </ul>
-      <button class="btn-pricing" onclick="location.href='contact.html'">Pesan Sekarang</button>
+      <button class="btn-pricing" onclick="location.href='contact.html'" data-i18n="pricing.btn">Pesan Sekarang</button>
     </div>
   </div>
 </section>
@@ -832,7 +837,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       <p data-i18n="footer.desc">Solusi kemasan dan baking supply berkualitas tinggi untuk bisnis Anda di seluruh Indonesia.</p>
     </div>
     <div class="footer-col">
-      <h4>Menu</h4>
+      <h4 data-i18n="footer.menu">Menu</h4>
       <ul>
         <li><a href="index.html" data-i18n="nav.home">Beranda</a></li>
         <li><a href="about.html" data-i18n="nav.about">Tentang Kami</a></li>
@@ -841,7 +846,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Produk</h4>
+      <h4 data-i18n="footer.products_col">Produk</h4>
       <ul>
         <li><a href="products.html">Kotak Kemasan</a></li>
         <li><a href="products.html">Paper Bag</a></li>
@@ -851,11 +856,11 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Newsletter</h4>
+      <h4 data-i18n="footer.newsletter">Newsletter</h4>
       <p style="font-size:13px;color:#777;margin-bottom:8px;" data-i18n="footer.newsletter_desc">Dapatkan info produk terbaru dan penawaran spesial.</p>
       <div class="newsletter-input-wrap">
-        <input class="newsletter-input" type="email" placeholder="Email Anda">
-        <button class="btn-send-sm">Daftar</button>
+        <input class="newsletter-input" type="email" placeholder="Email Anda" data-i18n-placeholder="footer.newsletter_ph">
+        <button class="btn-send-sm" data-i18n="footer.newsletter_btn">Daftar</button>
       </div>
     </div>
   </div>
