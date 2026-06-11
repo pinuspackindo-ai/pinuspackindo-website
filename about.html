@@ -1,309 +1,418 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Tentang Kami — Pinus Pack Indo</title>
-  <meta name="description" content="Kenali lebih dekat Pinus Pack Indo, perusahaan packaging dan baking supply terpercaya di Indonesia."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/style.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tentang Kami - Pinus Packindo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: #222; }
+a { text-decoration: none; color: inherit; }
+
+/* ── NAV ── */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 80px; background: #fff;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+}
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon { width: 52px; height: 52px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+.logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+.logo-name { font-weight: 800; font-size: 17px; color: #27ae60; line-height: 1.15; }
+.logo-sub  { font-size: 10px; color: #999; letter-spacing: 0.5px; }
+.nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; color: #444; }
+.nav-links a { transition: color 0.18s, transform 0.18s; display: inline-block; }
+.nav-links a:hover { color: #27ae60; transform: translateY(-2px); }
+.nav-links a.active { color: #27ae60; font-weight: 700; }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.lang-switcher { display: flex; gap: 4px; }
+.lang-btn {
+  padding: 5px 10px; border-radius: 5px; border: 1.5px solid #ddd;
+  background: #fff; font-size: 12px; font-weight: 600; cursor: pointer; color: #666; transition: all 0.2s;
+}
+.lang-btn.active, .lang-btn:hover { background: #27ae60; color: #fff; border-color: #27ae60; }
+.btn-quote {
+  background: #27ae60; color: #fff; padding: 10px 22px;
+  border-radius: 6px; font-size: 14px; font-weight: 600;
+  border: none; cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s;
+}
+.btn-quote:hover { background: #1e8449; transform: translateY(-3px) scale(1.04); box-shadow: 0 6px 20px rgba(39,174,96,0.35); }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { background: #f8f8f8; padding: 12px 80px; border-bottom: 1px solid #eee; }
+.breadcrumb a { font-size: 13px; color: #27ae60; }
+.breadcrumb span { font-size: 13px; color: #999; margin: 0 6px; }
+.breadcrumb strong { font-size: 13px; color: #444; }
+
+/* ── PAGE HERO BANNER ── */
+.page-hero {
+  background: linear-gradient(135deg, #0d2218 0%, #1a4a2e 55%, #27ae60 100%);
+  padding: 80px 80px;
+  position: relative; overflow: hidden;
+}
+.page-hero::after {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 360px; height: 360px; border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.page-hero::before {
+  content: ''; position: absolute; bottom: -50px; left: 35%;
+  width: 240px; height: 240px; border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+}
+.page-hero-inner { position: relative; z-index: 1; max-width: 640px; }
+.page-hero-tag { font-size: 12px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; }
+.page-hero h1 { font-size: 44px; font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 16px; }
+.page-hero p { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; max-width: 500px; }
+
+/* ── SECTION LAYOUT ── */
+.section { padding: 72px 80px; }
+.section-label { font-size: 12px; color: #27ae60; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+.section-title { font-size: 32px; font-weight: 800; line-height: 1.3; margin-bottom: 14px; }
+.section-sub { font-size: 14px; color: #555; line-height: 1.7; }
+
+/* ── TENTANG PINUS ── */
+.about-section { background: #fff; }
+.about-inner { display: flex; gap: 64px; align-items: center; }
+.about-text { flex: 1; }
+.about-text p { font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 16px; }
+.about-text p:last-of-type { margin-bottom: 0; }
+.about-photos { position: relative; flex-shrink: 0; width: 420px; height: 360px; }
+.about-photo-1 {
+  position: absolute; top: 0; right: 0; width: 280px; height: 220px;
+  border-radius: 14px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  border-top: 7px solid #27ae60; border-right: 7px solid #27ae60;
+  transition: transform 0.3s ease;
+}
+.about-photo-2 {
+  position: absolute; top: 100px; left: 0; width: 230px; height: 180px;
+  border-radius: 14px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  border-top: 7px solid #fff; border-right: 7px solid #fff;
+  transition: transform 0.3s ease;
+}
+.about-photo-3 {
+  position: absolute; bottom: 0; right: 30px; width: 200px; height: 155px;
+  border-radius: 14px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  border-top: 7px solid #aaa; border-right: 7px solid #aaa;
+  transition: transform 0.3s ease;
+}
+.about-photo-1:hover,.about-photo-2:hover,.about-photo-3:hover { transform: scale(1.03); }
+.about-photo-1 img,.about-photo-2 img,.about-photo-3 img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ── STATS STRIP ── */
+.stats-strip {
+  background: #27ae60; padding: 40px 80px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center;
+}
+.stat-item { color: #fff; }
+.stat-num { font-size: 36px; font-weight: 800; line-height: 1; margin-bottom: 6px; }
+.stat-label { font-size: 13px; opacity: 0.85; }
+
+/* ── VISI & MISI ── */
+.visimisi-section { background: #f7faf8; }
+.visimisi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
+.vm-card {
+  background: #fff; border-radius: 16px; padding: 36px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  border-top: 4px solid #27ae60;
+}
+.vm-card h3 {
+  font-size: 20px; font-weight: 800; color: #27ae60; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.vm-card h3 svg { width: 22px; height: 22px; fill: none; stroke: #27ae60; stroke-width: 2; flex-shrink: 0; }
+.vm-card > p { font-size: 14px; color: #444; line-height: 1.8; }
+.vm-card ul { list-style: none; }
+.vm-card ul li {
+  font-size: 14px; color: #444; line-height: 1.7;
+  padding: 10px 0; border-bottom: 1px dashed #e8e8e8;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.vm-card ul li:last-child { border-bottom: none; }
+.vm-dot { width: 8px; height: 8px; background: #27ae60; border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+
+/* ── CORE VALUES ── */
+.values-section { background: #fff; }
+.values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
+.value-card {
+  background: #f7faf8; border-radius: 14px; padding: 28px 20px;
+  text-align: center; border: 2px solid transparent;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.value-card:hover { border-color: #27ae60; box-shadow: 0 6px 20px rgba(39,174,96,0.14); transform: translateY(-4px); }
+.value-num { font-size: 11px; color: #27ae60; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+.value-icon {
+  width: 52px; height: 52px; background: #e8f5e9; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+}
+.value-icon svg { width: 22px; height: 22px; stroke: #27ae60; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.value-title { font-size: 13px; font-weight: 800; color: #1a1a1a; letter-spacing: 0.5px; }
+
+/* ── FOOTER ── */
+footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 40px; margin-bottom: 40px; }
+.footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.footer-brand p { font-size: 13px; color: #888; line-height: 1.7; }
+.footer-col h4 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { font-size: 13px; color: #888; transition: color 0.18s, transform 0.18s; display: inline-block; }
+.footer-col ul li a:hover { color: #27ae60; transform: translateX(4px); }
+.newsletter-input-wrap { display: flex; gap: 6px; }
+.newsletter-input {
+  flex: 1; padding: 9px 12px; border-radius: 6px;
+  border: 1.5px solid #2a4a35; background: #0f2d1e; color: #ccc; font-size: 13px;
+}
+.btn-send-sm {
+  padding: 9px 14px; background: #27ae60; color: #fff;
+  border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.footer-bottom {
+  border-top: 1px solid #1e3a2a; padding-top: 24px;
+  font-size: 12px; color: #555; text-align: center;
+}
+</style>
 </head>
 <body>
 
-<!-- ── TOP BAR ─────────────────────────────────── -->
-<div class="top-bar">
-  <div class="top-bar-item">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 13.5 19.79 19.79 0 01.16 4.82 2 2 0 012.18 2.65h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.17 6.17l1.49-1.49a2 2 0 012.12-.45c.907.339 1.85.573 2.81.7A2 2 0 0121.92 16.92z"/></svg>
-    <span>+62 8XX-XXXX-XXXX</span>
-  </div>
-  <div class="top-bar-item">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-    <span>pinuspackindo@gmail.com</span>
-  </div>
-  <div class="top-bar-item">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-    <span>Jakarta, Indonesia</span>
-  </div>
-</div>
-
-<!-- ── NAVBAR ─────────────────────────────────── -->
-<div class="navbar-wrap">
-  <nav class="navbar">
-    <a href="index.html" class="navbar-brand">
-      <div class="brand-logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      </div>
-      <div>
-        <div class="brand-name">Pinus Pack Indo</div>
-        <div class="brand-sub">Packaging &amp; Baking Supply</div>
-      </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html"     data-i18n="nav.home">Beranda</a></li>
-      <li><a href="about.html"    data-i18n="nav.about">Tentang Kami</a></li>
-      <li><a href="products.html" data-i18n="nav.products">Produk</a></li>
-      <li><a href="contact.html"  data-i18n="nav.contact">Kontak</a></li>
-    </ul>
-    <div class="nav-right">
-      <div class="lang-switcher">
-        <button class="lang-btn" data-lang="id">ID</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-      <a href="contact.html" class="btn-nav" data-i18n="nav.contact">Kontak</a>
-      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon"><img src="images/logo.jpg" alt="Pinus Packindo Logo"></div>
+    <div>
+      <div class="logo-name">Pinus Packindo</div>
+      <div class="logo-sub">PACKAGING &amp; BAKING SUPPLY</div>
     </div>
-  </nav>
-</div>
-
-<!-- ── MOBILE NAV ─────────────────────────────── -->
-<div class="mobile-nav">
-  <div class="mobile-nav-header">
-    <a href="index.html" class="navbar-brand">
-      <div class="brand-logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      </div>
-      <div class="brand-name">Pinus Pack Indo</div>
-    </a>
-    <button class="mobile-close" aria-label="Tutup">✕</button>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" data-i18n="nav.home">Beranda</a>
+    <a href="about.html" class="active" data-i18n="nav.about">Tentang Kami</a>
+    <a href="products.html" data-i18n="nav.products">Produk</a>
+    <a href="contact.html" data-i18n="nav.contact">Kontak</a>
   </div>
-  <a href="index.html"     data-i18n="nav.home">Beranda</a>
-  <a href="about.html"    data-i18n="nav.about">Tentang Kami</a>
-  <a href="products.html" data-i18n="nav.products">Produk</a>
-  <a href="contact.html"  data-i18n="nav.contact">Kontak</a>
-  <div class="mobile-lang">
-    <button class="lang-btn" data-lang="id">ID</button>
-    <button class="lang-btn" data-lang="en">EN</button>
-  </div>
-</div>
-
-<!-- ── PAGE HERO ─────────────────────────────── -->
-<div class="page-hero">
-  <div class="section-label">Tentang Kami</div>
-  <h1 data-i18n="about_page.hero_title">Tentang Kami</h1>
-  <p data-i18n="about_page.hero_subtitle">Kenali lebih dekat Pinus Pack Indo</p>
-</div>
-
-<!-- ── CERITA KAMI ───────────────────────────── -->
-<section style="padding:70px 5%;background:var(--white)">
-  <div class="about-grid">
-    <div class="about-img-wrap">
-      <!-- Ganti dengan: <img src="images/about-story.jpg" alt="Cerita Pinus Pack Indo"> -->
-      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--gray);padding:40px;text-align:center;width:100%;height:100%">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" style="opacity:0.4"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        <p style="font-size:.85rem">Foto Cerita Perusahaan<br><small>Ganti dengan foto asli</small></p>
-      </div>
-      <div class="about-stat-badge">
-        <div class="about-stat-num">2019</div>
-        <div class="about-stat-lbl">Berdiri Sejak</div>
-      </div>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="switchLang('id')">ID</button>
+      <button class="lang-btn" onclick="switchLang('en')">EN</button>
     </div>
-    <div class="about-content">
-      <div class="section-label">Cerita Kami</div>
-      <h2 data-i18n="about_page.story_title">Cerita Kami</h2>
-      <p data-i18n="about_page.story_text">Pinus Pack Indo berdiri dengan tekad untuk menjadi mitra terpercaya bagi para pelaku bisnis dalam kebutuhan kemasan dan perlengkapan baking. Dengan pengalaman di industri ini, kami memahami kebutuhan setiap pelanggan.</p>
-      <p>Berawal dari semangat untuk memberikan solusi kemasan berkualitas dengan harga terjangkau, kami terus berkembang hingga menjadi pilihan utama ratusan pelaku bisnis di seluruh Indonesia.</p>
-      <div class="about-checks">
-        <div class="check-item">
-          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span data-i18n="why_us.q1_title">Kualitas Terjamin — Standar Food Grade</span>
-        </div>
-        <div class="check-item">
-          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span data-i18n="why_us.q2_title">Pengiriman Cepat ke Seluruh Indonesia</span>
-        </div>
-        <div class="check-item">
-          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span data-i18n="why_us.q3_title">Harga Kompetitif Langsung dari Produsen</span>
-        </div>
-        <div class="check-item">
-          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span>500+ Jenis Produk Tersedia</span>
-        </div>
-      </div>
-      <a href="contact.html" class="btn-green">
-        Hubungi Kami
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+    <button class="btn-quote" onclick="location.href='contact.html'" data-i18n="nav.cta">Hubungi Kami</button>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html" data-i18n="nav.home">Beranda</a>
+  <span>›</span>
+  <strong data-i18n="nav.about">Tentang Kami</strong>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-tag" data-i18n="about_page.tag">Pinus Packindo</p>
+    <h1 data-i18n="about_page.h1">Mengenal Lebih Dekat Pinus Packindo</h1>
+    <p data-i18n="about_page.p">Mitra terpercaya untuk kebutuhan kemasan dan baking supply bisnis Anda di Pati, Jawa Tengah.</p>
+  </div>
+</section>
+
+<!-- TENTANG PINUS -->
+<section class="section about-section">
+  <div class="about-inner">
+    <div class="about-text">
+      <p class="section-label" data-i18n="about_page.about_label">Siapa Kami</p>
+      <h2 class="section-title" data-i18n="about_page.about_title">Pinus Packindo — Solusi Kemasan &amp; Baking Supply Terlengkap di Pantura</h2>
+      <p data-i18n="about_page.about_p1">Pinus Packindo adalah perusahaan distribusi dan retail yang bergerak di bidang kemasan makanan & minuman, serta bahan dan perlengkapan baking. Berlokasi di Jalan Penjawi No. 11, Pati, Jawa Tengah, kami telah melayani ribuan pelaku usaha di kawasan Pantura dan sekitarnya.</p>
+      <p data-i18n="about_page.about_p2">Dengan pengalaman bertahun-tahun dan tim yang berdedikasi, kami berkomitmen menghadirkan produk berkualitas tinggi, layanan yang ramah, dan harga kompetitif langsung dari produsen. Dari usaha rumahan hingga skala industri, Pinus Packindo siap menjadi mitra terpercaya Anda.</p>
+      <p data-i18n="about_page.about_p3">Kami percaya bahwa kemasan bukan hanya pembungkus — ia adalah wajah produk Anda. Karena itu kami selalu menghadirkan pilihan terlengkap agar bisnis Anda tampil profesional dan berkesan di mata pelanggan.</p>
+    </div>
+    <div class="about-photos">
+      <div class="about-photo-1"><img src="images/hero-1.jpeg" alt="Tim Pinus Packindo"></div>
+      <div class="about-photo-2"><img src="images/hero-2.png" alt="Produk Pinus Packindo"></div>
+      <div class="about-photo-3"><img src="images/hero-3.png" alt="Gudang Pinus Packindo"></div>
     </div>
   </div>
 </section>
 
-<!-- ── VISI & MISI (DARK) ────────────────────── -->
-<section style="background:var(--dark);padding:70px 5%">
-  <div style="max-width:1100px;margin:0 auto;text-align:center;margin-bottom:40px">
-    <div class="section-label" style="justify-content:center;color:var(--green-lt)">Nilai Perusahaan</div>
-    <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);color:white;margin-bottom:8px" data-i18n="about_page.values_title">Nilai Kami</h2>
-    <p style="font-size:.92rem;color:rgba(255,255,255,.6);max-width:480px;margin:0 auto">Fondasi nilai yang menjadi landasan setiap langkah dan keputusan Pinus Pack Indo</p>
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-item">
+    <div class="stat-num" data-i18n="about_page.stat1_num">1500+</div>
+    <div class="stat-label" data-i18n="about_page.stat1_label">Jenis Produk</div>
   </div>
-  <div class="vm-page-grid">
-    <div class="vmp-card dark-card">
-      <div class="vmp-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="26"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-      </div>
-      <h3 data-i18n="about_page.vision_title">Visi</h3>
-      <p data-i18n="about_page.vision_text">Menjadi perusahaan packaging dan baking supply terdepan yang dipercaya oleh ribuan pelaku bisnis di Indonesia.</p>
+  <div class="stat-item">
+    <div class="stat-num" data-i18n="about_page.stat2_num">5000+</div>
+    <div class="stat-label" data-i18n="about_page.stat2_label">Pelanggan Puas</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" data-i18n="about_page.stat3_num">10+</div>
+    <div class="stat-label" data-i18n="about_page.stat3_label">Tahun Pengalaman</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" data-i18n="about_page.stat4_num">Pantura</div>
+    <div class="stat-label" data-i18n="about_page.stat4_label">Area Pelayanan</div>
+  </div>
+</div>
+
+<!-- VISI & MISI -->
+<section class="section visimisi-section">
+  <div style="text-align:center;">
+    <p class="section-label" data-i18n="about_page.vm_label">Landasan Kami</p>
+    <h2 class="section-title" data-i18n="about_page.vm_title">Visi &amp; Misi</h2>
+    <p class="section-sub" style="max-width:560px;margin:0 auto;" data-i18n="about_page.vm_sub">Arah dan tujuan yang menjadi pedoman kami dalam melayani pelanggan dan membangun bisnis yang berkelanjutan.</p>
+  </div>
+  <div class="visimisi-grid">
+    <!-- VISI -->
+    <div class="vm-card">
+      <h3>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span data-i18n="about_page.visi_title">VISI</span>
+      </h3>
+      <p data-i18n="about_page.visi_text">Menjadi perusahaan distribusi dan retail terkemuka dalam bidang kemasan makanan & minuman, bahan & perlengkapan baking paling lengkap di Pantura.</p>
     </div>
-    <div class="vmp-card mid-card">
-      <div class="vmp-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="26"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-      </div>
-      <h3 data-i18n="about_page.mission_title">Misi</h3>
-      <ul data-i18n-html="about_page.mission_list" style="list-style:disc;padding-left:18px">
-        <li>Menyediakan produk kemasan dan baking supply berkualitas tinggi</li>
-        <li>Memberikan pelayanan terbaik kepada setiap pelanggan</li>
-        <li>Membangun kemitraan jangka panjang yang saling menguntungkan</li>
-        <li>Terus berinovasi untuk memenuhi kebutuhan pasar</li>
+    <!-- MISI -->
+    <div class="vm-card">
+      <h3>
+        <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span data-i18n="about_page.misi_title">MISI</span>
+      </h3>
+      <ul>
+        <li><div class="vm-dot"></div><span data-i18n="about_page.misi_1">Lapangan kerja layak, SDM berkualitas</span></li>
+        <li><div class="vm-dot"></div><span data-i18n="about_page.misi_2">Inovasi barang yang mengikuti trend dan jaman</span></li>
+        <li><div class="vm-dot"></div><span data-i18n="about_page.misi_3">Inovasi service agar kepuasan pelanggan maximal</span></li>
+        <li><div class="vm-dot"></div><span data-i18n="about_page.misi_4">Edukasi masyarakat terkait barang</span></li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ── KEUNGGULAN ────────────────────────────── -->
-<section style="background:var(--white);padding:70px 5%">
-  <div style="max-width:1100px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:44px">
-      <div class="section-label" style="justify-content:center">Keunggulan</div>
-      <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);color:var(--dark);margin-bottom:8px" data-i18n="why_us.title">Mengapa Pinus Pack Indo?</h2>
-      <p style="font-size:.92rem;color:var(--gray);max-width:480px;margin:0 auto">Kami hadir sebagai solusi lengkap untuk kebutuhan kemasan dan baking supply bisnis Anda</p>
+<!-- CORE VALUES -->
+<section class="section values-section">
+  <div style="text-align:center;">
+    <p class="section-label" data-i18n="about_page.cv_label">Nilai-Nilai Kami</p>
+    <h2 class="section-title" data-i18n="about_page.cv_title">Core Values</h2>
+    <p class="section-sub" style="max-width:520px;margin:0 auto;" data-i18n="about_page.cv_sub">Delapan nilai utama yang menjadi fondasi budaya kerja dan pelayanan Pinus Packindo.</p>
+  </div>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-num">I</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="value-title" data-i18n="about_page.cv1">INTEGRITAS</div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px">
-      <div style="background:var(--cream);border-radius:var(--radius-lg);padding:28px">
-        <div style="width:52px;height:52px;border-radius:14px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" width="24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 style="font-size:.98rem;font-weight:700;color:var(--dark);margin-bottom:8px" data-i18n="why_us.q1_title">Kualitas Terjamin</h3>
-        <p style="font-size:.84rem;color:var(--gray);line-height:1.6" data-i18n="why_us.q1_text">Setiap produk melewati proses seleksi ketat untuk memastikan kualitas terbaik.</p>
-      </div>
-      <div style="background:var(--dark);border-radius:var(--radius-lg);padding:28px">
-        <div style="width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </div>
-        <h3 style="font-size:.98rem;font-weight:700;color:white;margin-bottom:8px" data-i18n="why_us.q2_title">Pengiriman Cepat</h3>
-        <p style="font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.6" data-i18n="why_us.q2_text">Kami memastikan produk sampai ke tangan Anda tepat waktu.</p>
-      </div>
-      <div style="background:var(--mid);border-radius:var(--radius-lg);padding:28px">
-        <div style="width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        </div>
-        <h3 style="font-size:.98rem;font-weight:700;color:white;margin-bottom:8px" data-i18n="why_us.q3_title">Harga Kompetitif</h3>
-        <p style="font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.6" data-i18n="why_us.q3_text">Harga terbaik dengan kualitas premium untuk kebutuhan bisnis Anda.</p>
-      </div>
-      <div style="background:var(--cream);border-radius:var(--radius-lg);padding:28px">
-        <div style="width:52px;height:52px;border-radius:14px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" width="24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        <h3 style="font-size:.98rem;font-weight:700;color:var(--dark);margin-bottom:8px" data-i18n="why_us.q4_title">Layanan Profesional</h3>
-        <p style="font-size:.84rem;color:var(--gray);line-height:1.6" data-i18n="why_us.q4_text">Tim kami siap membantu Anda menemukan produk yang tepat.</p>
-      </div>
+    <div class="value-card">
+      <div class="value-num">II</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+      <div class="value-title" data-i18n="about_page.cv2">BERSYUKUR</div>
+    </div>
+    <div class="value-card">
+      <div class="value-num">III</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="value-title" data-i18n="about_page.cv3">KUALITAS</div>
+    </div>
+    <div class="value-card">
+      <div class="value-num">IV</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+      <div class="value-title" data-i18n="about_page.cv4">INOVASI</div>
+    </div>
+    <div class="value-card">
+      <div class="value-num">V</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="value-title" data-i18n="about_page.cv5">TEAMWORK</div>
+    </div>
+    <div class="value-card">
+      <div class="value-num">VI</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+      <div class="value-title" data-i18n="about_page.cv6">KEPERCAYAAN</div>
+    </div>
+    <div class="value-card">
+      <div class="value-num">VII</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <div class="value-title" data-i18n="about_page.cv7">SERVICE</div>
+    </div>
+    <div class="value-card">
+      <div class="value-num">VIII</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM3 10h18v4H3zM3 17h18v4H3z" opacity="0.3"/><path d="M9 3v18M15 3v18" stroke-linecap="round"/></svg></div>
+      <div class="value-title" data-i18n="about_page.cv8">KEBERSIHAN</div>
     </div>
   </div>
 </section>
 
-<!-- ── TIM ────────────────────────────────────── -->
-<section style="background:var(--cream);padding:70px 5%">
-  <div style="max-width:1100px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:44px">
-      <div class="section-label" style="justify-content:center">Tim Kami</div>
-      <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);color:var(--dark);margin-bottom:8px">Orang-orang di Balik Pinus Pack Indo</h2>
-      <p style="font-size:.92rem;color:var(--gray);max-width:480px;margin:0 auto">Tim profesional kami berdedikasi untuk memberikan yang terbaik bagi setiap pelanggan</p>
-    </div>
-    <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap">
-      <!-- TODO: Isi dengan data anggota tim asli -->
-      <div style="text-align:center;background:white;border-radius:var(--radius-lg);padding:32px 28px;width:220px;box-shadow:var(--shadow)">
-        <div style="width:80px;height:80px;border-radius:50%;background:var(--green-xs);border:3px solid var(--green-lt);display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" width="36"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h4 style="font-size:.98rem;font-weight:700;color:var(--dark);margin-bottom:4px">Nama Pendiri</h4>
-        <p style="font-size:.8rem;color:var(--gray)">Founder &amp; CEO</p>
-      </div>
-      <div style="text-align:center;background:white;border-radius:var(--radius-lg);padding:32px 28px;width:220px;box-shadow:var(--shadow)">
-        <div style="width:80px;height:80px;border-radius:50%;background:var(--green-xs);border:3px solid var(--green-lt);display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" width="36"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h4 style="font-size:.98rem;font-weight:700;color:var(--dark);margin-bottom:4px">Nama Rekan</h4>
-        <p style="font-size:.8rem;color:var(--gray)">Co-Founder</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CTA BANNER ─────────────────────────────── -->
-<section class="cta-section">
-  <div class="cta-inner">
-    <div class="cta-text">
-      <h2>Tertarik Bekerja Sama?</h2>
-      <p>Hubungi kami dan mulai kemitraan yang menguntungkan bersama Pinus Pack Indo</p>
-    </div>
-    <div class="cta-btns">
-      <a href="https://wa.me/628XXXXXXXXXX" target="_blank" class="btn-wa">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        <span data-i18n="contact_page.wa_button">Chat via WhatsApp</span>
-      </a>
-      <a href="products.html" class="btn-outline-w" data-i18n="hero.cta_products">Lihat Produk</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ─────────────────────────────────── -->
+<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo-row">
-          <div class="brand-logo">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <span class="footer-brand-name">Pinus Pack Indo</span>
-        </div>
-        <p data-i18n="footer.tagline">Solusi kemasan dan baking supply berkualitas tinggi untuk bisnis Anda di seluruh Indonesia.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-          <a href="https://wa.me/628XXXXXXXXXX" target="_blank" class="social-btn" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></a>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="logo-icon"><img src="images/logo.jpg" alt="Pinus Packindo Logo"></div>
+        <div>
+          <div style="font-weight:800;font-size:16px;color:#fff;">Pinus Packindo</div>
+          <div style="font-size:10px;color:#666;letter-spacing:0.5px;">Packaging &amp; Baking Supply</div>
         </div>
       </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer.links_title">Tautan Cepat</h4>
-        <ul>
-          <li><a href="index.html"     data-i18n="nav.home">Beranda</a></li>
-          <li><a href="about.html"    data-i18n="nav.about">Tentang Kami</a></li>
-          <li><a href="products.html" data-i18n="nav.products">Produk</a></li>
-          <li><a href="contact.html"  data-i18n="nav.contact">Kontak</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Produk</h4>
-        <ul>
-          <li><a href="products.html">Kotak Kemasan</a></li>
-          <li><a href="products.html">Paper Bag</a></li>
-          <li><a href="products.html">Peralatan Baking</a></li>
-          <li><a href="products.html">Kertas Baking</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Kontak</h4>
-        <div style="font-size:.84rem;color:rgba(255,255,255,.55);line-height:2">
-          📞 +62 8XX-XXXX-XXXX<br>
-          ✉️ pinuspackindo@gmail.com<br>
-          📍 Jakarta, Indonesia<br>
-          🕐 Senin–Sabtu 08.00–17.00
-        </div>
+      <p data-i18n="footer.desc">Solusi kemasan dan baking supply berkualitas tinggi untuk bisnis Anda di seluruh Indonesia.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.menu">Menu</h4>
+      <ul>
+        <li><a href="index.html" data-i18n="nav.home">Beranda</a></li>
+        <li><a href="about.html" data-i18n="nav.about">Tentang Kami</a></li>
+        <li><a href="products.html" data-i18n="nav.products">Produk</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.products_col">Produk</h4>
+      <ul>
+        <li><a href="products.html" data-i18n="footer.prod1">Kotak Kemasan</a></li>
+        <li><a href="products.html" data-i18n="footer.prod2">Paper Bag</a></li>
+        <li><a href="products.html" data-i18n="footer.prod3">Peralatan Baking</a></li>
+        <li><a href="products.html" data-i18n="footer.prod4">Kertas Baking</a></li>
+        <li><a href="products.html" data-i18n="footer.prod5">Baking Cup</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.newsletter">Newsletter</h4>
+      <p style="font-size:13px;color:#777;margin-bottom:8px;" data-i18n="footer.newsletter_desc">Dapatkan info produk terbaru dan penawaran spesial.</p>
+      <div class="newsletter-input-wrap">
+        <input class="newsletter-input" type="email" placeholder="Email Anda" data-i18n-placeholder="footer.newsletter_ph">
+        <button class="btn-send-sm" data-i18n="footer.newsletter_btn">Daftar</button>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; <span id="year"></span> Pinus Pack Indo. <span data-i18n="footer.rights">Hak Cipta Dilindungi</span>.</span>
-      <span>Made with ♥ in Indonesia</span>
-    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; <span id="year"></span> Pinus Packindo. Hak Cipta Dilindungi.
   </div>
 </footer>
 
-<button class="scroll-top" aria-label="Scroll to top">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-<script src="js/main.js"></script>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  let currentLang = localStorage.getItem('lang') || 'id';
+  function getVal(obj, path) {
+    return path.split('.').reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), obj);
+  }
+  function applyLang(t) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const v = getVal(t, el.getAttribute('data-i18n'));
+      if (v !== undefined) el.textContent = v;
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const v = getVal(t, el.getAttribute('data-i18n-placeholder'));
+      if (v !== undefined) el.placeholder = v;
+    });
+    document.querySelectorAll('.lang-btn').forEach(b =>
+      b.classList.toggle('active', b.getAttribute('onclick').includes(`'${currentLang}'`))
+    );
+  }
+  async function switchLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    const res = await fetch(`lang/${lang}.json`);
+    const t = await res.json();
+    applyLang(t);
+  }
+  fetch(`lang/${currentLang}.json`).then(r => r.json()).then(applyLang);
+</script>
 </body>
 </html>
