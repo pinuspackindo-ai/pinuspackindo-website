@@ -59,15 +59,14 @@ async function switchLang(lang) {
 
 // ── Navbar ───────────────────────────────
 function initNavbar() {
-  const navbarWrap = document.querySelector('.navbar-wrap');
-  const navbar     = document.querySelector('.navbar');
+  const navEl      = document.querySelector('nav');
   const hamburger  = document.querySelector('.hamburger');
-  const mobileNav  = document.querySelector('.mobile-nav');
-  const mobileClose = document.querySelector('.mobile-close');
+  const mobileNav  = document.getElementById('mobileNav');
+  const mobileClose = document.getElementById('mobileClose');
 
   window.addEventListener('scroll', () => {
-    navbarWrap?.classList.toggle('scrolled', window.scrollY > 20);
-    document.querySelector('.scroll-top')?.classList.toggle('show', window.scrollY > 300);
+    navEl?.classList.toggle('scrolled', window.scrollY > 20);
+    document.getElementById('scrollTop')?.classList.toggle('visible', window.scrollY > 300);
   });
 
   hamburger?.addEventListener('click', () => {
@@ -79,7 +78,7 @@ function initNavbar() {
   });
 
   document.addEventListener('click', e => {
-    if (!navbarWrap?.contains(e.target) && !mobileNav?.contains(e.target)) {
+    if (!navEl?.contains(e.target) && !mobileNav?.contains(e.target)) {
       mobileNav?.classList.remove('open');
     }
   });
@@ -88,6 +87,7 @@ function initNavbar() {
   const currentPage = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(a => {
     const href = a.getAttribute('href');
+    a.classList.remove('active');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       a.classList.add('active');
     }
@@ -141,9 +141,25 @@ function initContactForm() {
   });
 }
 
+// ── Send button di homepage (bukan form) ──
+function initSendBtn() {
+  const btn = document.getElementById('sendBtn');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const inputs = btn.closest('section').querySelectorAll('input, textarea');
+    const name    = inputs[0]?.value.trim() || '';
+    const phone   = inputs[1]?.value.trim() || '';
+    const message = inputs[3]?.value.trim() || '';
+    if (!name) { inputs[0]?.focus(); return; }
+    const WA_NUMBER = '628XXXXXXXXXX'; // TODO: ganti nomor WA bisnis
+    const text = encodeURIComponent(`Halo Pinus Pack Indo,\n\nNama: ${name}\nHP: ${phone}\nPesan: ${message}`);
+    window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, '_blank');
+  });
+}
+
 // ── Scroll to top ─────────────────────────
 function initScrollTop() {
-  const btn = document.querySelector('.scroll-top');
+  const btn = document.getElementById('scrollTop');
   btn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
@@ -166,6 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLangButtons();
   initFilter();
   initContactForm();
+  initSendBtn();
   initScrollTop();
   initLang();
 });
