@@ -281,11 +281,11 @@ nav {
 .blog-card { border-radius: 12px; overflow: hidden; }
 .blog-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
 .blog-img {
-  width: 100%; height: 180px;
-  background: linear-gradient(135deg, #c8e6c9, #81c784);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 44px; border-radius: 12px 12px 0 0;
+  width: 100%; height: 200px;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
 }
+.blog-img img { width: 100%; height: 100%; object-fit: cover; }
 .blog-body { padding: 18px; }
 .blog-meta { font-size: 11px; color: #999; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
 .blog-body h3 { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 10px; }
@@ -631,7 +631,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   </div>
   <div class="blog-grid">
     <div class="blog-card">
-      <div class="blog-img">🌿</div>
+      <div class="blog-img"><img src="images/blog-1.png" alt="Kemasan Ramah Lingkungan"></div>
       <div class="blog-body">
         <p class="blog-meta">Tim Pinus &nbsp; Jan 2025</p>
         <h3>Kemasan Ramah Lingkungan: Pilihan Cerdas untuk Bisnis Modern</h3>
@@ -640,7 +640,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       </div>
     </div>
     <div class="blog-card">
-      <div class="blog-img">📦</div>
+      <div class="blog-img"><img src="images/blog-2.png" alt="Tips Memilih Kemasan"></div>
       <div class="blog-body">
         <p class="blog-meta">Tim Pinus &nbsp; Feb 2025</p>
         <h3>Tips Memilih Kemasan yang Tepat untuk Produk Makanan Anda</h3>
@@ -649,7 +649,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       </div>
     </div>
     <div class="blog-card">
-      <div class="blog-img">✨</div>
+      <div class="blog-img"><img src="images/blog-3.png" alt="Manfaat Kemasan Berkualitas"></div>
       <div class="blog-body">
         <p class="blog-meta">Tim Pinus &nbsp; Mar 2025</p>
         <h3>Manfaat Kemasan Berkualitas untuk Meningkatkan Penjualan</h3>
