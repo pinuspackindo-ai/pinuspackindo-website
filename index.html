@@ -372,10 +372,15 @@ nav {
   overflow: hidden;
 }
 .blog-img img { width: 100%; height: 100%; object-fit: cover; }
-.blog-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+.blog-body {
+  padding: 18px; flex: 1;
+  display: grid;
+  grid-template-rows: auto minmax(70px, auto) 1fr auto;
+  gap: 0;
+}
 .blog-meta { font-size: 11px; color: #999; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
-.blog-body h3 { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 10px; min-height: 68px; }
-.blog-body p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 14px; flex: 1; }
+.blog-body h3 { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 10px; align-self: start; }
+.blog-body p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 14px; align-self: start; }
 .read-more {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600;
