@@ -322,5 +322,32 @@
     "p5_6_desc": "Aneka topping: meses, keju parut, sprinkle, almond slice, dan dekorasi kue lainnya.",
     "p5_7_name": "Pewarna & Essens",
     "p5_7_desc": "Pewarna makanan food grade dan berbagai essens rasa untuk tampilan dan aroma kue."
+  },
+  "howtobuy": {
+    "label": "Cara Pembelian",
+    "title": "Cara Membeli Produk Kami?",
+    "c1_num": "Cara 1",
+    "c1_title": "Datang Langsung ke Toko",
+    "c1_type": "Ecer & Grosir",
+    "c2_num": "Cara 2",
+    "c2_title": "Daring melalui CS",
+    "c2_type": "Grosir",
+    "c3_num": "Cara 3",
+    "c3_title": "E-Commerce",
+    "c3_type": "Ecer",
+    "c4_num": "Cara 4",
+    "c4_title": "Pengiriman",
+    "c4_type": "Grosir",
+    "cat_plastik": "Kemasan Plastik",
+    "cat_kertas": "Kemasan Kertas",
+    "cat_styro": "Kemasan Styrofoam",
+    "cat_peralatan": "Peralatan Membuat Kue",
+    "cat_bahan": "Bahan Membuat Kue",
+    "harga_std": "Harga Standar",
+    "konsultasi": "Konsultasi Produk Gratis",
+    "btn_visit": "Kunjungi Toko",
+    "btn_order": "Pesan Sekarang",
+    "btn_tiktok": "TikTok Shop",
+    "btn_shopee": "Shopee"
   }
 }

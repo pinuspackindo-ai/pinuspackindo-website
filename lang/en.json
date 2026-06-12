@@ -322,5 +322,32 @@
     "p5_6_desc": "Various toppings: chocolate sprinkles, grated cheese, sprinkles, almond slices, and more.",
     "p5_7_name": "Food Coloring & Essence",
     "p5_7_desc": "Food grade coloring and various flavor essences for cake appearance and aroma."
+  },
+  "howtobuy": {
+    "label": "How to Buy",
+    "title": "How to Buy Our Products?",
+    "c1_num": "Option 1",
+    "c1_title": "Visit Our Store",
+    "c1_type": "Retail & Wholesale",
+    "c2_num": "Option 2",
+    "c2_title": "Online via CS",
+    "c2_type": "Wholesale",
+    "c3_num": "Option 3",
+    "c3_title": "E-Commerce",
+    "c3_type": "Retail",
+    "c4_num": "Option 4",
+    "c4_title": "Delivery",
+    "c4_type": "Wholesale",
+    "cat_plastik": "Plastic Packaging",
+    "cat_kertas": "Paper Packaging",
+    "cat_styro": "Styrofoam Packaging",
+    "cat_peralatan": "Baking Equipment",
+    "cat_bahan": "Baking Ingredients",
+    "harga_std": "Standard Price",
+    "konsultasi": "Free Product Consultation",
+    "btn_visit": "Visit Store",
+    "btn_order": "Order Now",
+    "btn_tiktok": "TikTok Shop",
+    "btn_shopee": "Shopee"
   }
 }
