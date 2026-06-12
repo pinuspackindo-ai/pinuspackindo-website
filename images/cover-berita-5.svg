@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#071a0f"/>
+      <stop offset="50%" style="stop-color:#0a2218"/>
+      <stop offset="100%" style="stop-color:#071a0f"/>
+    </linearGradient>
+    <linearGradient id="clockFace" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#0d3320"/>
+      <stop offset="100%" style="stop-color:#071810"/>
+    </linearGradient>
+    <radialGradient id="clockGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#27ae60;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#27ae60;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#f1c40f;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#f1c40f;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="glow5">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow5">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg5)"/>
+
+  <!-- Subtle dot grid left side -->
+  <g fill="#27ae60" fill-opacity="0.05">
+    <circle cx="50" cy="80" r="2"/><circle cx="110" cy="80" r="2"/><circle cx="170" cy="80" r="2"/><circle cx="230" cy="80" r="2"/><circle cx="290" cy="80" r="2"/>
+    <circle cx="50" cy="140" r="2"/><circle cx="110" cy="140" r="2"/><circle cx="170" cy="140" r="2"/><circle cx="230" cy="140" r="2"/>
+    <circle cx="50" cy="200" r="2"/><circle cx="110" cy="200" r="2"/><circle cx="170" cy="200" r="2"/>
+    <circle cx="50" cy="260" r="2"/><circle cx="110" cy="260" r="2"/>
+    <circle cx="50" cy="320" r="2"/>
+  </g>
+
+  <!-- ── RIGHT: CLOCK ── -->
+  <!-- Clock glow -->
+  <ellipse cx="870" cy="295" rx="220" ry="220" fill="url(#clockGlow)"/>
+
+  <!-- Clock outer ring -->
+  <circle cx="870" cy="295" r="195" fill="none" stroke="#27ae60" stroke-width="2" stroke-opacity="0.3"/>
+  <circle cx="870" cy="295" r="180" fill="#071810" stroke="#27ae60" stroke-width="3" filter="url(#glow5)"/>
+  <circle cx="870" cy="295" r="170" fill="#0a1f12" stroke="#1a3a20" stroke-width="1"/>
+
+  <!-- Hour tick marks -->
+  <g stroke="#27ae60" stroke-opacity="0.5">
+    <!-- 12 major ticks -->
+    <line x1="870" y1="128" x2="870" y2="148" stroke-width="3"/>
+    <line x1="958" y1="152" x2="947" y2="169" stroke-width="2"/>
+    <line x1="1019" y1="215" x2="1002" y2="224" stroke-width="2"/>
+    <line x1="1040" y1="295" x2="1020" y2="295" stroke-width="3"/>
+    <line x1="1019" y1="375" x2="1002" y2="366" stroke-width="2"/>
+    <line x1="958" y1="438" x2="947" y2="421" stroke-width="2"/>
+    <line x1="870" y1="462" x2="870" y2="442" stroke-width="3"/>
+    <line x1="782" y1="438" x2="793" y2="421" stroke-width="2"/>
+    <line x1="721" y1="375" x2="738" y2="366" stroke-width="2"/>
+    <line x1="700" y1="295" x2="720" y2="295" stroke-width="3"/>
+    <line x1="721" y1="215" x2="738" y2="224" stroke-width="2"/>
+    <line x1="782" y1="152" x2="793" y2="169" stroke-width="2"/>
+  </g>
+
+  <!-- Hour numbers -->
+  <g font-family="Arial" font-size="14" font-weight="bold" fill="#27ae60" fill-opacity="0.7" text-anchor="middle">
+    <text x="870" y="155">12</text>
+    <text x="957" y="183">1</text>
+    <text x="1010" y="240">2</text>
+    <text x="1025" y="300">3</text>
+    <text x="1010" y="360">4</text>
+    <text x="957" y="415">5</text>
+    <text x="870" y="445">6</text>
+    <text x="785" y="415">7</text>
+    <text x="732" y="360">8</text>
+    <text x="716" y="300">9</text>
+    <text x="732" y="240">10</text>
+    <text x="785" y="183">11</text>
+  </g>
+
+  <!-- OPENING ARC: 08:00–21:00 (280° arc, from 8 o'clock = 120° to 21:00 = 270°+90°=... -->
+  <!-- 08:00 = 8/12 * 360 - 90 = 240 - 90 = 150° from x-axis = 120° clock position -->
+  <!-- In SVG: 08:00 angle = (8/12)*360 - 90 = 150°; 21:00 = (21/24)*360 - 90 = 225° -->
+  <!-- Let's use clock convention: 12=top=-90°. Each hour = 30°. -->
+  <!-- 08:00 = -90 + 8*30 = -90+240 = 150° (svg) -->
+  <!-- 21:00 = -90 + 21*30 = -90+630 = 540° = 540-360=180°? No wait, clock goes 0-12 -->
+  <!-- 21:00 in 12-hour = 9:00 PM. On clock face: 9 = left side -->
+  <!-- 08:00 position: 8 on clock = -90+8*30 = 150° -->
+  <!-- 21:00 = 9 on clock (PM) = -90+9*30 = 180° -->
+  <!-- Arc from 150° to 180° going clockwise = 30°? That's too small -->
+  <!-- Let me think differently. Use 24h clock rendered on 12h face: -->
+  <!-- AM arc 08:00–12:00: from 150° to -90°(=270°) going clockwise = 120° -->
+  <!-- PM arc 12:00–21:00: from -90° to 180° going clockwise = 270° ... -->
+  <!-- Total: 08:00 to 21:00 = 13 hours = 13/12 * 360 = 390° > one full revolution -->
+  <!-- Let's just draw a thick colored arc from the 8 position to the 9 position going the long way -->
+  <!-- 8 o'clock = 150°, 9 o'clock = 180°, going CLOCKWISE the long way = 330° arc -->
+  <!-- Actually let me simplify: just draw highlight arc to show "open" zone visually -->
+  <!-- Arc from 8 (150°) clockwise to 9(PM=21:00) (180°) going the short clockwise way = 30° -->
+  <!-- That won't look impressive. Better: just show 08:00 and 21:00 as hand positions with glow -->
+
+  <!-- Hour hand pointing to 8 (open time) - thin dashed -->
+  <!-- 8 o'clock: angle = 150° from right (east), so from center: dx=cos(150)*r, dy=sin(150)*r -->
+  <!-- cos(150)=-0.866, sin(150)=0.5 -->
+  <line x1="870" y1="295" x2="754" y2="355" stroke="#27ae60" stroke-width="2" stroke-dasharray="6,4" stroke-opacity="0.5" stroke-linecap="round"/>
+  <!-- 21:00 = 9 on clock: angle=180°, dx=cos(180)*r=-1*130=-130, dy=0 -->
+  <line x1="870" y1="295" x2="740" y2="295" stroke="#f1c40f" stroke-width="4" stroke-linecap="round" filter="url(#glow5)"/>
+
+  <!-- Minute hand (pointing to 12 = straight up for :00) -->
+  <line x1="870" y1="295" x2="870" y2="140" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Open arc: 08:00 to 21:00 on outer rim, highlighted -->
+  <!-- 08:00 angle on SVG coordinate (0=right, CW): 8h*30°-90° = 150° -->
+  <!-- 21:00 = 9h * 30° - 90° = 180° -->
+  <!-- Going clockwise from 150° to 180° = 30° short arc (that's just 1 hour visually) -->
+  <!-- Let's instead use the arc from 8 going COUNTER-clockwise to 9 to show the "open" span -->
+  <!-- Or better: just draw a thick arc from 150° to 180° going the LONG way (330°) -->
+  <!-- Path: M start, A rx ry xrot large-arc-flag sweep-flag end -->
+  <!-- start at 8: cx+r*cos(150°), cy+r*sin(150°) = 870+155*(-0.866), 295+155*(0.5) = 870-134.2, 295+77.5 = 735.8, 372.5 -->
+  <!-- end at 9(21:00): cx+r*cos(180°), cy+r*sin(180°) = 870-155, 295 = 715, 295 -->
+  <!-- large-arc=1 (>180°), sweep=1 (clockwise) -->
+  <path d="M 735.8 372.5 A 155 155 0 1 1 715 295" fill="none" stroke="#27ae60" stroke-width="8" stroke-linecap="round" stroke-opacity="0.35" filter="url(#softglow5)"/>
+  <path d="M 735.8 372.5 A 155 155 0 1 1 715 295" fill="none" stroke="#27ae60" stroke-width="4" stroke-linecap="round" stroke-opacity="0.7"/>
+
+  <!-- Dots at 8 and 9 (open/close) -->
+  <circle cx="735.8" cy="372.5" r="8" fill="#27ae60" filter="url(#glow5)"/>
+  <circle cx="715" cy="295" r="8" fill="#f1c40f" filter="url(#glow5)"/>
+
+  <!-- Labels on clock -->
+  <text x="718" y="390" font-family="Arial" font-size="11" font-weight="bold" fill="#27ae60" text-anchor="middle">08:00</text>
+  <text x="694" y="290" font-family="Arial" font-size="11" font-weight="bold" fill="#f1c40f" text-anchor="end">21:00</text>
+
+  <!-- Center dot -->
+  <circle cx="870" cy="295" r="8" fill="#27ae60" filter="url(#glow5)"/>
+  <circle cx="870" cy="295" r="4" fill="#fff"/>
+
+  <!-- OPEN badge in clock -->
+  <rect x="820" y="340" width="100" height="30" rx="15" fill="#27ae60"/>
+  <text x="870" y="360" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white" letter-spacing="1">BUKA TIAP HARI</text>
+
+  <!-- ── LEFT SIDE: TEXT ── -->
+  <!-- Badge -->
+  <rect x="60" y="58" width="148" height="28" rx="14" fill="#27ae60"/>
+  <text x="134" y="77" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white" letter-spacing="0.5">🕗 JAM OPERASIONAL</text>
+
+  <text x="235" y="77" font-family="Arial" font-size="12" fill="#555">12 Juni 2026</text>
+
+  <!-- Headline -->
+  <text x="60" y="148" font-family="Arial" font-size="38" font-weight="bold" fill="white">Pinus Packindo</text>
+  <text x="60" y="196" font-family="Arial" font-size="38" font-weight="bold" fill="white">Buka</text>
+  <text x="60" y="244" font-family="Arial" font-size="38" font-weight="bold" fill="#27ae60">Setiap Hari! 🎉</text>
+
+  <line x1="60" y1="264" x2="540" y2="264" stroke="#27ae60" stroke-width="2" opacity="0.35"/>
+
+  <!-- Big time display -->
+  <text x="60" y="320" font-family="Arial" font-size="52" font-weight="bold" fill="white">08.00</text>
+  <text x="240" y="312" font-family="Arial" font-size="22" fill="#555">—</text>
+  <text x="270" y="320" font-family="Arial" font-size="52" font-weight="bold" fill="#27ae60">21.00</text>
+
+  <text x="60" y="352" font-family="Arial" font-size="14" fill="#666">Senin s.d. Minggu · Libur Nasional tetap buka</text>
+
+  <!-- 3 boxes -->
+  <g transform="translate(60, 378)">
+    <rect x="0" y="0" width="148" height="60" rx="10" fill="#0a1f10" stroke="#27ae60" stroke-width="1.5"/>
+    <text x="74" y="22" text-anchor="middle" font-family="Arial" font-size="22">🏪</text>
+    <text x="74" y="40" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#27ae60">Toko Langsung</text>
+    <text x="74" y="54" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">Jl. Penjawi No. 11, Pati</text>
+
+    <rect x="164" y="0" width="148" height="60" rx="10" fill="#0a1f10" stroke="#27ae60" stroke-width="1.5"/>
+    <text x="238" y="22" text-anchor="middle" font-family="Arial" font-size="22">💬</text>
+    <text x="238" y="40" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#27ae60">WhatsApp</text>
+    <text x="238" y="54" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">0852-8333-8989</text>
+
+    <rect x="328" y="0" width="148" height="60" rx="10" fill="#0a1f10" stroke="#27ae60" stroke-width="1.5"/>
+    <text x="402" y="22" text-anchor="middle" font-family="Arial" font-size="22">📦</text>
+    <text x="402" y="40" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#27ae60">Pengiriman Cepat</text>
+    <text x="402" y="54" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">Order sebelum jam 17.00</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="590" width="1200" height="40" fill="#040f07"/>
+  <rect x="0" y="590" width="5" height="40" fill="#27ae60"/>
+  <text x="25" y="615" font-family="Arial" font-size="12" fill="#555">Pinus Packindo — Jl. Penjawi No. 11, Pati · WA (0852) 8333 8989</text>
+  <text x="1140" y="615" text-anchor="end" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold">pinuspackindo.com</text>
+</svg>
