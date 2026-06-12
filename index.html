@@ -419,37 +419,56 @@ nav {
 .author-title { font-size: 12px; color: #888; }
 
 /* BLOG */
+/* ── BLOG SECTION ── */
 .blog-section { background: #fff; }
 .blog-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
-.blog-header-right { max-width: 380px; }
-.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.blog-card { border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
-.blog-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
-.blog-img {
-  width: 100%; height: 200px;
-  border-radius: 12px 12px 0 0;
-  overflow: hidden;
+.blog-header-right { max-width: 420px; display:flex; flex-direction:column; gap:14px; }
+.btn-all-artikel { align-self:flex-start; font-size:13px; font-weight:700; color:#27ae60; border:2px solid #27ae60; border-radius:8px; padding:8px 18px; transition:all 0.2s; }
+.btn-all-artikel:hover { background:#27ae60; color:#fff; }
+
+/* ── ARTIKEL SLIDESHOW ── */
+.aslide-wrapper { position:relative; }
+.aslide-viewport { overflow:hidden; border-radius:16px; }
+.aslide-track { display:flex; gap:24px; transition:transform 0.5s cubic-bezier(.4,0,.2,1); will-change:transform; }
+.aslide-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  background:#fff; border-radius:16px;
+  box-shadow:0 2px 16px rgba(0,0,0,0.08);
+  overflow:hidden; cursor:pointer;
+  display:flex; flex-direction:column;
+  transition:transform 0.22s, box-shadow 0.22s;
 }
-.blog-img img { width: 100%; height: 100%; object-fit: cover; }
-.blog-body {
-  padding: 18px; flex: 1;
-  display: grid;
-  grid-template-rows: auto minmax(48px, auto) 1fr auto;
-  gap: 0;
+.aslide-card:hover { transform:translateY(-5px); box-shadow:0 10px 32px rgba(0,0,0,0.13); }
+.aslide-img { width:100%; overflow:hidden; background:#f5f5f5; min-height:60px; }
+.aslide-img img { width:100%; height:auto; display:block; transition:transform 0.3s; }
+.aslide-card:hover .aslide-img img { transform:scale(1.03); }
+.aslide-img.aslide-img-empty { min-height:160px; background:linear-gradient(135deg,#e8f5e9,#c8e6c9); display:flex; align-items:center; justify-content:center; }
+.aslide-body { padding:18px 20px 22px; flex:1; display:flex; flex-direction:column; gap:10px; }
+.aslide-meta { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.aslide-cat { font-size:10px; font-weight:700; color:#27ae60; background:#e8f5e9; border-radius:20px; padding:3px 10px; text-transform:uppercase; letter-spacing:0.5px; }
+.aslide-date { font-size:12px; color:#999; }
+.aslide-body h3 { font-size:14px; font-weight:700; line-height:1.55; color:#111; flex:1; }
+.aslide-body p { font-size:12px; color:#666; line-height:1.65; }
+.aslide-read { font-size:12px; font-weight:700; color:#27ae60; margin-top:4px; }
+
+/* Arrows */
+.aslide-arrow {
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:40px; height:40px; border-radius:50%;
+  background:#fff; border:1.5px solid #ddd;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; z-index:10; color:#444;
+  box-shadow:0 2px 12px rgba(0,0,0,0.1);
+  transition:all 0.2s;
 }
-.blog-meta { font-size: 11px; color: #999; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
-.blog-body h3 { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 10px; align-self: start; }
-.blog-body p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 14px; align-self: start; }
-.read-more {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600;
-  cursor: pointer; border: none; width: fit-content; text-decoration: none;
-}
-/* Selang-seling blog card: ganjil = putih, genap = hijau */
-.blog-card:nth-child(odd)  .read-more { background: #fff; color: #27ae60; box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
-.blog-card:nth-child(odd)  .read-more:hover { background: #f0f0f0; text-decoration: none; }
-.blog-card:nth-child(even) .read-more { background: #27ae60; color: #fff; }
-.blog-card:nth-child(even) .read-more:hover { background: #1e8449; text-decoration: none; }
+.aslide-arrow:hover { background:#27ae60; color:#fff; border-color:#27ae60; }
+.aslide-prev { left:-20px; }
+.aslide-next { right:-20px; }
+
+/* Dots */
+.aslide-dots { display:flex; justify-content:center; gap:8px; margin-top:28px; }
+.aslide-dot { width:8px; height:8px; border-radius:50%; background:#ddd; border:none; cursor:pointer; padding:0; transition:all 0.3s; }
+.aslide-dot.active { width:24px; border-radius:4px; background:#27ae60; }
 
 /* CONTACT */
 .contact-section { background: #fff; }
@@ -932,38 +951,92 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     </div>
     <div class="blog-header-right">
       <p class="section-sub" data-i18n="blog.sub">Dapatkan tips packaging terkini, update produk, dan panduan memilih kemasan yang tepat untuk bisnis Anda.</p>
+      <a href="artikel.html" class="btn-all-artikel" data-i18n="blog.all">Lihat Semua Artikel →</a>
     </div>
   </div>
   <hr style="border:none;border-top:2.5px solid #d0d0d0;margin-bottom:32px;">
-  <div class="blog-grid">
-    <div class="blog-card">
-      <div class="blog-img"><img src="images/blog-1.png" alt="Kemasan Ramah Lingkungan"></div>
-      <div class="blog-body">
-        <p class="blog-meta">Tim Pinus &nbsp; Jan 2025</p>
-        <h3 data-i18n="blog.b1_title">Kemasan Ramah Lingkungan: Pilihan Cerdas untuk Bisnis Modern</h3>
-        <p data-i18n="blog.b1_desc">Pelajari bagaimana kemasan eco-friendly dapat meningkatkan citra brand Anda sekaligus menjaga lingkungan...</p>
-        <a href="#" class="read-more" data-i18n="blog.read_more">Baca Selengkapnya</a>
-      </div>
-    </div>
-    <div class="blog-card">
-      <div class="blog-img"><img src="images/blog-2.png" alt="Tips Memilih Kemasan"></div>
-      <div class="blog-body">
-        <p class="blog-meta">Tim Pinus &nbsp; Feb 2025</p>
-        <h3 data-i18n="blog.b2_title">Tips Memilih Kemasan yang Tepat untuk Produk Makanan Anda</h3>
-        <p data-i18n="blog.b2_desc">Panduan lengkap memilih jenis kemasan yang sesuai untuk berbagai produk makanan dan minuman...</p>
-        <a href="#" class="read-more" data-i18n="blog.read_more">Baca Selengkapnya</a>
-      </div>
-    </div>
-    <div class="blog-card">
-      <div class="blog-img"><img src="images/blog-3.png" alt="Manfaat Kemasan Berkualitas"></div>
-      <div class="blog-body">
-        <p class="blog-meta">Tim Pinus &nbsp; Mar 2025</p>
-        <h3 data-i18n="blog.b3_title">Manfaat Kemasan Berkualitas untuk Meningkatkan Penjualan</h3>
-        <p data-i18n="blog.b3_desc">Ketahui bagaimana investasi pada kemasan berkualitas dapat meningkatkan omzet bisnis Anda secara signifikan...</p>
-        <a href="#" class="read-more" data-i18n="blog.read_more">Baca Selengkapnya</a>
-      </div>
-    </div>
+
+  <!-- ARTIKEL SLIDESHOW -->
+  <div class="aslide-wrapper">
+    <button class="aslide-arrow aslide-prev" onclick="artikelSlide(-1)" aria-label="Sebelumnya">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="aslide-viewport" id="aslideViewport">
+      <div class="aslide-track" id="aslideTrack">
+
+        <!-- Artikel 1 -->
+        <div class="aslide-card" onclick="location.href='artikel-1.html'">
+          <div class="aslide-img">
+            <img src="images/cover-artikel-1.png" alt="Artikel 1" loading="lazy" onerror="this.parentElement.classList.add('aslide-img-empty')">
+          </div>
+          <div class="aslide-body">
+            <div class="aslide-meta"><span class="aslide-cat">Tips Kemasan</span><span class="aslide-date">12 Juni 2026</span></div>
+            <h3>5 Tips Memilih Kemasan yang Tepat untuk Produk Makanan Anda</h3>
+            <p>Kemasan yang tepat bukan hanya melindungi produk, tapi juga menjadi media promosi bisnis Anda...</p>
+            <span class="aslide-read">Baca Selengkapnya →</span>
+          </div>
+        </div>
+
+        <!-- Artikel 2 -->
+        <div class="aslide-card" onclick="location.href='artikel-2.html'">
+          <div class="aslide-img">
+            <img src="images/cover-artikel-2.png" alt="Artikel 2" loading="lazy" onerror="this.parentElement.classList.add('aslide-img-empty')">
+          </div>
+          <div class="aslide-body">
+            <div class="aslide-meta"><span class="aslide-cat">Edukasi</span><span class="aslide-date">5 Juni 2026</span></div>
+            <h3>Perbedaan Kemasan Plastik Food Grade dan Non-Food Grade yang Wajib Diketahui</h3>
+            <p>Tidak semua plastik aman untuk makanan. Ketahui perbedaannya sebelum memilih kemasan untuk produk Anda...</p>
+            <span class="aslide-read">Baca Selengkapnya →</span>
+          </div>
+        </div>
+
+        <!-- Artikel 3 -->
+        <div class="aslide-card" onclick="location.href='artikel-3.html'">
+          <div class="aslide-img">
+            <img src="images/cover-artikel-3.png" alt="Artikel 3" loading="lazy" onerror="this.parentElement.classList.add('aslide-img-empty')">
+          </div>
+          <div class="aslide-body">
+            <div class="aslide-meta"><span class="aslide-cat">Tren</span><span class="aslide-date">28 Mei 2026</span></div>
+            <h3>Tren Kemasan Ramah Lingkungan 2026 yang Wajib Diikuti Pelaku UMKM</h3>
+            <p>Konsumen semakin peduli lingkungan. Simak tren kemasan eco-friendly yang sedang naik daun...</p>
+            <span class="aslide-read">Baca Selengkapnya →</span>
+          </div>
+        </div>
+
+        <!-- Artikel 4 -->
+        <div class="aslide-card" onclick="location.href='artikel-4.html'">
+          <div class="aslide-img">
+            <img src="images/cover-artikel-4.png" alt="Artikel 4" loading="lazy" onerror="this.parentElement.classList.add('aslide-img-empty')">
+          </div>
+          <div class="aslide-body">
+            <div class="aslide-meta"><span class="aslide-cat">Panduan</span><span class="aslide-date">15 Mei 2026</span></div>
+            <h3>Panduan Lengkap Memilih Box Kue untuk Usaha Bakery Rumahan</h3>
+            <p>Panduan ini membantu Anda memilih box kue yang sesuai budget dan kebutuhan usaha bakery...</p>
+            <span class="aslide-read">Baca Selengkapnya →</span>
+          </div>
+        </div>
+
+        <!-- Artikel 5 -->
+        <div class="aslide-card" onclick="location.href='artikel-5.html'">
+          <div class="aslide-img">
+            <img src="images/cover-artikel-5.png" alt="Artikel 5" loading="lazy" onerror="this.parentElement.classList.add('aslide-img-empty')">
+          </div>
+          <div class="aslide-body">
+            <div class="aslide-meta"><span class="aslide-cat">Tips Kemasan</span><span class="aslide-date">2 Mei 2026</span></div>
+            <h3>Cara Menghitung Kebutuhan Kemasan untuk Bisnis F&amp;B Anda</h3>
+            <p>Pelajari cara menghitung kebutuhan kemasan yang tepat agar tidak kekurangan atau kelebihan stok...</p>
+            <span class="aslide-read">Baca Selengkapnya →</span>
+          </div>
+        </div>
+
+      </div><!-- /aslide-track -->
+    </div><!-- /aslide-viewport -->
+    <button class="aslide-arrow aslide-next" onclick="artikelSlide(1)" aria-label="Berikutnya">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
   </div>
+  <!-- Dots -->
+  <div class="aslide-dots" id="aslideDots"></div>
 </section>
 
 
@@ -1045,6 +1118,81 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ── ARTIKEL SLIDESHOW ────────────────────────────────────────────
+  (function(){
+    const TOTAL   = 5;   // total artikel
+    const VISIBLE = 3;   // tampil 3 sekaligus di desktop
+    const GAP     = 24;  // px, sama dengan CSS gap
+    const DELAY   = 7000;// 7 detik
+
+    let cur = 0;
+    let autoTimer;
+    let touchStartX = 0;
+
+    const track    = document.getElementById('aslideTrack');
+    const viewport = document.getElementById('aslideViewport');
+    const dotsWrap = document.getElementById('aslideDots');
+
+    // Buat dots
+    for(let i = 0; i < TOTAL; i++){
+      const d = document.createElement('button');
+      d.className = 'aslide-dot' + (i===0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Artikel '+(i+1));
+      d.onclick = () => goTo(i);
+      dotsWrap.appendChild(d);
+    }
+
+    function cardWidth(){
+      const vw = viewport.offsetWidth;
+      return (vw - GAP * (VISIBLE - 1)) / VISIBLE;
+    }
+
+    function goTo(idx){
+      const maxIdx = TOTAL - VISIBLE;
+      cur = Math.max(0, Math.min(idx, maxIdx));
+      const shift = cur * (cardWidth() + GAP);
+      track.style.transform = 'translateX(-' + shift + 'px)';
+      // dots update
+      dotsWrap.querySelectorAll('.aslide-dot').forEach((d,i) => {
+        d.classList.toggle('active', i === cur);
+      });
+    }
+
+    function startAuto(){
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => {
+        goTo(cur + 1 < TOTAL - VISIBLE + 1 ? cur + 1 : 0);
+      }, DELAY);
+    }
+
+    window.artikelSlide = function(dir){
+      const maxIdx = TOTAL - VISIBLE;
+      let next = cur + dir;
+      if(next < 0) next = maxIdx;
+      if(next > maxIdx) next = 0;
+      goTo(next);
+      startAuto();
+    };
+
+    // Touch/swipe support
+    viewport.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
+    viewport.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 40) { artikelSlide(diff > 0 ? 1 : -1); }
+    }, {passive:true});
+
+    // Pause on hover
+    viewport.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    viewport.addEventListener('mouseleave', () => startAuto());
+
+    // Recalculate on resize
+    window.addEventListener('resize', () => goTo(cur));
+
+    // Init
+    goTo(0);
+    startAuto();
+  })();
 
   // Services slider (show 3, total 5, max shift = 2)
   let svcIndex = 0;
