@@ -1,95 +1,114 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
     <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#fff9f0"/>
-      <stop offset="100%" style="stop-color:#fef3e2"/>
+      <stop offset="0%" stop-color="#fff9f0"/>
+      <stop offset="100%" stop-color="#fef3e2"/>
     </linearGradient>
-    <linearGradient id="globeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#e0f2fe"/>
-      <stop offset="100%" style="stop-color:#bae6fd"/>
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#bae6fd"/>
     </linearGradient>
-    <filter id="s1"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#f9731620"/></filter>
-    <filter id="s2"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#00000012"/></filter>
-    <filter id="s3"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#00000015"/></filter>
+    <filter id="dropshadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#00000015"/>
+    </filter>
+    <filter id="cardshadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#00000010"/>
+    </filter>
   </defs>
 
+  <!-- Background -->
   <rect width="1200" height="630" fill="url(#bg1)"/>
 
-  <!-- Soft bg blobs -->
-  <circle cx="1080" cy="100" r="200" fill="#fed7aa" fill-opacity="0.3"/>
-  <circle cx="980" cy="560" r="140" fill="#fde68a" fill-opacity="0.25"/>
-  <circle cx="60" cy="520" r="100" fill="#fecdd3" fill-opacity="0.2"/>
+  <!-- Decorative soft blobs -->
+  <circle cx="1080" cy="90" r="200" fill="#fed7aa" fill-opacity="0.3"/>
+  <circle cx="980" cy="570" r="140" fill="#fde68a" fill-opacity="0.22"/>
+  <circle cx="55" cy="520" r="95" fill="#fecdd3" fill-opacity="0.18"/>
 
-  <!-- ── GLOBE RIGHT ── -->
-  <g transform="translate(620, 45)" filter="url(#s3)">
-    <circle cx="270" cy="270" r="230" fill="url(#globeGrad)" stroke="#7dd3fc" stroke-width="3"/>
-    <!-- lat lines -->
-    <g stroke="#bae6fd" stroke-width="1.5" fill="none">
-      <ellipse cx="270" cy="270" rx="230" ry="57"/>
-      <ellipse cx="270" cy="270" rx="230" ry="115"/>
-      <ellipse cx="270" cy="270" rx="230" ry="172"/>
-      <line x1="40" y1="270" x2="500" y2="270"/>
-      <line x1="270" y1="40" x2="270" y2="500"/>
+  <!-- ===== RIGHT SIDE: GLOBE ===== -->
+  <g transform="translate(620, 50)" filter="url(#dropshadow)">
+    <!-- Ocean -->
+    <circle cx="265" cy="265" r="228" fill="url(#oceanGrad)" stroke="#7dd3fc" stroke-width="3"/>
+
+    <!-- Latitude lines -->
+    <g stroke="#bae6fd" stroke-width="1.5" fill="none" opacity="0.6">
+      <ellipse cx="265" cy="265" rx="228" ry="57"/>
+      <ellipse cx="265" cy="265" rx="228" ry="114"/>
+      <ellipse cx="265" cy="265" rx="228" ry="171"/>
+      <line x1="37" y1="265" x2="493" y2="265"/>
+      <line x1="265" y1="37" x2="265" y2="493"/>
     </g>
-    <!-- continents as friendly green blobs -->
-    <ellipse cx="320" cy="200" rx="80" ry="65" fill="#86efac" fill-opacity="0.9" rx="12"/>
-    <ellipse cx="175" cy="235" rx="58" ry="85" fill="#86efac" fill-opacity="0.8"/>
-    <ellipse cx="270" cy="350" rx="42" ry="58" fill="#86efac" fill-opacity="0.7"/>
-    <ellipse cx="270" cy="180" rx="32" ry="22" fill="#86efac" fill-opacity="0.6"/>
 
-    <!-- Iran pill -->
-    <rect x="302" y="192" width="70" height="32" rx="16" fill="#fb923c" filter="url(#s2)"/>
-    <text x="337" y="212" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">🇮🇷 Iran</text>
+    <!-- Continents -->
+    <!-- Americas -->
+    <ellipse cx="155" cy="240" rx="56" ry="90" fill="#86efac" fill-opacity="0.85"/>
+    <!-- Europe -->
+    <ellipse cx="262" cy="175" rx="34" ry="26" fill="#86efac" fill-opacity="0.7"/>
+    <!-- Asia blob -->
+    <ellipse cx="340" cy="205" rx="82" ry="68" fill="#86efac" fill-opacity="0.85"/>
+    <!-- Africa -->
+    <ellipse cx="272" cy="330" rx="40" ry="58" fill="#86efac" fill-opacity="0.7"/>
 
     <!-- USA pill -->
-    <rect x="135" y="200" width="66" height="32" rx="16" fill="#60a5fa" filter="url(#s2)"/>
-    <text x="168" y="220" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">🇺🇸 AS</text>
+    <rect x="114" y="202" width="70" height="32" rx="16" fill="#60a5fa"/>
+    <text x="149" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">USA</text>
 
-    <!-- Dashed arrow Iran→top -->
-    <path d="M 350 192 Q 420 130 400 60" fill="none" stroke="#f97316" stroke-width="3" stroke-dasharray="8,5" stroke-linecap="round"/>
-    <polygon points="398,46 390,65 408,63" fill="#f97316"/>
+    <!-- Iran pill -->
+    <rect x="308" y="195" width="68" height="32" rx="16" fill="#fb923c"/>
+    <text x="342" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Iran</text>
 
-    <!-- Emoji alert -->
-    <text x="400" y="50" font-family="Arial" font-size="26">⚡</text>
+    <!-- Dotted arrow between them -->
+    <path d="M 184 218 Q 265 160 308 211" fill="none" stroke="#f97316" stroke-width="2.5" stroke-dasharray="7,5" stroke-linecap="round"/>
 
-    <!-- Globe shadow -->
-    <ellipse cx="270" cy="492" rx="190" ry="16" fill="#f97316" fill-opacity="0.08"/>
+    <!-- Lightning bolt emoji area (text) -->
+    <text x="263" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="24">⚡</text>
+
+    <!-- Globe bottom shadow -->
+    <ellipse cx="265" cy="487" rx="185" ry="15" fill="#f97316" fill-opacity="0.07"/>
   </g>
 
-  <!-- ── LEFT TEXT ── -->
-  <rect x="60" y="60" width="86" height="30" rx="15" fill="#ef4444"/>
-  <text x="103" y="80" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">BERITA</text>
-  <text x="163" y="79" font-family="Arial" font-size="12" fill="#bbb">12 Juni 2026</text>
+  <!-- ===== LEFT SIDE: TEXT ===== -->
 
-  <text x="60" y="148" font-family="Arial" font-size="42" font-weight="800" fill="#111">Kelangkaan</text>
-  <text x="60" y="198" font-family="Arial" font-size="42" font-weight="800" fill="#111">Bijah Plastik</text>
-  <text x="60" y="248" font-family="Arial" font-size="36" font-weight="800" fill="#f97316">Imbas Konflik</text>
-  <text x="60" y="292" font-family="Arial" font-size="36" font-weight="800" fill="#f97316">Iran–AS 🌏</text>
+  <!-- Badge -->
+  <rect x="60" y="62" width="88" height="30" rx="15" fill="#ef4444"/>
+  <text x="104" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">BERITA</text>
+  <text x="165" y="81" font-family="Arial, sans-serif" font-size="12" fill="#bbb">12 Juni 2026</text>
 
-  <line x1="60" y1="316" x2="490" y2="316" stroke="#f97316" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+  <!-- Headline -->
+  <text x="60" y="148" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#111">Kelangkaan</text>
+  <text x="60" y="198" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#111">Bahan Baku</text>
+  <text x="60" y="248" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#f97316">Plastik Global</text>
+  <text x="60" y="290" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#f97316">Imbas Iran–AS</text>
 
-  <text x="60" y="346" font-family="Arial" font-size="15" fill="#888">Pasokan petrokimia global terganggu.</text>
-  <text x="60" y="368" font-family="Arial" font-size="15" fill="#888">Harga kemasan plastik berpotensi naik</text>
-  <text x="60" y="390" font-family="Arial" font-size="15" fill="#888">signifikan dalam waktu dekat.</text>
+  <!-- Divider line -->
+  <line x1="60" y1="314" x2="490" y2="314" stroke="#f97316" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- Description -->
+  <text x="60" y="344" font-family="Arial, sans-serif" font-size="15" fill="#888">Pasokan petrokimia global terganggu.</text>
+  <text x="60" y="366" font-family="Arial, sans-serif" font-size="15" fill="#888">Harga kemasan plastik berpotensi naik</text>
+  <text x="60" y="388" font-family="Arial, sans-serif" font-size="15" fill="#888">15–25% dalam waktu dekat.</text>
 
   <!-- Stat chips -->
-  <g transform="translate(60,418)" filter="url(#s2)">
-    <rect x="0" y="0" width="140" height="68" rx="16" fill="white" stroke="#fee2e2" stroke-width="1.5"/>
-    <text x="70" y="22" text-anchor="middle" font-family="Arial" font-size="11" fill="#aaa">Produksi Iran</text>
-    <text x="70" y="52" text-anchor="middle" font-family="Arial" font-size="28" font-weight="800" fill="#ef4444">−40%</text>
+  <!-- Chip 1 -->
+  <rect x="60" y="416" width="142" height="70" rx="16" fill="white" stroke="#fee2e2" stroke-width="1.5" filter="url(#cardshadow)"/>
+  <text x="131" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#aaa">Produksi Iran</text>
+  <text x="131" y="468" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#ef4444">-40%</text>
 
-    <rect x="156" y="0" width="140" height="68" rx="16" fill="white" stroke="#fef3c7" stroke-width="1.5"/>
-    <text x="226" y="22" text-anchor="middle" font-family="Arial" font-size="11" fill="#aaa">Harga PE Global</text>
-    <text x="226" y="52" text-anchor="middle" font-family="Arial" font-size="28" font-weight="800" fill="#f59e0b">+35%</text>
+  <!-- Chip 2 -->
+  <rect x="218" y="416" width="142" height="70" rx="16" fill="white" stroke="#fef3c7" stroke-width="1.5" filter="url(#cardshadow)"/>
+  <text x="289" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#aaa">Harga PE Global</text>
+  <text x="289" y="468" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#f59e0b">+35%</text>
 
-    <rect x="312" y="0" width="140" height="68" rx="16" fill="white" stroke="#fee2e2" stroke-width="1.5"/>
-    <text x="382" y="22" text-anchor="middle" font-family="Arial" font-size="11" fill="#aaa">Status Stok</text>
-    <text x="382" y="48" text-anchor="middle" font-family="Arial" font-size="20" font-weight="800" fill="#ef4444">⚠ KRITIS</text>
-  </g>
+  <!-- Chip 3 -->
+  <rect x="376" y="416" width="142" height="70" rx="16" fill="white" stroke="#fee2e2" stroke-width="1.5" filter="url(#cardshadow)"/>
+  <text x="447" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#aaa">Status Stok</text>
+  <text x="447" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ef4444">KRITIS</text>
+
+  <!-- Emoji row -->
+  <text x="60" y="536" font-family="Arial, sans-serif" font-size="30">🌏  📦  ⚠️</text>
 
   <!-- Bottom strip -->
   <rect x="0" y="596" width="1200" height="34" fill="#fff7ed" opacity="0.9"/>
-  <rect x="0" y="596" width="6" height="34" fill="#f97316" rx="0"/>
-  <text x="22" y="618" font-family="Arial" font-size="12" fill="#ccc">Pinus Packindo · pinuspackindo.com</text>
-  <text x="1175" y="618" text-anchor="end" font-family="Arial" font-size="12" fill="#f97316" font-weight="bold">pinuspackindo.com</text>
+  <rect x="0" y="596" width="6" height="34" fill="#f97316"/>
+  <text x="22" y="618" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Pinus Packindo · pinuspackindo.com</text>
+  <text x="1175" y="618" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#f97316" font-weight="bold">pinuspackindo.com</text>
 </svg>
