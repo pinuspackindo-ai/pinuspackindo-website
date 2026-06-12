@@ -234,11 +234,11 @@
     "newsletter_desc": "Dapatkan info produk terbaru dan penawaran spesial.",
     "newsletter_ph": "Email Anda",
     "newsletter_btn": "Daftar",
-    "prod1": "Kotak Kemasan",
-    "prod2": "Paper Bag",
-    "prod3": "Peralatan Baking",
-    "prod4": "Kertas Baking",
-    "prod5": "Baking Cup"
+    "prod1": "Kemasan Plastik",
+    "prod2": "Kemasan Kertas",
+    "prod3": "Kemasan Styrofoam",
+    "prod4": "Peralatan Baking",
+    "prod5": "Bahan Baking"
   },
   "products_page": {
     "tag": "Katalog Produk",

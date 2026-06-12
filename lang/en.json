@@ -234,11 +234,11 @@
     "newsletter_desc": "Get the latest product info and special offers.",
     "newsletter_ph": "Your Email",
     "newsletter_btn": "Subscribe",
-    "prod1": "Packaging Boxes",
-    "prod2": "Paper Bag",
-    "prod3": "Baking Equipment",
-    "prod4": "Baking Paper",
-    "prod5": "Baking Cup"
+    "prod1": "Plastic Packaging",
+    "prod2": "Paper Packaging",
+    "prod3": "Styrofoam Packaging",
+    "prod4": "Baking Equipment",
+    "prod5": "Baking Ingredients"
   },
   "products_page": {
     "tag": "Product Catalog",
