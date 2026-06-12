@@ -125,6 +125,16 @@ nav {
 .btn-wa svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
 
 /* ── FOOTER ── */
+.social-links { display: flex; gap: 10px; margin-top: 18px; }
+.social-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: #1a1a1a; border: 1px solid #2a2a2a;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.social-icon:hover { background: #27ae60; border-color: #27ae60; }
+.social-icon svg { width: 18px; height: 18px; fill: #666; transition: fill 0.2s; }
+.social-icon:hover svg { fill: #fff; }
 footer { background: #111; color: #aaa; padding: 56px 80px 24px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 40px; }
 .footer-brand p { font-size: 13px; color: #666; line-height: 1.7; margin-top: 14px; max-width: 260px; }
