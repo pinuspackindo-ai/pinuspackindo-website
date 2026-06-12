@@ -4,7 +4,9 @@
     "about": "About Us",
     "products": "Products",
     "contact": "Contact",
-    "cta": "Contact Us"
+    "cta": "Contact Us",
+    "artikel": "Articles",
+    "berita": "News & Events"
   },
   "hero": {
     "tag": "Packaging & Baking Supply",
@@ -349,5 +351,51 @@
     "btn_order": "Order Now",
     "btn_tiktok": "TikTok Shop",
     "btn_shopee": "Shopee"
+  },
+  "artikel": {
+    "tag": "Content & Education",
+    "h1": "Articles",
+    "desc": "Find informative articles about packaging, baking supplies, and business tips from the Pinus Packindo team.",
+    "section_label": "Latest Articles",
+    "section_title": "All Articles",
+    "btn_read": "Read More",
+    "cat1": "Packaging Tips",
+    "cat2": "Education",
+    "cat3": "Trends",
+    "cat4": "Guide",
+    "a1_title": "5 Tips for Choosing the Right Packaging for Your Food Products",
+    "a1_desc": "The right packaging not only protects your product but also serves as a marketing medium for your business. Here are 5 tips for choosing effective food packaging...",
+    "a2_title": "Food Grade vs Non-Food Grade Plastic Packaging: What You Need to Know",
+    "a2_desc": "Not all plastics are safe for food. Learn the differences between food grade and non-food grade packaging before choosing for your products...",
+    "a3_title": "Eco-Friendly Packaging Trends 2026 That SMEs Should Follow",
+    "a3_desc": "Consumers are increasingly eco-conscious. Explore the rising eco-friendly packaging trends and how SMEs can adapt...",
+    "a4_title": "Complete Guide to Choosing Cake Boxes for Home Bakery Businesses",
+    "a4_desc": "For bakery businesses, cake packaging is an important investment. This guide helps you choose the right cake box for your budget and needs...",
+    "a5_title": "How to Calculate Packaging Needs for Your F&B Business",
+    "a5_desc": "Miscalculating packaging stock can hurt your business. Learn how to accurately calculate your packaging needs...",
+    "a6_title": "Understanding Different Types of Baking Paper and Their Uses",
+    "a6_desc": "Baking paper is more than just a pan liner. Learn about parchment, greaseproof, silicone paper and when to use each..."
+  },
+  "berita": {
+    "tag": "Updates & Activities",
+    "h1": "News & Events",
+    "desc": "Stay up to date with the latest from Pinus Packindo — promos, product launches, events, and more.",
+    "section_label": "Latest",
+    "section_title": "All News & Events",
+    "cat1": "Event",
+    "cat2": "News",
+    "cat3": "Promo",
+    "b1_title": "Pinus Packindo at the Pati SME Exhibition 2026",
+    "b1_desc": "Pinus Packindo participates in the Pati Regency SME Exhibition 2026. Visit our booth and get special offers...",
+    "b2_title": "Pinus Packindo Officially Opens Store at Jalan Penjawi No. 11 Pati",
+    "b2_desc": "We are proud to announce the grand opening of our new Pinus Packindo store at a more strategic location...",
+    "b3_title": "Special Eid Packaging Promo: Discounts up to 20%",
+    "b3_desc": "Welcome the special moment with quality packaging. Get special discounts on cake boxes, acrylic, and paper bags...",
+    "b4_title": "Free Packaging Workshop for F&B SMEs with Pinus Packindo",
+    "b4_desc": "Pinus Packindo hosts a free workshop on packaging strategy for food & beverage SMEs in Pati and surrounding areas...",
+    "b5_title": "Pinus Packindo Now Available on Shopee and TikTok Shop",
+    "b5_desc": "Great news! You can now shop Pinus Packindo products online via Shopee and TikTok Shop. Delivery nationwide...",
+    "b6_title": "New Product Launch: Eco-Friendly Kraft Packaging",
+    "b6_desc": "Pinus Packindo launches a new line of biodegradable kraft packaging. Available for food boxes, paper bags, and bowls..."
   }
 }
