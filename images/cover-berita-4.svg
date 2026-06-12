@@ -1,240 +1,166 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
     <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#071018"/>
-      <stop offset="55%" style="stop-color:#0a1a28"/>
-      <stop offset="100%" style="stop-color:#071018"/>
+      <stop offset="0%" style="stop-color:#f0fdf4"/>
+      <stop offset="100%" style="stop-color:#ecfdf5"/>
     </linearGradient>
-    <linearGradient id="downGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:0.9"/>
-      <stop offset="35%" style="stop-color:#e67e22;stop-opacity:0.8"/>
-      <stop offset="65%" style="stop-color:#f1c40f;stop-opacity:0.8"/>
-      <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1"/>
+    <linearGradient id="trendLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="40%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
     </linearGradient>
-    <linearGradient id="barGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#e74c3c"/>
-      <stop offset="100%" style="stop-color:#c0392b"/>
+    <linearGradient id="barUp" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fca5a5"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
     </linearGradient>
-    <linearGradient id="barGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#e74c3c"/>
-      <stop offset="100%" style="stop-color:#c0392b"/>
+    <linearGradient id="barDown" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ade80"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
     </linearGradient>
-    <linearGradient id="barGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#e67e22"/>
-      <stop offset="100%" style="stop-color:#d35400"/>
+    <linearGradient id="barMid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fde68a"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
     </linearGradient>
-    <linearGradient id="barGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#f1c40f"/>
-      <stop offset="100%" style="stop-color:#d4ac0d"/>
-    </linearGradient>
-    <linearGradient id="barGrad5" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#2ecc71"/>
-      <stop offset="100%" style="stop-color:#27ae60"/>
-    </linearGradient>
-    <linearGradient id="barGrad6" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#27ae60"/>
-      <stop offset="100%" style="stop-color:#1e8449"/>
-    </linearGradient>
-    <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#3498db;stop-opacity:0.15"/>
-      <stop offset="100%" style="stop-color:#3498db;stop-opacity:0"/>
-    </radialGradient>
-    <filter id="glow4">
-      <feGaussianBlur stdDeviation="4" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="softglow4">
-      <feGaussianBlur stdDeviation="8" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+    <filter id="s2_4"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#00000010"/></filter>
+    <filter id="s3_4"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#22c55e14"/></filter>
   </defs>
 
-  <!-- Background -->
   <rect width="1200" height="630" fill="url(#bg4)"/>
 
-  <!-- Subtle grid lines -->
-  <g stroke="#1a2a3a" stroke-width="1" opacity="0.4">
-    <line x1="0" y1="105" x2="1200" y2="105"/>
-    <line x1="0" y1="210" x2="1200" y2="210"/>
-    <line x1="0" y1="315" x2="1200" y2="315"/>
-    <line x1="0" y1="420" x2="1200" y2="420"/>
-    <line x1="0" y1="525" x2="1200" y2="525"/>
-  </g>
+  <!-- bg blobs -->
+  <circle cx="1100" cy="80" r="180" fill="#bbf7d0" fill-opacity="0.3"/>
+  <circle cx="950" cy="570" r="130" fill="#a7f3d0" fill-opacity="0.2"/>
+  <circle cx="60" cy="540" r="90" fill="#d1fae5" fill-opacity="0.3"/>
 
-  <!-- Blue glow on right side -->
-  <ellipse cx="950" cy="300" rx="300" ry="260" fill="url(#glowBlue)"/>
+  <!-- ── RIGHT: BAR CHART ── -->
+  <g transform="translate(595, 44)" filter="url(#s3_4)">
+    <rect x="0" y="0" width="555" height="510" rx="24" fill="white" stroke="#f0fdf4" stroke-width="1.5"/>
 
-  <!-- ── RIGHT SIDE: BAR CHART (price going down) ── -->
-  <g transform="translate(620, 60)">
-    <rect x="0" y="0" width="530" height="470" rx="16" fill="#0a1624" stroke="#1a2a3a" stroke-width="1.5"/>
+    <text x="278" y="36" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#374151">Indeks Harga Plastik (PE/PP) · 2026</text>
+    <text x="278" y="56" text-anchor="middle" font-family="Arial" font-size="11" fill="#9ca3af">Jan 2026 = 100 · Jul–Des = proyeksi</text>
 
-    <!-- Chart title -->
-    <text x="265" y="32" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#3498db" letter-spacing="1">INDEKS HARGA PLASTIK MENTAH (PE/PP)</text>
-    <text x="265" y="50" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">Basis Jan 2026 = 100</text>
-
-    <!-- Y-axis labels -->
-    <g font-family="Arial" font-size="9" fill="#444" text-anchor="end">
-      <text x="55" y="82">180</text>
-      <text x="55" y="122">160</text>
-      <text x="55" y="162">140</text>
-      <text x="55" y="202">120</text>
-      <text x="55" y="242">100</text>
-      <text x="55" y="282">80</text>
-      <text x="55" y="322">60</text>
-      <text x="55" y="362">40</text>
+    <!-- Grid -->
+    <g stroke="#f9fafb" stroke-width="1">
+      <line x1="55" y1="80" x2="530" y2="80"/>
+      <line x1="55" y1="130" x2="530" y2="130"/>
+      <line x1="55" y1="180" x2="530" y2="180"/>
+      <line x1="55" y1="230" x2="530" y2="230"/>
+      <line x1="55" y1="280" x2="530" y2="280"/>
+      <line x1="55" y1="330" x2="530" y2="330"/>
+      <line x1="55" y1="380" x2="530" y2="380"/>
     </g>
+    <line x1="55" y1="380" x2="530" y2="380" stroke="#e5e7eb" stroke-width="1.5"/>
+    <line x1="55" y1="80" x2="55" y2="380" stroke="#e5e7eb" stroke-width="1.5"/>
 
-    <!-- Grid lines inside chart -->
-    <g stroke="#131f2e" stroke-width="1">
-      <line x1="60" y1="80" x2="510" y2="80"/>
-      <line x1="60" y1="120" x2="510" y2="120"/>
-      <line x1="60" y1="160" x2="510" y2="160"/>
-      <line x1="60" y1="200" x2="510" y2="200"/>
-      <line x1="60" y1="240" x2="510" y2="240"/>
-      <line x1="60" y1="280" x2="510" y2="280"/>
-      <line x1="60" y1="320" x2="510" y2="320"/>
-      <line x1="60" y1="360" x2="510" y2="360"/>
-    </g>
+    <!-- Bars: Jan=100, Feb=118, Mar=148, Apr=168, Mei=178(peak), Jun=158, Jul=140, Ags=122, Sep=108, Des=100 -->
+    <!-- chart h = 300px (y80..y380). 200 pts = 300px → scale = 1.5px/pt. 0→y380 -->
+    <!-- bar_h = val*1.5, bar_y = 380 - val*1.5 -->
+    <!-- Jan: 100→150px, y=230 -->
+    <rect x="65" y="230" width="38" height="150" rx="8" fill="url(#barUp)"/>
+    <text x="84" y="224" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#ef4444">100</text>
+    <text x="84" y="396" text-anchor="middle" font-family="Arial" font-size="9" fill="#9ca3af">Jan</text>
 
-    <!-- Baseline = 100 (y=240), highlighted -->
-    <line x1="60" y1="240" x2="510" y2="240" stroke="#3498db" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
-    <text x="515" y="243" font-family="Arial" font-size="8" fill="#3498db">100</text>
+    <!-- Feb: 118→177px, y=203 -->
+    <rect x="113" y="203" width="38" height="177" rx="8" fill="url(#barUp)"/>
+    <text x="132" y="197" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#ef4444">118</text>
+    <text x="132" y="396" text-anchor="middle" font-family="Arial" font-size="9" fill="#9ca3af">Feb</text>
 
-    <!-- X-axis -->
-    <line x1="60" y1="365" x2="510" y2="365" stroke="#1a2a3a" stroke-width="1.5"/>
-    <line x1="60" y1="80" x2="60" y2="365" stroke="#1a2a3a" stroke-width="1.5"/>
+    <!-- Mar: 148→222px, y=158 -->
+    <rect x="161" y="158" width="38" height="222" rx="8" fill="url(#barUp)"/>
+    <text x="180" y="152" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#ef4444">148</text>
+    <text x="180" y="396" text-anchor="middle" font-family="Arial" font-size="9" fill="#9ca3af">Mar</text>
 
-    <!-- Bars: Jan26=100, Feb26=115, Mar26=145, Apr26=170, Mei26=178(peak), Jun26=165, Jul26=148, Ags26=130, Sep26=112, Okt26=100 -->
-    <!-- bar width=36, gap=8, start x=70 -->
-    <!-- y_bar = 240 - (val-100)*2 , height = (val-100)*2 + ... wait let me recalc -->
-    <!-- scale: 1 unit = 2px. y_base=365 (x-axis). bar_height = val * 2 -->
-    <!-- Jan: val=100 → bar_h=80 → y=285 -->
+    <!-- Apr: 168→252px, y=128 -->
+    <rect x="209" y="128" width="38" height="252" rx="8" fill="url(#barUp)"/>
+    <text x="228" y="122" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#ef4444">168</text>
+    <text x="228" y="396" text-anchor="middle" font-family="Arial" font-size="9" fill="#9ca3af">Apr</text>
 
-    <!-- Jan 2026: 100 → bar_h=80, y=285 red -->
-    <rect x="70" y="285" width="36" height="80" rx="3" fill="url(#barGrad1)"/>
-    <text x="88" y="278" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#e74c3c">100</text>
-    <text x="88" y="379" text-anchor="middle" font-family="Arial" font-size="8" fill="#555">Jan</text>
+    <!-- Mei: 178→267px, y=113 PEAK -->
+    <rect x="257" y="100" width="38" height="280" rx="8" fill="#ef4444"/>
+    <rect x="245" y="86" width="62" height="22" rx="11" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+    <text x="276" y="101" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#ef4444">▲ PUNCAK</text>
+    <text x="276" y="395" text-anchor="middle" font-family="Arial" font-size="9" fill="#9ca3af">Mei</text>
 
-    <!-- Feb: 118 → bar_h=94.4 ≈ 94 → y=271 -->
-    <rect x="115" y="271" width="36" height="94" rx="3" fill="url(#barGrad2)"/>
-    <text x="133" y="264" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#e74c3c">118</text>
-    <text x="133" y="379" text-anchor="middle" font-family="Arial" font-size="8" fill="#555">Feb</text>
+    <!-- Jun: 158→237px, y=143 TURUN -->
+    <rect x="305" y="143" width="38" height="237" rx="8" fill="url(#barMid)"/>
+    <text x="324" y="137" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#d97706">158</text>
+    <text x="324" y="396" text-anchor="middle" font-family="Arial" font-size="9" fill="#22c55e" font-weight="bold">Jun ↓</text>
 
-    <!-- Mar: 148 → bar_h=118 → y=247 -->
-    <rect x="160" y="247" width="36" height="118" rx="3" fill="url(#barGrad3)"/>
-    <text x="178" y="240" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#e67e22">148</text>
-    <text x="178" y="379" text-anchor="middle" font-family="Arial" font-size="8" fill="#555">Mar</text>
+    <!-- Jul: 140→210px, y=170 -->
+    <rect x="353" y="170" width="38" height="210" rx="8" fill="url(#barMid)"/>
+    <text x="372" y="164" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#d97706">140</text>
+    <text x="372" y="396" text-anchor="middle" font-family="Arial" font-size="9" fill="#9ca3af">Jul ↓</text>
 
-    <!-- Apr: 168 → bar_h=134 → y=231 -->
-    <rect x="205" y="231" width="36" height="134" rx="3" fill="url(#barGrad3)"/>
-    <text x="223" y="224" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#e67e22">168</text>
-    <text x="223" y="379" text-anchor="middle" font-family="Arial" font-size="8" fill="#555">Apr</text>
+    <!-- Ags: 122→183px, y=197 -->
+    <rect x="401" y="197" width="38" height="183" rx="8" fill="url(#barDown)"/>
+    <text x="420" y="191" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#16a34a">122</text>
+    <text x="420" y="396" text-anchor="middle" font-family="Arial" font-size="9" fill="#9ca3af">Ags ↓</text>
 
-    <!-- Mei: 178 PEAK → bar_h=142 → y=223 -->
-    <rect x="250" y="210" width="36" height="155" rx="3" fill="url(#barGrad2)" filter="url(#glow4)"/>
-    <text x="268" y="204" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#e74c3c">178 ▲</text>
-    <text x="268" y="379" text-anchor="middle" font-family="Arial" font-size="8" fill="#555">Mei</text>
-    <!-- PEAK label -->
-    <rect x="243" y="190" width="50" height="14" rx="3" fill="#e74c3c" fill-opacity="0.2"/>
-    <text x="268" y="200" text-anchor="middle" font-family="Arial" font-size="8" font-weight="bold" fill="#e74c3c">PUNCAK</text>
+    <!-- Sep: 108→162px, y=218 -->
+    <rect x="449" y="218" width="38" height="162" rx="8" fill="url(#barDown)"/>
+    <text x="468" y="212" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#16a34a">108</text>
+    <text x="468" y="396" text-anchor="middle" font-family="Arial" font-size="9" fill="#9ca3af">Sep ↓</text>
 
-    <!-- Jun: 158 → bar_h=126 → y=239 — TURUN MULAI -->
-    <rect x="295" y="239" width="36" height="126" rx="3" fill="url(#barGrad4)"/>
-    <text x="313" y="232" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#f1c40f">158</text>
-    <text x="313" y="379" text-anchor="middle" font-family="Arial" font-size="8" fill="#3498db" font-weight="bold">Jun*</text>
+    <!-- Des: 100→150px, y=230 -->
+    <rect x="497" y="230" width="38" height="150" rx="8" fill="url(#barDown)" filter="url(#s2_4)"/>
+    <text x="516" y="224" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#16a34a">100</text>
+    <text x="516" y="396" text-anchor="middle" font-family="Arial" font-size="9" fill="#22c55e" font-weight="bold">Des ✓</text>
 
-    <!-- Jul: 140 → bar_h=112 → y=253 -->
-    <rect x="340" y="253" width="36" height="112" rx="3" fill="url(#barGrad4)"/>
-    <text x="358" y="246" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#f1c40f">140</text>
-    <text x="358" y="379" text-anchor="middle" font-family="Arial" font-size="8" fill="#555">Jul▾</text>
+    <!-- Trend arrow overlay -->
+    <polyline points="84,230 132,203 180,158 228,128 276,100 324,143 372,170 420,197 468,218 516,230"
+      fill="none" stroke="url(#trendLine)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
 
-    <!-- Ags: 122 → bar_h=98 → y=267 -->
-    <rect x="385" y="267" width="36" height="98" rx="3" fill="url(#barGrad5)"/>
-    <text x="403" y="260" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#2ecc71">122</text>
-    <text x="403" y="379" text-anchor="middle" font-family="Arial" font-size="8" fill="#555">Ags▾</text>
+    <!-- Big down arrow -->
+    <text x="516" y="175" text-anchor="middle" font-family="Arial" font-size="28">📉</text>
 
-    <!-- Sep: 108 → bar_h=86 → y=279 -->
-    <rect x="430" y="279" width="36" height="86" rx="3" fill="url(#barGrad5)"/>
-    <text x="448" y="272" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#27ae60">108</text>
-    <text x="448" y="379" text-anchor="middle" font-family="Arial" font-size="8" fill="#555">Sep▾</text>
+    <!-- 3 stat boxes -->
+    <g transform="translate(28, 422)">
+      <rect x="0" y="0" width="155" height="62" rx="14" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+      <text x="78" y="18" text-anchor="middle" font-family="Arial" font-size="10" fill="#9ca3af">Turun dari puncak</text>
+      <text x="78" y="44" text-anchor="middle" font-family="Arial" font-size="22" font-weight="800" fill="#22c55e">−11,2%</text>
 
-    <!-- Des: 100 → bar_h=80 → y=285 -->
-    <rect x="475" y="285" width="36" height="80" rx="3" fill="url(#barGrad6)" filter="url(#softglow4)"/>
-    <text x="493" y="278" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#27ae60">100</text>
-    <text x="493" y="379" text-anchor="middle" font-family="Arial" font-size="8" fill="#27ae60" font-weight="bold">Des▾</text>
+      <rect x="170" y="0" width="155" height="62" rx="14" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+      <text x="248" y="18" text-anchor="middle" font-family="Arial" font-size="10" fill="#9ca3af">Target akhir 2026</text>
+      <text x="248" y="44" text-anchor="middle" font-family="Arial" font-size="22" font-weight="800" fill="#3b82f6">= 100</text>
 
-    <!-- Trend line overlay: connect bar tops -->
-    <polyline points="88,285 133,271 178,247 223,231 268,210 313,239 358,253 403,267 448,279 493,285"
-      fill="none" stroke="url(#downGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
-
-    <!-- Arrow showing downtrend -->
-    <line x1="268" y1="215" x2="480" y2="290" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5"/>
-    <polygon points="480,290 472,280 490,278" fill="#27ae60" opacity="0.6"/>
-
-    <!-- Jun* note -->
-    <text x="265" y="400" text-anchor="middle" font-family="Arial" font-size="9" fill="#3498db">* Jun 2026 = data terkini · Jul–Des = proyeksi</text>
-
-    <!-- 3 stat boxes below chart -->
-    <g transform="translate(15, 415)">
-      <!-- Stat 1 -->
-      <rect x="0" y="0" width="155" height="44" rx="8" fill="#091420" stroke="#1a3a1a" stroke-width="1"/>
-      <text x="78" y="16" text-anchor="middle" font-family="Arial" font-size="10" fill="#aaa">Penurunan Jun–Des</text>
-      <text x="78" y="33" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#27ae60">−43,8%</text>
-
-      <!-- Stat 2 -->
-      <rect x="170" y="0" width="155" height="44" rx="8" fill="#091420" stroke="#1a3a1a" stroke-width="1"/>
-      <text x="248" y="16" text-anchor="middle" font-family="Arial" font-size="10" fill="#aaa">Target Akhir 2026</text>
-      <text x="248" y="33" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#3498db">= 100</text>
-
-      <!-- Stat 3 -->
-      <rect x="340" y="0" width="155" height="44" rx="8" fill="#091420" stroke="#1a3a1a" stroke-width="1"/>
-      <text x="418" y="16" text-anchor="middle" font-family="Arial" font-size="10" fill="#aaa">Kecepatan Pemulihan</text>
-      <text x="418" y="33" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#f1c40f">−8 poin/bln</text>
+      <rect x="340" y="0" width="155" height="62" rx="14" fill="#fefce8" stroke="#fde68a" stroke-width="1.5"/>
+      <text x="418" y="18" text-anchor="middle" font-family="Arial" font-size="10" fill="#9ca3af">Kecepatan turun</text>
+      <text x="418" y="44" text-anchor="middle" font-family="Arial" font-size="18" font-weight="800" fill="#ca8a04">−8 poin/bln</text>
     </g>
   </g>
 
-  <!-- ── LEFT SIDE: TEXT ── -->
-  <!-- Badge -->
-  <rect x="60" y="58" width="160" height="28" rx="14" fill="#1a6b3a"/>
-  <text x="140" y="77" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#4ade80" letter-spacing="0.5">📉 UPDATE HARGA</text>
+  <!-- ── LEFT TEXT ── -->
+  <rect x="60" y="60" width="136" height="30" rx="15" fill="#22c55e"/>
+  <text x="128" y="80" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">📉 UPDATE HARGA</text>
+  <text x="211" y="79" font-family="Arial" font-size="12" fill="#bbb">12 Juni 2026</text>
 
-  <text x="255" y="77" font-family="Arial" font-size="12" fill="#555">12 Juni 2026</text>
+  <text x="60" y="152" font-family="Arial" font-size="42" font-weight="800" fill="#111">Harga Plastik</text>
+  <text x="60" y="202" font-family="Arial" font-size="42" font-weight="800" fill="#111">Mulai</text>
+  <text x="60" y="252" font-family="Arial" font-size="42" font-weight="800" fill="#22c55e">Turun 📉</text>
 
-  <!-- Main headline -->
-  <text x="60" y="145" font-family="Arial" font-size="34" font-weight="bold" fill="white">Harga Plastik</text>
-  <text x="60" y="191" font-family="Arial" font-size="34" font-weight="bold" fill="white">Mulai Berangsur</text>
-  <text x="60" y="237" font-family="Arial" font-size="34" font-weight="bold" fill="#27ae60">Turun 📉</text>
+  <line x1="60" y1="278" x2="490" y2="278" stroke="#22c55e" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
 
-  <line x1="60" y1="258" x2="530" y2="258" stroke="#27ae60" stroke-width="2" opacity="0.35"/>
+  <text x="60" y="310" font-family="Arial" font-size="15" fill="#6b7280">Setelah mencapai puncak Mei 2026,</text>
+  <text x="60" y="332" font-family="Arial" font-size="15" fill="#6b7280">indeks harga PE/PP kini bergerak</text>
+  <text x="60" y="354" font-family="Arial" font-size="15" fill="#6b7280">turun bertahap ke level normal.</text>
 
-  <text x="60" y="287" font-family="Arial" font-size="14" fill="#777">Setelah mencapai puncak di Mei 2026,</text>
-  <text x="60" y="308" font-family="Arial" font-size="14" fill="#777">harga bahan baku plastik global kini</text>
-  <text x="60" y="329" font-family="Arial" font-size="14" fill="#777">memasuki fase koreksi bertahap.</text>
+  <!-- stat chips left -->
+  <g transform="translate(60,380)" filter="url(#s2_4)">
+    <rect x="0" y="0" width="138" height="64" rx="14" fill="white" stroke="#dcfce7" stroke-width="1.5"/>
+    <text x="69" y="22" text-anchor="middle" font-family="Arial" font-size="11" fill="#aaa">PE turun</text>
+    <text x="69" y="50" text-anchor="middle" font-family="Arial" font-size="26" font-weight="800" fill="#22c55e">−11%</text>
 
-  <!-- 3 item bullet points -->
-  <g transform="translate(60, 355)">
-    <rect x="0" y="0" width="14" height="14" rx="3" fill="#27ae60"/>
-    <text x="20" y="11" font-family="Arial" font-size="12" fill="#ccc">PE turun dari puncak <tspan fill="#27ae60" font-weight="bold">−11,2%</tspan></text>
-
-    <rect x="0" y="24" width="14" height="14" rx="3" fill="#3498db"/>
-    <text x="20" y="35" font-family="Arial" font-size="12" fill="#ccc">PP turun dari puncak <tspan fill="#3498db" font-weight="bold">−9,6%</tspan></text>
-
-    <rect x="0" y="48" width="14" height="14" rx="3" fill="#f1c40f"/>
-    <text x="20" y="59" font-family="Arial" font-size="12" fill="#ccc">Target kembali normal <tspan fill="#f1c40f" font-weight="bold">Akhir 2026</tspan></text>
+    <rect x="154" y="0" width="138" height="64" rx="14" fill="white" stroke="#dcfce7" stroke-width="1.5"/>
+    <text x="223" y="22" text-anchor="middle" font-family="Arial" font-size="11" fill="#aaa">PP turun</text>
+    <text x="223" y="50" text-anchor="middle" font-family="Arial" font-size="26" font-weight="800" fill="#22c55e">−9,6%</text>
   </g>
 
-  <!-- Down arrow icon -->
-  <g transform="translate(60, 445)">
-    <rect x="0" y="0" width="240" height="64" rx="12" fill="#071810" stroke="#27ae60" stroke-width="1.5"/>
-    <!-- Big arrow down -->
-    <text x="32" y="42" text-anchor="middle" font-family="Arial" font-size="40" fill="#27ae60">↓</text>
-    <text x="140" y="25" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#27ae60">HARGA SEDANG TURUN</text>
-    <text x="140" y="45" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">Pinus Packindo update harga segera</text>
-  </g>
+  <text x="60" y="484" font-family="Arial" font-size="32">🎉 📦 ✅</text>
+  <text x="60" y="512" font-family="Arial" font-size="13" fill="#aaa">Target kembali normal: Akhir 2026</text>
 
-  <!-- Bottom bar -->
-  <rect x="0" y="590" width="1200" height="40" fill="#040d10"/>
-  <rect x="0" y="590" width="5" height="40" fill="#27ae60"/>
-  <text x="25" y="615" font-family="Arial" font-size="12" fill="#555">Pinus Packindo — Jl. Penjawi No. 11, Pati · WA (0852) 8333 8989</text>
-  <text x="1140" y="615" text-anchor="end" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold">pinuspackindo.com</text>
+  <!-- Bottom strip -->
+  <rect x="0" y="596" width="1200" height="34" fill="#f0fdf4" opacity="0.9"/>
+  <rect x="0" y="596" width="6" height="34" fill="#22c55e"/>
+  <text x="22" y="618" font-family="Arial" font-size="12" fill="#aaa">Pinus Packindo · pinuspackindo.com</text>
+  <text x="1175" y="618" text-anchor="end" font-family="Arial" font-size="12" fill="#22c55e" font-weight="bold">pinuspackindo.com</text>
 </svg>
