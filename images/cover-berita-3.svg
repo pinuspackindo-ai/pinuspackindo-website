@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#071a0f"/>
+      <stop offset="55%" style="stop-color:#0d2818"/>
+      <stop offset="100%" style="stop-color:#071a0f"/>
+    </linearGradient>
+    <linearGradient id="greenGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60"/>
+      <stop offset="100%" style="stop-color:#1e8449"/>
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:0.8"/>
+      <stop offset="40%" style="stop-color:#e67e22;stop-opacity:0.7"/>
+      <stop offset="70%" style="stop-color:#f1c40f;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#27ae60;stop-opacity:0.9"/>
+    </linearGradient>
+    <linearGradient id="calmBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c"/>
+      <stop offset="45%" style="stop-color:#f39c12"/>
+      <stop offset="100%" style="stop-color:#27ae60"/>
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#27ae60;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#27ae60;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="blur3">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle dot grid -->
+  <g fill="#27ae60" fill-opacity="0.06">
+    <circle cx="60" cy="60" r="2"/><circle cx="120" cy="60" r="2"/><circle cx="180" cy="60" r="2"/><circle cx="240" cy="60" r="2"/>
+    <circle cx="60" cy="120" r="2"/><circle cx="120" cy="120" r="2"/><circle cx="180" cy="120" r="2"/><circle cx="240" cy="120" r="2"/>
+    <circle cx="60" cy="180" r="2"/><circle cx="120" cy="180" r="2"/><circle cx="180" cy="180" r="2"/><circle cx="240" cy="180" r="2"/>
+    <circle cx="60" cy="240" r="2"/><circle cx="120" cy="240" r="2"/><circle cx="180" cy="240" r="2"/>
+    <circle cx="60" cy="300" r="2"/><circle cx="120" cy="300" r="2"/>
+    <circle cx="60" cy="360" r="2"/>
+  </g>
+
+  <!-- Green center glow behind shield -->
+  <ellipse cx="850" cy="295" rx="260" ry="240" fill="url(#centerGlow)"/>
+
+  <!-- ── SHIELD / CALM ICON (right side) ── -->
+  <g transform="translate(680, 80)">
+    <!-- Shield outer -->
+    <path d="M170 20 L300 20 L340 60 L340 200 Q340 300 170 360 Q0 300 0 200 L0 60 Z"
+          fill="#0d2818" stroke="#27ae60" stroke-width="2.5" stroke-opacity="0.6"/>
+    <!-- Shield inner fill glow -->
+    <path d="M170 40 L285 40 L318 72 L318 196 Q318 285 170 338 Q22 285 22 196 L22 72 Z"
+          fill="#0a1f10" stroke="#27ae60" stroke-width="1" stroke-opacity="0.3"/>
+
+    <!-- Checkmark in shield -->
+    <path d="M95 175 L145 230 L250 130" fill="none" stroke="#27ae60" stroke-width="16"
+          stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+
+    <!-- Shield label -->
+    <text x="170" y="300" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#27ae60" letter-spacing="2">TERKENDALI</text>
+    <text x="170" y="320" text-anchor="middle" font-family="Arial" font-size="11" fill="#27ae60" fill-opacity="0.6">situasi saat ini</text>
+
+    <!-- Orbiting dots (calm motion) -->
+    <circle cx="340" cy="150" r="6" fill="#27ae60" opacity="0.7"/>
+    <circle cx="310" cy="350" r="5" fill="#27ae60" opacity="0.5"/>
+    <circle cx="30" cy="320" r="5" fill="#27ae60" opacity="0.5"/>
+    <circle cx="10" cy="130" r="7" fill="#27ae60" opacity="0.6"/>
+  </g>
+
+  <!-- ── TIMELINE / WAVE CHART bottom right ── -->
+  <g transform="translate(640, 420)">
+    <rect x="0" y="0" width="510" height="150" rx="12" fill="#091a0c" stroke="#1a3a1a" stroke-width="1"/>
+    <text x="255" y="22" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#666" letter-spacing="1">PROYEKSI STABILISASI HARGA BAHAN BAKU</text>
+
+    <!-- Axes -->
+    <line x1="40" y1="110" x2="490" y2="110" stroke="#1e3a1e" stroke-width="1"/>
+    <line x1="40" y1="30" x2="40" y2="110" stroke="#1e3a1e" stroke-width="1"/>
+
+    <!-- Wave: spike then calm down -->
+    <polyline points="40,90 95,80 150,50 205,35 260,38 315,55 370,72 425,85 480,90"
+      fill="none" stroke="url(#waveGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Fill under curve -->
+    <polygon points="40,110 40,90 95,80 150,50 205,35 260,38 315,55 370,72 425,85 480,90 480,110"
+      fill="url(#waveGrad)" fill-opacity="0.08"/>
+
+    <!-- Peak marker -->
+    <line x1="205" y1="35" x2="205" y2="110" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,3" stroke-opacity="0.5"/>
+    <circle cx="205" cy="35" r="5" fill="#e74c3c" filter="url(#glow)"/>
+    <text x="205" y="28" text-anchor="middle" font-family="Arial" font-size="9" fill="#e74c3c">PUNCAK</text>
+
+    <!-- Recovery zone -->
+    <rect x="315" y="30" width="165" height="80" rx="4" fill="#27ae60" fill-opacity="0.06"/>
+    <text x="397" y="47" text-anchor="middle" font-family="Arial" font-size="9" fill="#27ae60" opacity="0.7">zona pemulihan</text>
+
+    <!-- X-axis labels -->
+    <g font-family="Arial" font-size="9" fill="#555" text-anchor="middle">
+      <text x="40" y="122">Jan'26</text>
+      <text x="150" y="122">Mar'26</text>
+      <text x="260" y="122">Jun'26</text>
+      <text x="370" y="122">Sep'26</text>
+      <text x="480" y="122">Des'26</text>
+    </g>
+
+    <!-- Current position arrow -->
+    <line x1="260" y1="38" x2="260" y2="110" stroke="#f1c40f" stroke-width="1.5" stroke-dasharray="4,3" stroke-opacity="0.6"/>
+    <circle cx="260" cy="38" r="4" fill="#f1c40f"/>
+    <text x="260" y="28" text-anchor="middle" font-family="Arial" font-size="9" fill="#f1c40f">SEKARANG</text>
+
+    <text x="255" y="142" text-anchor="middle" font-family="Arial" font-size="8" fill="#333">proyeksi · bukan jaminan · sumber: IHS Markit</text>
+  </g>
+
+  <!-- ── LEFT: TEXT ── -->
+  <!-- Badge Pinus Packindo Announcement -->
+  <rect x="60" y="60" width="180" height="28" rx="14" fill="#27ae60"/>
+  <text x="150" y="79" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white" letter-spacing="0.5">📢 PERNYATAAN RESMI</text>
+
+  <text x="255" y="79" font-family="Arial" font-size="12" fill="#555">12 Juni 2026</text>
+
+  <!-- Headline -->
+  <text x="60" y="148" font-family="Arial" font-size="36" font-weight="bold" fill="white">Jangan Panik!</text>
+  <text x="60" y="196" font-family="Arial" font-size="36" font-weight="bold" fill="white">Situasi Akan</text>
+  <text x="60" y="244" font-family="Arial" font-size="36" font-weight="bold" fill="#27ae60">Segera Pulih</text>
+
+  <line x1="60" y1="265" x2="540" y2="265" stroke="#27ae60" stroke-width="2" opacity="0.4"/>
+
+  <text x="60" y="294" font-family="Arial" font-size="15" fill="#888">Pinus Packindo memastikan pasokan kemasan</text>
+  <text x="60" y="315" font-family="Arial" font-size="15" fill="#888">tetap tersedia. Krisis ini bersifat sementara.</text>
+
+  <!-- 3 calm point boxes -->
+  <g transform="translate(60, 340)">
+    <!-- Point 1 -->
+    <rect x="0" y="0" width="155" height="65" rx="10" fill="#0a1f10" stroke="#27ae60" stroke-width="1.5"/>
+    <text x="78" y="20" text-anchor="middle" font-family="Arial" font-size="22">🛡</text>
+    <text x="78" y="38" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#27ae60">Stok Aman</text>
+    <text x="78" y="53" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">Pinus Packindo</text>
+
+    <!-- Point 2 -->
+    <rect x="170" y="0" width="155" height="65" rx="10" fill="#0a1f10" stroke="#27ae60" stroke-width="1.5"/>
+    <text x="248" y="20" text-anchor="middle" font-family="Arial" font-size="22">📦</text>
+    <text x="248" y="38" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#27ae60">Harga Terjangkau</text>
+    <text x="248" y="53" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">Konsultasi gratis</text>
+
+    <!-- Point 3 -->
+    <rect x="340" y="0" width="155" height="65" rx="10" fill="#0a1f10" stroke="#27ae60" stroke-width="1.5"/>
+    <text x="418" y="20" text-anchor="middle" font-family="Arial" font-size="22">⏱</text>
+    <text x="418" y="38" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#27ae60">Pulih 3–6 Bulan</text>
+    <text x="418" y="53" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">Proyeksi analis</text>
+  </g>
+
+  <!-- Progress bar: dari krisis ke normal -->
+  <g transform="translate(60, 430)">
+    <text x="0" y="0" font-family="Arial" font-size="10" fill="#555" font-weight="bold" letter-spacing="1">STATUS PASOKAN GLOBAL</text>
+    <rect x="0" y="10" width="510" height="14" rx="7" fill="#0d1a0d" stroke="#1e3a1e" stroke-width="1"/>
+    <rect x="0" y="10" width="230" height="14" rx="7" fill="url(#calmBar)"/>
+    <circle cx="230" cy="17" r="8" fill="#f1c40f" stroke="#0d1a0d" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="36" font-family="Arial" font-size="9" fill="#e74c3c">KRISIS</text>
+    <text x="220" y="36" text-anchor="middle" font-family="Arial" font-size="9" fill="#f1c40f">KINI</text>
+    <text x="510" y="36" text-anchor="end" font-family="Arial" font-size="9" fill="#27ae60">NORMAL</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="590" width="1200" height="40" fill="#040f07"/>
+  <rect x="0" y="590" width="5" height="40" fill="#27ae60"/>
+  <text x="25" y="615" font-family="Arial" font-size="12" fill="#555">Pinus Packindo — Jl. Penjawi No. 11, Pati · WA (0852) 8333 8989</text>
+  <text x="1140" y="615" text-anchor="end" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold">pinuspackindo.com</text>
+</svg>
