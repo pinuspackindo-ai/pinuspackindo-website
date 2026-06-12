@@ -1054,9 +1054,31 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   </div>
   <hr style="border:none;border-top:2.5px solid #d0d0d0;margin-bottom:32px;">
 
-  <!-- Konten berita akan diisi -->
-  <div style="text-align:center;padding:48px 0;color:#aaa;font-size:14px;">Konten berita &amp; acara segera hadir.</div>
-  <div style="display:flex;justify-content:flex-end;margin-top:8px;">
+  <div class="aslide-wrapper">
+    <div class="aslide-viewport" id="bslideViewport">
+      <div class="aslide-track" id="bslideTrack">
+
+        <!-- Berita 1 -->
+        <div class="aslide-card" onclick="location.href='berita-1.html'" style="flex:0 0 360px;max-width:360px;">
+          <div class="aslide-img">
+            <img src="images/cover-berita-1.svg" alt="Kelangkaan Bijih Plastik" style="width:100%;height:auto;display:block;">
+          </div>
+          <div class="aslide-body">
+            <div class="aslide-meta">
+              <span class="aslide-cat" style="background:#fde8e8;color:#e74c3c;">Berita</span>
+              <span class="aslide-date">12 Juni 2026</span>
+            </div>
+            <h3>Kelangkaan Bijih Plastik Imbas Konflik Iran–Amerika Serikat</h3>
+            <p>Pasokan petrokimia global terganggu, harga kemasan plastik berpotensi naik 15–25% dalam waktu dekat...</p>
+            <span class="aslide-read">Baca Selengkapnya →</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="aslide-dots" id="bslideDots"></div>
+  <div style="display:flex;justify-content:flex-end;margin-top:24px;">
     <a href="berita.html" class="btn-all-artikel" data-i18n="news.all">Lihat Semua Berita &amp; Acara →</a>
   </div>
 </section>
