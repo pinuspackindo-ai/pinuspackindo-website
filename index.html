@@ -598,9 +598,11 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   position: absolute;
   top: 0; right: 0;
   width: 280px;
-  height: 100%;
+  height: auto;
+  max-height: 100%;
   background: #fff;
   box-shadow: -4px 0 24px rgba(0,0,0,0.12);
+  border-radius: 0 0 0 16px;
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -636,8 +638,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 .mobile-menu-links {
   display: flex;
   flex-direction: column;
-  padding: 12px 0;
-  flex: 1;
+  padding: 8px 0;
   overflow-y: auto;
 }
 .mobile-menu-links a {
