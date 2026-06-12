@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="60%" style="stop-color:#0f1f0a"/>
+      <stop offset="100%" style="stop-color:#0a1628"/>
+    </linearGradient>
+    <linearGradient id="barUp" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#c0392b"/>
+      <stop offset="100%" style="stop-color:#e74c3c"/>
+    </linearGradient>
+    <linearGradient id="barMid" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#d35400"/>
+      <stop offset="100%" style="stop-color:#e67e22"/>
+    </linearGradient>
+    <linearGradient id="barLow" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a7a3c"/>
+      <stop offset="100%" style="stop-color:#27ae60"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c"/>
+      <stop offset="100%" style="stop-color:#f39c12"/>
+    </linearGradient>
+    <radialGradient id="glowOrange" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#e67e22;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#e67e22;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softblur">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+  </defs>
+
+  <!-- BG -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g stroke="#ffffff" stroke-opacity="0.025" stroke-width="1">
+    <line x1="0" y1="126" x2="1200" y2="126"/><line x1="0" y1="252" x2="1200" y2="252"/>
+    <line x1="0" y1="378" x2="1200" y2="378"/><line x1="0" y1="504" x2="1200" y2="504"/>
+    <line x1="240" y1="0" x2="240" y2="630"/><line x1="480" y1="0" x2="480" y2="630"/>
+    <line x1="720" y1="0" x2="720" y2="630"/><line x1="960" y1="0" x2="960" y2="630"/>
+  </g>
+
+  <!-- Orange glow right -->
+  <ellipse cx="900" cy="300" rx="380" ry="300" fill="url(#glowOrange)"/>
+
+  <!-- ── BAR CHART (right panel) ── -->
+  <g transform="translate(620, 80)">
+    <!-- Chart background -->
+    <rect x="0" y="0" width="520" height="430" rx="16" fill="#0d1a0d" stroke="#1e3a1e" stroke-width="1.5"/>
+    <text x="260" y="35" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#aaa" letter-spacing="1">INDEKS HARGA BAHAN BAKU PLASTIK</text>
+    <text x="260" y="55" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">(Polietilena / PP / PVC — Basis: Jan 2025 = 100)</text>
+
+    <!-- Y-axis labels -->
+    <g font-family="Arial" font-size="10" fill="#555">
+      <text x="42" y="82" text-anchor="end">180</text>
+      <text x="42" y="122" text-anchor="end">160</text>
+      <text x="42" y="162" text-anchor="end">140</text>
+      <text x="42" y="202" text-anchor="end">120</text>
+      <text x="42" y="242" text-anchor="end">100</text>
+      <text x="42" y="282" text-anchor="end">80</text>
+    </g>
+    <!-- Horizontal grid lines -->
+    <g stroke="#1e3a1e" stroke-width="1">
+      <line x1="48" y1="80" x2="500" y2="80"/>
+      <line x1="48" y1="120" x2="500" y2="120"/>
+      <line x1="48" y1="160" x2="500" y2="160"/>
+      <line x1="48" y1="200" x2="500" y2="200"/>
+      <line x1="48" y1="240" x2="500" y2="240"/>
+      <line x1="48" y1="280" x2="500" y2="280"/>
+    </g>
+    <!-- Baseline (100) highlighted -->
+    <line x1="48" y1="240" x2="500" y2="240" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="6,4" stroke-opacity="0.5"/>
+    <text x="505" y="244" font-family="Arial" font-size="9" fill="#27ae60" opacity="0.6">normal</text>
+
+    <!-- Bars: Jan25, Apr25, Jul25, Oct25, Jan26, Apr26, Jun26 -->
+    <!-- Jan 2025: 100 → height 0 from baseline at y=240 -->
+    <rect x="60" y="240" width="40" height="0" fill="url(#barLow)" rx="3"/><!-- placeholder 100 -->
+    <!-- Actually draw from top: bar bottom = 240, top = 240 - (val-80)*2 -->
+    <!-- Jan25=100: top=240-(100-80)*2=200, h=40 -->
+    <rect x="60" y="200" width="40" height="40" fill="url(#barLow)" rx="3" opacity="0.9"/>
+    <text x="80" y="295" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">Jan 25</text>
+
+    <!-- Apr25=108 → top=240-56=184, h=56 -->
+    <rect x="118" y="184" width="40" height="56" fill="url(#barLow)" rx="3" opacity="0.9"/>
+    <text x="138" y="295" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">Apr 25</text>
+
+    <!-- Jul25=115 → top=240-70=170, h=70 -->
+    <rect x="176" y="170" width="40" height="70" fill="url(#barLow)" rx="3" opacity="0.9"/>
+    <text x="196" y="295" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">Jul 25</text>
+
+    <!-- Oct25=122 → top=240-84=156, h=84 -->
+    <rect x="234" y="156" width="40" height="84" fill="url(#barMid)" rx="3" opacity="0.9"/>
+    <text x="254" y="295" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">Okt 25</text>
+
+    <!-- Jan26=138 → top=240-116=124, h=116 -->
+    <rect x="292" y="124" width="40" height="116" fill="url(#barMid)" rx="3" opacity="0.9"/>
+    <text x="312" y="295" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">Jan 26</text>
+
+    <!-- Apr26=158 → top=240-156=84, h=156 -->
+    <rect x="350" y="84" width="40" height="156" fill="url(#barUp)" rx="3" opacity="0.9"/>
+    <text x="370" y="295" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">Apr 26</text>
+
+    <!-- Jun26=172 → top=240-184=56, h=184 -->
+    <rect x="408" y="56" width="40" height="184" fill="url(#barUp)" rx="3" filter="url(#glow)"/>
+    <text x="428" y="295" text-anchor="middle" font-family="Arial" font-size="9" fill="#e74c3c">Jun 26</text>
+    <!-- Value label on top bar -->
+    <text x="428" y="48" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#e74c3c">+72%</text>
+    <text x="428" y="38" text-anchor="middle" font-family="Arial" font-size="9" fill="#e74c3c" opacity="0.7">↑ dari Jan 25</text>
+
+    <!-- Trend line -->
+    <polyline points="80,200 138,184 196,170 254,156 312,124 370,84 428,56"
+      fill="none" stroke="#f39c12" stroke-width="2" stroke-dasharray="6,3" opacity="0.5"/>
+
+    <!-- X-axis -->
+    <line x1="48" y1="280" x2="500" y2="280" stroke="#333" stroke-width="1"/>
+
+    <!-- Legend -->
+    <rect x="60" y="310" width="12" height="12" rx="2" fill="url(#barLow)"/>
+    <text x="78" y="321" font-family="Arial" font-size="10" fill="#666">Normal (100–120)</text>
+    <rect x="200" y="310" width="12" height="12" rx="2" fill="url(#barMid)"/>
+    <text x="218" y="321" font-family="Arial" font-size="10" fill="#666">Waspada (120–150)</text>
+    <rect x="355" y="310" width="12" height="12" rx="2" fill="url(#barUp)"/>
+    <text x="373" y="321" font-family="Arial" font-size="10" fill="#666">Kritis (&gt;150)</text>
+
+    <!-- Source -->
+    <text x="260" y="345" text-anchor="middle" font-family="Arial" font-size="9" fill="#444">Sumber: IHS Markit · Bloomberg Commodities · Kemenperin RI</text>
+
+    <!-- Tipe plastik breakdown -->
+    <g transform="translate(20, 370)">
+      <text x="0" y="14" font-family="Arial" font-size="10" font-weight="bold" fill="#777" letter-spacing="1">KENAIKAN PER JENIS</text>
+      <!-- PE -->
+      <rect x="0" y="20" width="148" height="32" rx="6" fill="#1a0505" stroke="#e74c3c" stroke-width="1" stroke-opacity="0.6"/>
+      <text x="74" y="33" text-anchor="middle" font-family="Arial" font-size="9" fill="#aaa">Polyethylene (PE)</text>
+      <text x="74" y="46" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#e74c3c">+78%</text>
+      <!-- PP -->
+      <rect x="158" y="20" width="148" height="32" rx="6" fill="#1a0800" stroke="#e67e22" stroke-width="1" stroke-opacity="0.6"/>
+      <text x="232" y="33" text-anchor="middle" font-family="Arial" font-size="9" fill="#aaa">Polypropylene (PP)</text>
+      <text x="232" y="46" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#e67e22">+65%</text>
+      <!-- PVC -->
+      <rect x="316" y="20" width="148" height="32" rx="6" fill="#0a0a1a" stroke="#f1c40f" stroke-width="1" stroke-opacity="0.6"/>
+      <text x="390" y="33" text-anchor="middle" font-family="Arial" font-size="9" fill="#aaa">PVC</text>
+      <text x="390" y="46" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#f1c40f">+48%</text>
+    </g>
+  </g>
+
+  <!-- ── LEFT: TEXT ── -->
+  <!-- Badge -->
+  <rect x="60" y="60" width="130" height="28" rx="14" fill="#e74c3c"/>
+  <text x="125" y="79" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white" letter-spacing="0.5">⚠ HARGA NAIK</text>
+
+  <text x="205" y="79" font-family="Arial" font-size="12" fill="#666">12 Juni 2026</text>
+
+  <!-- Headline -->
+  <text x="60" y="148" font-family="Arial" font-size="36" font-weight="bold" fill="white">Harga Kemasan</text>
+  <text x="60" y="196" font-family="Arial" font-size="36" font-weight="bold" fill="white">Plastik Melonjak</text>
+  <text x="60" y="244" font-family="Arial" font-size="36" font-weight="bold" fill="#f39c12">Hingga 78%</text>
+
+  <line x1="60" y1="266" x2="540" y2="266" stroke="#e74c3c" stroke-width="2" opacity="0.4"/>
+
+  <text x="60" y="295" font-family="Arial" font-size="15" fill="#999">Kelangkaan bahan baku akibat krisis geopolitik</text>
+  <text x="60" y="316" font-family="Arial" font-size="15" fill="#999">memaksa produsen kemasan menaikkan harga jual.</text>
+
+  <!-- Big price arrow visual -->
+  <g transform="translate(60, 345)">
+    <rect x="0" y="0" width="510" height="2" fill="#1a1a1a"/>
+    <!-- Arrow going up -->
+    <path d="M30 180 L30 30 L15 50 M30 30 L45 50" stroke="url(#arrowGrad)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+    <text x="55" y="175" font-family="Arial" font-size="13" fill="#666">Jan 25</text>
+    <text x="55" y="35" font-family="Arial" font-size="13" fill="#e74c3c">Jun 26</text>
+
+    <!-- Price tags -->
+    <rect x="80" y="140" width="130" height="42" rx="8" fill="#0d1a0d" stroke="#27ae60" stroke-width="1.5"/>
+    <text x="145" y="157" text-anchor="middle" font-family="Arial" font-size="10" fill="#777">Harga PE (Jan 25)</text>
+    <text x="145" y="174" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#27ae60">Rp 15.200/kg</text>
+
+    <rect x="80" y="10" width="130" height="42" rx="8" fill="#1a0505" stroke="#e74c3c" stroke-width="1.5"/>
+    <text x="145" y="27" text-anchor="middle" font-family="Arial" font-size="10" fill="#777">Harga PE (Jun 26)</text>
+    <text x="145" y="44" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#e74c3c">Rp 27.000/kg</text>
+
+    <!-- Middle bracket -->
+    <line x1="215" y1="31" x2="240" y2="31" stroke="#f39c12" stroke-width="1.5" stroke-opacity="0.7"/>
+    <line x1="215" y1="161" x2="240" y2="161" stroke="#f39c12" stroke-width="1.5" stroke-opacity="0.7"/>
+    <line x1="240" y1="31" x2="240" y2="161" stroke="#f39c12" stroke-width="1.5" stroke-opacity="0.7"/>
+    <text x="255" y="100" font-family="Arial" font-size="22" font-weight="bold" fill="#f39c12">+78%</text>
+    <text x="255" y="118" font-family="Arial" font-size="10" fill="#888">dalam 18 bulan</text>
+
+    <!-- Impact on packaging products -->
+    <g transform="translate(340, 10)">
+      <text x="0" y="14" font-family="Arial" font-size="10" font-weight="bold" fill="#777" letter-spacing="1">DAMPAK KE KEMASAN</text>
+      <rect x="0" y="22" width="160" height="26" rx="5" fill="#1a0505" stroke="#e74c3c" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="80" y="32" text-anchor="middle" font-family="Arial" font-size="9" fill="#aaa">Plastik Standing Pouch</text>
+      <text x="80" y="43" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#e74c3c">+55–70%</text>
+
+      <rect x="0" y="56" width="160" height="26" rx="5" fill="#1a0800" stroke="#e67e22" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="80" y="66" text-anchor="middle" font-family="Arial" font-size="9" fill="#aaa">Kantong Plastik / Mika</text>
+      <text x="80" y="77" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#e67e22">+40–60%</text>
+
+      <rect x="0" y="90" width="160" height="26" rx="5" fill="#0f1a0a" stroke="#27ae60" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="80" y="100" text-anchor="middle" font-family="Arial" font-size="9" fill="#aaa">Kemasan Kertas / Kraft</text>
+      <text x="80" y="111" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#27ae60">+10–15%</text>
+
+      <rect x="0" y="124" width="160" height="26" rx="5" fill="#0a0a1a" stroke="#3498db" stroke-width="1" stroke-opacity="0.5"/>
+      <text x="80" y="134" text-anchor="middle" font-family="Arial" font-size="9" fill="#aaa">Styrofoam</text>
+      <text x="80" y="145" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#3498db">+30–45%</text>
+    </g>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="590" width="1200" height="40" fill="#080808"/>
+  <rect x="0" y="590" width="5" height="40" fill="#f39c12"/>
+  <text x="25" y="615" font-family="Arial" font-size="12" fill="#555">Data: IHS Markit · Bloomberg Commodities · Kemenperin RI · Asosiasi Industri Plastik Indonesia</text>
+  <text x="1140" y="615" text-anchor="end" font-family="Arial" font-size="12" fill="#27ae60" font-weight="bold">pinuspackindo.com</text>
+</svg>
