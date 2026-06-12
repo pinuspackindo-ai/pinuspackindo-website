@@ -185,7 +185,8 @@
     "name_ph": "Your Name",
     "phone_ph": "WhatsApp / Phone Number",
     "msg_ph": "Tell us about your packaging needs...",
-    "btn_send": "Send via WhatsApp"
+    "btn_send": "Send via WhatsApp",
+    "our_store": "Our Store"
   },
   "about_page": {
     "tag": "Pinus Packindo",
