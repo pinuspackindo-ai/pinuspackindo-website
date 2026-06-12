@@ -31,7 +31,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 8
 .breadcrumb strong{font-size:13px;color:#444;}
 .article-hero{
   background:linear-gradient(135deg,rgba(13,34,24,0.85) 0%,rgba(26,74,46,0.78) 55%,rgba(39,174,96,0.65) 100%),
-  url('images/cover-artikel-2.png'), url('images/artikel-hero.png') center center/cover no-repeat;
+  url('images/artikel-hero.png') center center/cover no-repeat;
   padding:72px 80px;
 }
 .article-hero-tag{font-size:11px;font-weight:700;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;}
@@ -103,7 +103,10 @@ footer{background:#111;color:#aaa;padding:56px 80px 24px;}
 </div>
 
 <div class="article-main">
-  <a class="article-back" href="artikel.html" onclick="history.back();return false;">← Kembali ke Artikel</a>
+  <div style="width:100%;border-radius:16px;overflow:hidden;margin-bottom:36px;box-shadow:0 4px 24px rgba(0,0,0,0.1);">
+    <img src="images/cover-artikel-2.png" alt="Sampul Artikel" style="width:100%;display:block;max-height:480px;object-fit:cover;">
+  </div>
+    <a class="article-back" href="artikel.html" onclick="history.back();return false;">← Kembali ke Artikel</a>
   <div class="article-content">
     <p>Memilih kemasan plastik untuk produk makanan bukan hal yang bisa dilakukan sembarangan. Ada perbedaan mendasar antara plastik food grade dan non-food grade yang wajib Anda pahami demi keamanan konsumen dan legalitas bisnis.</p>
 <h2>Apa itu Plastik Food Grade?</h2>
