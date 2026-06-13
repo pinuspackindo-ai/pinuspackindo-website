@@ -156,8 +156,13 @@
       ppBtnCancel.addEventListener('click', onNo);
     }
 
+    // Flag bypass agar klik ulang setelah konfirmasi tidak ter-intercept lagi
+    var ppBypassed = false;
+
     // Intercept klik pada tombol hapus (capture phase)
     document.addEventListener('click', function(e) {
+      if (ppBypassed) return; // lewati interceptor setelah konfirmasi
+
       var el = e.target;
 
       // Cari elemen delete sampai 6 level ke atas
@@ -167,14 +172,14 @@
           e.stopImmediatePropagation();
           e.preventDefault();
 
-          var ctx         = getDeleteContext(el);
-          var targetEl    = el; // simpan referensi
-          var targetEvent = e;
+          var ctx      = getDeleteContext(el);
+          var targetEl = el;
 
           showConfirm(ctx, function() {
-            // Jalankan klik asli setelah konfirmasi
-            targetEl.removeEventListener('click', arguments.callee);
+            // Jalankan klik asli setelah konfirmasi dengan bypass flag
+            ppBypassed = true;
             targetEl.click();
+            ppBypassed = false;
           });
           return;
         }
