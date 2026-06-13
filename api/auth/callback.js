@@ -22,38 +22,44 @@ export default async function handler(req, res) {
     const data = await response.json();
 
     if (data.error) {
-      return res.status(400).send(`Error: ${data.error_description}`);
+      const html = `<!DOCTYPE html><html><body><script>
+        window.opener && window.opener.postMessage(
+          'authorization:github:error:${JSON.stringify({ error: data.error_description })}',
+          '*'
+        );
+        window.close();
+      <\/script></body></html>`;
+      res.setHeader('Content-Type', 'text/html');
+      return res.status(200).send(html);
     }
 
     const token = data.access_token;
+    const message = `authorization:github:success:${JSON.stringify({ token, provider: 'github' })}`;
 
-    // Send token back to CMS via postMessage
-    const script = `
-      <script>
-        (function() {
-          function receiveMessage(e) {
-            console.log("receiveMessage %o", e);
-          }
-          window.addEventListener("message", receiveMessage, false);
-          window.opener.postMessage(
-            'authorization:github:success:${JSON.stringify({ token, provider: "github" })}',
-            '*'
-          );
-        })();
-      </script>
-    `;
+    const html = `<!DOCTYPE html>
+<html>
+<head><title>Authorizing...</title></head>
+<body>
+<p>Authorizing, please wait...</p>
+<script>
+  (function() {
+    var message = ${JSON.stringify(message)};
+    function sendMessage() {
+      if (window.opener) {
+        window.opener.postMessage(message, '*');
+        setTimeout(function() { window.close(); }, 1000);
+      } else {
+        setTimeout(sendMessage, 500);
+      }
+    }
+    sendMessage();
+  })();
+<\/script>
+</body>
+</html>`;
 
     res.setHeader('Content-Type', 'text/html');
-    return res.status(200).send(`
-      <!DOCTYPE html>
-      <html>
-        <head><title>Authorizing...</title></head>
-        <body>
-          <p>Authorizing, please wait...</p>
-          ${script}
-        </body>
-      </html>
-    `);
+    return res.status(200).send(html);
   } catch (error) {
     return res.status(500).send(`Server error: ${error.message}`);
   }
