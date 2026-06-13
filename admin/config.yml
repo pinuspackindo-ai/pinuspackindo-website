@@ -72,9 +72,11 @@ collections:
           - label: "Kartu Produk"
             name: "cards"
             widget: "list"
+            summary: "{{title}} — 📷 s2-{{kode}}"
             fields:
               - {label: "Judul Kartu", name: "title", widget: "string"}
               - {label: "Deskripsi", name: "description", widget: "text"}
+              - {label: "Kode Foto (s2-X)", name: "kode", widget: "string", hint: "Angka urutan foto, contoh: 1 → foto s2-1.png"}
 
       - label: "Section 3 — Tentang Kami"
         name: "section3"
@@ -94,9 +96,11 @@ collections:
           - label: "Kartu Keunggulan"
             name: "cards"
             widget: "list"
+            summary: "{{title}} — 📷 s4-{{kode}}"
             fields:
               - {label: "Judul", name: "title", widget: "string"}
               - {label: "Deskripsi", name: "description", widget: "text"}
+              - {label: "Kode Foto (s4-X)", name: "kode", widget: "string", hint: "Angka urutan foto, contoh: 1 → foto s4-1.png"}
 
       - label: "Section 7 — Testimoni"
         name: "section7"
@@ -107,10 +111,12 @@ collections:
           - label: "Daftar Testimoni"
             name: "testimonials"
             widget: "list"
+            summary: "{{name}} — 📷 s7-{{kode}}"
             fields:
               - {label: "Kutipan", name: "quote", widget: "text"}
               - {label: "Nama", name: "name", widget: "string"}
               - {label: "Jabatan/Usaha", name: "role", widget: "string"}
+              - {label: "Kode Foto (s7-X)", name: "kode", widget: "string", hint: "Angka urutan foto, contoh: 1 → foto s7-1.jpg"}
 
   - name: "settings"
     label: "⚙️ Pengaturan Website"

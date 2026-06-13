@@ -5,27 +5,32 @@
     {
       "title": "Kemasan Plastik",
       "description": "Berbagai kemasan plastik untuk kebutuhan makanan & minuman: gelas, piring, mika, botol, kantong, standing pouch, thinwall, vacuum bag, toples, sedotan, dan shopping bag.",
-      "photo": "images/s2-1.png"
+      "photo": "images/s2-1.png",
+      "kode": "1"
     },
     {
       "title": "Kemasan Kertas",
       "description": "Kemasan berbahan kertas ramah lingkungan: gelas kertas, box makanan, mangkok, paper bag, kemasan nasi, snack, kue, dan kertas roti.",
-      "photo": "images/s2-2.png"
+      "photo": "images/s2-2.png",
+      "kode": "2"
     },
     {
       "title": "Kemasan Styrofoam",
       "description": "Aneka kemasan styrofoam untuk makanan: box, piring, mangkok, ice box, tray buah, hingga kemasan daging dan sayuran segar.",
-      "photo": "images/s2-3.png"
+      "photo": "images/s2-3.png",
+      "kode": "3"
     },
     {
       "title": "Peralatan Baking",
       "description": "Peralatan lengkap untuk membuat kue & roti: pengocok telur, timbangan, cetakan, spuit, alas adonan, botol saus, loyang, dan mixer.",
-      "photo": "images/s2-4.png"
+      "photo": "images/s2-4.png",
+      "kode": "4"
     },
     {
       "title": "Bahan Baking",
       "description": "Bahan-bahan berkualitas untuk membuat kue: tepung, gula, susu, obat kue, coklat, topping, pewarna makanan, dan berbagai essens.",
-      "photo": "images/s2-5.png"
+      "photo": "images/s2-5.png",
+      "kode": "5"
     }
   ]
 }
