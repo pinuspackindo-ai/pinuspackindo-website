@@ -2,8 +2,8 @@
 title: "Mengenal Jenis-jenis Kertas Roti dan Fungsinya dalam Dunia Baking"
 category: "Edukasi"
 date: 2026-04-10T08:00:00.000Z
-cover: images/ma-0006.png
-kode: "0006"
+cover: images/ma-0001.png
+kode: "0001"
 summary: Kertas roti memiliki berbagai jenis dengan fungsi berbeda. Kenali jenis-jenisnya agar Anda bisa memilih yang tepat untuk kebutuhan baking.
 ---
 
