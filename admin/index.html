@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex">
   <title>Admin | Pinus Packindo</title>
-  <!-- v2 -->
+  <!-- v3 -->
   <style>
     /* ── Custom Delete Confirmation Modal ── */
     #pp-confirm-overlay {
@@ -26,30 +26,18 @@
       from { transform: scale(0.9); opacity: 0; }
       to   { transform: scale(1);   opacity: 1; }
     }
-    #pp-confirm-box .pp-icon {
-      font-size: 36px; margin-bottom: 12px; display: block;
-    }
-    #pp-confirm-box h3 {
-      margin: 0 0 8px; font-size: 17px; font-weight: 700; color: #1a1a1a;
-    }
-    #pp-confirm-box p {
-      margin: 0 0 24px; font-size: 14px; color: #666; line-height: 1.5;
-    }
-    #pp-confirm-box .pp-btns {
-      display: flex; gap: 10px; justify-content: center;
-    }
+    #pp-confirm-box .pp-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+    #pp-confirm-box h3 { margin: 0 0 8px; font-size: 17px; font-weight: 700; color: #1a1a1a; }
+    #pp-confirm-box p  { margin: 0 0 24px; font-size: 14px; color: #666; line-height: 1.5; }
+    #pp-confirm-box .pp-btns { display: flex; gap: 10px; justify-content: center; }
     #pp-confirm-box button {
       flex: 1; padding: 10px 0; border-radius: 8px;
       font-size: 14px; font-weight: 600; cursor: pointer;
       border: none; transition: opacity 0.15s;
     }
     #pp-confirm-box button:hover { opacity: 0.85; }
-    #pp-btn-cancel {
-      background: #f0f0f0; color: #444;
-    }
-    #pp-btn-confirm {
-      background: #e74c3c; color: #fff;
-    }
+    #pp-btn-cancel  { background: #f0f0f0; color: #444; }
+    #pp-btn-confirm { background: #e74c3c; color: #fff; }
   </style>
 </head>
 <body>
@@ -99,17 +87,18 @@
       'delete image', 'delete media'
     ];
 
+    // Status: sedang menunggu konfirmasi
+    var ppPending = false;
+
     function isDeleteTarget(el) {
       if (!el) return false;
-      var tag    = (el.tagName || '').toLowerCase();
-      var label  = (el.getAttribute('aria-label') || '').toLowerCase();
-      var title  = (el.getAttribute('title') || '').toLowerCase();
-      var role   = (el.getAttribute('role') || '').toLowerCase();
-      var text   = (el.textContent || '').trim().toLowerCase();
-      var isBtn  = tag === 'button' || tag === 'a' || role === 'menuitem' || role === 'button';
-
+      var tag   = (el.tagName || '').toLowerCase();
+      var label = (el.getAttribute('aria-label') || '').toLowerCase();
+      var title = (el.getAttribute('title') || '').toLowerCase();
+      var role  = (el.getAttribute('role') || '').toLowerCase();
+      var text  = (el.textContent || '').trim().toLowerCase();
+      var isBtn = tag === 'button' || tag === 'a' || role === 'menuitem' || role === 'button';
       if (!isBtn) return false;
-
       for (var i = 0; i < DELETE_KEYWORDS.length; i++) {
         var kw = DELETE_KEYWORDS[i];
         if (label === kw || title === kw || text === kw) return true;
@@ -118,7 +107,6 @@
     }
 
     function getDeleteContext(el) {
-      // Tentukan pesan berdasarkan konteks
       var label = (el.getAttribute('aria-label') || el.textContent || '').toLowerCase();
       if (label.includes('asset') || label.includes('file') || label.includes('image') || label.includes('media')) {
         return {
@@ -132,64 +120,95 @@
           msg: 'Yakin ingin menghapus entri ini?<br>Data akan <strong>terhapus permanen</strong> dan tidak bisa dikembalikan.'
         };
       }
-      // List item remove (tombol ×)
       return {
         title: 'Hapus Item dari Daftar?',
         msg: 'Yakin ingin menghapus item ini dari daftar?<br>Perubahan baru berlaku setelah klik <strong>Save</strong>.'
       };
     }
 
-    function showConfirm(context, onOk) {
+    function showConfirm(context, onOk, onCancel) {
       ppTitle.textContent = context.title;
       ppMsg.innerHTML     = context.msg;
       ppOverlay.classList.add('show');
 
       function cleanup() {
         ppOverlay.classList.remove('show');
+        ppPending = false;
         ppBtnOk.removeEventListener('click', onYes);
         ppBtnCancel.removeEventListener('click', onNo);
       }
       function onYes() { cleanup(); onOk(); }
-      function onNo()  { cleanup(); }
+      function onNo()  { cleanup(); if (onCancel) onCancel(); }
 
       ppBtnOk.addEventListener('click', onYes);
       ppBtnCancel.addEventListener('click', onNo);
     }
 
-    // Flag bypass agar klik ulang setelah konfirmasi tidak ter-intercept lagi
-    var ppBypassed = false;
-
-    // Intercept klik pada tombol hapus (capture phase)
+    /*
+     * Strategi: BIARKAN klik event jalan dulu (tidak di-prevent),
+     * tapi langsung batalkan efeknya jika user pilih "Batalkan".
+     *
+     * Untuk delete yang memerlukan konfirmasi lanjutan dari CMS sendiri
+     * (misal Sveltia menampilkan dialog-nya sendiri), kita intercept
+     * sebelum dialog CMS muncul dan gantikan dengan dialog kita.
+     *
+     * Pendekatan yang lebih andal: PREVENT dulu, lalu re-dispatch
+     * event baru yang identik setelah konfirmasi.
+     */
     document.addEventListener('click', function(e) {
-      if (ppBypassed) return; // lewati interceptor setelah konfirmasi
+      // Jika sudah dalam proses konfirmasi atau klik dari dalam modal kita, lewati
+      if (ppPending) return;
+      if (ppOverlay.contains(e.target)) return;
 
       var el = e.target;
-
-      // Cari elemen delete sampai 6 level ke atas
       for (var depth = 0; depth < 6; depth++) {
         if (!el || el === document.body) break;
         if (isDeleteTarget(el)) {
+          // Blok event asli
           e.stopImmediatePropagation();
           e.preventDefault();
 
+          ppPending = true;
           var ctx      = getDeleteContext(el);
-          var targetEl = el;
+          var savedEl  = el;
 
           showConfirm(ctx, function() {
-            // Jalankan klik asli setelah konfirmasi dengan bypass flag
-            ppBypassed = true;
-            targetEl.click();
-            ppBypassed = false;
+            // Konfirmasi: re-dispatch event baru ke elemen yang sama
+            // Cek dulu apakah elemen masih ada di DOM
+            if (document.body.contains(savedEl)) {
+              savedEl.dispatchEvent(new MouseEvent('click', {
+                bubbles: true,
+                cancelable: true,
+                composed: true,
+                view: window
+              }));
+            } else {
+              // Elemen sudah di-re-render, cari pengganti terdekat
+              var candidates = Array.from(document.querySelectorAll(
+                'button[aria-label], [role="menuitem"], [role="button"]'
+              ));
+              for (var i = 0; i < candidates.length; i++) {
+                if (isDeleteTarget(candidates[i])) {
+                  candidates[i].dispatchEvent(new MouseEvent('click', {
+                    bubbles: true, cancelable: true, composed: true, view: window
+                  }));
+                  break;
+                }
+              }
+            }
           });
           return;
         }
         el = el.parentElement;
       }
-    }, true); // capture phase agar lebih awal dari handler Svelte
+    }, true);
 
     // Tutup modal jika klik di luar box
     ppOverlay.addEventListener('click', function(e) {
-      if (e.target === ppOverlay) ppOverlay.classList.remove('show');
+      if (e.target === ppOverlay) {
+        ppOverlay.classList.remove('show');
+        ppPending = false;
+      }
     });
   </script>
 
