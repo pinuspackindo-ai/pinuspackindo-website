@@ -20,7 +20,7 @@ collections:
       - {label: "Judul", name: "title", widget: "string"}
       - {label: "Kategori", name: "category", widget: "string", default: "Berita"}
       - {label: "Tanggal", name: "date", widget: "datetime"}
-      - {label: "Foto Sampul", name: "cover", widget: "image", required: false}
+      - {label: "Kode Foto (mb-XXXX)", name: "kode", widget: "string", required: false, hint: "Isi kode foto, contoh: 0001 → foto akan bernama mb-0001.svg di folder images/"}
       - {label: "Ringkasan", name: "summary", widget: "text"}
       - {label: "Konten", name: "body", widget: "markdown"}
 
@@ -33,7 +33,7 @@ collections:
       - {label: "Judul", name: "title", widget: "string"}
       - {label: "Kategori", name: "category", widget: "string", default: "Tips"}
       - {label: "Tanggal", name: "date", widget: "datetime"}
-      - {label: "Foto Sampul", name: "cover", widget: "image", required: false}
+      - {label: "Kode Foto (ma-XXXX)", name: "kode", widget: "string", required: false, hint: "Isi kode foto, contoh: 0001 → foto akan bernama ma-0001.png di folder images/"}
       - {label: "Ringkasan", name: "summary", widget: "text"}
       - {label: "Konten", name: "body", widget: "markdown"}
 
@@ -45,7 +45,7 @@ collections:
     fields:
       - {label: "Nama Produk", name: "title", widget: "string"}
       - {label: "Kategori", name: "category", widget: "select", options: ["Kemasan Plastik", "Kemasan Kertas", "Kemasan Styrofoam", "Peralatan Baking", "Bahan Baking"]}
-      - {label: "Foto Produk", name: "image", widget: "image", required: false}
+      - {label: "Kode Foto (mp-XXXX)", name: "kode", widget: "string", required: false, hint: "Isi kode foto, contoh: 0001 → foto akan bernama mp-0001.png di folder images/"}
       - {label: "Deskripsi", name: "description", widget: "text"}
       - {label: "Tersedia", name: "available", widget: "boolean", default: true}
 
@@ -72,7 +72,6 @@ collections:
             fields:
               - {label: "Judul Kartu", name: "title", widget: "string"}
               - {label: "Deskripsi", name: "description", widget: "text"}
-              - {label: "Foto", name: "photo", widget: "image", required: false}
 
       - label: "Section 3 — Tentang Kami"
         name: "section3"
@@ -95,7 +94,6 @@ collections:
             fields:
               - {label: "Judul", name: "title", widget: "string"}
               - {label: "Deskripsi", name: "description", widget: "text"}
-              - {label: "Foto", name: "photo", widget: "image", required: false}
 
       - label: "Section 7 — Testimoni"
         name: "section7"
@@ -110,7 +108,6 @@ collections:
               - {label: "Kutipan", name: "quote", widget: "text"}
               - {label: "Nama", name: "name", widget: "string"}
               - {label: "Jabatan/Usaha", name: "role", widget: "string"}
-              - {label: "Foto", name: "photo", widget: "image", required: false}
 
   - name: "settings"
     label: "⚙️ Pengaturan Website"
