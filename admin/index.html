@@ -5,9 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex">
   <title>Admin | Pinus Packindo</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'pinuspackindo-ai/pinuspackindo-website',
+          branch: 'main',
+          auth_type: 'pkce',
+          app_id: 'Ov23liTZUhMtWLjMCjZ6',
+        },
+        media_folder: 'images',
+        public_folder: '/images',
+        locale: 'id',
+        collections: [
+          {
+            name: 'berita',
+            label: '📰 Berita & Acara',
+            folder: '_berita',
+            create: true,
+            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+            fields: [
+              { label: 'Judul', name: 'title', widget: 'string' },
+              { label: 'Kategori', name: 'category', widget: 'string', default: 'Berita' },
+              { label: 'Tanggal', name: 'date', widget: 'datetime' },
+              { label: 'Foto Sampul', name: 'cover', widget: 'image', required: false },
+              { label: 'Ringkasan', name: 'summary', widget: 'text' },
+              { label: 'Konten', name: 'body', widget: 'markdown' },
+            ],
+          },
+          {
+            name: 'artikel',
+            label: '📝 Artikel',
+            folder: '_artikel',
+            create: true,
+            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+            fields: [
+              { label: 'Judul', name: 'title', widget: 'string' },
+              { label: 'Kategori', name: 'category', widget: 'string', default: 'Tips' },
+              { label: 'Tanggal', name: 'date', widget: 'datetime' },
+              { label: 'Foto Sampul', name: 'cover', widget: 'image', required: false },
+              { label: 'Ringkasan', name: 'summary', widget: 'text' },
+              { label: 'Konten', name: 'body', widget: 'markdown' },
+            ],
+          },
+          {
+            name: 'produk',
+            label: '📦 Produk',
+            folder: '_produk',
+            create: true,
+            slug: '{{slug}}',
+            fields: [
+              { label: 'Nama Produk', name: 'title', widget: 'string' },
+              { label: 'Kategori', name: 'category', widget: 'select', options: ['Kemasan Plastik', 'Kemasan Kertas', 'Kemasan Styrofoam', 'Peralatan Baking', 'Bahan Baking'] },
+              { label: 'Foto Produk', name: 'image', widget: 'image', required: false },
+              { label: 'Deskripsi', name: 'description', widget: 'text' },
+              { label: 'Tersedia', name: 'available', widget: 'boolean', default: true },
+            ],
+          },
+          {
+            name: 'settings',
+            label: '⚙️ Pengaturan Website',
+            files: [
+              {
+                label: 'Info Umum',
+                name: 'general',
+                file: '_data/settings.json',
+                fields: [
+                  { label: 'Nama Perusahaan', name: 'company_name', widget: 'string' },
+                  { label: 'Tagline', name: 'tagline', widget: 'string' },
+                  { label: 'Nomor WhatsApp CS', name: 'whatsapp', widget: 'string' },
+                  { label: 'Alamat Toko', name: 'address', widget: 'text' },
+                  { label: 'Jam Operasional', name: 'hours', widget: 'string' },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    });
+  </script>
 </body>
 </html>
