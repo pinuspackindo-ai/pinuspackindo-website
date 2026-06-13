@@ -5,15 +5,16 @@
   ],
   "headers": [
     {
-      "source": "/admin/config.yml",
+      "source": "/admin/(.*)",
       "headers": [
-        { "key": "Content-Type", "value": "text/yaml; charset=utf-8" },
-        { "key": "Cache-Control", "value": "no-cache" }
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" },
+        { "key": "X-Robots-Tag", "value": "noindex" }
       ]
     },
     {
-      "source": "/admin/(.*)",
+      "source": "/admin",
       "headers": [
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" },
         { "key": "X-Robots-Tag", "value": "noindex" }
       ]
     }
