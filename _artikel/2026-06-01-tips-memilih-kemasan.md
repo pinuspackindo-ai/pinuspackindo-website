@@ -2,7 +2,7 @@
 title: "5 Tips Memilih Kemasan yang Tepat untuk Produk Makanan Anda"
 category: "Tips"
 date: 2026-06-01T08:00:00.000Z
-cover: images/Menu Artikel/cover-artikel-1.png
+cover: images/ma-cover-artikel-1.png
 summary: Memilih kemasan yang tepat sangat penting untuk menjaga kualitas produk dan menarik perhatian konsumen. Simak 5 tips praktisnya.
 ---
 
