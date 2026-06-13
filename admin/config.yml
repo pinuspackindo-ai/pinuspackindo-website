@@ -16,10 +16,12 @@ collections:
     folder: "_berita"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    media_folder: "images/Menu Berita dan Acara"
+    public_folder: "/images/Menu Berita dan Acara"
     fields:
       - {label: "Judul", name: "title", widget: "string"}
       - {label: "Kategori", name: "category", widget: "string", default: "Berita"}
-      - {label: "Tanggal", name: "date", widget: "datetime", format: "DD MMMM YYYY"}
+      - {label: "Tanggal", name: "date", widget: "datetime"}
       - {label: "Foto Sampul", name: "cover", widget: "image", required: false}
       - {label: "Ringkasan", name: "summary", widget: "text"}
       - {label: "Konten", name: "body", widget: "markdown"}
@@ -29,10 +31,12 @@ collections:
     folder: "_artikel"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    media_folder: "images/Menu Artikel"
+    public_folder: "/images/Menu Artikel"
     fields:
       - {label: "Judul", name: "title", widget: "string"}
       - {label: "Kategori", name: "category", widget: "string", default: "Tips"}
-      - {label: "Tanggal", name: "date", widget: "datetime", format: "DD MMMM YYYY"}
+      - {label: "Tanggal", name: "date", widget: "datetime"}
       - {label: "Foto Sampul", name: "cover", widget: "image", required: false}
       - {label: "Ringkasan", name: "summary", widget: "text"}
       - {label: "Konten", name: "body", widget: "markdown"}
@@ -42,6 +46,8 @@ collections:
     folder: "_produk"
     create: true
     slug: "{{slug}}"
+    media_folder: "images/Menu Produk"
+    public_folder: "/images/Menu Produk"
     fields:
       - {label: "Nama Produk", name: "title", widget: "string"}
       - {label: "Kategori", name: "category", widget: "select", options: ["Kemasan Plastik", "Kemasan Kertas", "Kemasan Styrofoam", "Peralatan Baking", "Bahan Baking"]}
@@ -52,9 +58,19 @@ collections:
   - name: "homepage"
     label: "🏠 Konten Homepage"
     files:
+      - label: "Section 1 - Slider Hero"
+        name: "section1"
+        file: "_data/section1.json"
+        media_folder: "images/Section 1"
+        public_folder: "/images/Section 1"
+        fields:
+          - {label: "Judul Utama", name: "title", widget: "string"}
+          - {label: "Subjudul", name: "subtitle", widget: "string"}
       - label: "Section 2 - Produk & Layanan"
         name: "section2"
         file: "_data/section2.json"
+        media_folder: "images/Section 2"
+        public_folder: "/images/Section 2"
         fields:
           - {label: "Judul Section", name: "title", widget: "string"}
           - {label: "Subjudul Section", name: "subtitle", widget: "text"}
@@ -64,6 +80,29 @@ collections:
             fields:
               - {label: "Judul Kartu", name: "title", widget: "string"}
               - {label: "Deskripsi", name: "description", widget: "text"}
+      - label: "Section 3 - Tentang Kami"
+        name: "section3"
+        file: "_data/section3.json"
+        media_folder: "images/Section 3"
+        public_folder: "/images/Section 3"
+        fields:
+          - {label: "Judul", name: "title", widget: "string"}
+          - {label: "Deskripsi", name: "description", widget: "text"}
+      - label: "Section 4 - Keunggulan"
+        name: "section4"
+        file: "_data/section4.json"
+        media_folder: "images/Section 4"
+        public_folder: "/images/Section 4"
+        fields:
+          - {label: "Judul", name: "title", widget: "string"}
+          - {label: "Deskripsi", name: "description", widget: "text"}
+      - label: "Section 7 - Testimoni"
+        name: "section7"
+        file: "_data/section7.json"
+        media_folder: "images/Section 7"
+        public_folder: "/images/Section 7"
+        fields:
+          - {label: "Judul", name: "title", widget: "string"}
 
   - name: "settings"
     label: "⚙️ Pengaturan Website"
