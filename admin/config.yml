@@ -1,0 +1,60 @@
+backend:
+  name: github
+  repo: pinuspackindo-ai/pinuspackindo-website
+  branch: main
+  auth_type: pkce
+  app_id: pinuspackindo
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "berita"
+    label: "Berita & Acara"
+    folder: "_berita"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Judul", name: "title", widget: "string"}
+      - {label: "Kategori", name: "category", widget: "string"}
+      - {label: "Tanggal", name: "date", widget: "datetime"}
+      - {label: "Sampul", name: "cover", widget: "image", required: false}
+      - {label: "Ringkasan", name: "summary", widget: "text"}
+      - {label: "Konten", name: "body", widget: "markdown"}
+
+  - name: "artikel"
+    label: "Artikel"
+    folder: "_artikel"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Judul", name: "title", widget: "string"}
+      - {label: "Kategori", name: "category", widget: "string"}
+      - {label: "Tanggal", name: "date", widget: "datetime"}
+      - {label: "Sampul", name: "cover", widget: "image", required: false}
+      - {label: "Ringkasan", name: "summary", widget: "text"}
+      - {label: "Konten", name: "body", widget: "markdown"}
+
+  - name: "produk"
+    label: "Produk"
+    folder: "_produk"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nama Produk", name: "title", widget: "string"}
+      - {label: "Kategori", name: "category", widget: "string"}
+      - {label: "Foto Produk", name: "image", widget: "image", required: false}
+      - {label: "Deskripsi", name: "description", widget: "text"}
+
+  - name: "settings"
+    label: "Pengaturan Website"
+    files:
+      - label: "Info Umum"
+        name: "general"
+        file: "_data/settings.json"
+        fields:
+          - {label: "Nama Perusahaan", name: "company_name", widget: "string"}
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "Nomor WhatsApp", name: "whatsapp", widget: "string"}
+          - {label: "Alamat", name: "address", widget: "text"}
+          - {label: "Jam Buka", name: "hours", widget: "string"}
