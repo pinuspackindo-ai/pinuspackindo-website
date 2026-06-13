@@ -3,58 +3,65 @@ backend:
   repo: pinuspackindo-ai/pinuspackindo-website
   branch: main
   auth_type: pkce
-  app_id: pinuspackindo
+  app_id: Ov23liTZUhMtWLjMCjZ6
+  base_url: https://pinuspackindo.com
+  auth_endpoint: api/auth
 
 media_folder: "images"
 public_folder: "/images"
 
+locale: id
+
 collections:
   - name: "berita"
-    label: "Berita & Acara"
+    label: "📰 Berita & Acara"
     folder: "_berita"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Judul", name: "title", widget: "string"}
-      - {label: "Kategori", name: "category", widget: "string"}
-      - {label: "Tanggal", name: "date", widget: "datetime"}
-      - {label: "Sampul", name: "cover", widget: "image", required: false}
+      - {label: "Kategori", name: "category", widget: "string", default: "Berita"}
+      - {label: "Tanggal", name: "date", widget: "datetime", format: "DD MMMM YYYY"}
+      - {label: "Foto Sampul", name: "cover", widget: "image", required: false}
       - {label: "Ringkasan", name: "summary", widget: "text"}
       - {label: "Konten", name: "body", widget: "markdown"}
 
   - name: "artikel"
-    label: "Artikel"
+    label: "📝 Artikel"
     folder: "_artikel"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Judul", name: "title", widget: "string"}
-      - {label: "Kategori", name: "category", widget: "string"}
-      - {label: "Tanggal", name: "date", widget: "datetime"}
-      - {label: "Sampul", name: "cover", widget: "image", required: false}
+      - {label: "Kategori", name: "category", widget: "string", default: "Tips"}
+      - {label: "Tanggal", name: "date", widget: "datetime", format: "DD MMMM YYYY"}
+      - {label: "Foto Sampul", name: "cover", widget: "image", required: false}
       - {label: "Ringkasan", name: "summary", widget: "text"}
       - {label: "Konten", name: "body", widget: "markdown"}
 
   - name: "produk"
-    label: "Produk"
+    label: "📦 Produk"
     folder: "_produk"
     create: true
     slug: "{{slug}}"
     fields:
       - {label: "Nama Produk", name: "title", widget: "string"}
-      - {label: "Kategori", name: "category", widget: "string"}
+      - {label: "Kategori", name: "category", widget: "select", options: ["Kemasan Plastik", "Kemasan Kertas", "Kemasan Styrofoam", "Peralatan Baking", "Bahan Baking"]}
       - {label: "Foto Produk", name: "image", widget: "image", required: false}
       - {label: "Deskripsi", name: "description", widget: "text"}
+      - {label: "Tersedia", name: "available", widget: "boolean", default: true}
 
   - name: "settings"
-    label: "Pengaturan Website"
+    label: "⚙️ Pengaturan Website"
     files:
       - label: "Info Umum"
         name: "general"
         file: "_data/settings.json"
         fields:
-          - {label: "Nama Perusahaan", name: "company_name", widget: "string"}
+          - {label: "Nama Perusahaan", name: "company_name", widget: "string", default: "Pinus Packindo"}
           - {label: "Tagline", name: "tagline", widget: "string"}
-          - {label: "Nomor WhatsApp", name: "whatsapp", widget: "string"}
-          - {label: "Alamat", name: "address", widget: "text"}
-          - {label: "Jam Buka", name: "hours", widget: "string"}
+          - {label: "Nomor WhatsApp CS", name: "whatsapp", widget: "string", default: "6285283338989"}
+          - {label: "Alamat Toko", name: "address", widget: "text"}
+          - {label: "Jam Operasional", name: "hours", widget: "string", default: "08.00 - 21.00"}
+          - {label: "Instagram", name: "instagram", widget: "string"}
+          - {label: "TikTok", name: "tiktok", widget: "string"}
