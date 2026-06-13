@@ -1,0 +1,24 @@
+{
+  "title": "Apa Kata Pelanggan Kami Tentang Produk Kami",
+  "subtitle": "Baca testimoni dari pelanggan kami yang puas. Lihat bagaimana produk packaging kami telah membantu bisnis mereka berkembang.",
+  "testimonials": [
+    {
+      "quote": "Produk kemasan dari Pinus Packindo sangat memuaskan! Kualitas kotak dan paper bag jauh melebihi ekspektasi saya. Pengiriman cepat dan packaging aman sampai tujuan. Sangat direkomendasikan untuk semua pelaku usaha!",
+      "name": "Joya Pratama",
+      "role": "Pemilik Coffee Shop, Rembang",
+      "photo": "images/s7-testi-joya.jpg"
+    },
+    {
+      "quote": "Saya sudah langganan Pinus Packindo untuk kemasan toko roti saya. Kotak kemasan dan kertas rotinya selalu bersih, rapi, dan membuat produk saya makin menarik. Harga juga sangat bersahabat untuk usaha kecil seperti saya!",
+      "name": "Tasya Amelia",
+      "role": "Pemilik Toko Roti, Kudus",
+      "photo": "images/s7-testi-tasya.jpg"
+    },
+    {
+      "quote": "Sebagai pemilik toko bahan kue, saya sangat puas dengan kelengkapan produk di Pinus Packindo. Stok selalu tersedia, pelayanannya ramah dan cepat tanggap, serta harga grosirnya sangat menguntungkan untuk bisnis saya.",
+      "name": "Sukardi",
+      "role": "Pemilik Toko Bahan Kue, Pati",
+      "photo": ""
+    }
+  ]
+}

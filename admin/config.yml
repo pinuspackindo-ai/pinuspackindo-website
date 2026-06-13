@@ -52,7 +52,15 @@ collections:
   - name: "homepage"
     label: "🏠 Konten Homepage"
     files:
-      - label: "Section 2 - Produk & Layanan"
+      - label: "Section 1 — Hero Slider"
+        name: "section1"
+        file: "_data/section1.json"
+        fields:
+          - {label: "Tag (atas judul)", name: "tag", widget: "string"}
+          - {label: "Judul Utama", name: "title", widget: "string"}
+          - {label: "Subjudul", name: "subtitle", widget: "text"}
+
+      - label: "Section 2 — Produk & Layanan"
         name: "section2"
         file: "_data/section2.json"
         fields:
@@ -64,6 +72,43 @@ collections:
             fields:
               - {label: "Judul Kartu", name: "title", widget: "string"}
               - {label: "Deskripsi", name: "description", widget: "text"}
+
+      - label: "Section 3 — Tentang Kami"
+        name: "section3"
+        file: "_data/section3.json"
+        fields:
+          - {label: "Label (atas judul)", name: "label", widget: "string"}
+          - {label: "Judul", name: "title", widget: "string"}
+          - {label: "Deskripsi", name: "description", widget: "text"}
+
+      - label: "Section 4 — Keunggulan Kami"
+        name: "section4"
+        file: "_data/section4.json"
+        fields:
+          - {label: "Judul Section", name: "title", widget: "string"}
+          - {label: "Label (atas judul)", name: "label", widget: "string"}
+          - {label: "Subjudul", name: "subtitle", widget: "text"}
+          - label: "Kartu Keunggulan"
+            name: "cards"
+            widget: "list"
+            fields:
+              - {label: "Judul", name: "title", widget: "string"}
+              - {label: "Deskripsi", name: "description", widget: "text"}
+
+      - label: "Section 7 — Testimoni"
+        name: "section7"
+        file: "_data/section7.json"
+        fields:
+          - {label: "Judul", name: "title", widget: "string"}
+          - {label: "Subjudul", name: "subtitle", widget: "text"}
+          - label: "Daftar Testimoni"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - {label: "Kutipan", name: "quote", widget: "text"}
+              - {label: "Nama", name: "name", widget: "string"}
+              - {label: "Jabatan/Usaha", name: "role", widget: "string"}
+              - {label: "Foto", name: "photo", widget: "image", required: false}
 
   - name: "settings"
     label: "⚙️ Pengaturan Website"
