@@ -3,6 +3,7 @@ title: "Perbedaan Kemasan Plastik Food Grade dan Non-Food Grade yang Wajib Diket
 category: "Edukasi"
 date: 2026-05-20T08:00:00.000Z
 cover: images/ma-0002.png
+kode: "0002"
 summary: Mengetahui perbedaan kemasan plastik food grade dan non-food grade sangat penting untuk keamanan produk makanan Anda.
 ---
 

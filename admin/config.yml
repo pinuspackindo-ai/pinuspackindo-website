@@ -16,6 +16,7 @@ collections:
     folder: "_berita"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — 📷 mb-{{kode}}"
     fields:
       - {label: "Judul", name: "title", widget: "string"}
       - {label: "Kategori", name: "category", widget: "string", default: "Berita"}
@@ -29,6 +30,7 @@ collections:
     folder: "_artikel"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — 📷 ma-{{kode}}"
     fields:
       - {label: "Judul", name: "title", widget: "string"}
       - {label: "Kategori", name: "category", widget: "string", default: "Tips"}
@@ -42,6 +44,7 @@ collections:
     folder: "_produk"
     create: true
     slug: "{{slug}}"
+    summary: "{{title}} — 📷 mp-{{kode}}"
     fields:
       - {label: "Nama Produk", name: "title", widget: "string"}
       - {label: "Kategori", name: "category", widget: "select", options: ["Kemasan Plastik", "Kemasan Kertas", "Kemasan Styrofoam", "Peralatan Baking", "Bahan Baking"]}
