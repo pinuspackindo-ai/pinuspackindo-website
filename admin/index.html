@@ -80,6 +80,28 @@
             ],
           },
           {
+            name: 'homepage',
+            label: '🏠 Konten Homepage',
+            files: [
+              {
+                label: 'Section 2 — Produk & Layanan',
+                name: 'section2',
+                file: '_data/section2.json',
+                fields: [
+                  { label: 'Judul Section', name: 'title', widget: 'string' },
+                  { label: 'Subjudul Section', name: 'subtitle', widget: 'text' },
+                  {
+                    label: 'Kartu Produk', name: 'cards', widget: 'list',
+                    fields: [
+                      { label: 'Judul Kartu', name: 'title', widget: 'string' },
+                      { label: 'Deskripsi', name: 'description', widget: 'text' },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
             name: 'settings',
             label: '⚙️ Pengaturan Website',
             files: [
