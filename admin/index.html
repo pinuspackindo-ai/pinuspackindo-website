@@ -9,17 +9,17 @@
 <body>
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
   <script>
-    // Sembunyikan teks "Signed in as..." di dropdown akun
-    function hideSignedInText() {
+    function hideSignedIn() {
       document.querySelectorAll('*').forEach(function(el) {
-        if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
-          if (el.textContent.trim().startsWith('Signed in as')) {
-            el.style.display = 'none';
-          }
+        if (el.textContent.trim().startsWith('Signed in as') && el.children.length === 0) {
+          var parent = el.parentElement;
+          if (parent) parent.style.display = 'none';
         }
       });
     }
-    setInterval(hideSignedInText, 1000);
+    var observer = new MutationObserver(hideSignedIn);
+    observer.observe(document.body, { childList: true, subtree: true });
+    setInterval(hideSignedIn, 500);
   </script>
   <script>
     CMS.init({
