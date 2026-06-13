@@ -6,6 +6,20 @@
   <meta name="robots" content="noindex">
   <title>Admin | Pinus Packindo</title>
   <link rel="icon" type="image/jpeg" href="../images/logo.jpg">
+  <script>
+    // Paksa favicon tetap logo Pinus meski Sveltia override
+    function forceFavicon() {
+      const links = document.querySelectorAll("link[rel*='icon']");
+      links.forEach(l => l.remove());
+      const link = document.createElement('link');
+      link.rel = 'icon';
+      link.type = 'image/jpeg';
+      link.href = '../images/logo.jpg';
+      document.head.appendChild(link);
+    }
+    forceFavicon();
+    setInterval(forceFavicon, 1000);
+  </script>
   <!-- v4 -->
 </head>
 <body>
