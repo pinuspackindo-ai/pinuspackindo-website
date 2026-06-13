@@ -72,6 +72,7 @@ collections:
             fields:
               - {label: "Judul Kartu", name: "title", widget: "string"}
               - {label: "Deskripsi", name: "description", widget: "text"}
+              - {label: "Foto", name: "photo", widget: "image", required: false}
 
       - label: "Section 3 — Tentang Kami"
         name: "section3"
@@ -94,6 +95,7 @@ collections:
             fields:
               - {label: "Judul", name: "title", widget: "string"}
               - {label: "Deskripsi", name: "description", widget: "text"}
+              - {label: "Foto", name: "photo", widget: "image", required: false}
 
       - label: "Section 7 — Testimoni"
         name: "section7"
