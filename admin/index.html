@@ -11,7 +11,7 @@
   <script>
     function hideSignedIn() {
       document.querySelectorAll('*').forEach(function(el) {
-        if (el.textContent.trim().startsWith('Signed in as') && el.children.length === 0) {
+        if (el.textContent.trim().toLowerCase().startsWith('signed in as') && el.children.length === 0) {
           var parent = el.parentElement;
           if (parent) parent.style.display = 'none';
         }
