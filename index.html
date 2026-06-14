@@ -1517,10 +1517,9 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 
   // ── ARTIKEL SLIDESHOW ────────────────────────────────────────────
   (function(){
-    const TOTAL   = 5;   // total artikel
-    const VISIBLE = 3;   // tampil 3 sekaligus di desktop
-    const GAP     = 24;  // px, sama dengan CSS gap
-    const DELAY   = 7000;// 7 detik
+    const TOTAL   = 5;
+    const GAP     = 24;
+    const DELAY   = 7000;
 
     let cur = 0;
     let autoTimer;
@@ -1529,6 +1528,9 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     const track    = document.getElementById('aslideTrack');
     const viewport = document.getElementById('aslideViewport');
     const dotsWrap = document.getElementById('aslideDots');
+
+    // Mobile = 1 kartu, desktop = 3 kartu
+    function getVisible(){ return window.innerWidth <= 768 ? 1 : 3; }
 
     // Buat dots
     for(let i = 0; i < TOTAL; i++){
@@ -1540,16 +1542,20 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     }
 
     function cardWidth(){
-      const vw = viewport.offsetWidth;
-      return (vw - GAP * (VISIBLE - 1)) / VISIBLE;
+      const VISIBLE = getVisible();
+      return (viewport.offsetWidth - GAP * (VISIBLE - 1)) / VISIBLE;
     }
 
     function goTo(idx){
-      const maxIdx = TOTAL - VISIBLE;
+      const VISIBLE = getVisible();
+      const maxIdx  = TOTAL - VISIBLE;
       cur = Math.max(0, Math.min(idx, maxIdx));
       const shift = cur * (cardWidth() + GAP);
       track.style.transform = 'translateX(-' + shift + 'px)';
-      // dots update
+      // set lebar tiap kartu via JS agar responsive
+      track.querySelectorAll('.aslide-card').forEach(c => {
+        c.style.flex = '0 0 ' + cardWidth() + 'px';
+      });
       dotsWrap.querySelectorAll('.aslide-dot').forEach((d,i) => {
         d.classList.toggle('active', i === cur);
       });
@@ -1558,12 +1564,14 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     function startAuto(){
       clearInterval(autoTimer);
       autoTimer = setInterval(() => {
+        const VISIBLE = getVisible();
         goTo(cur + 1 < TOTAL - VISIBLE + 1 ? cur + 1 : 0);
       }, DELAY);
     }
 
     window.artikelSlide = function(dir){
-      const maxIdx = TOTAL - VISIBLE;
+      const VISIBLE = getVisible();
+      const maxIdx  = TOTAL - VISIBLE;
       let next = cur + dir;
       if(next < 0) next = maxIdx;
       if(next > maxIdx) next = 0;
@@ -1571,21 +1579,16 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       startAuto();
     };
 
-    // Touch/swipe support
     viewport.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
     viewport.addEventListener('touchend', e => {
       const diff = touchStartX - e.changedTouches[0].clientX;
       if(Math.abs(diff) > 40) { artikelSlide(diff > 0 ? 1 : -1); }
     }, {passive:true});
 
-    // Pause on hover
     viewport.addEventListener('mouseenter', () => clearInterval(autoTimer));
     viewport.addEventListener('mouseleave', () => startAuto());
+    window.addEventListener('resize', () => { cur = 0; goTo(0); });
 
-    // Recalculate on resize
-    window.addEventListener('resize', () => goTo(cur));
-
-    // Init
     goTo(0);
     startAuto();
   })();
@@ -1593,7 +1596,6 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   // ── BERITA & ACARA SLIDESHOW ─────────────────────────────────────
   (function(){
     const TOTAL   = 5;
-    const VISIBLE = 3;
     const GAP     = 24;
     const DELAY   = 7000;
 
@@ -1605,6 +1607,8 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     const viewport = document.getElementById('bslideViewport');
     const dotsWrap = document.getElementById('bslideDots');
 
+    function getVisible(){ return window.innerWidth <= 768 ? 1 : 3; }
+
     for(let i = 0; i < TOTAL; i++){
       const d = document.createElement('button');
       d.className = 'aslide-dot' + (i===0 ? ' active' : '');
@@ -1614,13 +1618,18 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     }
 
     function cardWidth(){
+      const VISIBLE = getVisible();
       return (viewport.offsetWidth - GAP * (VISIBLE - 1)) / VISIBLE;
     }
 
     function goTo(idx){
-      const maxIdx = TOTAL - VISIBLE;
+      const VISIBLE = getVisible();
+      const maxIdx  = TOTAL - VISIBLE;
       cur = Math.max(0, Math.min(idx, maxIdx));
       track.style.transform = 'translateX(-' + cur * (cardWidth() + GAP) + 'px)';
+      track.querySelectorAll('.aslide-card').forEach(c => {
+        c.style.flex = '0 0 ' + cardWidth() + 'px';
+      });
       dotsWrap.querySelectorAll('.aslide-dot').forEach((d,i) => {
         d.classList.toggle('active', i === cur);
       });
@@ -1629,12 +1638,14 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     function startAuto(){
       clearInterval(autoTimer);
       autoTimer = setInterval(() => {
+        const VISIBLE = getVisible();
         goTo(cur + 1 < TOTAL - VISIBLE + 1 ? cur + 1 : 0);
       }, DELAY);
     }
 
     window.beritaSlide = function(dir){
-      const maxIdx = TOTAL - VISIBLE;
+      const VISIBLE = getVisible();
+      const maxIdx  = TOTAL - VISIBLE;
       let next = cur + dir;
       if(next < 0) next = maxIdx;
       if(next > maxIdx) next = 0;
@@ -1650,7 +1661,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 
     viewport.addEventListener('mouseenter', () => clearInterval(autoTimer));
     viewport.addEventListener('mouseleave', () => startAuto());
-    window.addEventListener('resize', () => goTo(cur));
+    window.addEventListener('resize', () => { cur = 0; goTo(0); });
 
     goTo(0);
     startAuto();
