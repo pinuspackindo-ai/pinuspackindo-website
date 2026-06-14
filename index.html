@@ -721,19 +721,16 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .section-sub { font-size: 12px; line-height: 1.6; }
   .section-label { font-size: 11px; }
 
-  /* HERO — foto tampil PENUH (contain) di atas, teks di bawah */
-  .hero { min-height: 0; display: block; background: #0f2d1e; }
-  .hero-track { position: relative; height: 240px; }
-  .hero-slide { object-fit: contain; object-position: center; background: #0f2d1e; }
-  .hero-overlay { display: none; }
-  .hero-arrow { top: 120px; }
-  .hero-dots { bottom: auto; top: 218px; }
-  .hero-inner { position: static; padding: 18px 16px 24px; max-width: 100%; background: #0f2d1e; }
-  .hero h1 { font-size: 22px; line-height: 1.25; margin-bottom: 12px; }
-  .hero p { font-size: 12px; line-height: 1.6; margin-bottom: 16px; max-width: 100%; }
+  /* HERO — foto cover + teks overlay (seperti semula), foto digeser kanan */
+  .hero { min-height: 420px; }
+  .hero-inner { padding: 32px 16px; max-width: 100%; }
+  .hero h1 { font-size: 24px; line-height: 1.25; margin-bottom: 12px; }
+  .hero p { font-size: 12.5px; line-height: 1.6; margin-bottom: 18px; max-width: 100%; }
   .hero-tag { font-size: 10px; }
   .hero-btns { flex-direction: column; gap: 10px; }
   .btn-green { width: 100%; text-align: center; padding: 12px; font-size: 14px; }
+  /* geser titik fokus foto ke kanan agar orang terlihat */
+  .hero-slide { object-position: 72% center; }
 
   /* SERVICES — 2 kartu sejajar (lebar diatur JS) */
   .services-header { flex-direction: column; gap: 12px; margin-bottom: 18px; }
