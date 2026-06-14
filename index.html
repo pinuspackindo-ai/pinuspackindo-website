@@ -12,8 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { overflow-x: hidden; }
-body { font-family: 'Inter', sans-serif; color: #222; overflow-x: hidden; max-width: 100vw; }
+html { overflow-x: clip; }
+body { font-family: 'Inter', sans-serif; color: #222; overflow-x: clip; max-width: 100vw; }
 img { max-width: 100%; height: auto; }
 p { text-align: justify; }
 a { text-decoration: none; color: inherit; }
@@ -733,6 +733,8 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .hero-slide { object-position: 72% center; }
   .hero-slide:nth-child(3) { object-position: 85% center; }  /* s1-3 geser kanan lagi */
   .hero-slide:nth-child(5) { object-position: 92% center; }  /* s1-5 geser kanan, 2 orang terlihat */
+  /* tombol panah hero TOTAL dihapus di HP */
+  .hero-arrow { display: none !important; }
 
   /* SERVICES — 2 kartu sejajar (lebar diatur JS) */
   .services-header { flex-direction: column; gap: 12px; margin-bottom: 18px; }
@@ -795,8 +797,11 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .aslide-body p { font-size: 11px; }
   .aslide-cat { font-size: 9px; padding: 2px 7px; }
   .aslide-date { font-size: 10px; }
-  .aslide-prev { left: 0; }
-  .aslide-next { right: 0; }
+  /* panah artikel transparan agar tidak menutup tulisan */
+  .aslide-arrow { background: transparent; border: none; box-shadow: none; color: rgba(0,0,0,0.3); width: 30px; height: 30px; }
+  .aslide-arrow:hover { background: transparent; color: rgba(0,0,0,0.55); border: none; }
+  .aslide-prev { left: -2px; }
+  .aslide-next { right: -2px; }
 
   /* CONTACT */
   .contact-inner { flex-direction: column; gap: 28px; }

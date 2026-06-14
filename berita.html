@@ -11,8 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { overflow-x: hidden; }
-body { font-family: 'Inter', sans-serif; color: #222; overflow-x: hidden; max-width: 100vw; }
+html { overflow-x: clip; }
+body { font-family: 'Inter', sans-serif; color: #222; overflow-x: clip; max-width: 100vw; }
 img { max-width: 100%; height: auto; }
 p { text-align: justify; }
 a { text-decoration: none; color: inherit; }
@@ -264,6 +264,8 @@ footer { background: #111; color: #aaa; padding: 56px 80px 24px; }
   .article-body { padding: 12px 12px 14px; }
   .article-body h3 { font-size: 13px; line-height: 1.4; margin-bottom: 6px; }
   .article-body p { font-size: 11px; line-height: 1.55; margin-bottom: 10px; }
+  /* badge di atas, tanggal di bawah (2 baris) konsisten */
+  .article-meta { flex-direction: column; align-items: flex-start; gap: 4px; }
   .article-cat { font-size: 9px; padding: 2px 7px; }
   .article-date { font-size: 10px; }
   /* Tombol Baca Selengkapnya di bawah penulis agar tidak terpotong */
