@@ -713,89 +713,97 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .logo-name { font-size: 16px; }
   .logo-icon { width: 32px; height: 32px; }
 
-  /* SECTION padding */
-  .section { padding: 40px 16px; }
-  .howtobuy-section { padding: 40px 16px; }
-  .testimonial-section { padding: 40px 16px; }
-  .section-title { font-size: 24px; line-height: 1.3; }
-  .section-sub { font-size: 14px; }
-  .section-label { font-size: 12px; }
+  /* SECTION padding — lebih sempit agar muat 2 kolom */
+  .section { padding: 36px 14px; }
+  .howtobuy-section { padding: 36px 14px; }
+  .testimonial-section { padding: 36px 14px; }
+  .section-title { font-size: 22px; line-height: 1.3; }
+  .section-sub { font-size: 13px; }
+  .section-label { font-size: 11px; }
 
   /* HERO */
-  .hero { min-height: 420px; }
-  .hero-inner { padding: 36px 16px; max-width: 100%; }
-  .hero h1 { font-size: 30px; line-height: 1.2; }
-  .hero p { font-size: 14px; margin-bottom: 24px; max-width: 100%; }
+  .hero { min-height: 400px; }
+  .hero-inner { padding: 32px 14px; max-width: 100%; }
+  .hero h1 { font-size: 26px; line-height: 1.2; }
+  .hero p { font-size: 13px; margin-bottom: 20px; max-width: 100%; }
   .hero-tag { font-size: 11px; }
   .hero-btns { flex-direction: column; gap: 10px; }
-  .btn-green { width: 100%; text-align: center; padding: 14px; font-size: 15px; }
+  .btn-green { width: 100%; text-align: center; padding: 13px; font-size: 14px; }
 
-  /* SERVICES — 1 kartu penuh sekaligus */
-  .services-header { flex-direction: column; gap: 12px; margin-bottom: 20px; }
+  /* SERVICES — 2 kartu sejajar (lebar diatur JS) */
+  .services-header { flex-direction: column; gap: 12px; margin-bottom: 18px; }
   .services-header-right { max-width: 100%; }
-  .service-card { width: calc(100vw - 32px); }
-  .service-card-icon { height: 200px; }
-  .service-card-body h3 { font-size: 18px; }
-  .service-card-body p { font-size: 14px; }
+  .services-track { gap: 12px; }
+  .service-card-icon { height: 130px; }
+  .service-card-body { padding: 12px 2px; }
+  .service-card-body h3 { font-size: 14px; }
+  .service-card-body p { font-size: 12px; line-height: 1.5; margin-bottom: 10px; }
+  .btn-book { font-size: 11px; padding: 7px 10px; }
   .services-nav { justify-content: center; }
 
   /* ABOUT */
-  .about-inner { flex-direction: column-reverse; gap: 28px; }
-  .about-text h2 { font-size: 24px; }
-  .about-text p { font-size: 14px; }
+  .about-inner { flex-direction: column-reverse; gap: 24px; }
+  .about-text h2 { font-size: 22px; }
+  .about-text p { font-size: 13px; }
   .about-photos { width: 100%; height: 220px; }
   .about-photo-1 { width: 62%; height: 155px; }
   .about-photo-2 { width: 52%; height: 125px; top: 65px; }
   .about-photo-3 { width: 46%; height: 115px; right: 8px; }
 
-  /* KEUNGGULAN — 1 kolom */
-  .team-header { flex-direction: column; gap: 12px; margin-bottom: 20px; }
+  /* KEUNGGULAN — 2 kolom */
+  .team-header { flex-direction: column; gap: 12px; margin-bottom: 18px; }
   .team-header-right { max-width: 100%; }
-  .team-grid { grid-template-columns: 1fr; gap: 24px; }
-  .team-card-img { height: 220px; }
-  .team-card-body h4 { font-size: 18px; }
-  .team-card-body p { font-size: 14px; }
+  .team-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .team-card-img { height: 130px; border-radius: 12px; }
+  .team-card-body { padding: 12px 2px; }
+  .team-card-body h4 { font-size: 14px; margin-bottom: 6px; }
+  .team-card-body p { font-size: 12px; line-height: 1.5; }
 
   /* WELCOME */
   .welcome-inner { flex-direction: column; gap: 24px; }
-  .welcome-img { width: 100%; height: 240px; }
-  .welcome-text h2 { font-size: 24px; }
-  .welcome-text p { font-size: 14px; }
-  .feature-list li { font-size: 14px; }
+  .welcome-img { width: 100%; height: 220px; }
+  .welcome-text h2 { font-size: 22px; }
+  .welcome-text p { font-size: 13px; }
+  .feature-list li { font-size: 13px; }
   .welcome-btns { flex-direction: column; }
-  .btn-green { font-size: 15px; }
 
-  /* HOW TO BUY — 1 kolom */
-  .howtobuy-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
-  .hb-title { font-size: 17px; }
-  .hb-features li { font-size: 13px; }
+  /* HOW TO BUY — 2 kolom */
+  .howtobuy-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+  .hb-card { padding: 18px 14px 16px; }
+  .hb-icon { width: 40px; height: 40px; margin-bottom: 12px; }
+  .hb-title { font-size: 14px; }
+  .hb-type { font-size: 10px; }
+  .hb-features li { font-size: 11px; margin-bottom: 7px; }
+  .btn-hb-primary, .btn-hb-secondary { font-size: 12px; padding: 9px; }
 
   /* TESTIMONIAL */
   .testimonial-inner { flex-direction: column; gap: 24px; }
-  .testimonial-left h2 { font-size: 24px; }
-  .testimonial-left p { font-size: 14px; }
-  .testimonial-text { font-size: 14px; }
+  .testimonial-left h2 { font-size: 22px; }
+  .testimonial-left p { font-size: 13px; }
+  .testimonial-text { font-size: 13px; }
 
-  /* BLOG/ARTIKEL — 1 kartu penuh */
-  .blog-header { flex-direction: column; gap: 12px; margin-bottom: 20px; }
-  .aslide-card { flex: 0 0 calc(100vw - 32px); }
-  .aslide-body h3 { font-size: 15px; }
-  .aslide-body p { font-size: 13px; }
+  /* BLOG/ARTIKEL — 2 kartu sejajar (lebar diatur JS) */
+  .blog-header { flex-direction: column; gap: 12px; margin-bottom: 18px; }
+  .aslide-body { padding: 12px 12px 16px; gap: 6px; }
+  .aslide-body h3 { font-size: 13px; line-height: 1.45; }
+  .aslide-body p { font-size: 11px; }
+  .aslide-cat { font-size: 9px; padding: 2px 7px; }
+  .aslide-date { font-size: 10px; }
   .aslide-prev { left: 0; }
   .aslide-next { right: 0; }
 
   /* CONTACT */
-  .contact-inner { flex-direction: column; gap: 32px; }
-  .contact-left h2, .contact-right h2 { font-size: 24px; }
-  .contact-left > p { font-size: 14px; }
-  .contact-value { font-size: 15px; }
-  .form-group input, .form-group textarea { font-size: 15px; }
+  .contact-inner { flex-direction: column; gap: 28px; }
+  .contact-left h2, .contact-right h2 { font-size: 22px; }
+  .contact-left > p { font-size: 13px; }
+  .contact-value { font-size: 14px; }
+  .form-group input, .form-group textarea { font-size: 14px; }
 
   /* FOOTER */
-  footer { padding: 40px 16px 24px; }
-  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-  .footer-col h4 { font-size: 15px; }
-  .footer-col ul li a { font-size: 14px; }
+  footer { padding: 36px 14px 24px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .footer-col h4 { font-size: 14px; }
+  .footer-col ul li a { font-size: 13px; }
 }
 
 </style>
@@ -968,7 +976,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   </div>
   <!-- Slider Navigation -->
   <div class="services-nav">
-    <span class="svc-counter"><span id="svcCurrent">1</span> / 3</span>
+    <span class="svc-counter"><span id="svcCurrent">1</span> / <span id="svcTotalPages">3</span></span>
     <button class="svc-btn" id="svcPrev" onclick="slideServices(-1)" disabled></button>
     <button class="svc-btn" id="svcNext" onclick="slideServices(1)"></button>
   </div>
@@ -1530,7 +1538,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     const dotsWrap = document.getElementById('aslideDots');
 
     // Mobile = 1 kartu, desktop = 3 kartu
-    function getVisible(){ return window.innerWidth <= 768 ? 1 : 3; }
+    function getVisible(){ return window.innerWidth <= 768 ? 2 : 3; }
 
     // Buat dots
     for(let i = 0; i < TOTAL; i++){
@@ -1607,7 +1615,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     const viewport = document.getElementById('bslideViewport');
     const dotsWrap = document.getElementById('bslideDots');
 
-    function getVisible(){ return window.innerWidth <= 768 ? 1 : 3; }
+    function getVisible(){ return window.innerWidth <= 768 ? 2 : 3; }
 
     for(let i = 0; i < TOTAL; i++){
       const d = document.createElement('button');
@@ -1667,39 +1675,61 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
     startAuto();
   })();
 
-  // Services slider (show 3, total 5, max shift = 2)
-  let svcIndex = 0;
-  const svcMax = 2;
-  function slideServices(dir) {
-    svcIndex = Math.max(0, Math.min(svcMax, svcIndex + dir));
-    const card = document.querySelector('.service-card');
-    const gap = 24;
-    const cardW = card.offsetWidth + gap;
-    document.getElementById('servicesTrack').style.transform = 'translateX(-' + (svcIndex * cardW) + 'px)';
-    document.getElementById('svcCurrent').textContent = svcIndex + 1;
-    document.getElementById('svcPrev').disabled = svcIndex === 0;
-    document.getElementById('svcNext').disabled = svcIndex === svcMax;
-  }
-  // Auto-play services every 7s (loop back to start)
-  setInterval(function() {
-    svcIndex = (svcIndex >= svcMax) ? 0 : svcIndex + 1;
-    const card = document.querySelector('.service-card');
-    const cardW = card.offsetWidth + 24;
-    document.getElementById('servicesTrack').style.transform = 'translateX(-' + (svcIndex * cardW) + 'px)';
-    document.getElementById('svcCurrent').textContent = svcIndex + 1;
-    document.getElementById('svcPrev').disabled = svcIndex === 0;
-    document.getElementById('svcNext').disabled = svcIndex === svcMax;
-  }, 7000);
-
-  // Swipe touch — Section 2 (Services)
+  // Services slider — responsif: 2 kartu di HP, 3 di desktop
   (function() {
-    var el = document.getElementById('servicesTrack');
-    var startX = 0;
-    el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, { passive: true });
-    el.addEventListener('touchend', function(e){
+    const SVC_TOTAL = 5;
+    let svcIndex = 0;
+    let svcTimer;
+
+    const track    = document.getElementById('servicesTrack');
+    const viewport = document.querySelector('.services-viewport');
+
+    function svcVisible(){ return window.innerWidth <= 768 ? 2 : 3; }
+    function svcGap(){ return window.innerWidth <= 768 ? 12 : 24; }
+    function svcMaxIdx(){ return SVC_TOTAL - svcVisible(); }
+
+    function renderSvc(){
+      const visible = svcVisible();
+      const gap     = svcGap();
+      const cardW   = (viewport.offsetWidth - gap * (visible - 1)) / visible;
+      track.style.gap = gap + 'px';
+      track.querySelectorAll('.service-card').forEach(c => { c.style.width = cardW + 'px'; });
+      if (svcIndex > svcMaxIdx()) svcIndex = svcMaxIdx();
+      track.style.transform = 'translateX(-' + (svcIndex * (cardW + gap)) + 'px)';
+      document.getElementById('svcCurrent').textContent = svcIndex + 1;
+      document.getElementById('svcTotalPages').textContent = svcMaxIdx() + 1;
+      document.getElementById('svcPrev').disabled = svcIndex === 0;
+      document.getElementById('svcNext').disabled = svcIndex >= svcMaxIdx();
+    }
+
+    window.slideServices = function(dir){
+      svcIndex = Math.max(0, Math.min(svcMaxIdx(), svcIndex + dir));
+      renderSvc();
+      startSvcAuto();
+    };
+
+    function startSvcAuto(){
+      clearInterval(svcTimer);
+      svcTimer = setInterval(function(){
+        svcIndex = (svcIndex >= svcMaxIdx()) ? 0 : svcIndex + 1;
+        renderSvc();
+      }, 7000);
+    }
+
+    // Swipe
+    let startX = 0;
+    track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function(e){
       var diff = startX - e.changedTouches[0].clientX;
       if (Math.abs(diff) > 40) slideServices(diff > 0 ? 1 : -1);
     });
+
+    viewport.addEventListener('mouseenter', () => clearInterval(svcTimer));
+    viewport.addEventListener('mouseleave', () => startSvcAuto());
+    window.addEventListener('resize', () => { svcIndex = 0; renderSvc(); });
+
+    renderSvc();
+    startSvcAuto();
   })();
 
   // Testimonial slider
