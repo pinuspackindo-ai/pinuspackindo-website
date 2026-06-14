@@ -11,8 +11,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
+html { overflow-x: hidden; }
 p { text-align: justify; }
-body { font-family: 'Inter', sans-serif; color: #222; }
+body { font-family: 'Inter', sans-serif; color: #222; overflow-x: hidden; max-width: 100vw; }
+img { max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; }
 
 /* ── NAV ── */
@@ -321,8 +323,34 @@ footer { background: #111; color: #aaa; padding: 56px 80px 24px; }
   .hamburger { display: flex !important; }
 }
 @media (max-width: 768px) {
-  .logo-name { font-size: 17px; }
-  .logo-icon { width: 27px; height: 27px; }
+  .logo-name { font-size: 16px; }
+  .logo-icon { width: 32px; height: 32px; }
+  p { text-align: left; }
+
+  .breadcrumb { padding: 10px 16px; }
+  .breadcrumb a, .breadcrumb span, .breadcrumb strong { font-size: 12px; }
+
+  .page-hero { padding: 48px 16px; }
+  .page-hero h1 { font-size: 26px; }
+  .page-hero p { font-size: 13px; }
+
+  .section { padding: 40px 16px; }
+
+  /* KONTAK — stack 1 kolom */
+  .contact-inner { flex-direction: column; gap: 32px; }
+  .contact-info h2 { font-size: 24px; }
+  .contact-info > p { font-size: 13px; }
+  .contact-detail .value { font-size: 14px; }
+  .contact-form-wrap h3 { font-size: 22px; }
+  .contact-map iframe { height: 200px; }
+
+  /* FOOTER */
+  footer { padding: 36px 16px 24px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .footer-brand p { text-align: left; }
+  .newsletter-input-wrap { flex-direction: column; gap: 8px; }
+  .newsletter-input, .btn-send-sm { width: 100%; }
+  .social-strip { padding: 28px 0 32px; }
 }
 
 </style>

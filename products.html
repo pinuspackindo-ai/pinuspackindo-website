@@ -11,8 +11,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
+html { overflow-x: hidden; }
 p { text-align: justify; }
-body { font-family: 'Inter', sans-serif; color: #222; }
+body { font-family: 'Inter', sans-serif; color: #222; overflow-x: hidden; max-width: 100vw; }
+img { max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; }
 
 /* ── NAV ── */
@@ -336,8 +338,39 @@ footer { background: #111; color: #aaa; padding: 56px 80px 24px; }
   .hamburger { display: flex !important; }
 }
 @media (max-width: 768px) {
-  .logo-name { font-size: 17px; }
-  .logo-icon { width: 27px; height: 27px; }
+  .logo-name { font-size: 16px; }
+  .logo-icon { width: 32px; height: 32px; }
+  p { text-align: left; }
+
+  .breadcrumb { padding: 10px 14px; }
+  .breadcrumb a, .breadcrumb span, .breadcrumb strong { font-size: 12px; }
+
+  .page-hero { padding: 48px 14px; }
+  .page-hero h1 { font-size: 26px; }
+  .page-hero p { font-size: 13px; }
+
+  .cat-tabs { padding: 0 12px; }
+  .cat-tab { padding: 13px 14px; font-size: 13px; }
+
+  .section { padding: 36px 12px; }
+  .section-title { font-size: 22px; }
+  .section-sub { font-size: 13px; margin-bottom: 22px; }
+
+  /* PRODUK — 3 kolom */
+  .product-grid { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .prod-card { border-radius: 10px; }
+  .prod-card-img { height: 88px; }
+  .prod-card-body { padding: 8px 8px 10px; }
+  .prod-card-body h3 { font-size: 11px; margin-bottom: 3px; line-height: 1.3; }
+  .prod-card-body p { font-size: 10px; line-height: 1.4; }
+
+  /* FOOTER */
+  .social-strip { padding: 28px 0 30px; }
+  footer { padding: 36px 14px 24px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .footer-brand p { text-align: left; }
+  .newsletter-input-wrap { flex-direction: column; gap: 8px; }
+  .newsletter-input, .btn-send-sm { width: 100%; }
 }
 
 </style>
