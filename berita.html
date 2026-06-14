@@ -362,6 +362,9 @@ footer { background: #111; color: #aaa; padding: 56px 80px 24px; }
   <div class="section-label" data-i18n="berita.section_label">Terbaru</div>
   <div class="section-title" style="font-size:28px;font-weight:800;" data-i18n="berita.section_title">Semua Berita &amp; Acara</div>
   <div class="articles-grid">
+    <!--AUTO-CARDS-START-->
+    
+    <!--AUTO-CARDS-END-->
     <div class="article-card">
       <div class="article-img">
         <img src="images/mb-0005.svg" alt="Pinus Packindo Buka Setiap Hari 08.00-21.00" style="width:100%;height:auto;display:block;">
@@ -568,8 +571,14 @@ footer { background: #111; color: #aaa; padding: 56px 80px 24px; }
     const btn = document.querySelector(`.lang-btn[onclick*="'${lang}'"]`);
     if (btn) btn.classList.add('active');
   }
-  function switchLang(lang) { loadLang(lang); }
-  loadLang(localStorage.getItem('lang') || 'id');
+  function applyDataEn(lang) {
+    document.querySelectorAll('[data-en]').forEach(el => {
+      if (!el.hasAttribute('data-id')) el.setAttribute('data-id', el.innerHTML);
+      el.innerHTML = (lang === 'en') ? el.getAttribute('data-en') : el.getAttribute('data-id');
+    });
+  }
+  function switchLang(lang) { applyDataEn(lang); loadLang(lang); }
+  (function(){ const l = localStorage.getItem('lang') || 'id'; applyDataEn(l); loadLang(l); })();
 </script>
 
 <script>

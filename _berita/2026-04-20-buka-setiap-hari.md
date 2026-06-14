@@ -1,4 +1,5 @@
 ---
+legacy: true
 title: "Pinus Packindo Buka Setiap Hari 08.00–21.00, Termasuk Libur Nasional"
 category: "Info"
 date: 2026-04-20T08:00:00.000Z

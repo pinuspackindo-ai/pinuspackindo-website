@@ -1,4 +1,5 @@
 ---
+legacy: true
 title: "Jangan Panik! Pinus Packindo Pastikan Stok Aman & Krisis Bersifat Sementara"
 category: "Berita"
 date: 2026-05-10T08:00:00.000Z

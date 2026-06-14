@@ -1,4 +1,5 @@
 ---
+legacy: true
 title: "Kelangkaan Bijih Plastik Imbas Konflik Iran–AS"
 category: "Berita"
 date: 2026-06-01T08:00:00.000Z

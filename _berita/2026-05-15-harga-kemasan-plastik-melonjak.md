@@ -1,4 +1,5 @@
 ---
+legacy: true
 title: "Harga Kemasan Plastik Melonjak Hingga 78%"
 category: "Berita"
 date: 2026-05-15T08:00:00.000Z

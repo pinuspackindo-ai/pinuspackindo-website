@@ -1,4 +1,5 @@
 ---
+legacy: true
 title: "5 Tips Memilih Kemasan yang Tepat untuk Produk Makanan Anda"
 category: "Tips"
 date: 2026-06-01T08:00:00.000Z

@@ -1,4 +1,5 @@
 ---
+legacy: true
 title: "Kabar Baik! Harga Bahan Baku Plastik Mulai Berangsur Turun"
 category: "Berita"
 date: 2026-05-01T08:00:00.000Z

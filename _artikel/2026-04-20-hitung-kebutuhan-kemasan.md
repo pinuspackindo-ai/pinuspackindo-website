@@ -1,4 +1,5 @@
 ---
+legacy: true
 title: "Cara Menghitung Kebutuhan Kemasan untuk Bisnis F&B Anda"
 category: "Tips"
 date: 2026-04-20T08:00:00.000Z

@@ -18,12 +18,15 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     summary: "{{title}} — 📷 mb-{{kode}}"
     fields:
-      - {label: "Judul", name: "title", widget: "string"}
+      - {label: "🇮🇩 Judul (Indonesia)", name: "title", widget: "string"}
+      - {label: "🇬🇧 Judul (English)", name: "title_en", widget: "string", required: false, hint: "Terjemahan judul ke bahasa Inggris"}
       - {label: "Kategori", name: "category", widget: "string", default: "Berita"}
       - {label: "Tanggal", name: "date", widget: "datetime"}
       - {label: "Kode Foto (mb-XXXX)", name: "kode", widget: "string", required: false, hint: "Isi kode foto, contoh: 0001 → foto akan bernama mb-0001.svg di folder images/"}
-      - {label: "Ringkasan", name: "summary", widget: "text"}
-      - {label: "Konten", name: "body", widget: "markdown"}
+      - {label: "🇮🇩 Ringkasan (Indonesia)", name: "summary", widget: "text"}
+      - {label: "🇬🇧 Ringkasan (English)", name: "summary_en", widget: "text", required: false}
+      - {label: "🇮🇩 Konten (Indonesia)", name: "body", widget: "markdown"}
+      - {label: "🇬🇧 Konten (English)", name: "body_en", widget: "markdown", required: false, hint: "Terjemahan isi ke bahasa Inggris. Susun paragraf/judul dengan urutan SAMA seperti versi Indonesia."}
 
   - name: "artikel"
     label: "📝 Artikel"
@@ -32,12 +35,15 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     summary: "{{title}} — 📷 ma-{{kode}}"
     fields:
-      - {label: "Judul", name: "title", widget: "string"}
+      - {label: "🇮🇩 Judul (Indonesia)", name: "title", widget: "string"}
+      - {label: "🇬🇧 Judul (English)", name: "title_en", widget: "string", required: false, hint: "Terjemahan judul ke bahasa Inggris"}
       - {label: "Kategori", name: "category", widget: "string", default: "Tips"}
       - {label: "Tanggal", name: "date", widget: "datetime"}
       - {label: "Kode Foto (ma-XXXX)", name: "kode", widget: "string", required: false, hint: "Isi kode foto, contoh: 0001 → foto akan bernama ma-0001.png di folder images/"}
-      - {label: "Ringkasan", name: "summary", widget: "text"}
-      - {label: "Konten", name: "body", widget: "markdown"}
+      - {label: "🇮🇩 Ringkasan (Indonesia)", name: "summary", widget: "text"}
+      - {label: "🇬🇧 Ringkasan (English)", name: "summary_en", widget: "text", required: false}
+      - {label: "🇮🇩 Konten (Indonesia)", name: "body", widget: "markdown"}
+      - {label: "🇬🇧 Konten (English)", name: "body_en", widget: "markdown", required: false, hint: "Terjemahan isi ke bahasa Inggris. Susun paragraf/judul dengan urutan SAMA seperti versi Indonesia."}
 
   - name: "produk"
     label: "📦 Produk"

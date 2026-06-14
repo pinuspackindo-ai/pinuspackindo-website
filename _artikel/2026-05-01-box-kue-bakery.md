@@ -1,4 +1,5 @@
 ---
+legacy: true
 title: "Panduan Lengkap Memilih Box Kue untuk Usaha Bakery Rumahan"
 category: "Tips"
 date: 2026-05-01T08:00:00.000Z

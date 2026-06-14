@@ -1,4 +1,5 @@
 ---
+legacy: true
 title: "Mengenal Jenis-jenis Kertas Roti dan Fungsinya dalam Dunia Baking"
 category: "Edukasi"
 date: 2026-04-10T08:00:00.000Z

@@ -1,4 +1,5 @@
 ---
+legacy: true
 title: "Tren Kemasan Ramah Lingkungan 2026 yang Wajib Diikuti Pelaku UMKM"
 category: "Tren"
 date: 2026-05-10T08:00:00.000Z
