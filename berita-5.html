@@ -593,7 +593,19 @@ footer{background:#111;color:#aaa;padding:56px 80px 24px;}
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  function switchLang(lang){ localStorage.setItem('lang',lang); }
+  function switchLang(lang){
+    localStorage.setItem('lang', lang);
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      if(!el.hasAttribute('data-id')) el.setAttribute('data-id', el.innerHTML);
+      el.innerHTML = (lang === 'en') ? el.getAttribute('data-en') : el.getAttribute('data-id');
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.toggle('active', b.textContent.trim().toLowerCase() === lang); });
+    var mid = document.getElementById('mobileLangID'), men = document.getElementById('mobileLangEN');
+    if(mid) mid.classList.toggle('active', lang === 'id');
+    if(men) men.classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+  }
+  document.addEventListener('DOMContentLoaded', function(){ switchLang(localStorage.getItem('lang') || 'id'); });
 </script>
 
 <script>
