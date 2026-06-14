@@ -11,7 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}p{text-align:justify;}
-body{font-family:'Inter',sans-serif;color:#222;}
+html{overflow-x:hidden;}
+body{font-family:'Inter',sans-serif;color:#222;overflow-x:hidden;max-width:100vw;}
+img{max-width:100%;height:auto;}
 a{text-decoration:none;color:inherit;}
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 80px;background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,0.07);}
 .logo{display:flex;align-items:center;gap:10px;cursor:pointer;}
@@ -294,8 +296,33 @@ footer{background:#111;color:#aaa;padding:56px 80px 24px;}
   .hamburger { display: flex !important; }
 }
 @media (max-width: 768px) {
-  .logo-name { font-size: 17px; }
-  .logo-icon { width: 27px; height: 27px; }
+  .logo-name { font-size: 16px; }
+  .logo-icon { width: 32px; height: 32px; }
+  p { text-align: left; }
+  .breadcrumb { padding: 10px 16px; }
+  .breadcrumb a, .breadcrumb span, .breadcrumb strong { font-size: 12px; }
+  /* HERO artikel */
+  .article-hero { padding: 40px 16px; }
+  .article-hero h1 { font-size: 23px; line-height: 1.25; margin-bottom: 14px; }
+  .article-hero-meta { gap: 10px; }
+  /* ISI artikel — rapat & rata kiri, tidak terlalu di tengah */
+  .article-main { max-width: 100%; padding: 28px 16px; }
+  .article-content h2 { font-size: 17px; margin: 22px 0 10px; }
+  .article-content p { font-size: 13px; line-height: 1.7; margin-bottom: 13px; }
+  .article-divider { margin: 28px 0; }
+  .article-back { font-size: 13px; margin-bottom: 24px; }
+  .author-box { padding: 16px 16px; gap: 12px; margin-top: 28px; }
+  .author-avatar-lg { width: 44px; height: 44px; font-size: 14px; }
+  .author-info h4 { font-size: 14px; }
+  .author-info p { font-size: 12px; }
+  /* FOOTER — 2 kolom, email panjang wrap */
+  footer { padding: 36px 16px 24px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .footer-grid > div { min-width: 0; }
+  .footer-col ul li a, .footer-brand p { word-break: break-word; overflow-wrap: anywhere; }
+  .footer-brand p { text-align: left; max-width: 100%; }
+  .newsletter-input-wrap { flex-direction: column; gap: 8px; }
+  .newsletter-input, .btn-send-sm { width: 100%; }
 }
 
 </style>

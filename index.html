@@ -714,21 +714,26 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .logo-icon { width: 32px; height: 32px; }
 
   /* SECTION padding — lebih sempit agar muat 2 kolom */
-  .section { padding: 36px 14px; }
-  .howtobuy-section { padding: 36px 14px; }
-  .testimonial-section { padding: 36px 14px; }
-  .section-title { font-size: 22px; line-height: 1.3; }
-  .section-sub { font-size: 13px; }
+  .section { padding: 32px 14px; }
+  .howtobuy-section { padding: 32px 14px; }
+  .testimonial-section { padding: 32px 14px; }
+  .section-title { font-size: 20px; line-height: 1.3; }
+  .section-sub { font-size: 12px; line-height: 1.6; }
   .section-label { font-size: 11px; }
 
-  /* HERO */
-  .hero { min-height: 400px; }
-  .hero-inner { padding: 32px 14px; max-width: 100%; }
-  .hero h1 { font-size: 26px; line-height: 1.2; }
-  .hero p { font-size: 13px; margin-bottom: 20px; max-width: 100%; }
-  .hero-tag { font-size: 11px; }
+  /* HERO — foto tampil PENUH (contain) di atas, teks di bawah */
+  .hero { min-height: 0; display: block; background: #0f2d1e; }
+  .hero-track { position: relative; height: 240px; }
+  .hero-slide { object-fit: contain; object-position: center; background: #0f2d1e; }
+  .hero-overlay { display: none; }
+  .hero-arrow { top: 120px; }
+  .hero-dots { bottom: auto; top: 218px; }
+  .hero-inner { position: static; padding: 18px 16px 24px; max-width: 100%; background: #0f2d1e; }
+  .hero h1 { font-size: 22px; line-height: 1.25; margin-bottom: 12px; }
+  .hero p { font-size: 12px; line-height: 1.6; margin-bottom: 16px; max-width: 100%; }
+  .hero-tag { font-size: 10px; }
   .hero-btns { flex-direction: column; gap: 10px; }
-  .btn-green { width: 100%; text-align: center; padding: 13px; font-size: 14px; }
+  .btn-green { width: 100%; text-align: center; padding: 12px; font-size: 14px; }
 
   /* SERVICES — 2 kartu sejajar (lebar diatur JS) */
   .services-header { flex-direction: column; gap: 12px; margin-bottom: 18px; }
@@ -743,8 +748,8 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 
   /* ABOUT */
   .about-inner { flex-direction: column-reverse; gap: 24px; }
-  .about-text h2 { font-size: 22px; }
-  .about-text p { font-size: 13px; }
+  .about-text h2 { font-size: 20px; line-height: 1.3; }
+  .about-text p { font-size: 12.5px; line-height: 1.65; }
   .about-photos { width: 100%; height: 220px; }
   .about-photo-1 { width: 62%; height: 155px; }
   .about-photo-2 { width: 52%; height: 125px; top: 65px; }
@@ -762,9 +767,9 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   /* WELCOME */
   .welcome-inner { flex-direction: column; gap: 24px; }
   .welcome-img { width: 100%; height: 220px; }
-  .welcome-text h2 { font-size: 22px; }
-  .welcome-text p { font-size: 13px; }
-  .feature-list li { font-size: 13px; }
+  .welcome-text h2 { font-size: 20px; line-height: 1.3; }
+  .welcome-text p { font-size: 12.5px; line-height: 1.65; }
+  .feature-list li { font-size: 12.5px; }
   .welcome-btns { flex-direction: column; }
 
   /* HOW TO BUY — 2 kolom */
@@ -777,10 +782,10 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .btn-hb-primary, .btn-hb-secondary { font-size: 12px; padding: 9px; }
 
   /* TESTIMONIAL */
-  .testimonial-inner { flex-direction: column; gap: 24px; }
-  .testimonial-left h2 { font-size: 22px; }
-  .testimonial-left p { font-size: 13px; }
-  .testimonial-text { font-size: 13px; }
+  .testimonial-inner { flex-direction: column; gap: 20px; }
+  .testimonial-left h2 { font-size: 20px; line-height: 1.3; }
+  .testimonial-left p { font-size: 12.5px; line-height: 1.65; }
+  .testimonial-text { font-size: 12.5px; line-height: 1.7; }
 
   /* BLOG/ARTIKEL — 2 kartu sejajar (lebar diatur JS) */
   .blog-header { flex-direction: column; gap: 12px; margin-bottom: 18px; }
