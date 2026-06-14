@@ -731,8 +731,8 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .btn-green { width: 100%; text-align: center; padding: 12px; font-size: 14px; }
   /* geser titik fokus foto ke kanan agar orang terlihat */
   .hero-slide { object-position: 72% center; }
-  .hero-slide:nth-child(3) { object-position: 85% center; }  /* s1-3 geser kanan lagi */
-  .hero-slide:nth-child(5) { object-position: 92% center; }  /* s1-5 geser kanan, 2 orang terlihat */
+  .hero-slide:nth-child(3) { object-position: 85% center; }  /* s1-3 geser kanan sedikit */
+  .hero-slide:nth-child(4) { object-position: 92% center; }  /* s1-4 geser kanan, 2 orang terlihat */
   /* tombol panah hero TOTAL dihapus di HP */
   .hero-arrow { display: none !important; }
 
@@ -797,11 +797,8 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .aslide-body p { font-size: 11px; }
   .aslide-cat { font-size: 9px; padding: 2px 7px; }
   .aslide-date { font-size: 10px; }
-  /* panah artikel transparan agar tidak menutup tulisan */
-  .aslide-arrow { background: transparent; border: none; box-shadow: none; color: rgba(0,0,0,0.3); width: 30px; height: 30px; }
-  .aslide-arrow:hover { background: transparent; color: rgba(0,0,0,0.55); border: none; }
-  .aslide-prev { left: -2px; }
-  .aslide-next { right: -2px; }
+  /* HP: semua panah/segitiga slideshow disembunyikan — cukup swipe (desktop tetap ada) */
+  .svc-btn, .nav-btn, .aslide-arrow { display: none !important; }
 
   /* CONTACT */
   .contact-inner { flex-direction: column; gap: 28px; }
