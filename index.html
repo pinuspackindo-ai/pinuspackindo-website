@@ -709,68 +709,93 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .hamburger { display: flex !important; }
 }
 @media (max-width: 768px) {
-  .logo-name { font-size: 17px; }
-  .logo-icon { width: 27px; height: 27px; }
+  /* NAV */
+  .logo-name { font-size: 16px; }
+  .logo-icon { width: 32px; height: 32px; }
 
   /* SECTION padding */
-  .section { padding: 48px 20px; }
-  .howtobuy-section { padding: 48px 20px; }
-  .testimonial-section { padding: 48px 20px; }
+  .section { padding: 40px 16px; }
+  .howtobuy-section { padding: 40px 16px; }
+  .testimonial-section { padding: 40px 16px; }
+  .section-title { font-size: 24px; line-height: 1.3; }
+  .section-sub { font-size: 14px; }
+  .section-label { font-size: 12px; }
 
   /* HERO */
-  .hero { min-height: 380px; }
-  .hero-inner { padding: 40px 20px; max-width: 100%; }
-  .hero h1 { font-size: 26px; }
-  .hero p { font-size: 13px; margin-bottom: 20px; max-width: 100%; }
+  .hero { min-height: 420px; }
+  .hero-inner { padding: 36px 16px; max-width: 100%; }
+  .hero h1 { font-size: 30px; line-height: 1.2; }
+  .hero p { font-size: 14px; margin-bottom: 24px; max-width: 100%; }
   .hero-tag { font-size: 11px; }
   .hero-btns { flex-direction: column; gap: 10px; }
-  .btn-green, .btn-secondary { width: 100%; text-align: center; }
+  .btn-green { width: 100%; text-align: center; padding: 14px; font-size: 15px; }
 
-  /* SERVICES */
-  .services-header { flex-direction: column; gap: 16px; margin-bottom: 24px; }
+  /* SERVICES — 1 kartu penuh sekaligus */
+  .services-header { flex-direction: column; gap: 12px; margin-bottom: 20px; }
   .services-header-right { max-width: 100%; }
-  .section-title { font-size: 22px; }
-  .service-card { width: 85vw; }
+  .service-card { width: calc(100vw - 32px); }
+  .service-card-icon { height: 200px; }
+  .service-card-body h3 { font-size: 18px; }
+  .service-card-body p { font-size: 14px; }
+  .services-nav { justify-content: center; }
 
   /* ABOUT */
-  .about-inner { flex-direction: column; gap: 32px; }
-  .about-text h2 { font-size: 22px; }
-  .about-photos { width: 100%; height: 240px; }
-  .about-photo-1 { width: 65%; height: 160px; }
-  .about-photo-2 { width: 55%; height: 130px; top: 70px; }
-  .about-photo-3 { width: 50%; height: 120px; right: 10px; }
+  .about-inner { flex-direction: column-reverse; gap: 28px; }
+  .about-text h2 { font-size: 24px; }
+  .about-text p { font-size: 14px; }
+  .about-photos { width: 100%; height: 220px; }
+  .about-photo-1 { width: 62%; height: 155px; }
+  .about-photo-2 { width: 52%; height: 125px; top: 65px; }
+  .about-photo-3 { width: 46%; height: 115px; right: 8px; }
 
-  /* KEUNGGULAN */
-  .team-header { flex-direction: column; gap: 16px; margin-bottom: 24px; }
+  /* KEUNGGULAN — 1 kolom */
+  .team-header { flex-direction: column; gap: 12px; margin-bottom: 20px; }
   .team-header-right { max-width: 100%; }
-  .team-grid { grid-template-columns: 1fr; gap: 20px; }
-  .team-card-img { height: 200px; }
-  .team-card-body h4 { font-size: 16px; }
+  .team-grid { grid-template-columns: 1fr; gap: 24px; }
+  .team-card-img { height: 220px; }
+  .team-card-body h4 { font-size: 18px; }
+  .team-card-body p { font-size: 14px; }
 
   /* WELCOME */
-  .welcome-inner { flex-direction: column; gap: 28px; }
-  .welcome-img { width: 100%; height: 220px; }
-  .welcome-text h2 { font-size: 22px; }
+  .welcome-inner { flex-direction: column; gap: 24px; }
+  .welcome-img { width: 100%; height: 240px; }
+  .welcome-text h2 { font-size: 24px; }
+  .welcome-text p { font-size: 14px; }
+  .feature-list li { font-size: 14px; }
   .welcome-btns { flex-direction: column; }
+  .btn-green { font-size: 15px; }
 
-  /* HOW TO BUY */
-  .howtobuy-grid { grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+  /* HOW TO BUY — 1 kolom */
+  .howtobuy-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
+  .hb-title { font-size: 17px; }
+  .hb-features li { font-size: 13px; }
 
   /* TESTIMONIAL */
-  .testimonial-inner { flex-direction: column; gap: 28px; }
-  .testimonial-left h2 { font-size: 22px; }
+  .testimonial-inner { flex-direction: column; gap: 24px; }
+  .testimonial-left h2 { font-size: 24px; }
+  .testimonial-left p { font-size: 14px; }
+  .testimonial-text { font-size: 14px; }
 
-  /* BLOG */
-  .blog-header { flex-direction: column; gap: 16px; margin-bottom: 24px; }
-  .aslide-card { flex: 0 0 85vw; }
+  /* BLOG/ARTIKEL — 1 kartu penuh */
+  .blog-header { flex-direction: column; gap: 12px; margin-bottom: 20px; }
+  .aslide-card { flex: 0 0 calc(100vw - 32px); }
+  .aslide-body h3 { font-size: 15px; }
+  .aslide-body p { font-size: 13px; }
+  .aslide-prev { left: 0; }
+  .aslide-next { right: 0; }
 
   /* CONTACT */
-  .contact-inner { flex-direction: column; gap: 36px; }
-  .contact-left h2, .contact-right h2 { font-size: 22px; }
+  .contact-inner { flex-direction: column; gap: 32px; }
+  .contact-left h2, .contact-right h2 { font-size: 24px; }
+  .contact-left > p { font-size: 14px; }
+  .contact-value { font-size: 15px; }
+  .form-group input, .form-group textarea { font-size: 15px; }
 
   /* FOOTER */
-  footer { padding: 40px 20px 24px; }
+  footer { padding: 40px 16px 24px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-col h4 { font-size: 15px; }
+  .footer-col ul li a { font-size: 14px; }
 }
 
 </style>
