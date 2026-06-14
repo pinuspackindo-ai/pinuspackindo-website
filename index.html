@@ -478,6 +478,11 @@ nav {
 .aslide-dot { width:8px; height:8px; border-radius:50%; background:#ddd; border:none; cursor:pointer; padding:0; transition:all 0.3s; }
 .aslide-dot.active { width:24px; border-radius:4px; background:#27ae60; }
 
+/* Slider dots (services & testimoni) — hanya tampil di HP */
+.slider-dots { display:none; justify-content:center; gap:8px; }
+.slider-dot { width:8px; height:8px; border-radius:50%; background:#ddd; border:none; cursor:pointer; padding:0; transition:all 0.3s; }
+.slider-dot.active { width:22px; border-radius:4px; background:#27ae60; }
+
 /* CONTACT */
 .contact-section { background: #fff; }
 .contact-inner { display: flex; gap: 60px; }
@@ -745,7 +750,10 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .service-card-body h3 { font-size: 14px; }
   .service-card-body p { font-size: 12px; line-height: 1.5; margin-bottom: 10px; }
   .btn-book { font-size: 11px; padding: 7px 10px; }
-  .services-nav { justify-content: center; }
+  /* HP: counter 1/4 diganti dots */
+  .services-nav, .testimonial-nav { justify-content: center; margin-top: 18px; }
+  .svc-counter { display: none; }
+  .slider-dots { display: flex; }
 
   /* ABOUT */
   .about-inner { flex-direction: column-reverse; gap: 24px; }
@@ -795,6 +803,8 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .aslide-body { padding: 12px 12px 16px; gap: 6px; }
   .aslide-body h3 { font-size: 13px; line-height: 1.45; }
   .aslide-body p { font-size: 11px; }
+  /* tanggal di bawah badge (2 baris), konsisten dgn menu artikel/berita */
+  .aslide-meta { flex-direction: column; align-items: flex-start; gap: 4px; }
   .aslide-cat { font-size: 9px; padding: 2px 7px; }
   .aslide-date { font-size: 10px; }
   /* HP: semua panah/segitiga slideshow disembunyikan — cukup swipe (desktop tetap ada) */
@@ -997,6 +1007,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   </div>
   <!-- Slider Navigation -->
   <div class="services-nav">
+    <div class="slider-dots" id="svcDots"></div>
     <span class="svc-counter"><span id="svcCurrent">1</span> / <span id="svcTotalPages">3</span></span>
     <button class="svc-btn" id="svcPrev" onclick="slideServices(-1)" disabled></button>
     <button class="svc-btn" id="svcNext" onclick="slideServices(1)"></button>
@@ -1251,6 +1262,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       </div>
     </div>
     <div class="testimonial-nav">
+      <div class="slider-dots" id="testiDots"></div>
       <button class="nav-btn" onclick="changeTesti(-1)"></button>
       <button class="nav-btn" onclick="changeTesti(1)"></button>
     </div>
@@ -1704,6 +1716,22 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
 
     const track    = document.getElementById('servicesTrack');
     const viewport = document.querySelector('.services-viewport');
+    const svcDots  = document.getElementById('svcDots');
+
+    function buildSvcDots(){
+      const n = svcMaxIdx() + 1;
+      if (svcDots.children.length !== n) {
+        svcDots.innerHTML = '';
+        for (let i = 0; i < n; i++) {
+          const d = document.createElement('button');
+          d.className = 'slider-dot';
+          d.setAttribute('aria-label', 'Slide ' + (i + 1));
+          d.onclick = () => { svcIndex = i; renderSvc(); startSvcAuto(); };
+          svcDots.appendChild(d);
+        }
+      }
+      Array.from(svcDots.children).forEach((d, i) => d.classList.toggle('active', i === svcIndex));
+    }
 
     function svcVisible(){ return window.innerWidth <= 768 ? 2 : 3; }
     function svcGap(){ return window.innerWidth <= 768 ? 12 : 24; }
@@ -1721,6 +1749,7 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
       document.getElementById('svcTotalPages').textContent = svcMaxIdx() + 1;
       document.getElementById('svcPrev').disabled = svcIndex === 0;
       document.getElementById('svcNext').disabled = svcIndex >= svcMaxIdx();
+      buildSvcDots();
     }
 
     window.slideServices = function(dir){
@@ -1756,14 +1785,26 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   // Testimonial slider
   let testiCurrent = 0;
   const testiTotal = 3;
+  const testiDots = document.getElementById('testiDots');
+  for (let i = 0; i < testiTotal; i++) {
+    const d = document.createElement('button');
+    d.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Testimoni ' + (i + 1));
+    d.onclick = () => { testiCurrent = i; updateTesti(); };
+    testiDots.appendChild(d);
+  }
+  function updateTesti() {
+    document.getElementById('testiTrack').style.transform = 'translateX(-' + (testiCurrent * 100) + '%)';
+    Array.from(testiDots.children).forEach((d, i) => d.classList.toggle('active', i === testiCurrent));
+  }
   function changeTesti(dir) {
     testiCurrent = (testiCurrent + dir + testiTotal) % testiTotal;
-    document.getElementById('testiTrack').style.transform = 'translateX(-' + (testiCurrent * 100) + '%)';
+    updateTesti();
   }
   // Auto-play testimonial every 10s
   setInterval(function() {
     testiCurrent = (testiCurrent + 1) % testiTotal;
-    document.getElementById('testiTrack').style.transform = 'translateX(-' + (testiCurrent * 100) + '%)';
+    updateTesti();
   }, 10000);
 
   // Swipe touch — Testimoni
