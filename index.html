@@ -731,6 +731,8 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .btn-green { width: 100%; text-align: center; padding: 12px; font-size: 14px; }
   /* geser titik fokus foto ke kanan agar orang terlihat */
   .hero-slide { object-position: 72% center; }
+  .hero-slide:nth-child(3) { object-position: 85% center; }  /* s1-3 geser kanan lagi */
+  .hero-slide:nth-child(5) { object-position: 92% center; }  /* s1-5 geser kanan, 2 orang terlihat */
 
   /* SERVICES — 2 kartu sejajar (lebar diatur JS) */
   .services-header { flex-direction: column; gap: 12px; margin-bottom: 18px; }
@@ -750,7 +752,9 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .about-photos { width: 100%; height: 220px; }
   .about-photo-1 { width: 62%; height: 155px; }
   .about-photo-2 { width: 52%; height: 125px; top: 65px; }
-  .about-photo-3 { width: 46%; height: 115px; right: 8px; }
+  /* foto abu-abu digeser ke kiri agar memotong foto diskon + subjek terlihat */
+  .about-photo-3 { width: 46%; height: 115px; right: 30px; }
+  .about-photo-3 img { object-position: left center; }
 
   /* KEUNGGULAN — 2 kolom */
   .team-header { flex-direction: column; gap: 12px; margin-bottom: 18px; }

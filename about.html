@@ -367,7 +367,9 @@ footer { background: #0d2218; color: #ccc; padding: 56px 80px 32px; }
   .about-photos { width: 100%; height: 230px; }
   .about-photo-1 { width: 62%; height: 155px; }
   .about-photo-2 { width: 52%; height: 125px; top: 65px; }
-  .about-photo-3 { width: 46%; height: 115px; right: 8px; }
+  /* foto abu-abu digeser ke kiri agar memotong foto diskon + subjek terlihat */
+  .about-photo-3 { width: 46%; height: 115px; right: 30px; }
+  .about-photo-3 img { object-position: left center; }
 
   /* STATS — 2 kolom */
   .stats-strip { padding: 28px 16px; grid-template-columns: 1fr 1fr; gap: 18px; }
