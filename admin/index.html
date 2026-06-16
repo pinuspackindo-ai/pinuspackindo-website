@@ -22,6 +22,99 @@
     setInterval(() => { document.title = 'Admin Website | Pinus Packindo'; }, 500);
   </script>
   <!-- v4 -->
+  <style>
+    /* ── Pinus Packindo Admin Theme ── */
+    :root {
+      --primary-color: #1e7e3e !important;
+      --accent-color: #27ae60 !important;
+    }
+
+    * { font-family: 'Segoe UI', system-ui, sans-serif !important; }
+
+    body, html {
+      background: #f5f7f5 !important;
+    }
+
+    /* Sidebar */
+    [class*="sidebar"], [class*="nav"], aside, nav {
+      background: #ffffff !important;
+      border-right: 1px solid #e0ede5 !important;
+    }
+
+    /* Tombol primary (New, Save, dll) */
+    button[class*="primary"], [class*="btn-primary"],
+    button[style*="background"][class*="new"],
+    [class*="button"][class*="primary"] {
+      background: #27ae60 !important;
+      border-color: #27ae60 !important;
+      color: #fff !important;
+    }
+
+    /* Override warna biru Sveltia → hijau Pinus */
+    [style*="color: rgb(59, 130, 246)"],
+    [style*="color:#3b82f6"],
+    [style*="background: rgb(59, 130, 246)"],
+    [style*="background:#3b82f6"] {
+      color: #27ae60 !important;
+      background: #27ae60 !important;
+    }
+
+    /* CSS variables Sveltia */
+    :root {
+      --color-accent: #27ae60 !important;
+      --color-accent-dark: #1e7e3e !important;
+      --color-active: #27ae60 !important;
+      --color-link: #27ae60 !important;
+      --sui-primary-accent: #27ae60 !important;
+      --sui-focus-ring-color: #27ae6040 !important;
+    }
+
+    /* Header bar */
+    header, [class*="header"], [class*="toolbar"] {
+      background: #ffffff !important;
+      border-bottom: 1px solid #e0ede5 !important;
+      box-shadow: 0 1px 4px rgba(39,174,96,0.08) !important;
+    }
+
+    /* Active/selected menu item */
+    [class*="active"], [aria-current="page"], [class*="selected"] {
+      background: #eaf7ef !important;
+      color: #1e7e3e !important;
+      border-left: 3px solid #27ae60 !important;
+    }
+
+    /* Card / panel */
+    [class*="card"], [class*="panel"], [class*="entry"], [class*="list-item"] {
+      background: #ffffff !important;
+      border: 1px solid #e8f5ee !important;
+      border-radius: 8px !important;
+      box-shadow: 0 1px 3px rgba(39,174,96,0.06) !important;
+    }
+
+    /* Input fields */
+    input, textarea, select, [class*="input"], [class*="field"] {
+      border-color: #c8e6d4 !important;
+      border-radius: 6px !important;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #27ae60 !important;
+      box-shadow: 0 0 0 3px rgba(39,174,96,0.15) !important;
+      outline: none !important;
+    }
+
+    /* Login page */
+    [class*="login"], [class*="sign-in"] {
+      background: #ffffff !important;
+      border-radius: 16px !important;
+      box-shadow: 0 4px 24px rgba(39,174,96,0.12) !important;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f5f7f5; }
+    ::-webkit-scrollbar-thumb { background: #b2d8bf; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #27ae60; }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
