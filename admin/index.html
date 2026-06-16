@@ -27,22 +27,30 @@
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 
   <script>
-    /* ── Override Sveltia logo & app name ── */
+    /* ── Override Sveltia logo & app name (termasuk Shadow DOM) ── */
+    function queryAllShadow(selector, root) {
+      root = root || document;
+      var results = Array.from(root.querySelectorAll(selector));
+      root.querySelectorAll('*').forEach(function(el) {
+        if (el.shadowRoot) results = results.concat(queryAllShadow(selector, el.shadowRoot));
+      });
+      return results;
+    }
     function overrideBranding() {
-      // Ganti semua SVG di halaman (logo Sveltia) dengan logo Pinus
-      document.querySelectorAll('svg').forEach(function(el) {
+      // Ganti SVG logo besar di light DOM maupun shadow DOM
+      queryAllShadow('svg').forEach(function(el) {
         if (el.getAttribute('data-pinus-replaced')) return;
         var w = el.getBoundingClientRect().width;
-        if (w < 40) return; // skip ikon kecil
+        if (w < 40) return;
         var img = document.createElement('img');
-        img.src = '../images/logo.jpg';
+        img.src = '/images/logo.jpg';
         img.alt = 'Pinus Packindo';
         img.setAttribute('data-pinus-replaced', '1');
         img.style.cssText = 'width:96px;height:96px;object-fit:contain;border-radius:16px;display:block;';
         el.replaceWith(img);
       });
-      // Ganti teks "Sveltia CMS" dengan "Admin Website"
-      document.querySelectorAll('*').forEach(function(el) {
+      // Ganti teks "Sveltia CMS" di light DOM maupun shadow DOM
+      queryAllShadow('*').forEach(function(el) {
         if (el.children.length === 0 && el.textContent.trim() === 'Sveltia CMS') {
           el.textContent = 'Admin Website';
         }
