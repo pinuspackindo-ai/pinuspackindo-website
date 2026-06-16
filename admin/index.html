@@ -27,39 +27,23 @@
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 
   <script>
-    /* ── Override Sveltia logo & app name via shadowRoot langsung ── */
+    /* ── Override Sveltia logo & app name ── */
     function overrideBranding() {
-      // Target custom element <sveltia-cms> dan shadow root-nya
-      var cmsEl = document.querySelector('sveltia-cms');
-      var roots = [document];
-      if (cmsEl && cmsEl.shadowRoot) roots.push(cmsEl.shadowRoot);
-
-      roots.forEach(function(root) {
-        // Ganti semua SVG
-        root.querySelectorAll('svg').forEach(function(el) {
-          if (el.getAttribute('data-pinus-replaced')) return;
+      // Ganti img base64 SVG (logo Sveltia) dengan logo Pinus
+      document.querySelectorAll('img').forEach(function(el) {
+        if (el.getAttribute('data-pinus-replaced')) return;
+        if (el.src && el.src.startsWith('data:image/svg+xml')) {
+          el.src = '/images/logo.jpg';
+          el.style.cssText = 'width:96px;height:96px;object-fit:contain;border-radius:16px;';
           el.setAttribute('data-pinus-replaced', '1');
-          var img = document.createElement('img');
-          img.src = '/images/logo.jpg';
-          img.alt = 'Pinus Packindo';
-          img.style.cssText = 'width:96px;height:96px;object-fit:contain;border-radius:16px;display:block;margin:auto;';
-          el.replaceWith(img);
-        });
-        // Ganti teks "Sveltia CMS"
-        root.querySelectorAll('*').forEach(function(el) {
-          if (el.children.length === 0 && el.textContent.trim() === 'Sveltia CMS') {
-            el.textContent = 'Admin Website';
-          }
-        });
+        }
       });
-
-      // Inject CSS ke shadow root untuk sembunyikan SVG yang lolos
-      if (cmsEl && cmsEl.shadowRoot && !cmsEl.shadowRoot.querySelector('#pinus-style')) {
-        var style = document.createElement('style');
-        style.id = 'pinus-style';
-        style.textContent = 'svg:not([data-pinus-replaced]) { display: none !important; }';
-        cmsEl.shadowRoot.appendChild(style);
-      }
+      // Ganti teks "Sveltia CMS"
+      document.querySelectorAll('*').forEach(function(el) {
+        if (el.children.length === 0 && el.textContent.trim() === 'Sveltia CMS') {
+          el.textContent = 'Admin Website';
+        }
+      });
     }
     var brandObserver = new MutationObserver(overrideBranding);
     brandObserver.observe(document.body, { childList: true, subtree: true });
