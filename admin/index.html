@@ -27,6 +27,33 @@
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 
   <script>
+    /* ── Override Sveltia logo & app name ── */
+    function overrideBranding() {
+      // Ganti logo SVG Sveltia dengan logo Pinus
+      document.querySelectorAll('img[alt="Sveltia CMS"], svg').forEach(function(el) {
+        if (el.closest('.login') || el.closest('[class*="login"]') || el.closest('[class*="sign"]')) {
+          if (el.tagName === 'svg') {
+            var img = document.createElement('img');
+            img.src = '../images/logo.jpg';
+            img.alt = 'Pinus Packindo';
+            img.style.cssText = 'width:80px;height:80px;object-fit:contain;border-radius:12px;';
+            el.replaceWith(img);
+          }
+        }
+      });
+      // Ganti teks "Sveltia CMS" dengan "Admin Website"
+      document.querySelectorAll('*').forEach(function(el) {
+        if (el.children.length === 0 && el.textContent.trim() === 'Sveltia CMS') {
+          el.textContent = 'Admin Website';
+        }
+      });
+    }
+    var brandObserver = new MutationObserver(overrideBranding);
+    brandObserver.observe(document.body, { childList: true, subtree: true });
+    setInterval(overrideBranding, 500);
+  </script>
+
+  <script>
     /* ── Hide "Signed in as" ── */
     function hideSignedIn() {
       document.querySelectorAll('*').forEach(function(el) {
