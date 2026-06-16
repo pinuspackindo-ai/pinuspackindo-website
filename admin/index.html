@@ -27,44 +27,39 @@
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 
   <script>
-    /* ── Override Sveltia logo & app name (termasuk Shadow DOM) ── */
-    function queryAllShadow(selector, root) {
-      root = root || document;
-      var results = Array.from(root.querySelectorAll(selector));
-      root.querySelectorAll('*').forEach(function(el) {
-        if (el.shadowRoot) results = results.concat(queryAllShadow(selector, el.shadowRoot));
-      });
-      return results;
-    }
+    /* ── Override Sveltia logo & app name via shadowRoot langsung ── */
     function overrideBranding() {
-      // Ganti semua SVG (tanpa size check) di light DOM + shadow DOM
-      queryAllShadow('svg').forEach(function(el) {
-        if (el.getAttribute('data-pinus-replaced')) return;
-        // Skip ikon kecil berdasarkan atribut width/height
-        var attrW = parseInt(el.getAttribute('width') || '0');
-        if (attrW > 0 && attrW < 40) return;
-        el.setAttribute('data-pinus-replaced', '1');
-        var img = document.createElement('img');
-        img.src = '/images/logo.jpg';
-        img.alt = 'Pinus Packindo';
-        img.style.cssText = 'width:96px;height:96px;object-fit:contain;border-radius:16px;display:block;';
-        el.replaceWith(img);
-      });
-      // Ganti img src yang mengandung "sveltia" atau "logo" milik Sveltia
-      queryAllShadow('img').forEach(function(el) {
-        if (el.getAttribute('data-pinus-replaced')) return;
-        if (el.src && el.src.toLowerCase().includes('sveltia')) {
-          el.src = '/images/logo.jpg';
-          el.style.cssText = 'width:96px;height:96px;object-fit:contain;border-radius:16px;';
+      // Target custom element <sveltia-cms> dan shadow root-nya
+      var cmsEl = document.querySelector('sveltia-cms');
+      var roots = [document];
+      if (cmsEl && cmsEl.shadowRoot) roots.push(cmsEl.shadowRoot);
+
+      roots.forEach(function(root) {
+        // Ganti semua SVG
+        root.querySelectorAll('svg').forEach(function(el) {
+          if (el.getAttribute('data-pinus-replaced')) return;
           el.setAttribute('data-pinus-replaced', '1');
-        }
+          var img = document.createElement('img');
+          img.src = '/images/logo.jpg';
+          img.alt = 'Pinus Packindo';
+          img.style.cssText = 'width:96px;height:96px;object-fit:contain;border-radius:16px;display:block;margin:auto;';
+          el.replaceWith(img);
+        });
+        // Ganti teks "Sveltia CMS"
+        root.querySelectorAll('*').forEach(function(el) {
+          if (el.children.length === 0 && el.textContent.trim() === 'Sveltia CMS') {
+            el.textContent = 'Admin Website';
+          }
+        });
       });
-      // Ganti teks "Sveltia CMS" di light DOM + shadow DOM
-      queryAllShadow('*').forEach(function(el) {
-        if (el.children.length === 0 && el.textContent.trim() === 'Sveltia CMS') {
-          el.textContent = 'Admin Website';
-        }
-      });
+
+      // Inject CSS ke shadow root untuk sembunyikan SVG yang lolos
+      if (cmsEl && cmsEl.shadowRoot && !cmsEl.shadowRoot.querySelector('#pinus-style')) {
+        var style = document.createElement('style');
+        style.id = 'pinus-style';
+        style.textContent = 'svg:not([data-pinus-replaced]) { display: none !important; }';
+        cmsEl.shadowRoot.appendChild(style);
+      }
     }
     var brandObserver = new MutationObserver(overrideBranding);
     brandObserver.observe(document.body, { childList: true, subtree: true });
